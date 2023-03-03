@@ -29,5 +29,21 @@ I've been using the default skins for the Prime 4 for some time now and always t
 
 So I decided to learn the script language and the XML syntax to improve the UI to my needs and to make the devices more usable and feature rich.
 
-## How to Install
-TODO
+## Installation
+### How to Install
+* Goto to the  [lates release page](releases)
+* Download either `Denon Prime4 Screen.zip` or `Denon PrimeGO Screen` depending on your controller
+* Find the VDJ home folder. On windows is is `%USERPROFILE%\Documents\VirtualDJ` or `%USERPROFILE%\AppData\Local\VirtualDJ`. Unable to find it? Checkout [this tutorial on YouTube](https://youtu.be/JmMLfJLpFHY).
+* Put the file in the subfolder `Skins`. Make sure to backup your customized package beforehand if any! Otherwise just override the existing default file.
+* Restart VDJ
+* Have fun ;-)
+
+### How to Uninstall
+* Just delete the file. VDJ will download the default skin as soon as you restart VDJ with a connected controller.
+
+## Getting involved
+You found a bug? Report it as an [Issues](issues).
+You want to improve, feel free to fork or to create Merge-Requests.
+
+## Contact
+Feel free to write me: electronic.greenroom[at]gmail.com
