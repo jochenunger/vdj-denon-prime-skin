@@ -1,4 +1,4 @@
-# Probably the Best Virtual DJ Skin for PrimeGO and Prime4
+# Probably the Best Virtual DJ Skin for Denon PrimeGO and Prime4 Controllers
 
 This project develops an improved Skin/User-Interface for Virtual DJ for screens of controllers like the *Denon Prime 4* and the *Denon Prime GO*.
 
@@ -26,7 +26,7 @@ This skin adds a great new value to the controller and makes a huge difference o
 ## Motivation
 VDJ is the most customizable DJ mixing tool that exist. It is incredible feature-rich and implements advanced features like just in time stems separation with awesome quality. It is a full video-mixing tool and supports nearly every controller out there.
 
-But the best feature is that everything can be customized. It supports a script language that can be used to do anything you want on a button press or a fader move. And the whole UI is defined with an XML-syntax so that everybody is free to adjust, extend, or completely redesign the UI on the laptop screen , but on the controller screen, as-well.
+But the best feature is that everything can be customized. It supports a [script language](https://www.virtualdj.com/wiki/VDJscript.html) that can be used to do anything you want on a button press or a fader move. And the whole UI is defined with an [XML-syntax](https://www.virtualdj.com/wiki/Skin%20SDK) so that everybody is free to adjust, extend, or completely redesign the UI on the laptop screen , but on the controller screen, as-well.
 
 I've been using the default skins for the Prime 4 for some time now and always thought that some features, VDJ can do, were missing in the screen of the controller.
 
@@ -36,7 +36,7 @@ So I decided to learn the script language and the XML syntax to improve the UI t
 Be aware that this project is a private project. The delivered code comes with absolute no warranty.
 
 ### How to Install
-* Goto to the  [lates release page](https://github.com/jochenunger/vdj-denon-prime-skin/releases553155)
+* Goto to the  [latest release page](https://github.com/jochenunger/vdj-denon-prime-skin/releases)
 * Download either `Denon Prime4 Screen.zip` or `Denon PrimeGO Screen` depending on your controller
 * Find the VDJ home folder. On windows is is `%USERPROFILE%\Documents\VirtualDJ` or `%USERPROFILE%\AppData\Local\VirtualDJ`. Unable to find it? Checkout [this tutorial on YouTube](https://youtu.be/JmMLfJLpFHY).
 * Put the file in the subfolder `Skins`. Make sure to backup your customized package beforehand if any! Otherwise just override the existing default file.
