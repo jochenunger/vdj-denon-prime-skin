@@ -13,8 +13,11 @@ The new Skin features beside the standard features:
 Here are some images to show you the new views of the skin:
 
 ![4 Decks Horizontal View](docs%2Fimages%2F4deckhor.png)
+
 ![2 Decks Vertical View](docs%2Fimages%2F2deckvert.png)
+
 ![4 Decks Vertical View](docs%2Fimages%2F4deckvert.png)
+
 ![Daylight Mode](docs%2Fimages%2Fdaylight1.png)
 
 ## Why should I use this Skin?

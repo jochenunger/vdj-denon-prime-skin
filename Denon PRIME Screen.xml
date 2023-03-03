@@ -368,7 +368,6 @@
 			<textselected dx="5" width="190" fontsize="[TEXTSIZE]" color="white" align="center" action="[TEXTACTION]"/>
 		</define>
 
-
 		<define class="fxbuttonon" placeholders="*icon=chevrondown">
 			<size width="80" height="80"/>
 			<off color="buttonoff3" shape="square"/>
@@ -437,7 +436,6 @@
 			</slider>
 		</define>
 
-
 		<define class="beat_bar">
 			<size width="36" height="9"/>
 			<off shape="square" color="black" radius="2"/>
@@ -473,6 +471,7 @@
 				<clipmask x="74" y="107"/>
 			</loops>
 		</define>
+
 		<define class="songprogresswide" colorPlayed="black" colorHigh="colorHigh" colorMed="colorMed"
 				colorBass="colorBass" placeholders="dwidth,*dheight">
 			<size width="[DWIDTH]" height="[DHEIGHT]"/>
@@ -508,7 +507,6 @@
 			</loops>
 		</define>
 
-
 		<define class="songprogressshort" colorPlayed="black" colorHigh="colorHigh" colorMed="colorMed"
 				colorBass="colorBass">
 			<size width="538-10" height="24"/>
@@ -525,6 +523,7 @@
 				<clipmask x="74" y="107"/>
 			</loops>
 		</define>
+
 		<define class="songprogressshortcolors" colorVocal="#075CDB" colorInstru="#0CFF00" colorBeat="#FFFFFF"
 				colorNoBeat="#000000" colorPlayed="#000000" colorHigh="colorHigh" colorMed="colorMed"
 				colorBass="colorBass">
@@ -559,6 +558,7 @@
 				<clipmask x="74" y="107"/>
 			</loops>
 		</define>
+
 		<define class="songprogressshortwidecolors" colorVocal="#075CDB" colorInstru="#0CFF00" colorBeat="#FFFFFF"
 				colorNoBeat="#000000" colorPlayed="#000000" colorHigh="colorHigh" colorMed="colorMed"
 				colorBass="colorBass">
@@ -576,23 +576,7 @@
 				<clipmask x="74" y="107"/>
 			</loops>
 		</define>
-		<define class="songprogresssandbox" colorPlayed="black" colorHigh="colorHigh" colorMed="colorMed"
-				colorBass="colorBass">
-			<pos x="+10" y="+280"/>
-			<size width="1240" height="160"/>
-			<wave>
-				<size height="160"/>
-				<pos y="+0"/>
-			</wave>
-			<cues dy="-5" shade="0">
-				<size width="18" height="24"/>
-				<clipmask x="30" y="107"/>
-			</cues>
-			<loops dy="-5">
-				<size width="22" height="160"/>
-				<clipmask x="74" y="107"/>
-			</loops>
-		</define>
+
 		<define class="songprogressvertical"
 				placeholders="*dwidth=200,*dheight">
 			<size width="538-10+88" height="24"/>
@@ -628,13 +612,29 @@
 			</loops>
 		</define>
 
+		<define class="songprogresssandbox" colorPlayed="black" colorHigh="colorHigh" colorMed="colorMed"
+				colorBass="colorBass">
+			<pos x="+10" y="+280"/>
+			<size width="1240" height="160"/>
+			<wave>
+				<size height="160"/>
+				<pos y="+0"/>
+			</wave>
+			<cues dy="-5" shade="0">
+				<size width="18" height="24"/>
+				<clipmask x="30" y="107"/>
+			</cues>
+			<loops dy="-5">
+				<size width="22" height="160"/>
+				<clipmask x="74" y="107"/>
+			</loops>
+		</define>
 
 		<define class="songprogressbar" type="linear" orientation="horizontal" source="song_pos" visibility="loaded">
 			<size width="538-10" height="6"/>
 			<on color="black" shape="square"/>
 			<off color="deckcolordark" shape="square"/>
 		</define>
-
 
 		<define class="needlelock" action="nothing" visibility="var '@$denonneedlelock' 1">
 			<size width="538-10" height="55"/>
@@ -656,9 +656,7 @@
 				<off color="buttonoff3" border_size="2" border="black"/>
 				<icon x="296" y="121" width="35" height="22" coloroff="#808080" colorselected="#aaaaaa"/>
 			</define>
-
 		</group>
-
 
 		<define class="scratchwh" placeholders="deckn,*swidth=1260,*sheight=100">
 			<deck deck="[DECKN]">
@@ -774,6 +772,7 @@
 				</group>
 			</deck>
 		</define>
+
 		<define class="scratchwverticalcolor" placeholders="deckn, *swidth,*sheight=100">
 			<deck deck="[DECKN]">
 				<group visibility="loaded">
@@ -812,12 +811,10 @@
 			</deck>
 		</define>
 
-
 		<define class="wavelockvertical" action="nothing" visibility="var '@$denonwavelock' 1"
 				placeholders="*swidth,*sheight">
 			<size width="[SWIDTH]" height="[SHEIGHT]"/>
 		</define>
-
 
 		<define class="wavedeck" placeholders="*dheight,textsize=36,deckn">
 			<deck deck="[DECKN]">
@@ -826,12 +823,12 @@
 					<size width="50" height="[DHEIGHT]"/>
 					<off color="panelback"/>
 				</visual>
-				<visual visibility="get_volume & param_bigger 0">
+				<visual visibility="get_volume &amp; param_bigger 0">
 					<pos x="+0" y="+0"/>
 					<size width="5" height="[DHEIGHT]"/>
 					<off color="deckcolorbright"/>
 				</visual>
-				<visual visibility="get_volume & param_equal 0">
+				<visual visibility="get_volume &amp; param_equal 0">
 					<pos x="+0" y="+0"/>
 					<size width="5" height="[DHEIGHT]"/>
 					<off color="black"/>
@@ -958,11 +955,6 @@
 					<text fontsize="[TEXTSIZE]" align="center" color="deckcolorbright" action="get_deck"/>
 				</textzone>
 				<panel visibility="get_title ? true : false">
-					<!--                    <textzone group="horizontal" scroll="no">-->
-					<!--                        <pos x="+5" y="+5"/>-->
-					<!--                        <size width="20" height="[DHEIGHT]-10"/>-->
-					<!--                        <text fontsize="[TEXTSIZE]" align="center" color="deckcolorbright" action="get_deck"/>-->
-					<!--                    </textzone>-->
 					<panel visibility="var '@$primeshowalbum' 0">
 						<textzone group="horizontal" scroll="yes">
 							<pos x="+5" y="+0"/>
@@ -998,6 +990,7 @@
 				</panel>
 			</deck>
 		</define>
+
 		<define class="wavedeckvertical_footer" placeholders="*dwidth,*dheight,textsize=36,deckn,*dwave_width">
 			<deck deck="[DECKN]">
 				<panel visibility="90%">
@@ -1101,6 +1094,7 @@
 				</button>
 			</deck>
 		</define>
+
 		<define class="vuvertical" placeholders="*dwidth,*dheight,textsize=36,deckn">
 			<deck deck="[DECKN]">
 				<visual type="vumeter" x="+0" y="+0" width="[DWIDTH]" height="120" source="get_level" smooth="true" visibility="loaded">
@@ -1164,7 +1158,7 @@
 		</define>
 
 		<define class="scratchpanelhor" placeholders="*dy,*dwidth,*dheight">
-			<panel class="greenroom-logo-static" x="+[DWIDTH]/2-100" y="+[DY]-100" visibility="not deck 1 loaded && not deck 2 loaded && not deck 3 loaded && not deck 4 loaded"/>
+			<panel class="greenroom-logo-static" x="+[DWIDTH]/2-100" y="+[DY]-100" visibility="not deck 1 loaded &amp;&amp; not deck 2 loaded &amp;&amp; not deck 3 loaded &amp;&amp; not deck 4 loaded"/>
 			<panel visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? false : true : true">
 				<panel class="scratchwh" x="+0" y="+0" swidth="[DWIDTH]" sheight="[DHEIGHT]" deckn="1" visibility="deck 1 leftdeck"/>
 				<panel class="scratchwh" x="+0" y="+0" swidth="[DWIDTH]" sheight="[DHEIGHT]" deckn="3" visibility="deck 3 leftdeck"/>
@@ -1186,33 +1180,9 @@
 			<button class="wavelockhor" sheight="[DHEIGHT]+20" x="+0" y="+0"/>
 			<button class="wavelockhor" sheight="[DHEIGHT]+20" x="+0" y="+[DY]"/>
 		</define>
-		<!--        <define class="scratchpanelhort_nopads" placeholders="*dy=224,*dheight=198">-->
-		<!--            <panel visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? false : true : true">-->
-		<!--                <panel class="scratchwh" x="+0" y="+0" sheight="[DHEIGHT]" deckn="1" visibility="deck 1 leftdeck"/>-->
-		<!--                <panel class="scratchwh" x="+0" y="+0" sheight="[DHEIGHT]" deckn="3" visibility="deck 3 leftdeck"/>-->
-		<!--                <panel class="scratchwh" x="+0" y="+[DY]" sheight="[DHEIGHT]" deckn="2" visibility="deck 2 rightdeck"/>-->
-		<!--                <panel class="scratchwh" x="+0" y="+[DY]" sheight="[DHEIGHT]" deckn="4" visibility="deck 4 rightdeck"/>-->
-		<!--            </panel>-->
-		<!--            <panel visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1">-->
-		<!--                <panel class="scratchwhcolor" x="+0" y="+0" sheight="[DHEIGHT]" deckn="1" visibility="deck 1 leftdeck"/>-->
-		<!--                <panel class="scratchwhcolor" x="+0" y="+0" sheight="[DHEIGHT]" deckn="3" visibility="deck 3 leftdeck"/>-->
-		<!--                <panel class="scratchwhcolor" x="+0" y="+[DY]" sheight="[DHEIGHT]" deckn="2"-->
-		<!--                       visibility="deck 2 rightdeck"/>-->
-		<!--                <panel class="scratchwhcolor" x="+0" y="+[DY]" sheight="[DHEIGHT]" deckn="4"-->
-		<!--                       visibility="deck 4 rightdeck"/>-->
-		<!--            </panel>-->
-
-		<!--            <panel class="wavedeck" x="+0" y="+0" dheight="[DHEIGHT]+20" deckn="1" visibility="deck 1 leftdeck"/>-->
-		<!--            <panel class="wavedeck" x="+0" y="+0" dheight="[DHEIGHT]+20" deckn="3" visibility="deck 3 leftdeck"/>-->
-		<!--            <panel class="wavedeck" x="+0" y="+[DY]" dheight="[DHEIGHT]+20" deckn="2" visibility="deck 2 rightdeck"/>-->
-		<!--            <panel class="wavedeck" x="+0" y="+[DY]" dheight="[DHEIGHT]+20" deckn="4" visibility="deck 4 rightdeck"/>-->
-
-		<!--            <button class="wavelockhor" sheight="[DHEIGHT]+20" x="+0" y="+0"/>-->
-		<!--            <button class="wavelockhor" sheight="[DHEIGHT]+20" x="+0" y="+[DY]"/>-->
-		<!--        </define>-->
 
 		<define class="scratchpanelhort_4decks" placeholders="*dy,*dwidth,*dheight">
-			<panel class="greenroom-logo-static" x="+[DWIDTH]/2-100" y="+[DY]*2-100" visibility="not deck 1 loaded && not deck 2 loaded && not deck 3 loaded && not deck 4 loaded"/>
+			<panel class="greenroom-logo-static" x="+[DWIDTH]/2-100" y="+[DY]*2-100" visibility="not deck 1 loaded &amp;&amp; not deck 2 loaded &amp;&amp; not deck 3 loaded &amp;&amp; not deck 4 loaded"/>
 			<panel visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? false : true : true">
 				<panel class="scratchwh" x="+0" y="+[DY]" swidth="[DWIDTH]" sheight="[DHEIGHT]" deckn="1"/>
 				<panel class="scratchwh" x="+0" y="+0" swidth="[DWIDTH]" sheight="[DHEIGHT]" deckn="3"/>
@@ -1243,6 +1213,7 @@
 				<panel class="inactive_overlay" x="+5" y="+[DY]*2" visibility="deck 4 rightdeck" dwidth="1280-25" dheight="[DHEIGHT]+20"/>
 			</group>
 		</define>
+
 		<define class="scratchpanelvertical" placeholders="*dy,*dwidth,*dheight,*songpos_dx">
 			<panel class="greenroom-logo" x="+[DY]*1+50" y="[DHEIGHT]/2" deckn="1"/>
 			<panel class="greenroom-logo" x="+[DY]*0+50" y="[DHEIGHT]/2" deckn="3"/>
@@ -1320,6 +1291,7 @@
 				</panel>
 			</deck>
 		</define>
+
 		<define class="greenroom-logo-static">
 			<visual type="color" source="constant 'white'">
 				<size width="200" height="200"/>
@@ -1330,6 +1302,7 @@
 				<off color="black"/>
 			</visual>
 		</define>
+
 		<define class="scratchpanelvertical2decks" placeholders="*dy,*dwidth,*dheight,*songpos_dx">
 
 			<!--            <panel class="greenroom-logo" x="+[DY]*1+50" y="[DHEIGHT]/2-30" deckn="1"/>-->
@@ -1512,21 +1485,21 @@
 				<size width="200" height="40"/>
 				<off color="fxseldark"/>
 				<text fontsize="18" color="textfxdark" weight="bold" align="center"
-					  action="get_effect_name 1 -3 & param_uppercase"/>
+					  action="get_effect_name 1 -3 &amp; param_uppercase"/>
 			</button>
 			<button action="nothing">
 				<pos x="+5" y="+5+40"/>
 				<size width="200" height="40"/>
 				<off color="fxseldark"/>
 				<text fontsize="18" color="textfxdark" weight="bold" align="center"
-					  action="get_effect_name 1 -2 & param_uppercase"/>
+					  action="get_effect_name 1 -2 &amp; param_uppercase"/>
 			</button>
 			<button action="nothing">
 				<pos x="+5" y="+5+40+40"/>
 				<size width="200" height="40"/>
 				<off color="fxseldark"/>
 				<text fontsize="18" color="textfxdark" weight="bold" align="center"
-					  action="get_effect_name 1 -1 & param_uppercase"/>
+					  action="get_effect_name 1 -1 &amp; param_uppercase"/>
 			</button>
 			<visual>
 				<pos x="+0" y="+5+40+40+40"/>
@@ -1537,28 +1510,28 @@
 				<pos x="+5" y="+5+40+40+40"/>
 				<size width="200" height="40"/>
 				<text fontsize="18" color="white" weight="bold" align="center"
-					  action="get_effect_name & param_uppercase"/>
+					  action="get_effect_name &amp; param_uppercase"/>
 			</button>
 			<button action="nothing">
 				<pos x="+5" y="+5+40+40+40+40"/>
 				<size width="200" height="40"/>
 				<off color="fxseldark"/>
 				<text fontsize="18" color="textfxdark" weight="bold" align="center"
-					  action="get_effect_name 1 +1 & param_uppercase"/>
+					  action="get_effect_name 1 +1 &amp; param_uppercase"/>
 			</button>
 			<button action="nothing">
 				<pos x="+5" y="+5+40+40+40+40+40"/>
 				<size width="200" height="40"/>
 				<off color="fxseldark"/>
 				<text fontsize="18" color="textfxdark" weight="bold" align="center"
-					  action="get_effect_name 1 +2 & param_uppercase"/>
+					  action="get_effect_name 1 +2 &amp; param_uppercase"/>
 			</button>
 			<button action="nothing">
 				<pos x="+5" y="+5+40+40+40+40+40+40"/>
 				<size width="200" height="40"/>
 				<off color="fxseldark"/>
 				<text fontsize="18" color="textfxdark" weight="bold" align="center"
-					  action="get_effect_name 1 +3 & param_uppercase"/>
+					  action="get_effect_name 1 +3 &amp; param_uppercase"/>
 			</button>
 		</define>
 
@@ -1613,16 +1586,16 @@
 				<text fontsize="18" align="left" color="settingsbuttontext" text="FX"/>
 			</textzone>
 			<button class="fxbuttonwide" deck="left" x="+20+95" y="+30" query="deck left effect_active"
-					textaction="deck left get_effect_name & param_uppercase"
+					textaction="deck left get_effect_name &amp; param_uppercase"
 					visibility="deck left effect_active ? deck right effect_active ? false : true : false"/>
 			<button class="fxbuttonwide" deck="right" x="+20+95" y="+30" query="deck right effect_active"
-					textaction="deck right get_effect_name & param_uppercase"
+					textaction="deck right get_effect_name &amp; param_uppercase"
 					visibility="deck right effect_active ? deck left effect_active ? false : true : false"/>
 			<button class="fxbuttonwideglobal" x="+20+95" y="+30" query="var '$pmgofxon' ? true : false"
-					textaction="deck left get_effect_name & param_uppercase"
+					textaction="deck left get_effect_name &amp; param_uppercase"
 					visibility="deck left effect_active ? false : deck right effect_active ? false : true"/>
 			<button class="fxbuttonwideglobalon" x="+20+95" y="+30" query="var '$pmgofxon' ? true : false"
-					textaction="deck left get_effect_name & param_uppercase"
+					textaction="deck left get_effect_name &amp; param_uppercase"
 					visibility="deck left effect_active ? deck right effect_active ? true : false"/>
 
 			<textzone>
@@ -1675,7 +1648,6 @@
 					<text fontsize="18" color="text2" align="center" text="4"/>
 				</button>
 			</deck>
-
 		</define>
 
 		<define class="deckpadswide_only4" placeholders="deckn"> <!-- width 626  518/3=-->
@@ -1726,7 +1698,6 @@
 			</deck>
 		</define>
 
-
 		<define class="deckline">
 			<size width="538" height="2"/>
 			<off color="buttonon2"/>
@@ -1752,7 +1723,6 @@
 				<size width="538+88" height="63"/>
 				<off color="background1"/>
 			</visual>
-
 		</define>
 
 		<define class="minideckwide" placeholders="deckn">
@@ -1762,12 +1732,12 @@
 					<pos x="+0" y="+0"/>
 					<size width="538+88" height="63+77"/>
 				</dropzone>
-				<visual visibility="get_volume & param_bigger 0">
+				<visual visibility="get_volume &amp; param_bigger 0">
 					<pos x="+0" y="+0"/>
 					<size width="5" height="41"/>
 					<off color="deckcolorbright"/>
 				</visual>
-				<visual visibility="get_volume & param_equal 0">
+				<visual visibility="get_volume &amp; param_equal 0">
 					<pos x="+0" y="+0"/>
 					<size width="5" height="41"/>
 					<off color="black"/>
@@ -1918,12 +1888,12 @@
 					<off color="background1"/>
 				</visual>
 
-				<visual visibility="get_volume & param_bigger 0">
+				<visual visibility="get_volume &amp; param_bigger 0">
 					<pos x="+0" y="+0"/>
 					<size width="5" height="71-10"/>
 					<off color="deckcolorbright"/>
 				</visual>
-				<visual visibility="get_volume & param_equal 0">
+				<visual visibility="get_volume &amp; param_equal 0">
 					<pos x="+0" y="+0"/>
 					<size width="5" height="71-10"/>
 					<off color="panelback"/>
@@ -2251,7 +2221,6 @@
 						</textzone>
 
 						<button action="toggle 'keydisplay'">
-							<tooltip></tooltip>
 							<pos x="+0" y="+0"/>
 							<size width="80" height="127-35"/>
 						</button>
@@ -2259,6 +2228,7 @@
 				</group>
 			</deck>
 		</define>
+
 		<define class="tinydeckwide" placeholders="deckn">
 			<deck deck="[DECKN]">
 				<visual>
@@ -2277,12 +2247,12 @@
 					<off color="panelback"/>
 				</visual>
 
-				<visual visibility="get_volume & param_bigger 0">
+				<visual visibility="get_volume &amp; param_bigger 0">
 					<pos x="+0" y="+0"/>
 					<size width="5" height="71-10"/>
 					<off color="deckcolorbright"/>
 				</visual>
-				<visual visibility="get_volume & param_equal 0">
+				<visual visibility="get_volume &amp; param_equal 0">
 					<pos x="+0" y="+0"/>
 					<size width="5" height="71-10"/>
 					<off color="panelback"/>
@@ -3078,14 +3048,14 @@
 				<text fontsize="26" align="left" color="settingsbuttontext" text="[TEXT]"/>
 				<textselected fontsize="26" align="left" color="text4" text="[TEXT]"/>
 			</button>
-			<button action="[ACTION1] & [ACTION3]">
+			<button action="[ACTION1] &amp; [ACTION3]">
 				<pos x="+600" y="+0"/>
 				<size width="200" height="70"/>
 				<text fontsize="26" align="center" color="settingsbuttontext" text="[TEXT1]"/>
 				<off color="buttonoff3" border_size="2" border="black"/>
 				<on color="buttonon3" border_size="2" border="black"/>
 			</button>
-			<button action="[ACTION2] & [ACTION3]">
+			<button action="[ACTION2] &amp; [ACTION3]">
 				<pos x="+600+200+20" y="+0"/>
 				<size width="200" height="70"/>
 				<text fontsize="26" align="center" color="settingsbuttontext" text="[TEXT2]"/>
@@ -3111,14 +3081,14 @@
 				<text fontsize="26" align="left" color="settingsbuttontext" text="[TEXT]"/>
 				<textselected fontsize="26" align="left" color="text4" text="[TEXT]"/>
 			</button>
-			<button action="[ACTION1] & [ACTION3]" query="[QUERY1]">
+			<button action="[ACTION1] &amp; [ACTION3]" query="[QUERY1]">
 				<pos x="+580+20" y="+0"/>
 				<size width="200" height="70"/>
 				<text fontsize="26" align="center" color="settingsbuttontext" text="[TEXT1]"/>
 				<off color="buttonoff3" border_size="2" border="black"/>
 				<on color="buttonon3" border_size="2" border="black"/>
 			</button>
-			<button action="[ACTION2] & [ACTION3]" query="[QUERY2]">
+			<button action="[ACTION2] &amp; [ACTION3]" query="[QUERY2]">
 				<pos x="+580+20+200+20" y="+0"/>
 				<size width="200" height="70"/>
 				<text fontsize="26" align="center" color="settingsbuttontext" text="[TEXT2]"/>
@@ -3274,10 +3244,10 @@
 					<panel class="fulldeckwide" deckn="2" x="640+3" y="94" visibility="deck 2 rightdeck"/>
 					<panel class="fulldeckwide" deckn="4" x="640+3" y="94" visibility="deck 4 rightdeck"/>
 
-					<group visibility="var '@$denoncontrollertype' 0 && var '@$primeshowvideo' 0">
+					<group visibility="var '@$denoncontrollertype' 0 &amp;&amp; var '@$primeshowvideo' 0">
 						<panel class="scratchpanelhor" x="10" y="309" dy="151" dwidth="1260" dheight="125"/>
 					</group>
-					<group visibility="var '@$denoncontrollertype' 0 && var '@$primeshowvideo' 1 && var '$denonfullvideo' 0">
+					<group visibility="var '@$denoncontrollertype' 0 &amp;&amp; var '@$primeshowvideo' 1 &amp;&amp; var '$denonfullvideo' 0">
 						<panel class="scratchpanelhor" x="10+230-2" y="309" dy="151" dwidth="1032" dheight="125"/>
 						<visual>
 							<pos x="+10" y="+309"/>
@@ -3286,19 +3256,19 @@
 							<!--                            <off shape="square" color="black" border_size="1" border="bordercolor"/>-->
 						</visual>
 						<panel class="video" x="+60" y="+317" dborder="0" dwidth="8.9*16" dheight="8.9*9" dsource ="deck" deckn="left" dbackgroundcolor="panelback"/>
-						<panel class="video" x="+12" y="+309+81+4" dborder="0" dwidth="14*16" dheight="14*9" daction="holding 1000ms ? set '@$primeshowvideo' 0 : video off ? set '$denonfullvideo' 1 & video on : set '$denonfullvideo' 1" dsource ="master" />
+						<panel class="video" x="+12" y="+309+81+4" dborder="0" dwidth="14*16" dheight="14*9" daction="holding 1000ms ? set '@$primeshowvideo' 0 : video off ? set '$denonfullvideo' 1 &amp; video on : set '$denonfullvideo' 1" dsource ="master" />
 						<panel class="video" x="+60" y="+312+81+126+6" dborder="0" dwidth="8.9*16" dheight="8.9*9" dsource ="deck" deckn="right" dbackgroundcolor="panelback"/>
 					</group>
-					<group visibility="var '@$denoncontrollertype' 0 && var '@$primeshowvideo' 1 && var '$denonfullvideo' 1">
+					<group visibility="var '@$denoncontrollertype' 0 &amp;&amp; var '@$primeshowvideo' 1 &amp;&amp; var '$denonfullvideo' 1">
 						<panel class="scratchpanelhor" x="10+512+10" y="309" dy="151" dwidth="735" dheight="125"/>
 						<panel class="video" x="+10" y="+309" dborder="5" dwidth="32*16+10" dheight="32*9+10" daction="set '$denonfullvideo' 0"/>
 					</group>
 
 
-					<group visibility="var '@$denoncontrollertype' 1 && var '@$primeshowvideo' 0">
+					<group visibility="var '@$denoncontrollertype' 1 &amp;&amp; var '@$primeshowvideo' 0">
 						<panel class="scratchpanelhor" x="10" y="309" dy="188" dwidth="1260" dheight="162"/>
 					</group>
-					<group visibility="var '@$denoncontrollertype' 1 && var '@$primeshowvideo' 1 && var '$denonfullvideo' 0">
+					<group visibility="var '@$denoncontrollertype' 1 &amp;&amp; var '@$primeshowvideo' 1 &amp;&amp; var '$denonfullvideo' 0">
 						<panel class="scratchpanelhor" x="10+230-2" y="309" dy="188" dwidth="1030" dheight="162"/>
 						<visual>
 							<pos x="+10" y="+309"/>
@@ -3307,10 +3277,10 @@
 							<!--                            <off shape="square" color="black" border_size="1" border="bordercolor"/>-->
 						</visual>
 						<panel class="video" x="+45" y="+309+17" dborder="0" dwidth="10*16" dheight="10*9" dsource ="deck" deckn="left" dbackgroundcolor="panelback"/>
-						<panel class="video" x="+12" y="+309+125" dborder="0" dwidth="14*16" dheight="14*9" daction="holding 1000ms ? set '@$primeshowvideo' 0 : video off ? set '$denonfullvideo' 1 & video on : set '$denonfullvideo' 1" dsource ="master" />
+						<panel class="video" x="+12" y="+309+125" dborder="0" dwidth="14*16" dheight="14*9" daction="holding 1000ms ? set '@$primeshowvideo' 0 : video off ? set '$denonfullvideo' 1 &amp; video on : set '$denonfullvideo' 1" dsource ="master" />
 						<panel class="video" x="+45" y="+309+120+145" dborder="0" dwidth="10*16" dheight="10*9" dsource ="deck" deckn="right" dbackgroundcolor="panelback"/>
 					</group>
-					<group visibility="var '@$denoncontrollertype' 1 && var '@$primeshowvideo' 1 && var '$denonfullvideo' 1">
+					<group visibility="var '@$denoncontrollertype' 1 &amp;&amp; var '@$primeshowvideo' 1 &amp;&amp; var '$denonfullvideo' 1">
 						<panel class="scratchpanelhor" x="10+630-50-2" y="309" dy="188" dwidth="1260-630+50" dheight="162"/>
 						<panel class="video" x="+10" y="+309" dborder="5" dwidth="628-50" dheight="188*2-6" daction="set '$denonfullvideo' 0"/>
 					</group>
@@ -3357,7 +3327,7 @@
 							</group>
 						</deck>
 					</define>
-					<!-----------------------2 Decks horizontal --------------------------------->
+					<!-- ========================= 2 Decks horizontal =========================== -->
 					<group visibility="var '@$denoncontrollertype' 0">
 						<panel name="pads" x="10" y="610">
 							<visual>
@@ -3399,7 +3369,7 @@
 					<group name="browsersmall" x="10" y="0">
 						<panel class="browserback" brheight="90"/>
 						<button class="browserextend" x="+5" y="+5"
-								action="set '$primebrowserextend' 1 & browser_isactive on" query="off"/>
+								action="set '$primebrowserextend' 1 &amp; browser_isactive on" query="off"/>
 
 						<panel class="customs" deckn="1" x="130" y="+20" visibility="deck 1 leftdeck ? true : false"/>
 						<panel class="customs" deckn="3" x="130" y="+20" visibility="deck 3 leftdeck ? true : false"/>
@@ -3412,8 +3382,7 @@
 						<panel class="beatsblock" deckn="4" x="565" y="+53" visibility="deck 4 rightdeck"/>
 					</group>
 				</panel>
-
-				<!-----------------------4 Decks horizontal --------------------------------->
+				<!-- ========================= 4 Decks horizontal  =========================== -->
 				<panel visibility="var '@$prime4fulldecks' 1">
 
 					<panel class="fulldeckwide" deckn="1" x="10" y="94" visibility="deck 1 leftdeck"/>
@@ -3426,12 +3395,12 @@
 					<panel class="tinydeckwide" deckn="2" x="640+3" y="94+212" visibility="deck 4 rightdeck"/>
 					<panel class="tinydeckwide" deckn="4" x="640+3" y="94+212" visibility="deck 2 rightdeck"/>
 
-					<!-----------------------Prime Go--------------------------------->
-					<group visibility="var '@$denoncontrollertype' 0 && var '@$primeshowvideo' 0">
+					<!-- ========================= Prime Go =========================== -->
+					<group visibility="var '@$denoncontrollertype' 0 &amp;&amp; var '@$primeshowvideo' 0">
 						<panel class="scratchpanelhort_4decks" x="10" y="373" dy="86" dwidth="1260" dheight="64"/>
 						<panel class="primegofxpannel"/>
 					</group>
-					<group visibility="var '@$denoncontrollertype' 0 && var '@$primeshowvideo' 1 && var '$denonfullvideo' 0">
+					<group visibility="var '@$denoncontrollertype' 0 &amp;&amp; var '@$primeshowvideo' 1 &amp;&amp; var '$denonfullvideo' 0">
 						<panel class="scratchpanelhort_4decks" x="10+230-2" y="373" dy="86" dwidth="1032" dheight="64"/>
 						<visual>
 							<pos x="+10" y="+374"/>
@@ -3440,22 +3409,22 @@
 						</visual>
 						<panel class="video" x="+11" y="+373+3" dborder="0" dwidth="7*16" dheight="7*9" dsource ="deck" deckn="3" dbackgroundcolor="panelback"/>
 						<panel class="video" x="+125" y="+373+43" dborder="0" dwidth="7*16" dheight="7*9" dsource ="deck" deckn="1" dbackgroundcolor="panelback"/>
-						<panel class="video" x="+12" y="+373+110" dborder="0" dwidth="14*16" dheight="14*9" daction="holding 1000ms ? set '@$primeshowvideo' 0 : video off ? set '$denonfullvideo' 1 & video on : set '$denonfullvideo' 1" dsource ="master" />
+						<panel class="video" x="+12" y="+373+110" dborder="0" dwidth="14*16" dheight="14*9" daction="holding 1000ms ? set '@$primeshowvideo' 0 : video off ? set '$denonfullvideo' 1 &amp; video on : set '$denonfullvideo' 1" dsource ="master" />
 						<panel class="video" x="+125" y="+373+236+4" dborder="0" dwidth="7*16" dheight="7*9" dsource ="deck" deckn="2" dbackgroundcolor="panelback"/>
 						<panel class="video" x="+11" y="+373+236+43" dborder="0" dwidth="7*16" dheight="7*9" dsource ="deck" deckn="4" dbackgroundcolor="panelback"/>
 						<panel class="primegofxpannel"/>
 					</group>
-					<group visibility="var '@$denoncontrollertype' 0 && var '@$primeshowvideo' 1 && var '$denonfullvideo' 1">
+					<group visibility="var '@$denoncontrollertype' 0 &amp;&amp; var '@$primeshowvideo' 1 &amp;&amp; var '$denonfullvideo' 1">
 						<panel class="scratchpanelhort_4decks" x="10+512+10" y="374" dy="86" dwidth="735" dheight="64"/>
 						<panel class="video" x="+10" y="+373" dborder="5" dwidth="32*16+10" dheight="32*9+55" daction="set '$denonfullvideo' 0"/>
 						<panel class="primegofxpannel"/>
 					</group>
 
-					<!-----------------------Prime 4--------------------------------->
-					<group visibility="var '@$denoncontrollertype' 1 && var '@$primeshowvideo' 0">
+					<!-- ========================= Prime 4 =========================== -->
+					<group visibility="var '@$denoncontrollertype' 1 &amp;&amp; var '@$primeshowvideo' 0">
 						<panel class="scratchpanelhort_4decks" x="10" y="374" dy="106" dwidth="1260" dheight="84"/>
 					</group>
-					<group visibility="var '@$denoncontrollertype' 1 && var '@$primeshowvideo' 1 && var '$denonfullvideo' 0">
+					<group visibility="var '@$denoncontrollertype' 1 &amp;&amp; var '@$primeshowvideo' 1 &amp;&amp; var '$denonfullvideo' 0">
 						<panel class="scratchpanelhort_4decks" x="10+230-2" y="374" dy="106" dwidth="1032" dheight="84"/>
 						<visual>
 							<pos x="+10" y="+374"/>
@@ -3464,11 +3433,11 @@
 						</visual>
 						<panel class="video" x="+70" y="+373+8" dborder="0" dwidth="7*16" dheight="7*9" dsource ="deck" deckn="3" dbackgroundcolor="panelback"/>
 						<panel class="video" x="+70" y="+373+78" dborder="0" dwidth="7*16" dheight="7*9" dsource ="deck" deckn="1" dbackgroundcolor="panelback"/>
-						<panel class="video" x="+12" y="+373+148" dborder="0" dwidth="14*16" dheight="14*9" daction="holding 1000ms ? set '@$primeshowvideo' 0 : video off ? set '$denonfullvideo' 1 & video on : set '$denonfullvideo' 1" dsource ="master" />
+						<panel class="video" x="+12" y="+373+148" dborder="0" dwidth="14*16" dheight="14*9" daction="holding 1000ms ? set '@$primeshowvideo' 0 : video off ? set '$denonfullvideo' 1 &amp; video on : set '$denonfullvideo' 1" dsource ="master" />
 						<panel class="video" x="+70" y="+373+236+48" dborder="0" dwidth="7*16" dheight="7*9" dsource ="deck" deckn="2" dbackgroundcolor="panelback"/>
 						<panel class="video" x="+70" y="+373+236+119" dborder="0" dwidth="7*16" dheight="7*9" dsource ="deck" deckn="4" dbackgroundcolor="panelback"/>
 					</group>
-					<group visibility="var '@$denoncontrollertype' 1 && var '@$primeshowvideo' 1 && var '$denonfullvideo' 1">
+					<group visibility="var '@$denoncontrollertype' 1 &amp;&amp; var '@$primeshowvideo' 1 &amp;&amp; var '$denonfullvideo' 1">
 						<panel class="scratchpanelhort_4decks" x="10+512+10" y="374" dy="106" dwidth="735" dheight="84"/>
 						<panel class="video" x="+10" y="+373" dborder="5" dwidth="32*16+10" dheight="422" daction="set '$denonfullvideo' 0"/>
 					</group>
@@ -3476,7 +3445,7 @@
 					<group name="browsersmall" x="10" y="0">
 						<panel class="browserback" brheight="90"/>
 						<button class="browserextend" x="+5" y="+5"
-								action="set '$primebrowserextend' 1 & browser_isactive on" query="off"/>
+								action="set '$primebrowserextend' 1 &amp; browser_isactive on" query="off"/>
 
 						<panel class="customs" deckn="1" x="130" y="+20" visibility="deck 1 leftdeck"/>
 						<panel class="customs" deckn="3" x="130" y="+20" visibility="deck 3 leftdeck"/>
@@ -3490,7 +3459,7 @@
 					</group>
 				</panel>
 
-				<!-----------------------4 Decks vertical --------------------------------->
+				<!-- ========================= 4 Decks vertical =========================== -->
 				<panel visibility="var '@$prime4fulldecks' 2">
 					<group visibility="var '@$denoncontrollertype' 0">
 						<panel class="scratchpanelvertical" x="10" y="94" dy="315" dwidth="200" dheight="695" songpos_dx="95"/>
@@ -3502,7 +3471,7 @@
 					<group name="browsersmall" x="10" y="0">
 						<panel class="browserback" brheight="90"/>
 						<button class="browserextend" x="+5" y="+5"
-								action="set '$primebrowserextend' 1 & browser_isactive on" query="off"/>
+								action="set '$primebrowserextend' 1 &amp;&amp; browser_isactive on" query="off"/>
 
 						<panel class="customs" deckn="1" x="130" y="+20" visibility="deck 1 leftdeck"/>
 						<panel class="customs" deckn="3" x="130" y="+20" visibility="deck 3 leftdeck"/>
@@ -3515,7 +3484,7 @@
 						<panel class="beatsblock" deckn="4" x="565" y="+63"/>
 					</group>
 				</panel>
-				<!-----------------------2 Decks vertical --------------------------------->
+				<!-- ========================= 2 Decks vertical =========================== -->
 				<panel visibility="var '@$prime4fulldecks' 3">
 					<group visibility="var '@$denoncontrollertype' 0">
 						<panel class="scratchpanelvertical2decks" x="10" y="94" dy="315" dwidth="200" dheight="621" songpos_dx="95"/>
@@ -3538,7 +3507,7 @@
 					<group name="browsersmall" x="10" y="0">
 						<panel class="browserback" brheight="90"/>
 						<button class="browserextend" x="+5" y="+5"
-								action="set '$primebrowserextend' 1 & browser_isactive on" query="off"/>
+								action="set '$primebrowserextend' 1 &amp;&amp; browser_isactive on" query="off"/>
 
 						<panel class="customs" deckn="1" x="130" y="+20" visibility="deck 1 leftdeck"/>
 						<panel class="customs" deckn="3" x="130" y="+20" visibility="deck 3 leftdeck"/>
@@ -3571,7 +3540,7 @@
 					<panel class="browserbuttons" visibility="var '$prbrowsersetbut' 0"/>
 
 					<button class="browserextend" x="+5" y="+5"
-							action="set '$primebrowserextend' 0 & browser_isactive off" query="on"/>
+							action="set '$primebrowserextend' 0 &amp; browser_isactive off" query="on"/>
 
 					<button class="browserfontoption" x="+5" y="+645-80"/>
 
@@ -3579,7 +3548,7 @@
 
 					<panel class="automixbuttons" y="30" visibility="browser_window 'sideview' ? sideview 'automix'"/>
 					<panel class="karaokebuttons" y="30" visibility="browser_window 'sideview' ? sideview 'karaoke'"/>
-					<panel class="sidelistbuttons" y="30" visibility="browser_window 'sideview' && not sideview 'automix' && not sideview 'karaoke' && not sideview 'remixes' && not sideview 'sampler'"/>
+					<panel class="sidelistbuttons" y="30" visibility="browser_window 'sideview' &amp;&amp; not sideview 'automix' &amp;&amp; not sideview 'karaoke' &amp;&amp; not sideview 'remixes' &amp;&amp; not sideview 'sampler'"/>
 					<panel class="remixesbuttons" y="30" visibility="browser_window 'sideview' ? sideview 'remixes'"/>
 					<panel class="samplersidebuttons" y="30"
 						   visibility="browser_window 'sideview' ? sideview 'sampler'"/>
@@ -3710,7 +3679,7 @@
 			</button>
 
 
-			<button action="set '@$denonwavebeats' 0 & setting 'SkinWaveformScratchType' 'Shapes' & setting 'SkinWaveformType' 'Shapes' & set '@$denonshapescolors' 0 & setting 'SkinWaveformScratchType' 'shapes' & setting 'loadSecurity' 'on' & setting 'multiTouchTwoFingerScroll' 0 & set '@$primelistappend' 0 & set '@$primebrowserinfo' 0 & set '@$denonwavelock' 0 & set '@$denonblinktime' 0 & setting 'KeyDisplay' 'Harmonic' & setting 'autoKey' 0 & set '@$primeshowalbum' 0 & set '@$primebrowserauto' 0 & grid_view off &  setting 'WaveformCenter' 'Centered' & setting 'ColoredWaveforms' 'monochrome' & set '@$denonneedlelock' 0 & set '@$denonhidepads' 0"
+			<button action="set '@$denonwavebeats' 0 &amp; setting 'SkinWaveformScratchType' 'Shapes' &amp; setting 'SkinWaveformType' 'Shapes' &amp; set '@$denonshapescolors' 0 &amp; setting 'SkinWaveformScratchType' 'shapes' &amp; setting 'loadSecurity' 'on' &amp; setting 'multiTouchTwoFingerScroll' 0 &amp; set '@$primelistappend' 0 &amp; set '@$primebrowserinfo' 0 &amp; set '@$denonwavelock' 0 &amp; set '@$denonblinktime' 0 &amp; setting 'KeyDisplay' 'Harmonic' &amp; setting 'autoKey' 0 &amp; set '@$primeshowalbum' 0 &amp; set '@$primebrowserauto' 0 &amp; grid_view off &amp;  setting 'WaveformCenter' 'Centered' &amp; setting 'ColoredWaveforms' 'monochrome' &amp; set '@$denonneedlelock' 0 &amp; set '@$denonhidepads' 0"
 					query="off">
 				<pos x="1280-20-250-30-10" y="+15"/>
 				<size width="250" height="60"/>
@@ -3832,8 +3801,8 @@
 					   action2="setting 'WaveformCenter' 'Left'"/>
 				<panel class="denonsetting" x="200" y="120+80" text="Scratch-Wave Type" text1="Shapes" text2="Colors"
 					   action3="set '$denonsetwave' 1"
-					   action1="setting 'SkinWaveformScratchType' 'Shapes' & setting 'SkinWaveformtype' 'Shapes'"
-					   action2="setting 'SkinWaveformScratchType' 'Colors' & setting 'SkinWaveformType' 'Colors'"/>
+					   action1="setting 'SkinWaveformScratchType' 'Shapes' &amp; setting 'SkinWaveformtype' 'Shapes'"
+					   action2="setting 'SkinWaveformScratchType' 'Colors' &amp; setting 'SkinWaveformType' 'Colors'"/>
 
 				<panel class="denonsetting" x="200" y="120+80+80" text="Shapes Wave Colors" text1="Per-Deck"
 					   text2="3 Colors" action3="set '$denonsetwave' 2" action1="set '@$denonshapescolors' 0"
@@ -3849,7 +3818,7 @@
 					</button>
 					<button/>
 					<button/>
-					<button action="setting 'ColoredWaveforms' 'monochrome' & set '$denonsetwave' 1">
+					<button action="setting 'ColoredWaveforms' 'monochrome' &amp; set '$denonsetwave' 1">
 						<pos x="+600-220" y="+0"/>
 						<size width="200" height="70"/>
 						<text dx="4" width="192" fontsize="26" align="center" color="settingsbuttontext"
@@ -3954,29 +3923,12 @@
 			</panel>
 
 			<panel name="DNS2_extensions" group="DNS2_settings" visible="no">
-				<!--                <panel class="denonsetting" x="200" y="120" text="Mic Attenuation2" text1="-10db" text2="-20db"-->
-				<!--                       action3="set '$denonsetmic' 0" action1="setting 'PRIMEGO-MicAttenuation' '10db'"-->
-				<!--                       action2="setting 'PRIMEGO-MicAttenuation' '20db'">-->
-				<!--                    <button/>-->
-				<!--                    <button>-->
-				<!--                        <size width="370" height="70"/>-->
-				<!--                    </button>-->
-				<!--                    <button/>-->
-				<!--                    <button/>-->
-				<!--                    <button action="setting 'PRIMEGO-MicAttenuation' '0db' & set '$denonsetmic' 0">-->
-				<!--                        <pos x="+600-220" y="+0"/>-->
-				<!--                        <size width="200" height="70"/>-->
-				<!--                        <text dx="4" width="192" fontsize="26" align="center" color="settingsbuttontext" text="0db"/>-->
-				<!--                        <off color="buttonoff3" border_size="2" border="black"/>-->
-				<!--                        <on color="buttonon3" border_size="2" border="black"/>-->
-				<!--                    </button>-->
-				<!--                </panel>-->
 				<panel class="denonsetting" x="200" y="120" text="Show Video" text1="No" text2="Yes"
 					   action3="set '$denonsetextension' 0" action1="set '@$primeshowvideo' 0"
 					   action2="set '@$primeshowvideo' 1"/>
 				<panel class="denonsetting" x="200" y="120+80" text="Color Mode" text1="Dark" text2="Daylight"
-					   action3="set '$denonsetextension' 1" action1="set '@$colorscheme' 0 & set '$primesettingsview' 0 & load_skin"
-					   action2="set '@$colorscheme' 2 & set '$primesettingsview' 0 & load_skin"/>
+					   action3="set '$denonsetextension' 1" action1="set '@$colorscheme' 0 &amp; set '$primesettingsview' 0 &amp; load_skin"
+					   action2="set '@$colorscheme' 2 &amp; set '$primesettingsview' 0 &amp; load_skin"/>
 				<panel class="denonsetting" x="200" y="120+80+80" text="Controller Flavour" text1="Prime GO" text2="Prime 4"
 					   action3="set '$denonsetextension' 2" action1="set '@$denoncontrollertype' 0"
 					   action2="set '@$denoncontrollertype' 1"/>
@@ -4009,7 +3961,7 @@
 					</button>
 					<button/>
 					<button/>
-					<button action="setting 'PRIMEGO-MicAttenuation' '0db' & set '$denonsetmic' 0">
+					<button action="setting 'PRIMEGO-MicAttenuation' '0db' &amp; set '$denonsetmic' 0">
 						<pos x="+600-220" y="+0"/>
 						<size width="200" height="70"/>
 						<text dx="4" width="192" fontsize="26" align="center" color="settingsbuttontext" text="0db"/>
