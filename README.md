@@ -39,7 +39,8 @@ Be aware that this project is a private project. The delivered code comes with a
 * Goto to the  [latest release page](https://github.com/jochenunger/vdj-denon-prime-skin/releases)
 * Download either `Denon Prime4 Screen.zip` or `Denon PrimeGO Screen` depending on your controller
 * Find the VDJ home folder. On windows is is `%USERPROFILE%\Documents\VirtualDJ` or `%USERPROFILE%\AppData\Local\VirtualDJ`. Unable to find it? Checkout [this tutorial on YouTube](https://youtu.be/JmMLfJLpFHY).
-* Put the file in the subfolder `Skins`. Make sure to backup your customized package beforehand if any! Otherwise just override the existing default file.
+* Rename filename and remove periods. For example `Denon.PRIMEGO.Screen.zip` to `Denon PRIMEGO Screen.zip` (Releases on GitHub seam to add those periods during upload).
+* Put the file in the subfolder `Skins`. Make sure to back up your customized package beforehand if any! Otherwise, just override the existing default file.
 * Restart VDJ
 * Have fun ;-)
 
