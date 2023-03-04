@@ -10,19 +10,29 @@ The new Skin features beside the standard features:
 * Use the browser to **edit tags**, to mark songs and to **prelisten to songs** before loading them into a deck.
 * Want to listen to the song, that is currently playing to check how to mix it best? The skin **supports VDJs sandbox mode** to listen to any song-position of the master song while the audience keeps listening to the song the *normal* way.
 
-[***Click here to see the full feature list***](docs/features.md)
+➡️ [***Click HERE to see the full feature list***](docs/features.md)
 
-Here are some images to show you the new views of the skin:
+## Overview of the new Views
 
-<img alt="4 Decks Horizontal View" src="docs/images/deckhor.png" width=300"/>
+4 Decks Horizontal View
 
-<img alt="2 Decks Vertical View" src="docs/images/2deckvert.png" width=300"/>
+<img alt="4 Decks Horizontal View" src="/docs/images/4deckhor.png" width="500"/>
 
-<img alt="2 Decks Vertical View" src="docs/images/2deckvert.png" width=300"/>
+2 Decks Vertical View
 
-<img alt="4 Decks Vertical View" src="docs/images/4deckvert.png" width=300"/>
+<img alt="2 Decks Vertical View" src="/docs/images/2deckvert.png" width="500"/>
 
-<img alt="Daylight Mode" src="docs/images/daylight1.png" width=300"/>
+2 Decks Video Mixing
+
+<img alt="2 Decks Video Mixing" src="/docs/images/video.png" width="500"/>
+
+4 Decks Vertical View
+
+<img alt="4 Decks Vertical View" src="/docs/images/4deckvert.png" width="500"/>
+
+Daylight Mode
+
+<img alt="Daylight Mode" src="/docs/images/daylight1.png" width="500"/>
 
 ## Why should I use this Skin?
 This skin adds a great new value to the controller and makes a huge difference on what you can do with your controller. Especially compared to the standalone Engine DJ software.
