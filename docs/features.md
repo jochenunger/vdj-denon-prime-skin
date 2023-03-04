@@ -76,8 +76,8 @@ The default effect section has been customized to enable full 4 channel mixing u
 
 [^1]: In case of the Prime GO this is a VU Meter.
 
-[^2]: Beeing in contact with the VDJ guys, this is due to technical limitations, that the SDK of denon has, when it comes to fast moving screen content with a lot of pixel changes over short time.
-  And my experience is, that it won't work for full screen video. But with a reduced viewport for videos this can be integrated easy.
+[^2]: Beeing in contact with the VDJ guys, this is due to technical limitations, that the SDK of Denon has. When it comes to fast moving screen content with a lot of pixel changes over short time, the SDK API is unable to handle it correctly and the display stutters or gets delayed.
+  And this is my experience, too. It won't work for full screen video. But with a reduced viewport for videos this can be integrated without any problems.
 
 
 
