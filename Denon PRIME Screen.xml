@@ -1,14 +1,22 @@
-﻿<skin name="denonprimego" version="2020" width="1280" height="800" nbdecks="4" hidden="false" dpi="1.3">
+﻿<!--
+ Customized Skin for the Denon Prime 4 and Denon Prime GO based on the default Skin of the Prime GO delivered by Atomix.
+ Thank you, Atomix, for providing such an awesome and increadebal customizable DJ software and giving me the possibility
+ publish this skin.
+ You're doing a great job!
+
+ Want to get in touch: https://github.com/jochenunger/vdj-denon-prime-skin
+
+ Have fun!
+ Jochen
+ -->
+<skin name="denonprimego" version="2020" width="1280" height="800" nbdecks="4" hidden="false" dpi="1.3">
 	<oninit action="get_controller_name &amp; param_contains 'Prime GO' ? set '@$denoncontrollertype' 0 : set '@$denoncontrollertype' 1"/>
 
 	<customicons file="icons_daylight.png" nb="64" nbx="16" condition="var_equal '@$colorscheme' 2"/>
 	<!-- Defines-->
 	<group name="windowdefines">
-		<!--        <font name="Arial"/>-->
 		<font name="Lato" />
-		<!--        <font name="Segoe Script" />-->
-		<!--        <font name="Comic Sans MS" />-->
-		<!--        <font name="Teko Light"/>-->
+
 		<dialogs darkmode="true" condition="var_not_equal '@$colorscheme' 2"/>
 		<dialogs darkmode="false" condition="var_equal '@$colorscheme' 2"/>
 
