@@ -10,15 +10,19 @@ The new Skin features beside the standard features:
 * Use the browser to **edit tags**, to mark songs and to **prelisten to songs** before loading them into a deck.
 * Want to listen to the song, that is currently playing to check how to mix it best? The skin **supports VDJs sandbox mode** to listen to any song-position of the master song while the audience keeps listening to the song the *normal* way.
 
+[***Click here to see the full feature list***](docs/features.md)
+
 Here are some images to show you the new views of the skin:
 
-![4 Decks Horizontal View](docs%2Fimages%2F4deckhor.png)
+<img alt="4 Decks Horizontal View" src="docs/images/deckhor.png" width=300"/>
 
-![2 Decks Vertical View](docs%2Fimages%2F2deckvert.png)
+<img alt="2 Decks Vertical View" src="docs/images/2deckvert.png" width=300"/>
 
-![4 Decks Vertical View](docs%2Fimages%2F4deckvert.png)
+<img alt="2 Decks Vertical View" src="docs/images/2deckvert.png" width=300"/>
 
-![Daylight Mode](docs%2Fimages%2Fdaylight1.png)
+<img alt="4 Decks Vertical View" src="docs/images/4deckvert.png" width=300"/>
+
+<img alt="Daylight Mode" src="docs/images/daylight1.png" width=300"/>
 
 ## Why should I use this Skin?
 This skin adds a great new value to the controller and makes a huge difference on what you can do with your controller. Especially compared to the standalone Engine DJ software.
