@@ -1312,10 +1312,10 @@
 
 		<define class="scratchpanelvertical2decks" placeholders="*dy,*dwidth,*dheight,*songpos_dx">
 
-			<!--            <panel class="greenroom-logo" x="+[DY]*1+50" y="[DHEIGHT]/2-30" deckn="1"/>-->
-			<!--            <panel class="greenroom-logo" x="+[DY]*0+50" y="[DHEIGHT]/2-30" deckn="3"/>-->
-			<!--            <panel class="greenroom-logo" x="+[DY]*2+50" y="[DHEIGHT]/2-30" deckn="2"/>-->
-			<!--            <panel class="greenroom-logo" x="+[DY]*3+50" y="[DHEIGHT]/2-30" deckn="4"/>-->
+			<panel class="greenroom-logo" x="+[DY]*0+50" y="[DHEIGHT]/2-30" deckn="1" visibility="deck 1 leftdeck" />
+			<panel class="greenroom-logo" x="+[DY]*0+50" y="[DHEIGHT]/2-30" deckn="3" visibility="deck 3 leftdeck" />
+			<panel class="greenroom-logo" x="+[DY]*3+50" y="[DHEIGHT]/2-30" deckn="2" visibility="deck 2 rightdeck"/>
+			<panel class="greenroom-logo" x="+[DY]*3+50" y="[DHEIGHT]/2-30" deckn="4" visibility="deck 4 rightdeck"/>
 
 			<panel class="songposvertical" x="+[DY]*1-[SONGPOS_DX]" y="+85" dwidth="60" dheight="[DHEIGHT]-210" dbuttonspacer="103" deckn="1" visibility="deck 1 leftdeck"/>
 			<panel class="songposvertical" x="+[DY]*1-[SONGPOS_DX]" y="+85" dwidth="60" dheight="[DHEIGHT]-210" dbuttonspacer="103" deckn="3" visibility="deck 3 leftdeck"/>
@@ -3494,6 +3494,12 @@
 				<!-- ========================= 2 Decks vertical =========================== -->
 				<panel visibility="var '@$prime4fulldecks' 3">
 					<group visibility="var '@$denoncontrollertype' 0">
+						<group visibility="var '@$primeshowvumeter' 0">
+							<panel class="scratchpanelvertical2decks" x="10" y="94" dy="315" dwidth="210" dheight="621" songpos_dx="80"/>
+						</group>
+						<group visibility="var '@$primeshowvumeter' 1">
+							<panel class="scratchpanelvertical2decks" x="10" y="94" dy="315" dwidth="200" dheight="621" songpos_dx="95"/>
+						</group>
 						<panel name="fxs" x="10" y="564+106+10+40">
 							<visual>
 								<pos x="+0" y="+0"/>
@@ -3505,11 +3511,13 @@
 						</panel>
 						<panel class="fxselects" x="10+115-2" y="500" visibility="var '$primego_fxselect'"/>
 					</group>
-					<group visibility="var '@$primeshowvumeter' 0">
-						<panel class="scratchpanelvertical2decks" x="10" y="94" dy="315" dwidth="210" dheight="695" songpos_dx="80"/>
-					</group>
-					<group visibility="var '@$primeshowvumeter' 1">
-						<panel class="scratchpanelvertical2decks" x="10" y="94" dy="315" dwidth="200" dheight="621" songpos_dx="95"/>
+					<group visibility="var '@$denoncontrollertype' 1">
+						<group visibility="var '@$primeshowvumeter' 0">
+							<panel class="scratchpanelvertical2decks" x="10" y="94" dy="315" dwidth="210" dheight="695" songpos_dx="80"/>
+						</group>
+						<group visibility="var '@$primeshowvumeter' 1">
+							<panel class="scratchpanelvertical2decks" x="10" y="94" dy="315" dwidth="200" dheight="695" songpos_dx="95"/>
+						</group>
 					</group>
 
 					<group name="browsersmall" x="10" y="0">
