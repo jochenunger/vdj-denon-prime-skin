@@ -10,7 +10,7 @@
  Jochen
  -->
 <skin name="denonprimego" version="2020" width="1280" height="800" nbdecks="4" hidden="false" dpi="1.3">
-	<oninit action="get_controller_name &amp; param_contains 'Prime GO' ? set '@$denoncontrollertype' 0 : set '@$denoncontrollertype' 1"/>
+<!--	<oninit action="get_controller_name &amp; param_contains 'Prime GO' ? set '@$denoncontrollertype' 0 : set '@$denoncontrollertype' 1"/>-->
 
 	<customicons file="icons_daylight.png" nb="64" nbx="16" condition="var_equal '@$colorscheme' 2"/>
 	<!-- Defines-->
@@ -866,7 +866,7 @@
 				<panel class="wavedeckvertical_wave_overlay" x="+50+17" y="+0" dwidth="1" dheight="+[DHEIGHT]" visibility="10%"/>
 				<panel class="wavedeckvertical_wave_overlay" x="+50+18" y="+0" dwidth="1" dheight="+[DHEIGHT]" visibility="5%"/>
 
-				<visual type="vumeter" x="+0" y="+0" width="5" height="120" source="get_level" smooth="true" visibility="var '@$denoncontrollertype' 0">
+				<visual type="vumeter" x="+0" y="+0" width="5" height="120" source="get_level" smooth="true" visibility="var '@$primeshowvumeter' 1">
 					<led x="+0" y="+[DHEIGHT]*11/12" width="5" height="[DHEIGHT]/12+1">
 						<off color="black"/>
 						<on color="deckcolorbright"/>
@@ -1190,7 +1190,7 @@
 		</define>
 
 		<define class="scratchpanelhort_4decks" placeholders="*dy,*dwidth,*dheight">
-			<panel class="greenroom-logo-static" x="+[DWIDTH]/2-100" y="+[DY]*2-100" visibility="not deck 1 loaded &amp;&amp; not deck 2 loaded &amp;&amp; not deck 3 loaded &amp;&amp; not deck 4 loaded"/>
+			<panel class="greenroom-logo-static" x="+[DWIDTH]/2-80" y="+[DY]*2-80" dwidth="160" dheight="160" visibility="not deck 1 loaded &amp;&amp; not deck 2 loaded &amp;&amp; not deck 3 loaded &amp;&amp; not deck 4 loaded"/>
 			<panel visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? false : true : true">
 				<panel class="scratchwh" x="+0" y="+[DY]" swidth="[DWIDTH]" sheight="[DHEIGHT]" deckn="1"/>
 				<panel class="scratchwh" x="+0" y="+0" swidth="[DWIDTH]" sheight="[DHEIGHT]" deckn="3"/>
@@ -1214,7 +1214,7 @@
 			<button class="wavelockhor" sheight="[DHEIGHT]+20" x="+0" y="+[DY]*2"/>
 			<button class="wavelockhor" sheight="[DHEIGHT]+20" x="+0" y="+[DY]*3"/>
 
-			<group visibility="var '@$denoncontrollertype' 0">
+			<group visibility="var '@$primedarkeninactivedeck' 1">
 				<panel class="inactive_overlay" x="+5" y="+0" visibility="deck 1 leftdeck" dwidth="1280-25" dheight="[DHEIGHT]+20"/>
 				<panel class="inactive_overlay" x="+5" y="+[DY]" visibility="deck 3 leftdeck" dwidth="1280-25" dheight="[DHEIGHT]+20"/>
 				<panel class="inactive_overlay" x="+5" y="+[DY]*3" visibility="deck 2 rightdeck" dwidth="1280-25" dheight="[DHEIGHT]+20"/>
@@ -1271,7 +1271,7 @@
 			<panel class="wavedeckvertical_footer" x="+[DY]*2" y="+[DHEIGHT]-80" dwidth="[DY]" dheight="80" dwave_width="[DWIDTH]" deckn="2"/>
 			<panel class="wavedeckvertical_footer" x="+[DY]*3" y="+[DHEIGHT]-80" dwidth="[DY]" dheight="80" dwave_width="[DWIDTH]" deckn="4"/>
 
-			<group visibility="var '@$denoncontrollertype' 0">
+			<group visibility="var '@$primeshowvumeter' 1">
 				<panel class="vuvertical" x="+[DY]*2-22" y="+65" dwidth="10" dheight="[DHEIGHT]-80-63" deckn="1"/>
 				<panel class="vuvertical" x="+[DY]*1-22" y="+65" dwidth="10" dheight="[DHEIGHT]-80-63" deckn="3"/>
 				<panel class="vuvertical" x="+[DY]*3-22" y="+65" dwidth="10" dheight="[DHEIGHT]-80-63" deckn="2"/>
@@ -1283,7 +1283,7 @@
 			<button class="wavelockvertical" x="+[DY]*2" y="+0" swidth="[DWIDTH]" sheight="[DHEIGHT]-80"/>
 			<button class="wavelockvertical" x="+[DY]*3" y="+0" swidth="[DWIDTH]" sheight="[DHEIGHT]-80"/>
 
-			<group visibility="var '@$denoncontrollertype' 0">
+			<group visibility="var '@$primedarkeninactivedeck' 1">
 				<panel class="inactive_overlay" x="+[DY]" y="+0" visibility="deck 3 leftdeck" dwidth="[DY]" dheight="[DHEIGHT]"/>
 				<panel class="inactive_overlay" x="+0" y="+0" visibility="deck 1 leftdeck" dwidth="[DY]" dheight="[DHEIGHT]"/>
 				<panel class="inactive_overlay" x="+[DY]*2" y="+0" visibility="deck 4 rightdeck" dwidth="[DY]" dheight="[DHEIGHT]"/>
@@ -1294,19 +1294,18 @@
 		<define class="greenroom-logo" placeholders="deckn">
 			<deck deck="[DECKN]">
 				<panel class="greenroom-logo-static" visibility="loaded ? false : true">
-					<!--                    <visual type="color" source="color 'deckcolorbright'"/>-->
 					<visual type="color" source="get_deck_color 'absolute' 30%"/>
 				</panel>
 			</deck>
 		</define>
 
-		<define class="greenroom-logo-static">
+		<define class="greenroom-logo-static" placeholders="dwidth=200,dheight=200">
 			<visual type="color" source="constant 'white'">
-				<size width="200" height="200"/>
-				<mask x="630" y="88"/>
+				<size width="[DWIDTH]" height="[DHEIGHT]"/>
+				<mask x="630" y="88" width="200" height="200"/>
 			</visual>
 			<visual visibility="60%">
-				<size width="200" height="200"/>
+				<size width="[DWIDTH]" height="[DHEIGHT]"/>
 				<off color="black"/>
 			</visual>
 		</define>
@@ -1348,7 +1347,7 @@
 			<panel class="wavedeckvertical_footer" x="+[DY]*3" y="+[DHEIGHT]-80" dwidth="[DY]" dheight="80" dwave_width="[DWIDTH]" deckn="4"
 				   visibility="deck 4 rightdeck"/>
 
-			<group visibility="var '@$denoncontrollertype' 0">
+			<group visibility="var '@$primeshowvumeter' 1">
 				<panel class="vuvertical" x="+[DY]*1-22" y="+65" dwidth="10" dheight="[DHEIGHT]-80-63" deckn="1" visibility="deck 1 leftdeck"/>
 				<panel class="vuvertical" x="+[DY]*1-22" y="+65" dwidth="10" dheight="[DHEIGHT]-80-63" deckn="3" visibility="deck 3 leftdeck"/>
 				<panel class="vuvertical" x="+[DY]*4-22" y="+65" dwidth="10" dheight="[DHEIGHT]-80-63" deckn="2" visibility="deck 2 rightdeck"/>
@@ -3469,10 +3468,10 @@
 
 				<!-- ========================= 4 Decks vertical =========================== -->
 				<panel visibility="var '@$prime4fulldecks' 2">
-					<group visibility="var '@$denoncontrollertype' 0">
+					<group visibility="var '@$primeshowvumeter' 1">
 						<panel class="scratchpanelvertical" x="10" y="94" dy="315" dwidth="200" dheight="695" songpos_dx="95"/>
 					</group>
-					<group visibility="var '@$denoncontrollertype' 1">
+					<group visibility="var '@$primeshowvumeter' 0">
 						<panel class="scratchpanelvertical" x="10" y="94" dy="315" dwidth="210" dheight="695" songpos_dx="80"/>
 					</group>
 
@@ -3495,8 +3494,6 @@
 				<!-- ========================= 2 Decks vertical =========================== -->
 				<panel visibility="var '@$prime4fulldecks' 3">
 					<group visibility="var '@$denoncontrollertype' 0">
-						<panel class="scratchpanelvertical2decks" x="10" y="94" dy="315" dwidth="200" dheight="621" songpos_dx="95"/>
-
 						<panel name="fxs" x="10" y="564+106+10+40">
 							<visual>
 								<pos x="+0" y="+0"/>
@@ -3508,8 +3505,11 @@
 						</panel>
 						<panel class="fxselects" x="10+115-2" y="500" visibility="var '$primego_fxselect'"/>
 					</group>
-					<group visibility="var '@$denoncontrollertype' 1">
+					<group visibility="var '@$primeshowvumeter' 0">
 						<panel class="scratchpanelvertical2decks" x="10" y="94" dy="315" dwidth="210" dheight="695" songpos_dx="80"/>
+					</group>
+					<group visibility="var '@$primeshowvumeter' 1">
+						<panel class="scratchpanelvertical2decks" x="10" y="94" dy="315" dwidth="200" dheight="621" songpos_dx="95"/>
 					</group>
 
 					<group name="browsersmall" x="10" y="0">
@@ -3931,32 +3931,50 @@
 			</panel>
 
 			<panel name="DNS2_extensions" group="DNS2_settings" visible="no">
-				<panel class="denonsetting" x="200" y="120" text="Show Video" text1="No" text2="Yes"
-					   action3="set '$denonsetextension' 0" action1="set '@$primeshowvideo' 0"
-					   action2="set '@$primeshowvideo' 1"/>
-				<panel class="denonsetting" x="200" y="120+80" text="Color Mode" text1="Dark" text2="Daylight"
-					   action3="set '$denonsetextension' 1" action1="set '@$colorscheme' 0 &amp; set '$primesettingsview' 0 &amp; load_skin"
-					   action2="set '@$colorscheme' 2 &amp; set '$primesettingsview' 0 &amp; load_skin"/>
-				<panel class="denonsetting" x="200" y="120+80+80" text="Controller Flavour" text1="Prime GO" text2="Prime 4"
-					   action3="set '$denonsetextension' 2" action1="set '@$denoncontrollertype' 0"
+				<panel class="denonsetting" x="200" y="120" text="Controller Flavour" text1="Prime GO" text2="Prime 4"
+					   action3="set '$denonsetextension' 0" action1="set '@$denoncontrollertype' 0"
 					   action2="set '@$denoncontrollertype' 1"/>
+				<panel class="denonsetting" x="200" y="120+80" text="Show Video" text1="No" text2="Yes"
+					   action3="set '$denonsetextension' 1" action1="set '@$primeshowvideo' 0"
+					   action2="set '@$primeshowvideo' 1"/>
+				<panel class="denonsetting" x="200" y="120+80+80" text="Color Mode" text1="Dark" text2="Daylight"
+					   action3="set '$denonsetextension' 2" action1="set '@$colorscheme' 0 &amp; set '$primesettingsview' 0 &amp; load_skin"
+					   action2="set '@$colorscheme' 2 &amp; set '$primesettingsview' 0 &amp; load_skin"/>
+				<panel class="denonsetting" x="200" y="120+80+80+80" text="Reduced Brightness for inactive Decks" text1="No" text2="Yes"
+					   action3="set '$denonsetextension' 3" action1="set '@$primedarkeninactivedeck' 0"
+					   action2="set '@$primedarkeninactivedeck' 1"/>
+				<panel class="denonsetting" x="200" y="120+80+80+80+80" text="Show VU-Meter" text1="No" text2="Yes"
+					   action3="set '$denonsetextension' 4" action1="set '@$primeshowvumeter' 0"
+					   action2="set '@$primeshowvumeter' 1"/>
 
 				<textzone visibility="var '$denonsetextension' 0">
 					<pos x="240" y="800-115"/>
 					<size width="1280-30-240" height="60"/>
-					<text fontsize="21" align="left" color="text" text="Display videos in horizontal mode?"/>
+					<text fontsize="21" align="left" color="text"
+						  text="Controller layout of your Skin"/>
 				</textzone>
 				<textzone visibility="var '$denonsetextension' 1">
 					<pos x="240" y="800-115"/>
 					<size width="1280-30-240" height="60"/>
-					<text fontsize="21" align="left" color="text"
-						  text="Enable or disable Daylight Mode"/>
+					<text fontsize="21" align="left" color="text" text="Display videos in horizontal mode?"/>
 				</textzone>
 				<textzone visibility="var '$denonsetextension' 2">
 					<pos x="240" y="800-115"/>
 					<size width="1280-30-240" height="60"/>
 					<text fontsize="21" align="left" color="text"
-						  text="Controller layout of your Skin"/>
+						  text="Enable or disable Daylight Mode"/>
+				</textzone>
+				<textzone visibility="var '$denonsetextension' 3">
+					<pos x="240" y="800-115"/>
+					<size width="1280-30-240" height="60"/>
+					<text fontsize="21" align="left" color="text"
+						  text="Inactive Decks will be displayed with reduced brightness."/>
+				</textzone>
+				<textzone visibility="var '$denonsetextension' 4">
+					<pos x="240" y="800-115"/>
+					<size width="1280-30-240" height="60"/>
+					<text fontsize="21" align="left" color="text"
+						  text="Show a per-channel VU-meter?"/>
 				</textzone>
 			</panel>
 			<panel name="DNS2_mic" group="DNS2_settings" visible="no">
