@@ -982,6 +982,8 @@
 							<pos x="+0" y="+5"/>
 							<size width="[DHEIGHT]-5" height="[DHEIGHT]-5"/>
 						</cover>
+						<panel x="+30-1" y="+35-1" class="stemsoverlay" deckn="[DECKN]"/>
+
 						<textzone group="horizontal" scroll="yes">
 							<pos x="+[DHEIGHT]" y="+0"/>
 							<size width="[DWIDTH]-[DHEIGHT]-5" height="[DHEIGHT]-25"/>
@@ -1984,6 +1986,7 @@
 									<pos x="+54" y="+0"/>
 									<size width="60" height="60"/>
 								</cover>
+								<panel x="+54+35-1" y="+35-1" class="stemsoverlay" deckn="[DECKN]"/>
 								<textzone group="horizontal" scroll="yes">
 									<pos x="+54+5+58" y="+1"/>
 									<size width="485+20" height="29"/>
@@ -3229,6 +3232,32 @@
 			</panel>
 
 			<panel class="fxselects" x="10+115-2" y="500" visibility="var '$primego_fxselect'"/>
+		</define>
+		<define class="stemsoverlay" placeholders="deckn,dsize=25">
+			<deck deck="[DECKN]">
+				<group visibility="has_stems '1.0'">
+					<circle color="black" border="1" border_color="white">
+						<pos x="+0" y="+0"/>
+						<size width="[DSIZE]" height="[DSIZE]"/>
+					</circle>
+					<textzone>
+						<pos x="+0" y="+0"/>
+						<size width="[DSIZE]" height="[DSIZE]"/>
+						<text fontsize="15" color="white" align="center" text="S"/>
+					</textzone>
+				</group>
+				<group visibility="has_stems '2.0'">
+					<circle color="darkgreen" border="1" border_color="white">
+						<pos x="+0" y="+0"/>
+						<size width="[DSIZE]" height="[DSIZE]"/>
+					</circle>
+					<textzone>
+						<pos x="+0" y="+0"/>
+						<size width="[DSIZE]" height="[DSIZE]"/>
+						<text fontsize="15" color="white" align="center" text="S"/>
+					</textzone>
+				</group>
+			</deck>
 		</define>
 	</group>
 
