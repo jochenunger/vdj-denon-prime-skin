@@ -1225,10 +1225,10 @@
 		</define>
 
 		<define class="scratchpanelvertical" placeholders="*dy,*dwidth,*dheight,*songpos_dx">
-			<panel class="greenroom-logo" x="+[DY]*1+50" y="[DHEIGHT]/2" deckn="1"/>
-			<panel class="greenroom-logo" x="+[DY]*0+50" y="[DHEIGHT]/2" deckn="3"/>
-			<panel class="greenroom-logo" x="+[DY]*2+50" y="[DHEIGHT]/2" deckn="2"/>
-			<panel class="greenroom-logo" x="+[DY]*3+50" y="[DHEIGHT]/2" deckn="4"/>
+			<panel class="greenroom-logo" x="+[DY]*1+50" y="[DHEIGHT]/2" visibility="not deck 1 loaded" dcolor="constant '#365E8F'"/>
+			<panel class="greenroom-logo" x="+[DY]*0+50" y="[DHEIGHT]/2" visibility="not deck 3 loaded" dcolor="constant '#368F47'"/>
+			<panel class="greenroom-logo" x="+[DY]*2+50" y="[DHEIGHT]/2" visibility="not deck 2 loaded" dcolor="constant '#8F2424'"/>
+			<panel class="greenroom-logo" x="+[DY]*3+50" y="[DHEIGHT]/2" visibility="not deck 4 loaded" dcolor="constant '#966E29'"/>
 
 			<panel class="songposvertical" x="+[DY]*2-[SONGPOS_DX]" y="+85" dwidth="60" dheight="[DHEIGHT]-210" dbuttonspacer="140" deckn="1"/>
 			<panel class="songposvertical" x="+[DY]*1-[SONGPOS_DX]" y="+85" dwidth="60" dheight="[DHEIGHT]-210" dbuttonspacer="140" deckn="3"/>
@@ -1293,12 +1293,10 @@
 			</group>
 		</define>
 
-		<define class="greenroom-logo" placeholders="deckn">
-			<deck deck="[DECKN]">
-				<panel class="greenroom-logo-static" visibility="loaded ? false : true">
-					<visual type="color" source="get_deck_color 'absolute' 30%"/>
-				</panel>
-			</deck>
+		<define class="greenroom-logo" placeholders="dcolor">
+			<panel class="greenroom-logo-static">
+				<visual type="color" source="[DCOLOR]"/>
+			</panel>
 		</define>
 
 		<define class="greenroom-logo-static" placeholders="dwidth=200,dheight=200">
@@ -1306,7 +1304,7 @@
 				<size width="[DWIDTH]" height="[DHEIGHT]"/>
 				<mask x="630" y="88" width="200" height="200"/>
 			</visual>
-			<visual visibility="60%">
+			<visual visibility="20%">
 				<size width="[DWIDTH]" height="[DHEIGHT]"/>
 				<off color="black"/>
 			</visual>
@@ -1314,10 +1312,10 @@
 
 		<define class="scratchpanelvertical2decks" placeholders="*dy,*dwidth,*dheight,*songpos_dx">
 
-			<panel class="greenroom-logo" x="+[DY]*0+50" y="[DHEIGHT]/2-30" deckn="1" visibility="deck 1 leftdeck" />
-			<panel class="greenroom-logo" x="+[DY]*0+50" y="[DHEIGHT]/2-30" deckn="3" visibility="deck 3 leftdeck" />
-			<panel class="greenroom-logo" x="+[DY]*3+50" y="[DHEIGHT]/2-30" deckn="2" visibility="deck 2 rightdeck"/>
-			<panel class="greenroom-logo" x="+[DY]*3+50" y="[DHEIGHT]/2-30" deckn="4" visibility="deck 4 rightdeck"/>
+            <panel class="greenroom-logo" x="+[DY]*0+50" y="[DHEIGHT]/2-30" visibility="deck 1 leftdeck &amp;&amp; not deck 1 loaded" dcolor="constant '#365E8F'"/>
+            <panel class="greenroom-logo" x="+[DY]*0+50" y="[DHEIGHT]/2-30" visibility="deck 3 leftdeck &amp;&amp; not deck 3 loaded" dcolor="constant '#368F47'"/>
+            <panel class="greenroom-logo" x="+[DY]*3+50" y="[DHEIGHT]/2-30" visibility="deck 2 rightdeck &amp;&amp; not deck 2 loaded" dcolor="constant '#8F2424'"/>
+            <panel class="greenroom-logo" x="+[DY]*3+50" y="[DHEIGHT]/2-30" visibility="deck 4 rightdeck &amp;&amp; not deck 4 loaded" dcolor="constant '#966E29'"/>
 
 			<panel class="songposvertical" x="+[DY]*1-[SONGPOS_DX]" y="+85" dwidth="60" dheight="[DHEIGHT]-210" dbuttonspacer="103" deckn="1" visibility="deck 1 leftdeck"/>
 			<panel class="songposvertical" x="+[DY]*1-[SONGPOS_DX]" y="+85" dwidth="60" dheight="[DHEIGHT]-210" dbuttonspacer="103" deckn="3" visibility="deck 3 leftdeck"/>
