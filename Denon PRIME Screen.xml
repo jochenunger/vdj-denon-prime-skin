@@ -9,7 +9,7 @@
  Have fun!
  Jochen
  -->
-<skin name="denonprimego" version="2020" width="1280" height="800" nbdecks="4" hidden="false" dpi="1.3">
+<skin name="denonprime" version="2020" width="1280" height="800" preview="preview.png" author="Jochen Unger" nbdecks="4" hidden="false" dpi="1.3">
 <!--	<oninit action="get_controller_name &amp; param_contains 'Prime GO' ? set '@$denoncontrollertype' 0 : set '@$denoncontrollertype' 1"/>-->
 
 	<customicons file="icons_daylight.png" nb="64" nbx="16" condition="var_equal '@$colorscheme' 2"/>
@@ -334,7 +334,7 @@
 			<selected color="buttonon" shape="square" border="deckcolordark" border_size="2"/>
 			<down color="buttonon" shape="square" border="deckcolordark" border_size="2"/>
 			<text dx="+2" width="86" fontsize="18" color="text2" colorselected="#eeeeee" colordown="#eeeeee"
-				  align="center" action="[TEXTACTION]"/>
+				  align="center" action="[TEXTACTION]" scroll="yes"/>
 		</define>
 
 		<define class="customs" placeholders="deckn">
@@ -982,7 +982,7 @@
 							<pos x="+0" y="+5"/>
 							<size width="[DHEIGHT]-5" height="[DHEIGHT]-5"/>
 						</cover>
-						<panel x="+30-1" y="+35-1" class="stemsoverlay" deckn="[DECKN]"/>
+						<panel x="+30-1" y="+35-1" class="stemsoverlay" deckn="[DECKN]" visibility="var '@$primeshowstemstatus'"/>
 
 						<textzone group="horizontal" scroll="yes">
 							<pos x="+[DHEIGHT]" y="+0"/>
@@ -1984,7 +1984,7 @@
 									<pos x="+54" y="+0"/>
 									<size width="60" height="60"/>
 								</cover>
-								<panel x="+54+35-1" y="+35-1" class="stemsoverlay" deckn="[DECKN]"/>
+								<panel x="+54+35-1" y="+35-1" class="stemsoverlay" deckn="[DECKN]" visibility="var '@$primeshowstemstatus'"/>
 								<textzone group="horizontal" scroll="yes">
 									<pos x="+54+5+58" y="+1"/>
 									<size width="485+20" height="29"/>
@@ -3981,6 +3981,9 @@
 				<panel class="denonsetting" x="200" y="120+80+80+80+80" text="Show VU-Meter" text1="No" text2="Yes"
 					   action3="set '$denonsetextension' 4" action1="set '@$primeshowvumeter' 0"
 					   action2="set '@$primeshowvumeter' 1"/>
+				<panel class="denonsetting" x="200" y="120+80+80+80+80+80" text="Stems Overlay on Album" text1="No" text2="Yes"
+					   action3="set '$denonsetextension' 5" action1="set '@$primeshowstemstatus' 0"
+					   action2="set '@$primeshowstemstatus' 1"/>
 
 				<textzone visibility="var '$denonsetextension' 0">
 					<pos x="240" y="800-115"/>
@@ -4010,6 +4013,12 @@
 					<size width="1280-30-240" height="60"/>
 					<text fontsize="21" align="left" color="text"
 						  text="Show a per-channel VU-meter?"/>
+				</textzone>
+				<textzone visibility="var '$denonsetextension' 5">
+					<pos x="240" y="800-115"/>
+					<size width="1280-30-240" height="60"/>
+					<text fontsize="21" align="left" color="text"
+						  text="Should a small S-symbol be overlayed to reflect the stems status?"/>
 				</textzone>
 			</panel>
 			<panel name="DNS2_mic" group="DNS2_settings" visible="no">
