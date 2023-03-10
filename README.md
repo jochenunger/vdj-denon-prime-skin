@@ -49,10 +49,24 @@ So I decided to learn the script language and the XML syntax to improve the UI t
 ## Installation
 Be aware that this project is a private project. The delivered code comes with absolute no warranty.
 
-### How to Install
+### How to Install from VirtualDJ Extensions
+* Got Extensions in VDJ setting
+![how-to-install.png](docs%2Fimages%2Fhow-to-install.png)
+* **Do not use the *INTERFACE* settings page to activate the skin**, because this activates the skin as the desktop skin! Follow the instructions below.
+* Find the VDJ home folder. On windows is is `%USERPROFILE%\Documents\VirtualDJ` or `%USERPROFILE%\AppData\Local\VirtualDJ`. On Mac it is: *\Users\YourUserName\Library\ApplicationSupport\VirtualDJ*. Unable to find it? Checkout [this tutorial on YouTube](https://youtu.be/JmMLfJLpFHY).
+* For Prime 4:
+    * Delete or rename if existing: *Denon Prime4 Screen.zip*
+    * Rename *Prime 4 Extended Screen Skin.zip* to *Denon Prime4 Screen.zip*
+* For Prime GO:
+  * Delete or rename if existing: *Denon PRIMEGO Screen.zip*
+  * Rename Rename *Prime GO Extended Screen Skin.zip* to *Denon PRIMEGO Screen.zip*
+* Restart VDJ
+* Have fun ;-)
+
+### How to Install from GitHub
 * Goto to the  [latest release page](https://github.com/jochenunger/vdj-denon-prime-skin/releases)
 * Download either `Denon Prime4 Screen.zip` or `Denon PrimeGO Screen` depending on your controller
-* Find the VDJ home folder. On windows is is `%USERPROFILE%\Documents\VirtualDJ` or `%USERPROFILE%\AppData\Local\VirtualDJ`. Unable to find it? Checkout [this tutorial on YouTube](https://youtu.be/JmMLfJLpFHY).
+* Find the VDJ home folder. On windows is is `%USERPROFILE%\Documents\VirtualDJ` or `%USERPROFILE%\AppData\Local\VirtualDJ`. On Mac it is: *\Users\YourUserName\Library\ApplicationSupport\VirtualDJ*. Unable to find it? Checkout [this tutorial on YouTube](https://youtu.be/JmMLfJLpFHY).
 * Rename filename and remove periods. For example `Denon.PRIMEGO.Screen.zip` to `Denon PRIMEGO Screen.zip` (Releases on GitHub seam to add those periods during upload).
 * Put the file in the subfolder `Skins`. Make sure to back up your customized package beforehand if any! Otherwise, just override the existing default file.
 * Restart VDJ
