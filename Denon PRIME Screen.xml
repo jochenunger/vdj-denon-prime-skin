@@ -4,18 +4,21 @@
  publish this skin.
  You're doing a great job!
 
+ Want to see it in action: https://youtu.be/pQGqcDsc6-w
  Want to get in touch: https://github.com/jochenunger/vdj-denon-prime-skin
+
+ Version: 0.2.1
 
  Have fun!
  Jochen
  -->
-<skin name="denonprime" version="2020" width="1280" height="800" preview="preview.png" author="Jochen Unger" nbdecks="4" hidden="false" dpi="1.3">
+<skin name="denonprime" version="2020" width="1280" height="800" preview="preview.png" author="Jochen Unger" nbdecks="4" hidden="true" dpi="1.3">
 <!--	<oninit action="get_controller_name &amp; param_contains 'Prime GO' ? set '@$denoncontrollertype' 0 : set '@$denoncontrollertype' 1"/>-->
 
 	<customicons file="icons_daylight.png" nb="64" nbx="16" condition="var_equal '@$colorscheme' 2"/>
 	<!-- Defines-->
 	<group name="windowdefines">
-		<font name="Lato" />
+<!--		<font name="Lato" />-->
 
 		<dialogs darkmode="true" condition="var_not_equal '@$colorscheme' 2"/>
 		<dialogs darkmode="false" condition="var_equal '@$colorscheme' 2"/>
