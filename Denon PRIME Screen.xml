@@ -18,7 +18,7 @@
 	<customicons file="icons_daylight.png" nb="64" nbx="16" condition="var_equal '@$colorscheme' 2"/>
 	<!-- Defines-->
 	<group name="windowdefines">
-<!--		<font name="Lato" />-->
+		<font name="Lato" />
 
 		<dialogs darkmode="true" condition="var_not_equal '@$colorscheme' 2"/>
 		<dialogs darkmode="false" condition="var_equal '@$colorscheme' 2"/>
@@ -1662,12 +1662,12 @@
 
 		<define class="deckpadswide_only4" placeholders="deckn"> <!-- width 626  518/3=-->
 			<deck deck="[DECKN]">
-				<textzone>
+				<button action="pad_page">
 					<pos x="+313-75" y="+5"/>
 					<size width="150" height="27"/>
 					<text fontsize="18" align="center" color="settingsbuttontext"
 						  action="pad_page &amp; param_uppercase"/>
-				</textzone>
+				</button>
 				<textzone>
 					<pos x="+2" y="+5"/>
 					<size width="150" height="27"/>
@@ -1678,6 +1678,14 @@
 					<size width="150" height="27"/>
 					<text fontsize="15" align="center" color="text" action="pad_param2"/>
 				</textzone>
+				<button action="pad_param -1">
+					<pos x="+2" y="+5"/>
+					<size width="75" height="27"/>
+				</button>
+				<button action="pad_param +1">
+					<pos x="+2+75" y="+5"/>
+					<size width="75" height="27"/>
+				</button>
 				<group x="+15" y="+5+37">
 					<panel class="padbuttonwide" x="+0" y="+0" action="var 'livepadbank' ? pad 5 : pad 1"
 						   rightclick="var 'livepadbank' ? padshift 5 : padshift 1"
@@ -3322,7 +3330,7 @@
 						<panel class="video" x="+10" y="+309" dborder="5" dwidth="628-50" dheight="188*2-6" daction="set '$denonfullvideo' 0"/>
 					</group>
 
-					<define class="deckpadswide" placeholders="deckn"> <!-- width 538  518/3=-->
+					<define class="deckpadswide" placeholders="deckn">
 						<deck deck="[DECKN]">
 							<button action="pad_page">
 								<pos x="+2" y="+8"/>
@@ -3340,9 +3348,13 @@
 								<size width="150" height="27"/>
 								<text fontsize="15" align="center" color="text" action="pad_param2"/>
 							</textzone>
-							<button action="pad_param +1">
+							<button action="pad_param -1">
 								<pos x="+2" y="+35"/>
-								<size width="150" height="60"/>
+								<size width="75" height="60"/>
+							</button>
+							<button action="pad_param +1">
+								<pos x="+2+75" y="+35"/>
+								<size width="75" height="60"/>
 							</button>
 							<group x="+155" y="+2">
 								<panel class="padbuttonshort" x="+0" y="+5" action="pad 1" rightclick="padshift 1"
