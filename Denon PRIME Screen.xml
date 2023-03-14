@@ -3268,6 +3268,26 @@
 				</group>
 			</deck>
 		</define>
+		<define class="vfxdrop" placeholders="*width=+90,action1,action2,textaction">
+			<button x="+0" y="+0" action="[ACTION1]" rightclick="temporary" scroll="[ACTION2]">
+				<size width="[WIDTH]" height="46"/>
+				<off color="buttonoff" shape="square" border="bordercolor" border_size="2" radius="5"/>
+				<over color="buttonon" shape="square" border="bordercolor" border_size="2" radius="5"/>
+				<on color="buttonon" shape="square" border="bordercolor" border_size="2" radius="5"/>
+				<text color="textoff3" colorover="textover" colorselected="texton" dx="10" width="[WIDTH]-5-24" fontsize="16" align="left" action="[TEXTACTION]" important="true"/>
+			</button>
+			<group x="[WIDTH]">
+				<button x="-46" y="+0" action="[ACTION2]" novisibility="[ACTION1]">
+					<size width="46" height="46"/>
+					<icon sysicon="chevrondown"  coloroff="textdarker" colorselected="texton" colorover="textover" colordown="texton" width="16" height="16" important="important"/>
+				</button>
+				<button x="-46" y="+0" action="[ACTION2]" visibility="[ACTION1]">
+					<size width="46" height="46"/>
+					<icon sysicon="chevrondown"  coloroff="texton" colorselected="texton" colorover="textover" colordown="texton" width="16" height="16" important="important"/>
+				</button>
+				<line color="darker" x="-46" y="+0" width="2" height="46"/>
+			</group>
+		</define>
 	</group>
 
 	<!-- Initial Skin Background-->
@@ -3307,6 +3327,7 @@
 					<group visibility="var '@$denoncontrollertype' 0 &amp;&amp; var '@$primeshowvideo' 1 &amp;&amp; var '$denonfullvideo' 1">
 						<panel class="scratchpanelhor" x="10+512+10" y="309" dy="151" dwidth="735" dheight="125"/>
 						<panel class="video" x="+10" y="+309" dborder="5" dwidth="32*16+10" dheight="32*9+10" daction="set '$denonfullvideo' 0"/>
+						<panel class="vfxdrop" width="+200" x="+180" y="+329+220" action1="video_fx" action2="video_fx_select" textaction="get_videofx_name &amp; param_uppercase"/>
 					</group>
 
 
@@ -3328,6 +3349,7 @@
 					<group visibility="var '@$denoncontrollertype' 1 &amp;&amp; var '@$primeshowvideo' 1 &amp;&amp; var '$denonfullvideo' 1">
 						<panel class="scratchpanelhor" x="10+630-50-2" y="309" dy="188" dwidth="1260-630+50" dheight="162"/>
 						<panel class="video" x="+10" y="+309" dborder="5" dwidth="628-50" dheight="188*2-6" daction="set '$denonfullvideo' 0"/>
+						<panel class="vfxdrop" width="+200" x="+190" y="+329+290" action1="video_fx" action2="video_fx_select" textaction="get_videofx_name &amp; param_uppercase"/>
 					</group>
 
 					<define class="deckpadswide" placeholders="deckn">
@@ -3466,6 +3488,7 @@
 					<group visibility="var '@$denoncontrollertype' 0 &amp;&amp; var '@$primeshowvideo' 1 &amp;&amp; var '$denonfullvideo' 1">
 						<panel class="scratchpanelhort_4decks" x="10+512+10" y="374" dy="86" dwidth="735" dheight="64"/>
 						<panel class="video" x="+10" y="+373" dborder="5" dwidth="32*16+10" dheight="32*9+55" daction="set '$denonfullvideo' 0"/>
+						<panel class="vfxdrop" width="+200" x="+170" y="+329+330" action1="video_fx" action2="video_fx_select" textaction="get_videofx_name &amp; param_uppercase"/>
 						<panel class="primegofxpannel"/>
 					</group>
 
@@ -3489,6 +3512,7 @@
 					<group visibility="var '@$denoncontrollertype' 1 &amp;&amp; var '@$primeshowvideo' 1 &amp;&amp; var '$denonfullvideo' 1">
 						<panel class="scratchpanelhort_4decks" x="10+512+10" y="374" dy="106" dwidth="735" dheight="84"/>
 						<panel class="video" x="+10" y="+373" dborder="5" dwidth="32*16+10" dheight="422" daction="set '$denonfullvideo' 0"/>
+						<panel class="vfxdrop" width="+200" x="+180" y="+329+407" action1="video_fx" action2="video_fx_select" textaction="get_videofx_name &amp; param_uppercase"/>
 					</group>
 
 					<group name="browsersmall" x="10" y="0">
