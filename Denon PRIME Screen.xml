@@ -2029,8 +2029,8 @@
 
 						<panel visibility="var 'keydisplay' 0 ? var 'showtrackinfo' 1">
 							<textzone group="horizontal" scroll="yes">
-								<pos x="+64+5" y="+1"/>
-								<size width="485-20+88" height="29"/>
+								<pos x="+60" y="+1"/>
+								<size width="485-20+88+9" height="29"/>
 								<text fontsize="21" color="textfxdark" format="Album: "/>
 								<text fontsize="21" color="text3" action="get_loaded_song 'album'"/>
 								<text fontsize="21" color="textfxdark" format="  Year: "/>
@@ -2039,8 +2039,8 @@
 								<text fontsize="21" color="text3" action="get_loaded_song 'rating'"/>
 							</textzone>
 							<textzone group="horizontal" scroll="yes">
-								<pos x="+64+5" y="+30"/>
-								<size width="485-20+88" height="29"/>
+								<pos x="+60" y="+30"/>
+								<size width="485-20+88+9" height="29"/>
 								<text fontsize="21" color="textfxdark" format="Genre: "/>
 								<text fontsize="21" color="text3" action="get_loaded_song 'genre'"/>
 								<text fontsize="21" color="textfxdark" format="  User 1: "/>
