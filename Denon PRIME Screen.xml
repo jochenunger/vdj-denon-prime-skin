@@ -7,7 +7,7 @@
  Want to see it in action: https://youtu.be/pQGqcDsc6-w
  Want to get in touch: https://github.com/jochenunger/vdj-denon-prime-skin
 
- Version: 0.2.2
+ Version: 0.2.3
 
  Have fun!
  Jochen
@@ -281,7 +281,7 @@
 				<scrollbars background="browser_scrollbar" button="browser_scrollbtn"/>
 				<info background="background" stripes="background2" text="textbrowser" label="textdark"
 					  artist="textover" title="textbright"/>
-				<search background="#000000" border="#7A7A7A" selected="#717171" text="#FFFFFF" cursor="#FFFFFF"/>
+				<search background="black" border="prelistenborder" selected="text" text="white" cursor="white"/>
 			</colors>
 		</define>
 
@@ -291,8 +291,8 @@
 				<off color="buttonoff" shape="square" border="bordercolor" border_size="2"/>
 				<selected color="buttonon" shape="square" border="deckcolordark" border_size="2"/>
 				<down color="buttonon" shape="square" border="deckcolordark" border_size="2"/>
-				<text dx="+4" dy="-5" width="118" fontsize="[TEXTSIZE]" color="text2" colorselected="#eeeeee"
-					  colordown="#eeeeee" align="center" action="[TEXTACTION]"/>
+				<text dx="+4" dy="-5" width="118" fontsize="[TEXTSIZE]" color="text2" colorselected="text3"
+					  colordown="text3" align="center" action="[TEXTACTION]"/>
 			</button>
 			<visual type="color" source="[SOURCECOLOR]" visibility="0.6" tooltip="">
 				<pos x="+37" y="+38"/>
@@ -306,8 +306,8 @@
 				<off color="buttonoff" shape="square" border="bordercolor" border_size="2"/>
 				<selected color="buttonon" shape="square" border="deckcolordark" border_size="2"/>
 				<down color="buttonon" shape="square" border="deckcolordark" border_size="2"/>
-				<text dx="+4" dy="-7" width="140-8" fontsize="[TEXTSIZE]" color="text2" colorselected="#eeeeee"
-					  colordown="#eeeeee" align="center" action="[TEXTACTION]"/>
+				<text dx="+4" dy="-7" width="140-8" fontsize="[TEXTSIZE]" color="text2" colorselected="text3"
+					  colordown="text3" align="center" action="[TEXTACTION]"/>
 			</button>
 			<visual type="color" source="[SOURCECOLOR]" visibility="0.6" tooltip="">
 				<pos x="+45" y="+39"/>
@@ -322,8 +322,8 @@
 				<off color="buttonoff" shape="square" border="bordercolor" border_size="2"/>
 				<selected color="buttonon" shape="square" border="deckcolordark" border_size="2"/>
 				<down color="buttonon" shape="square" border="deckcolordark" border_size="2"/>
-				<text dx="+4" dy="-7" width="102" fontsize="[TEXTSIZE]" color="text2" colorselected="#eeeeee"
-					  colordown="#eeeeee" align="center" action="[TEXTACTION]" important="[IMPORTANT]"/>
+				<text dx="+4" dy="-7" width="102" fontsize="[TEXTSIZE]" color="text2" colorselected="text3"
+					  colordown="text3" align="center" action="[TEXTACTION]" important="[IMPORTANT]"/>
 			</button>
 			<visual type="color" source="[SOURCECOLOR]" visibility="0.6" tooltip="">
 				<pos x="+30" y="+34"/>
@@ -336,7 +336,7 @@
 			<off color="buttonoff" shape="square" border="bordercolor" border_size="2"/>
 			<selected color="buttonon" shape="square" border="deckcolordark" border_size="2"/>
 			<down color="buttonon" shape="square" border="deckcolordark" border_size="2"/>
-			<text dx="+2" width="86" fontsize="18" color="text2" colorselected="#eeeeee" colordown="#eeeeee"
+			<text dx="+2" width="86" fontsize="18" color="text2" colorselected="text3" colordown="text3"
 				  align="center" action="[TEXTACTION]" scroll="yes"/>
 		</define>
 
@@ -383,7 +383,7 @@
 			<size width="80" height="80"/>
 			<off color="buttonoff3" shape="square"/>
 			<selected color="buttonoff3" shape="square"/>
-			<icon sysicon="[ICON]" width="40" height="40" coloroff="#aaaaaa" colorselected="#ffffff"/>
+			<icon sysicon="[ICON]" width="40" height="40" coloroff="text2" colorselected="#ffffff"/>
 		</define>
 
 		<define class="fxslider" placeholders="*swidth=120,action,frommiddle,disabled,check1=false,check2=false">
@@ -500,8 +500,8 @@
 			</loops>
 		</define>
 
-		<define class="songprogresscolorswide" colorVocal="#075CDB" colorInstru="#0CFF00" colorBeat="#FFFFFF"
-				colorNoBeat="#000000" colorPlayed="#000000" colorHigh="colorHigh" colorMed="colorMed"
+		<define class="songprogresscolorswide" colorVocal="#075CDB" colorInstru="#0CFF00" colorBeat="white"
+				colorNoBeat="black" colorPlayed="black" colorHigh="colorHigh" colorMed="colorMed"
 				colorBass="colorBass" placeholders="dwidth,*dheight">
 			<size width="[DWIDTH]" height="60"/>
 			<wave>
@@ -535,8 +535,8 @@
 			</loops>
 		</define>
 
-		<define class="songprogressshortcolors" colorVocal="#075CDB" colorInstru="#0CFF00" colorBeat="#FFFFFF"
-				colorNoBeat="#000000" colorPlayed="#000000" colorHigh="colorHigh" colorMed="colorMed"
+		<define class="songprogressshortcolors" colorVocal="#075CDB" colorInstru="#0CFF00" colorBeat="white"
+				colorNoBeat="black" colorPlayed="black" colorHigh="colorHigh" colorMed="colorMed"
 				colorBass="colorBass">
 			<size width="538-10" height="24"/>
 			<wave>
@@ -570,8 +570,8 @@
 			</loops>
 		</define>
 
-		<define class="songprogressshortwidecolors" colorVocal="#075CDB" colorInstru="#0CFF00" colorBeat="#FFFFFF"
-				colorNoBeat="#000000" colorPlayed="#000000" colorHigh="colorHigh" colorMed="colorMed"
+		<define class="songprogressshortwidecolors" colorVocal="#075CDB" colorInstru="#0CFF00" colorBeat="white"
+				colorNoBeat="black" colorPlayed="black" colorHigh="colorHigh" colorMed="colorMed"
 				colorBass="colorBass">
 			<size width="538-10+88" height="24"/>
 			<wave>
@@ -604,8 +604,8 @@
 				<clipmask x="74" y="107"/>
 			</loops>
 		</define>
-		<define class="songprogressverticalcolors" colorVocal="#075CDB" colorInstru="#0CFF00" colorBeat="#FFFFFF"
-				colorNoBeat="#000000" colorPlayed="#000000" colorHigh="colorHigh" colorMed="colorMed"
+		<define class="songprogressverticalcolors" colorVocal="#075CDB" colorInstru="#0CFF00" colorBeat="white"
+				colorNoBeat="black" colorPlayed="black" colorHigh="colorHigh" colorMed="colorMed"
 				colorBass="colorBass"
 				placeholders="*dwidth=200,*dheight">
 			<size width="538-10+88" height="24"/>
@@ -665,7 +665,7 @@
 			<define class="browserextend">
 				<size width="80" height="70"/>
 				<off color="buttonoff3" border_size="2" border="black"/>
-				<icon x="296" y="121" width="35" height="22" coloroff="#808080" colorselected="#aaaaaa"/>
+				<icon x="296" y="121" width="35" height="22" coloroff="#808080" colorselected="text2"/>
 			</define>
 		</group>
 
@@ -708,7 +708,7 @@
 		<define class="scratchwhcolor" placeholders="deckn,*swidth=1260,*sheight=100">
 			<deck deck="[DECKN]">
 				<group visibility="loaded">
-					<scratchwave orientation="horizontal" colorVocal="#075CDB" colorInstru="#0CFF00" colorBeat="#FFFFFF"
+					<scratchwave orientation="horizontal" colorVocal="#075CDB" colorInstru="#0CFF00" colorBeat="white"
 								 colorNoVocal="#36393B" colorNoInstru="#4B4C4D" colorNoBeat="#595A5C">
 						<pos x="+0" y="+15"/>
 						<size width="[SWIDTH]" height="[SHEIGHT]-10"/>
@@ -787,7 +787,7 @@
 		<define class="scratchwverticalcolor" placeholders="deckn, *swidth,*sheight=100">
 			<deck deck="[DECKN]">
 				<group visibility="loaded">
-					<scratchwave orientation="vertical" colorVocal="#075CDB" colorInstru="#0CFF00" colorBeat="#FFFFFF"
+					<scratchwave orientation="vertical" colorVocal="#075CDB" colorInstru="#0CFF00" colorBeat="white"
 								 colorNoVocal="#36393B" colorNoInstru="#4B4C4D" colorNoBeat="#595A5C">
 						<pos x="+0" y="+0"/>
 						<size width="[SWIDTH]" height="[SHEIGHT]"/>
@@ -1396,8 +1396,8 @@
 							 colorPlayed="black" colorHigh="colorHigh" colorMed="colorMed" colorBass="colorBass"
 							 visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? false : true : true"/>
 					<songpos x="+5" y="+5" class="songposvertical_wave" dwidth="[DWIDTH]-10" dheight="[DHEIGHT]-10"
-							 colorVocal="#075CDB" colorInstru="#0CFF00" colorBeat="#FFFFFF"
-							 colorNoBeat="#000000" colorPlayed="#000000" colorHigh="colorHigh" colorMed="colorMed"
+							 colorVocal="#075CDB" colorInstru="#0CFF00" colorBeat="white"
+							 colorNoBeat="black" colorPlayed="black" colorHigh="colorHigh" colorMed="colorMed"
 							 colorBass="colorBass"
 							 visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? true : false : false"/>
 					<textzone>
@@ -2063,7 +2063,7 @@
 							<off color="buttonoff" border_size="2" border="bordercolor3" radius="6"/>
 							<selected color="buttonoff" border_size="2" border="bordercolor3" radius="6"/>
 							<down color="buttonoff4" border_size="2" border="bordercolor4" radius="6"/>
-							<icon x="517" y="123" width="20" height="20" coloroff="#bbbbbb" colordown="white"/>
+							<icon x="517" y="123" width="20" height="20" coloroff="text4" colordown="white"/>
 						</button>
 						<button action="adjust_cbg +1" query="off">
 							<pos x="+65+65" y="+3"/>
@@ -2071,7 +2071,7 @@
 							<off color="buttonoff" border_size="2" border="bordercolor3" radius="6"/>
 							<selected color="buttonoff" border_size="2" border="bordercolor3" radius="6"/>
 							<down color="buttonoff4" border_size="2" border="bordercolor4" radius="6"/>
-							<icon x="487" y="123" width="20" height="20" coloroff="#bbbbbb" colordown="white"/>
+							<icon x="487" y="123" width="20" height="20" coloroff="text4" colordown="white"/>
 						</button>
 
 						<button action="set_bpm 50%" query="off">
@@ -2144,64 +2144,64 @@
 					<button action="quantize_all" >
 						<pos x="+538-80+5+88" y="+10"/>
 						<size width="70" height="22"/>
-						<off color="#1A1A1A"/>
-						<on color="#aaaaaa"/>
+						<off color="settingsbuttonoff"/>
+						<on color="text2"/>
 						<text fontsize="12" color="#707070" align="center" text="QUANTIZE"/>
-						<textselected fontsize="12" color="#000000" align="center" text="QUANTIZE"/>
+						<textselected fontsize="12" color="black" align="center" text="QUANTIZE"/>
 					</button>
 					<button action="nothing" query="masterdeck" >
 						<pos x="+538-80+5+88" y="+10+40"/>
 						<size width="70" height="22"/>
-						<off color="#1A1A1A"/>
-						<on color="#aaaaaa"/>
+						<off color="settingsbuttonoff"/>
+						<on color="text2"/>
 						<text fontsize="12" color="#707070" align="center" text="MASTER"/>
-						<textselected fontsize="12" color="#000000" align="center" text="MASTER"/>
+						<textselected fontsize="12" color="black" align="center" text="MASTER"/>
 					</button>
 
 					<textzone>
 						<pos x="+383" y="+5"/>
 						<size width="50" height="34"/>
-						<text fontsize="14" color="#909090" align="right" format="± %pitchrange%%"/>
+						<text fontsize="14" color="settingsbuttontext" align="right" format="± %pitchrange%%"/>
 					</textzone>
 
 					<textzone>
 						<pos x="+385+97+45-100" y="+5"/>
 						<size width="100" height="34"/>
-						<text fontsize="26" color="#AAAAAA" align="right" format="%Ppitch%"/>
+						<text fontsize="26" color="text2" align="right" format="%Ppitch%"/>
 					</textzone>
 
 					<group name="times" x="+185" y="+0">
 						<button action="nothing" query="display_time 'elapsed'" >
 							<pos x="+5" y="+7"/>
 							<size width="90" height="18"/>
-							<text fontsize="12" color="#505050" align="right" text="ELAPSED"/>
-							<textselected fontsize="12" color="#aaaaaa" align="right" text="ELAPSED"/>
+							<text fontsize="12" color="buttonon2" align="right" text="ELAPSED"/>
+							<textselected fontsize="12" color="text2" align="right" text="ELAPSED"/>
 						</button>
 						<button action="nothing" query="display_time 'remain'" >
 							<pos x="+5+90" y="+7"/>
 							<size width="90" height="18"/>
-							<text fontsize="12" color="#505050" align="right" text="REMAIN"/>
-							<textselected fontsize="12" color="#aaaaaa" align="right" text="REMAIN"/>
+							<text fontsize="12" color="buttonon2" align="right" text="REMAIN"/>
+							<textselected fontsize="12" color="text2" align="right" text="REMAIN"/>
 						</button>
 
 						<group name="time" visibility="loaded">
 							<button action="nothing" query="var '@$denonblinktime' 0 ? songpos_warning ? blink 1000ms : on : on">
 								<pos x="+20" y="+27"/>
 								<size width="80" height="50"/>
-								<text fontsize="46" color="#505050" valign="bottom" align="right" action="display_time 'remain' ? get_text '-`get_time_min`:' : get_text '`get_time_min`:'"/>
-								<textselected fontsize="46" color="#eeeeee" valign="bottom" align="right" action="display_time 'remain' ? get_text '-`get_time_min`:' : get_text '`get_time_min`:'"/>
+								<text fontsize="46" color="buttonon2" valign="bottom" align="right" action="display_time 'remain' ? get_text '-`get_time_min`:' : get_text '`get_time_min`:'"/>
+								<textselected fontsize="46" color="text3" valign="bottom" align="right" action="display_time 'remain' ? get_text '-`get_time_min`:' : get_text '`get_time_min`:'"/>
 							</button>
 							<button action="nothing" query="var '@$denonblinktime' 0 ? songpos_warning ? blink 1000ms : on : on">
 								<pos x="+20+80" y="+27"/>
 								<size width="68" height="50"/>
-								<text fontsize="46" color="#505050" valign="bottom" align="right" action="get_text &quot;`get_time_sec &amp; param_cast '00'`.&quot;"/>
-								<textselected fontsize="46" color="#eeeeee" valign="bottom" align="right" action="get_text &quot;`get_time_sec &amp; param_cast '00'`.&quot;"/>
+								<text fontsize="46" color="buttonon2" valign="bottom" align="right" action="get_text &quot;`get_time_sec &amp; param_cast '00'`.&quot;"/>
+								<textselected fontsize="46" color="text3" valign="bottom" align="right" action="get_text &quot;`get_time_sec &amp; param_cast '00'`.&quot;"/>
 							</button>
 							<button action="nothing" query="var '@$denonblinktime' 0 ? songpos_warning ? blink 1000ms : on : on">
 								<pos x="+20+80+68+2" y="+27"/>
 								<size width="50" height="50"/>
-								<text fontsize="34" color="#505050" valign="bottom" align="left" action="get_time_ms &amp; param_multiply 0.1 &amp; param_cast 'int_trunc'"/>
-								<textselected fontsize="34" color="#eeeeee" valign="bottom" align="left" action="get_time_ms &amp; param_multiply 0.1 &amp; param_cast 'int_trunc'"/>
+								<text fontsize="34" color="buttonon2" valign="bottom" align="left" action="get_time_ms &amp; param_multiply 0.1 &amp; param_cast 'int_trunc'"/>
+								<textselected fontsize="34" color="text3" valign="bottom" align="left" action="get_time_ms &amp; param_multiply 0.1 &amp; param_cast 'int_trunc'"/>
 							</button>
 						</group>
 
@@ -2223,7 +2223,7 @@
 							<pos x="+0" y="+40"/>
 							<size width="80" height="46"/>
 							<text fontsize="30" color="#909090" align="center" format="%loop"/>
-							<textselected fontsize="30" color="#eeeeee" align="center" format="%loop"/>
+							<textselected fontsize="30" color="text3" align="center" format="%loop"/>
 						</button>
 					</group>
 
@@ -2236,7 +2236,7 @@
 						<textzone>
 							<pos x="+0" y="+40"/>
 							<size width="70" height="46"/>
-							<text fontsize="30" color="#bbbbbb" align="center" action="beatjump_select"/>
+							<text fontsize="30" color="text4" align="center" action="beatjump_select"/>
 						</textzone>
 					</group>
 
@@ -2244,7 +2244,7 @@
 						<textzone>
 							<pos x="+0" y="+26+10-30"/>
 							<size width="80" height="34"/>
-							<text fontsize="26" color="#eeeeee" align="center" action="get_key"/>
+							<text fontsize="26" color="text3" align="center" action="get_key"/>
 						</textzone>
 						<visual type="color" source="get_key_color">
 							<pos x="+20" y="+64+10-30"/>
@@ -2253,7 +2253,7 @@
 						<textzone>
 							<pos x="+0" y="+127-25-10-35"/>
 							<size width="80" height="20"/>
-							<text fontsize="16" color="#eeeeee" align="center" action="get_key_modifier_text"/>
+							<text fontsize="16" color="text3" align="center" action="get_key_modifier_text"/>
 						</textzone>
 
 						<button action="toggle 'keydisplay'">
@@ -2413,10 +2413,10 @@
 						<info background="background" stripes="background2" text="textbrowser" label="textdark"
 							  artist="textover" title="textbright"/>
 						<!--                        <search background="browserback" text="textbrowser"/>-->
-						<search background="#FFFFFF" border="#7A7A7A" selected="#717171" text="#FFFFFF"
-								cursor="#FFFFFF"/>
+						<search background="white" border="prelistenborder" selected="text" text="white"
+								cursor="white"/>
 					</colors>
-					<search background="#FFFFFF" border="#7A7A7A" selected="#717171" text="#FFFFFF" cursor="#FFFFFF"/>
+					<search background="white" border="prelistenborder" selected="text" text="white" cursor="white"/>
 					<fontsearch fontsize="16"/>
 				</browsertoolbar>
 				<filelist class="primebrowser" headerheight="[LINEHEIGHT]" lineheight="[LINEHEIGHT]">
@@ -2748,8 +2748,8 @@
 			<off color="buttonoff3" border_size="2" border="black"/>
 			<on color="buttonoff3" border_size="2" border="black"/>
 			<down color="buttonoff4" border_size="2" border="bordercolor2"/>
-			<icon x="401" y="120" width="30" height="24" coloroff="#808080" colorselected="#eeeeee"
-				  colordown="#eeeeee"/>
+			<icon x="401" y="120" width="30" height="24" coloroff="#808080" colorselected="text3"
+				  colordown="text3"/>
 		</define>
 
 		<define class="browserfontbuttons">
@@ -2776,7 +2776,7 @@
 				<size width="80" height="55"/>
 				<off color="buttonoff3" border_size="2" border="black"/>
 				<down color="buttonoff4" border_size="2" border="bordercolor2"/>
-				<icon x="165" y="124" width="24" height="26" coloroff="iconoff" colordown="#eeeeee"/>
+				<icon x="165" y="124" width="24" height="26" coloroff="iconoff" colordown="text3"/>
 			</button>
 			<button action="var '@$denonpadding' 0 ? set '@$denonpadding' 1 : var '@$denonpadding' 1 ? set '@$denonpadding' 2 : set '@$denonpadding' 2"
 					query="off">
@@ -2784,7 +2784,7 @@
 				<size width="80" height="55"/>
 				<off color="buttonoff3" border_size="2" border="black"/>
 				<down color="buttonoff4" border_size="2" border="bordercolor2"/>
-				<icon x="165" y="154" width="24" height="26" coloroff="iconoff" colordown="#eeeeee"/>
+				<icon x="165" y="154" width="24" height="26" coloroff="iconoff" colordown="text3"/>
 			</button>
 		</define>
 
@@ -2831,8 +2831,8 @@
 				<off color="buttonoff3" border_size="2" border="black"/>
 				<down color="buttonoff4" border_size="2" border="bordercolor2"/>
 
-				<icon sysicon="show_splitpanel 'info'" width="48" height="48" coloroff="iconoff" colordown="#eeeeee"
-					  colorselected="#eeeeee"/>
+				<icon sysicon="show_splitpanel 'info'" width="48" height="48" coloroff="iconoff" colordown="text3"
+					  colorselected="text3"/>
 			</button>
 		</define>
 		<define class="sideviewbuttons">
@@ -2844,16 +2844,16 @@
 				<size width="80" height="70"/>
 				<off color="buttonoff3" border_size="2" border="black"/>
 				<down color="buttonoff4" border_size="2" border="bordercolor2"/>
-				<icon x="246" y="123" width="34" height="27" coloroff="iconoff" colordown="#eeeeee"
-					  colorselected="#eeeeee"/>
+				<icon x="246" y="123" width="34" height="27" coloroff="iconoff" colordown="text3"
+					  colorselected="text3"/>
 			</button>
 			<button action="sidelist_add">
 				<pos x="+1260-90+5" y="+35+80"/>
 				<size width="80" height="70"/>
 				<off color="buttonoff3" border_size="2" border="black"/>
 				<down color="buttonoff4" border_size="2" border="bordercolor2"/>
-				<icon x="246" y="162" width="34" height="25" coloroff="iconoff" colordown="#eeeeee"
-					  colorselected="#eeeeee"/>
+				<icon x="246" y="162" width="34" height="25" coloroff="iconoff" colordown="text3"
+					  colorselected="text3"/>
 			</button>
 			<panel class="tagbuttons" x="+1260-90+5" y="+35+80+105"/>
 		</define>
@@ -2865,8 +2865,8 @@
 				<off color="buttonoff3" border_size="2" border="black"/>
 				<selected color="buttonon4" border_size="2" border="bordercolor2"/>
 				<down color="buttonoff4" border_size="2" border="bordercolor2"/>
-				<icon sysicon="automix" width="40" height="40" coloroff="iconoff" colordown="#eeeeee"
-					  colorselected="#eeeeee"/>
+				<icon sysicon="automix" width="40" height="40" coloroff="iconoff" colordown="text3"
+					  colorselected="text3"/>
 			</button>
 			<button action="playlist_options">
 				<pos x="+1260-90+5" y="+35+80"/>
@@ -2898,7 +2898,7 @@
 				<off color="buttonoff3" border_size="2" border="black"/>
 				<selected color="buttonoff3" border_size="2" border="black"/>
 				<down color="buttonoff4" border_size="2" border="bordercolor2"/>
-				<icon sysicon="sampler_mode" width="42" height="42" coloroff="#aaaaaa"/>
+				<icon sysicon="sampler_mode" width="42" height="42" coloroff="text2"/>
 			</button>
 
 		</define>
@@ -2910,8 +2910,8 @@
 				<off color="buttonoff3" border_size="2" border="black"/>
 				<selected color="buttonon4" border_size="2" border="bordercolor2"/>
 				<down color="buttonoff4" border_size="2" border="bordercolor2"/>
-				<icon sysicon="karaoke" width="40" height="40" coloroff="iconoff" colordown="#eeeeee"
-					  colorselected="#eeeeee"/>
+				<icon sysicon="karaoke" width="40" height="40" coloroff="iconoff" colordown="text3"
+					  colorselected="text3"/>
 			</button>
 			<button action="karaoke_options">
 				<pos x="+1260-90+5" y="+35+80"/>
@@ -2952,24 +2952,24 @@
 				<size width="80" height="70"/>
 				<off color="buttonoff3" border_size="2" border="black"/>
 				<down color="buttonoff4" border_size="2" border="bordercolor2"/>
-				<icon x="246" y="123" width="34" height="27" coloroff="iconoff" colordown="#eeeeee"
-					  colorselected="#eeeeee"/>
+				<icon x="246" y="123" width="34" height="27" coloroff="iconoff" colordown="text3"
+					  colorselected="text3"/>
 			</button>
 			<button action="var '@$primelistappend' 1 ? sidelist_load 'append' : sidelist_load">
 				<pos x="+1260-90+5" y="+35+80"/>
 				<size width="80" height="70"/>
 				<off color="buttonoff3" border_size="2" border="black"/>
 				<down color="buttonoff4" border_size="2" border="bordercolor2"/>
-				<icon x="246" y="162" width="34" height="25" coloroff="iconoff" colordown="#eeeeee"
-					  colorselected="#eeeeee"/>
+				<icon x="246" y="162" width="34" height="25" coloroff="iconoff" colordown="text3"
+					  colorselected="text3"/>
 			</button>
 			<button action="var '@$primelistappend' 1 ? karaoke_load 'append' : karaoke_load">
 				<pos x="+1260-90+5" y="+35+80+80"/>
 				<size width="80" height="70"/>
 				<off color="buttonoff3" border_size="2" border="black"/>
 				<down color="buttonoff4" border_size="2" border="bordercolor2"/>
-				<icon x="246" y="193" width="34" height="24" coloroff="iconoff" colordown="#eeeeee"
-					  colorselected="#eeeeee"/>
+				<icon x="246" y="193" width="34" height="24" coloroff="iconoff" colordown="text3"
+					  colorselected="text3"/>
 			</button>
 		</define>
 
@@ -2980,8 +2980,8 @@
 				<off color="buttonoff3" border_size="2" border="black"/>
 				<selected color="buttonoff3" border_size="2" border="black"/>
 				<down color="buttonoff4" border_size="2" border="bordercolor2"/>
-				<icon x="553" y="38" width="38" height="27" coloroff="iconoff" colordown="#eeeeee"
-					  colorselected="#eeeeee"/>
+				<icon x="553" y="38" width="38" height="27" coloroff="iconoff" colordown="text3"
+					  colorselected="text3"/>
 			</button>
 			<button action="browser_window 'songs'">
 				<pos x="+5" y="+5+80+80"/>
@@ -2989,8 +2989,8 @@
 				<off color="buttonoff3" border_size="2" border="black"/>
 				<selected color="buttonoff3" border_size="2" border="black"/>
 				<down color="buttonoff4" border_size="2" border="bordercolor2"/>
-				<icon x="616" y="38" width="38" height="29" coloroff="iconoff" colordown="#eeeeee"
-					  colorselected="#eeeeee"/>
+				<icon x="616" y="38" width="38" height="29" coloroff="iconoff" colordown="text3"
+					  colorselected="text3"/>
 			</button>
 
 			<button action="browser_window 'sideview' ? sideview +1 : browser_window 'sideview'"
@@ -3000,8 +3000,8 @@
 				<off color="buttonoff3" border_size="2" border="black"/>
 				<selected color="buttonoff3" border_size="2" border="black"/>
 				<down color="buttonoff4" border_size="2" border="bordercolor2"/>
-				<icon sysicon="sideview 'automix'" width="48" height="48" coloroff="iconoff" colordown="#eeeeee"
-					  colorselected="#eeeeee"/>
+				<icon sysicon="sideview 'automix'" width="48" height="48" coloroff="iconoff" colordown="text3"
+					  colorselected="text3"/>
 			</button>
 			<button action="browser_window 'sideview' ? sideview +1 : browser_window 'sideview'"
 					query="browser_window 'sideview'" visibility="sideview 'karaoke'">
@@ -3010,8 +3010,8 @@
 				<off color="buttonoff3" border_size="2" border="black"/>
 				<selected color="buttonoff3" border_size="2" border="black"/>
 				<down color="buttonoff4" border_size="2" border="bordercolor2"/>
-				<icon sysicon="sideview 'karaoke'" width="48" height="48" coloroff="iconoff" colordown="#eeeeee"
-					  colorselected="#eeeeee"/>
+				<icon sysicon="sideview 'karaoke'" width="48" height="48" coloroff="iconoff" colordown="text3"
+					  colorselected="text3"/>
 			</button>
 			<button action="browser_window 'sideview' ? sideview +1 : browser_window 'sideview'"
 					query="browser_window 'sideview'" visibility="sideview 'sidelist'">
@@ -3020,8 +3020,8 @@
 				<off color="buttonoff3" border_size="2" border="black"/>
 				<selected color="buttonoff3" border_size="2" border="black"/>
 				<down color="buttonoff4" border_size="2" border="bordercolor2"/>
-				<icon sysicon="sideview 'sidelist'" width="48" height="48" coloroff="iconoff" colordown="#eeeeee"
-					  colorselected="#eeeeee"/>
+				<icon sysicon="sideview 'sidelist'" width="48" height="48" coloroff="iconoff" colordown="text3"
+					  colorselected="text3"/>
 			</button>
 			<button action="browser_window 'sideview' ? sideview +1 : browser_window 'sideview'"
 					query="browser_window 'sideview'" visibility="sideview 'remixes'">
@@ -3030,8 +3030,8 @@
 				<off color="buttonoff3" border_size="2" border="black"/>
 				<selected color="buttonoff3" border_size="2" border="black"/>
 				<down color="buttonoff4" border_size="2" border="bordercolor2"/>
-				<icon sysicon="sideview 'remixes'" width="48" height="48" coloroff="iconoff" colordown="#eeeeee"
-					  colorselected="#eeeeee"/>
+				<icon sysicon="sideview 'remixes'" width="48" height="48" coloroff="iconoff" colordown="text3"
+					  colorselected="text3"/>
 			</button>
 			<button action="browser_window 'sideview' ? sideview +1 : browser_window 'sideview'"
 					query="browser_window 'sideview'" visibility="sideview 'sampler'">
@@ -3040,8 +3040,8 @@
 				<off color="buttonoff3" border_size="2" border="black"/>
 				<selected color="buttonoff3" border_size="2" border="black"/>
 				<down color="buttonoff4" border_size="2" border="bordercolor2"/>
-				<icon sysicon="sideview 'sampler'" width="48" height="48" coloroff="iconoff" colordown="#eeeeee"
-					  colorselected="#eeeeee"/>
+				<icon sysicon="sideview 'sampler'" width="48" height="48" coloroff="iconoff" colordown="text3"
+					  colorselected="text3"/>
 			</button>
 			<button action="browser_window 'sideview' ? sideview +1 : browser_window 'sideview'"
 					query="browser_window 'sideview'"
@@ -3051,8 +3051,8 @@
 				<off color="buttonoff3" border_size="2" border="black"/>
 				<selected color="buttonoff3" border_size="2" border="black"/>
 				<down color="buttonoff4" border_size="2" border="bordercolor2"/>
-				<icon sysicon="sideview 'clone'" width="48" height="48" coloroff="iconoff" colordown="#eeeeee"
-					  colorselected="#eeeeee"/>
+				<icon sysicon="sideview 'clone'" width="48" height="48" coloroff="iconoff" colordown="text3"
+					  colorselected="text3"/>
 			</button>
 
 		</define>
@@ -3064,8 +3064,8 @@
 				<off color="buttonoff3" border_size="2" border="black"/>
 				<selected color="buttonoff3" border_size="2" border="black"/>
 				<down color="buttonoff4" border_size="2" border="bordercolor2"/>
-				<icon x="553" y="38" width="38" height="27" coloroff="iconoff" colordown="#eeeeee"
-					  colorselected="#eeeeee"/>
+				<icon x="553" y="38" width="38" height="27" coloroff="iconoff" colordown="text3"
+					  colorselected="text3"/>
 			</button>
 			<button action="browser_window 'songs'">
 				<pos x="+5" y="+5+80+80"/>
@@ -3073,8 +3073,8 @@
 				<off color="buttonoff3" border_size="2" border="black"/>
 				<selected color="buttonoff3" border_size="2" border="black"/>
 				<down color="buttonoff4" border_size="2" border="bordercolor2"/>
-				<icon x="616" y="38" width="38" height="29" coloroff="iconoff" colordown="#eeeeee"
-					  colorselected="#eeeeee"/>
+				<icon x="616" y="38" width="38" height="29" coloroff="iconoff" colordown="text3"
+					  colorselected="text3"/>
 			</button>
 		</define>
 
@@ -3352,7 +3352,6 @@
 						<panel class="video" x="+10" y="+309" dborder="5" dwidth="32*16+10" dheight="32*9+10" daction="set '$denonfullvideo' 0"/>
 						<panel class="vfxdrop" width="+200" x="+180" y="+329+220" action1="video_fx" action2="video_fx_select" textaction="get_videofx_name &amp; param_uppercase"/>
 					</group>
-
 
 					<group visibility="var '@$denoncontrollertype' 1 &amp;&amp; var '@$primeshowvideo' 0">
 						<panel class="scratchpanelhor" x="10" y="309" dy="188" dwidth="1260" dheight="162"/>
