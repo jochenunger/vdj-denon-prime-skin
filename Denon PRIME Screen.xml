@@ -67,6 +67,7 @@
 			<define color="padbuttonselected" value="#53181e" deck="2"/>
 			<define color="padbuttonselected" value="#16322f" deck="3"/>
 			<define color="padbuttonselected" value="#4a271d" deck="4"/>
+			<define color="padbuttontextselected" value="#ffffff"/>
 
 			<define color="settingsbuttontext" value="#909090"/>
 			<define color="settingsbuttonoff" value="#1A1A1A"/>
@@ -187,6 +188,7 @@
 			<define color="padbuttonselected" value="#ace7e1" deck="2"/>
 			<define color="padbuttonselected" value="#e9cdd0" deck="3"/>
 			<define color="padbuttonselected" value="#b5d8e2" deck="4"/>
+			<define color="padbuttontextselected" value="#ffffff"/>
 
 			<define color="settingsbuttontext" value="#6f6f6f"/>
 			<define color="settingsbuttonoff" value="#e5e5e5"/>
@@ -305,8 +307,8 @@
 				<off color="buttonoff" shape="square" border="bordercolor" border_size="2"/>
 				<selected color="buttonon" shape="square" border="deckcolordark" border_size="2"/>
 				<down color="buttonon" shape="square" border="deckcolordark" border_size="2"/>
-				<text dx="+4" dy="-7" width="140-8" fontsize="[TEXTSIZE]" color="text2" colorselected="text3"
-					  colordown="text3" align="center" action="[TEXTACTION]"/>
+				<text dx="+4" dy="-7" width="140-8" fontsize="[TEXTSIZE]" color="text2" colorselected="padbuttontextselected"
+					  colordown="padbuttontextselected" align="center" action="[TEXTACTION]"/>
 			</button>
 			<visual type="color" source="[SOURCECOLOR]" visibility="0.6" tooltip="">
 				<pos x="+45" y="+39"/>
@@ -321,8 +323,8 @@
 				<off color="buttonoff" shape="square" border="bordercolor" border_size="2"/>
 				<selected color="buttonon" shape="square" border="deckcolordark" border_size="2"/>
 				<down color="buttonon" shape="square" border="deckcolordark" border_size="2"/>
-				<text dx="+4" dy="-7" width="102" fontsize="[TEXTSIZE]" color="text2" colorselected="text3"
-					  colordown="text3" align="center" action="[TEXTACTION]" important="[IMPORTANT]"/>
+				<text dx="+4" dy="-7" width="102" fontsize="[TEXTSIZE]" color="text2" colorselected="padbuttontextselected"
+					  colordown="padbuttontextselected" align="center" action="[TEXTACTION]" important="[IMPORTANT]"/>
 			</button>
 			<visual type="color" source="[SOURCECOLOR]" visibility="0.6" tooltip="">
 				<pos x="+30" y="+34"/>
@@ -335,7 +337,7 @@
 			<off color="buttonoff" shape="square" border="bordercolor" border_size="2"/>
 			<selected color="buttonon" shape="square" border="deckcolordark" border_size="2"/>
 			<down color="buttonon" shape="square" border="deckcolordark" border_size="2"/>
-			<text dx="+2" width="86" fontsize="18" color="text2" colorselected="text3" colordown="text3"
+			<text dx="+2" width="86" fontsize="18" color="text2" colorselected="padbuttontextselected" colordown="padbuttontextselected"
 				  align="center" action="[TEXTACTION]" scroll="yes"/>
 		</define>
 
@@ -354,27 +356,27 @@
 		<define class="fxbutton" placeholders="textaction,textsize=18">
 			<size width="150" height="40"/>
 			<off color="fxseldark" shape="square" border="bordercolor" border_size="2"/>
-			<text dx="5" width="140" fontsize="[TEXTSIZE]" color="text2" align="center" action="[TEXTACTION]"/>
+			<text dx="5" width="140" fontsize="[TEXTSIZE]" color="text2" colorselected="padbuttontextselected" align="center" action="[TEXTACTION]"/>
 		</define>
 		<define class="fxbuttonwide" placeholders="textaction,textsize=18">
 			<size width="200" height="40"/>
 			<off color="fxseldark" shape="square" border="bordercolor" border_size="2"/>
 			<selected color="deckcolordark" shape="square" border="bordercolor" border_size="2"/>
-			<text dx="5" width="190" fontsize="[TEXTSIZE]" color="text2" align="center" action="[TEXTACTION]"/>
+			<text dx="5" width="190" fontsize="[TEXTSIZE]" color="text2" colorselected="padbuttontextselected" colordown="padbuttontextselected" align="center" action="[TEXTACTION]"/>
 			<textselected dx="5" width="190" fontsize="[TEXTSIZE]" color="white" align="center" action="[TEXTACTION]"/>
 		</define>
 		<define class="fxbuttonwideglobal" placeholders="textaction,textsize=18">
 			<size width="200" height="40"/>
 			<off color="fxseldark" shape="square" border="panelback" border_size="2"/>
 			<selected color="fxseldark" shape="square" border="panelback" border_size="2"/>
-			<text dx="5" width="190" fontsize="[TEXTSIZE]" color="textfxdark" align="center" action="[TEXTACTION]"/>
+			<text dx="5" width="190" fontsize="[TEXTSIZE]" color="text2" colorselected="padbuttontextselected" colordown="padbuttontextselected" align="center" action="[TEXTACTION]"/>
 			<textselected dx="5" width="190" fontsize="[TEXTSIZE]" color="white" align="center" action="[TEXTACTION]"/>
 		</define>
 		<define class="fxbuttonwideglobalon" placeholders="textaction,textsize=18">
 			<size width="200" height="40"/>
 			<off color="fxseldark" shape="square" border="panelback" border_size="2"/>
 			<selected color="buttonoff4" shape="square" border="panelback" border_size="2"/>
-			<text dx="5" width="190" fontsize="[TEXTSIZE]" color="textfxdark" align="center" action="[TEXTACTION]"/>
+			<text dx="5" width="190" fontsize="[TEXTSIZE]" color="text2" colorselected="padbuttontextselected" colordown="padbuttontextselected" align="center" action="[TEXTACTION]"/>
 			<textselected dx="5" width="190" fontsize="[TEXTSIZE]" color="white" align="center" action="[TEXTACTION]"/>
 		</define>
 
@@ -1575,7 +1577,7 @@
 					<size width="50" height="50"/>
 					<off color="fxseldark" shape="square" border="bordercolor" border_size="2"/>
 					<selected color="deckcolordark" shape="square" border="bordercolor" border_size="2"/>
-					<text fontsize="18" color="text2" align="center" text="1"/>
+					<text fontsize="18" color="text2" colorselected="padbuttontextselected" colordown="padbuttontextselected" align="center" text="1"/>
 				</button>
 			</deck>
 			<deck deck="3">
@@ -1585,7 +1587,7 @@
 					<size width="50" height="50"/>
 					<off color="fxseldark" shape="square" border="bordercolor" border_size="2"/>
 					<selected color="deckcolordark" shape="square" border="bordercolor" border_size="2"/>
-					<text fontsize="18" color="text2" align="center" text="3"/>
+					<text fontsize="18" color="text2" colorselected="padbuttontextselected" colordown="padbuttontextselected" align="center" text="3"/>
 				</button>
 			</deck>
 
@@ -1644,7 +1646,7 @@
 					<size width="50" height="50"/>
 					<off color="fxseldark" shape="square" border="bordercolor" border_size="2"/>
 					<selected color="deckcolordark" shape="square" border="bordercolor" border_size="2"/>
-					<text fontsize="18" color="text2" align="center" text="2"/>
+					<text fontsize="18" color="text2" colorselected="padbuttontextselected" colordown="padbuttontextselected" align="center" text="2"/>
 				</button>
 			</deck>
 			<deck deck="4">
@@ -1654,7 +1656,7 @@
 					<size width="50" height="50"/>
 					<off color="fxseldark" shape="square" border="bordercolor" border_size="2"/>
 					<selected color="deckcolordark" shape="square" border="bordercolor" border_size="2"/>
-					<text fontsize="18" color="text2" align="center" text="4"/>
+					<text fontsize="18" color="text2" colorselected="padbuttontextselected" colordown="padbuttontextselected" align="center" text="4"/>
 				</button>
 			</deck>
 		</define>
