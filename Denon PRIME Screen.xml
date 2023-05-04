@@ -251,7 +251,6 @@
 			<define color="browsergrid_selected" value="#777777"/>
 			<define color="browsergrid_focus" value="#4b4b4b"/>
 
-
 			<!-- browser icon buttons -->
 			<define color="browser_iconbuttonup" value="#e2e2e2"/>
 			<define color="browser_iconbuttonover" value="#eeeeee"/>
@@ -1375,8 +1374,8 @@
 			<button class="wavelockvertical" x="+[DY]*3" y="+0" swidth="[DWIDTH]" sheight="[DHEIGHT]-80" visibility="deck 4 rightdeck"/>
 
 			<panel class="browserlist_middle" x="+[DY]+4" y="+0" brheight="[DHEIGHT]" brwidth="[DY]*2-8" lineheight="1.1" visibility="var '@$denonpadding' 0"/>
-			<panel class="browserlist_middle" x="+[DY]+4" y="+0" brheight="[DHEIGHT]" lineheight="1.3" visibility="var '@$denonpadding' 1"/>
-			<panel class="browserlist_middle" x="+[DY]+4" y="+0" brheight="[DHEIGHT]" lineheight="1.6" visibility="var '@$denonpadding' 2"/>
+			<panel class="browserlist_middle" x="+[DY]+4" y="+0" brheight="[DHEIGHT]" brwidth="[DY]*2-8" lineheight="1.3" visibility="var '@$denonpadding' 1"/>
+			<panel class="browserlist_middle" x="+[DY]+4" y="+0" brheight="[DHEIGHT]" brwidth="[DY]*2-8" lineheight="1.6" visibility="var '@$denonpadding' 2"/>
 
 			<panel class="dropzone" x="+0" y="+0" visibility="deck 3 leftdeck" dwidth="[DY]" dheight="[DHEIGHT]" deckn="3"/>
 			<panel class="dropzone" x="+0" y="+0" visibility="deck 1 leftdeck" dwidth="[DY]" dheight="[DHEIGHT]" deckn="1"/>
