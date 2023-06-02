@@ -2392,7 +2392,7 @@
 						<pos x="+2" y="+6"/>
 						<size width="6" height="20"/>
 						<off shape="square" color="display"/>
-						<on shape="square" color="darkgree"/>
+						<on shape="square" color="darkgreen"/>
 					</visual>
 					<visual source="get_battery" type="linear" orientation="vertical" visibility="get_battery &amp; param_smaller 10% ? blink : false">
 						<pos x="+2" y="+6"/>
@@ -2400,6 +2400,17 @@
 						<off shape="square" color="display"/>
 						<on shape="square" color="red"/>
 					</visual>
+                    <visual>
+                        <pos x="+66" y="+4"/>
+                        <size width="6" height="24"/>
+                        <off color="white"/>
+                    </visual>
+                    <visual source="get_cpu" type="linear" orientation="vertical">
+                        <pos x="+66" y="+4"/>
+                        <size width="6" height="24"/>
+                        <off shape="square" color="display"/>
+                        <on shape="square" color="darkgreen"/>
+                    </visual>
                 </group>
             </panel>
 
