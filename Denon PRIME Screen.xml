@@ -4296,4 +4296,253 @@
         <songpos deck="3" class="songprogresssandbox" visibility="deck 3 masterdeck"/>
         <songpos deck="4" class="songprogresssandbox" visibility="deck 4 masterdeck"/>
     </panel>
+    <define class="decktouchfx" placeholders="deckn" >
+
+        <visual>
+            <pos x="+140" y="+90" />
+            <size width="1000-4" height="400" />
+            <off color="#000000" shape="square" radius="5"/>
+        </visual>
+
+        <visual>
+            <pos x="+146" y="+96" />
+            <size width="93" height="200-9" />
+            <off color="#444444" shape="square" radius="5"/>
+        </visual>
+        <visual>
+            <pos x="+146" y="+96+200-3" />
+            <size width="93" height="200-9" />
+            <off color="#444444" shape="square" radius="5"/>
+        </visual>
+
+        <visual>
+            <pos x="+146+99" y="+96+200-3" />
+            <size width="93" height="200-9" />
+            <off color="#444444" shape="square" radius="5"/>
+        </visual>
+        <visual>
+            <pos x="+146+99" y="+96" />
+            <size width="93" height="200-9" />
+            <off color="#444444" shape="square" radius="5"/>
+        </visual>
+
+        <visual>
+            <pos x="+146+99+99" y="+96+200-3" />
+            <size width="93" height="200-9" />
+            <off color="#444444" shape="square" radius="5"/>
+        </visual>
+        <visual>
+            <pos x="+146+99+99" y="+96" />
+            <size width="93" height="200-9" />
+            <off color="#444444" shape="square" radius="5"/>
+        </visual>
+
+        <visual>
+            <pos x="+146+99+99+99" y="+96+200-3" />
+            <size width="93" height="200-9" />
+            <off color="#444444" shape="square" radius="5"/>
+        </visual>
+        <visual>
+            <pos x="+146+99+99+99" y="+96" />
+            <size width="93" height="200-9" />
+            <off color="#444444" shape="square" radius="5"/>
+        </visual>
+
+        <visual>
+            <pos x="+146+99+99+99+99" y="+96+200-3" />
+            <size width="93" height="200-9" />
+            <off color="#444444" shape="square" radius="5"/>
+        </visual>
+        <visual>
+            <pos x="+146+99+99+99+99" y="+96" />
+            <size width="93" height="200-9" />
+            <off color="#444444" shape="square" radius="5"/>
+        </visual>
+
+        <visual>
+            <pos x="+146+99+99+99+99+99" y="+96+200-3" />
+            <size width="93" height="200-9" />
+            <off color="#444444" shape="square" radius="5"/>
+        </visual>
+        <visual>
+            <pos x="+146+99+99+99+99+99" y="+96" />
+            <size width="93" height="200-9" />
+            <off color="#444444" shape="square" radius="5"/>
+        </visual>
+
+        <visual>
+            <pos x="+146+99+99+99+99+99+99" y="+96+200-3" />
+            <size width="93" height="200-9" />
+            <off color="#444444" shape="square" radius="5"/>
+        </visual>
+        <visual>
+            <pos x="+146+99+99+99+99+99+99" y="+96" />
+            <size width="93" height="200-9" />
+            <off color="#444444" shape="square" radius="5"/>
+        </visual>
+
+        <visual>
+            <pos x="+146+99+99+99+99+99+99+99" y="+96+200-3" />
+            <size width="93" height="200-9" />
+            <off color="#444444" shape="square" radius="5"/>
+        </visual>
+        <visual>
+            <pos x="+146+99+99+99+99+99+99+99" y="+96" />
+            <size width="93" height="200-9" />
+            <off color="#444444" shape="square" radius="5"/>
+        </visual>
+
+        <visual>
+            <pos x="+146+99+99+99+99+99+99+99+99" y="+96+200-3" />
+            <size width="93" height="200-9" />
+            <off color="#444444" shape="square" radius="5"/>
+        </visual>
+        <visual>
+            <pos x="+146+99+99+99+99+99+99+99+99" y="+96" />
+            <size width="93" height="200-9" />
+            <off color="#444444" shape="square" radius="5"/>
+        </visual>
+
+        <visual>
+            <pos x="+146+99+99+99+99+99+99+99+99+99" y="+96+200-3" />
+            <size width="93" height="200-9" />
+            <off color="#444444" shape="square" radius="5"/>
+        </visual>
+        <visual>
+            <pos x="+146+99+99+99+99+99+99+99+99+99" y="+96" />
+            <size width="93" height="200-9" />
+            <off color="#444444" shape="square" radius="5"/>
+        </visual>
+        <textzone>
+            <pos x="+10" y="+100"/>
+            <size width="120" height="24"/>
+            <text fontsize="18" align="center" color="#AAAAAA" action="get_effect_slider_name 1"/>
+        </textzone>
+        <textzone>
+            <pos x="+10" y="+100+24"/>
+            <size width="120" height="24"/>
+            <text fontsize="18" align="center" color="#AAAAAA" action="get_effect_slider_text 1"/>
+        </textzone>
+        <textzone>
+            <pos x="+10" y="+100+65+300-30"/>
+            <size width="120" height="24"/>
+            <text fontsize="18" align="center" color="#AAAAAA" action="get_effect_slider_name 2"/>
+        </textzone>
+        <textzone>
+            <pos x="+10" y="+100+65+24+300-30"/>
+            <size width="120" height="24"/>
+            <text fontsize="18" align="center" color="#AAAAAA" action="get_effect_slider_text 2"/>
+        </textzone>
+        <textzone>
+            <pos x="+10" y="+100+65+300+30"/>
+            <size width="120" height="24"/>
+            <text fontsize="18" align="center" color="#AAAAAA" action="get_effect_slider_name 3"/>
+        </textzone>
+        <textzone>
+            <pos x="+10" y="+100+65+24+300+30"/>
+            <size width="120" height="24"/>
+            <text fontsize="18" align="center" color="#AAAAAA" action="get_effect_slider_text 3"/>
+        </textzone>
+        <textzone>
+            <pos x="+70" y="+4"/>
+            <size width="120" height="25"/>
+            <text fontsize="18" align="left" color="#909090" text="TOUCH FX"/>
+        </textzone>
+
+        <button class="fxbuttonwide" x="+10+2" y="+35" action="effect_select" query="effect_active" textaction="get_effect_name & param_uppercase"/>
+
+        <button class="fxbuttonwide" x="+10+220-10+2" y="+35" action="effect_activate" textaction="get_text 'ACTIVE'"/>
+
+        <button class="fxbuttonwide1" x="+2+220+220-10" y="+35" action="deck 1 select" textaction="get_deck & param_uppercase"/>
+        <button class="fxbuttonwide2" x="+2+220+220+220-20" y="+35" action="deck 2 select" textaction="get_deck & param_uppercase"/>
+        <button class="fxbuttonwide3" x="+2+220+220+220+220-30" y="+35" action="deck 3 select" textaction="get_deck & param_uppercase"/>
+        <button class="fxbuttonwide4" x="+2+220+220+220+220+220-40" y="+35" action="deck 4 select" textaction="get_deck & param_uppercase"/>
+
+
+
+        <panel >
+            <slider action="effect_slider_activate 1" orientation="horizontal" direction="right" >
+                <tooltip></tooltip>
+                <pos x="+35+4+100+8" y="+101-7"/>
+                <size width="1000-16" height="392"/>
+                <fader>
+                    <size width="2" height="387"/>
+                    <pos x="0" y="0"/>
+                    <on color="#FFFFFF"/>
+                    <off color="#FFFFFF"/>
+                </fader>
+            </slider>
+        </panel>
+        <panel >
+            <slider action="effect_slider_activate 2" direction="up" orientation="vertical" visibility="effect_has_slider 2" >
+                <tooltip></tooltip>
+                <pos x="+35+4+100+8" y="+96+12-10-1"/>
+                <size width="1000-18" height="386"/>
+                <fader>
+                    <size width="1000-18" height="2"/>
+                    <pos x="0" y="0"/>
+                    <on color="#FFFFFF"/>
+                    <off color="#FFFFFF"/>
+                </fader>
+            </slider>
+        </panel>
+
+        <slider action="effect_slider_activate 1" action2="effect_slider_activate 2" direction="right" direction2="up" orientation="2d" visibility="effect_has_slider 2">
+            <tooltip></tooltip>
+            <pos x="+35+4+100+8-3" y="+108-3-10-1"/>
+            <size width="1000-16+6" height="386+6"/>
+            <fader>
+                <size width="8" height="8" shape="circle"/>
+                <pos x="0" y="0"/>
+                <on color="#FFFFFF"/>
+                <off color="#FFFFFF"/>
+            </fader>
+        </slider>
+        <visual visibility="effect_has_slider 3">
+            <pos x="+140" y="+100+65+330+4"/>
+            <size width="1000-4" height="40"/>
+            <off color="#000000" shape="square" radius="5"/>
+        </visual>
+        <panel class="fxsliderxxl" x="+10+120+14+2" y="+100+65+330"  visibility="effect_has_slider 3"/>
+
+    </define>
+    <define class="deckverticaltouch" placeholders="deckn,deckside">
+        <deck deck="[DECKN]">
+            <visual>
+                <pos x="+2+2+4+160+18" y="82+55+4+30"/>
+                <size width="106" height="448" shape="square" radius="5"/>
+                <off color="#000000" shape="square" radius="5"/>
+            </visual>
+            <panel visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? false : true : true">
+                <panel class="scratchwv4deckswappadsdenontouch" x="+20+160+18" y="+144+30"/>
+            </panel>
+            <panel visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? true : false">
+                <panel class="scratchwv4deckswappadscolordenontouch" x="+20+160+18" y="+144+30"/>
+            </panel>
+        </deck>
+    </define>
+    <panel name="toucheffects" visibility= "var '$touchfx' 1">
+        <group name="browsersmall" x="10" y="0">
+            <!--            <panel class="browserback" brheight="78"/>-->
+            <button class="touch_fx" x="+5+84+998" y="+5" visibility="var '$prbrowsersetbut' 0"/>
+            <!--            <panel class="custbeatsvert4deck"/>-->
+
+            <!--            <panel class="minideckvertical" deckn="1"  name="deck1 info" x="0+320" y="0" />-->
+            <!--            <panel class="minideckvertical" deckn="3"  name="deck3 info" x="0" y="0" />-->
+            <!--            <panel class="minideckvertical" deckn="2"  name="deck2 info" x="0+320+320" y="0" />-->
+            <!--            <panel class="minideckvertical" deckn="4"  name="deck4 info" x="0+320+320+320" y="0" />-->
+        </group>
+        <panel name="decktoucheffects" x="2" y="80" visibility="yes">
+            <visual>
+                <pos x="+0" y="+0"/>
+                <size width="1280-4" height="800-166-80-8"/>
+                <off color="#242424"/>
+            </visual>
+            <panel class="decktouchfx"  x="+0" y="-0" />
+            <panel class="deckverticaltouch" deckn="1" deckside="leftdeck" name="deck1 info" x="970" y="0" visibility="deck 1 select"/>
+            <panel class="deckverticaltouch" deckn="3" deckside="leftdeck" name="deck3 info" x="970" y="0" visibility="deck 3 select"/>
+            <panel class="deckverticaltouch" deckn="2" deckside="rightdeck" name="deck2 info" x="970" y="O" visibility="deck 2 select"/>
+            <panel class="deckverticaltouch" deckn="4" deckside="rightdeck" name="deck4 info" x="970" y="0" visibility="deck 4 select"/>
+        </panel>
+    </panel>
 </skin>
