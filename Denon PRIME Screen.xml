@@ -3373,45 +3373,85 @@
                     <panel class="fulldeckwide" deckn="2" x="640+3" y="94" visibility="deck 2 rightdeck"/>
                     <panel class="fulldeckwide" deckn="4" x="640+3" y="94" visibility="deck 4 rightdeck"/>
 
-                    <group visibility="var '@$denoncontrollertype' 0 &amp;&amp; var '@$primeshowvideo' 0">
+                    <group visibility="var '@$denoncontrollertype' 0 &amp;&amp; var '@$primeshowvideo' 0 &amp;&amp; var '@$primeshowpads' 0">
+                        <panel class="scratchpanelhor" x="10" y="309" dy="151+55" dwidth="1260" dheight="125+55"/>
+                    </group>
+                    <group visibility="var '@$denoncontrollertype' 0 &amp;&amp; var '@$primeshowvideo' 0 &amp;&amp; var '@$primeshowpads' 1">
                         <panel class="scratchpanelhor" x="10" y="309" dy="151" dwidth="1260" dheight="125"/>
                     </group>
-                    <group visibility="var '@$denoncontrollertype' 0 &amp;&amp; var '@$primeshowvideo' 1 &amp;&amp; var '$denonfullvideo' 0">
+
+                    <group visibility="var '@$denoncontrollertype' 0 &amp;&amp; var '@$primeshowvideo' 1 &amp;&amp; var '$denonfullvideo' 0 &amp;&amp; var '@$primeshowpads' 0">
+                        <panel class="scratchpanelhor" x="10+230-2" y="309" dy="151+55" dwidth="1032" dheight="125+55"/>
+                        <visual>
+                            <pos x="+10" y="+309"/>
+                            <size width="14*16+4" height="151*2-5+110"/>
+                            <off color="panelback"/>
+                        </visual>
+                        <panel class="video" x="+45" y="+335" dborder="0" dwidth="10*16" dheight="10*9" dsource="deck" deckn="left" dbackgroundcolor="panelback"/>
+                        <panel class="video" x="+12" y="+309+81+4+55" dborder="0" dwidth="14*16" dheight="14*9"
+                               daction="holding 1000ms ? set '@$primeshowvideo' 0 : video off ? set '$denonfullvideo' 1 &amp; video on : set '$denonfullvideo' 1" dsource="master"/>
+                        <panel class="video" x="+45" y="+335+81+126+6+55" dborder="0" dwidth="10*16" dheight="10*9" dsource="deck" deckn="right" dbackgroundcolor="panelback"/>
+                    </group>
+                    <group visibility="var '@$denoncontrollertype' 0 &amp;&amp; var '@$primeshowvideo' 1 &amp;&amp; var '$denonfullvideo' 1 &amp;&amp; var '@$primeshowpads' 0">
+                        <panel class="scratchpanelhor" x="10+512+10+55" y="309" dy="151+55" dwidth="735-55" dheight="125+55"/>
+                        <panel class="video" x="+10" y="+309" dborder="5" dwidth="35*16+15" dheight="35*9+15" daction="set '$denonfullvideo' 0"/>
+                        <panel class="vfxdrop" width="+200" x="+180" y="+329+220+105" action1="video_fx" action2="video_fx_select" textaction="get_videofx_name &amp; param_uppercase"/>
+                    </group>
+                    <group visibility="var '@$denoncontrollertype' 0 &amp;&amp; var '@$primeshowvideo' 1 &amp;&amp; var '$denonfullvideo' 0 &amp;&amp; var '@$primeshowpads' 1">
                         <panel class="scratchpanelhor" x="10+230-2" y="309" dy="151" dwidth="1032" dheight="125"/>
                         <visual>
                             <pos x="+10" y="+309"/>
                             <size width="14*16+4" height="151*2-5"/>
                             <off color="panelback"/>
-                            <!--                            <off shape="square" color="black" border_size="1" border="bordercolor"/>-->
                         </visual>
                         <panel class="video" x="+60" y="+317" dborder="0" dwidth="8.9*16" dheight="8.9*9" dsource="deck" deckn="left" dbackgroundcolor="panelback"/>
                         <panel class="video" x="+12" y="+309+81+4" dborder="0" dwidth="14*16" dheight="14*9"
                                daction="holding 1000ms ? set '@$primeshowvideo' 0 : video off ? set '$denonfullvideo' 1 &amp; video on : set '$denonfullvideo' 1" dsource="master"/>
                         <panel class="video" x="+60" y="+312+81+126+6" dborder="0" dwidth="8.9*16" dheight="8.9*9" dsource="deck" deckn="right" dbackgroundcolor="panelback"/>
                     </group>
-                    <group visibility="var '@$denoncontrollertype' 0 &amp;&amp; var '@$primeshowvideo' 1 &amp;&amp; var '$denonfullvideo' 1">
+                    <group visibility="var '@$denoncontrollertype' 0 &amp;&amp; var '@$primeshowvideo' 1 &amp;&amp; var '$denonfullvideo' 1 &amp;&amp; var '@$primeshowpads' 1">
                         <panel class="scratchpanelhor" x="10+512+10" y="309" dy="151" dwidth="735" dheight="125"/>
                         <panel class="video" x="+10" y="+309" dborder="5" dwidth="32*16+10" dheight="32*9+10" daction="set '$denonfullvideo' 0"/>
                         <panel class="vfxdrop" width="+200" x="+180" y="+329+220" action1="video_fx" action2="video_fx_select" textaction="get_videofx_name &amp; param_uppercase"/>
                     </group>
 
-                    <group visibility="var '@$denoncontrollertype' 1 &amp;&amp; var '@$primeshowvideo' 0">
+                    <group visibility="var '@$denoncontrollertype' 1 &amp;&amp; var '@$primeshowvideo' 0 &amp;&amp; var '@$primeshowpads' 0">
+                        <panel class="scratchpanelhor" x="10" y="309" dy="188+55" dwidth="1260" dheight="162+55"/>
+                    </group>
+                    <group visibility="var '@$denoncontrollertype' 1 &amp;&amp; var '@$primeshowvideo' 0 &amp;&amp; var '@$primeshowpads' 1">
                         <panel class="scratchpanelhor" x="10" y="309" dy="188" dwidth="1260" dheight="162"/>
                     </group>
-                    <group visibility="var '@$denoncontrollertype' 1 &amp;&amp; var '@$primeshowvideo' 1 &amp;&amp; var '$denonfullvideo' 0">
+
+                    <group visibility="var '@$denoncontrollertype' 1 &amp;&amp; var '@$primeshowvideo' 1 &amp;&amp; var '$denonfullvideo' 0 &amp;&amp; var '@$primeshowpads' 0">
+                        <panel class="scratchpanelhor" x="10+230-2" y="309" dy="188+55" dwidth="1030" dheight="162+55"/>
+                        <visual>
+                            <pos x="+10" y="+309"/>
+                            <size width="14*16+4" height="188*2-6+55+55"/>
+                            <off color="panelback"/>
+                        </visual>
+                        <panel class="video" x="+45" y="+309+17+30" dborder="0" dwidth="10*16" dheight="10*9" dsource="deck" deckn="left" dbackgroundcolor="panelback"/>
+                        <panel class="video" x="+12" y="+309+125+55" dborder="0" dwidth="14*16" dheight="14*9"
+                               daction="holding 1000ms ? set '@$primeshowvideo' 0 : video off ? set '$denonfullvideo' 1 &amp; video on : set '$denonfullvideo' 1" dsource="master"/>
+                        <panel class="video" x="+45" y="+309+120+145+30+55" dborder="0" dwidth="10*16" dheight="10*9" dsource="deck" deckn="right" dbackgroundcolor="panelback"/>
+                    </group>
+                    <group visibility="var '@$denoncontrollertype' 1 &amp;&amp; var '@$primeshowvideo' 1 &amp;&amp; var '$denonfullvideo' 0 &amp;&amp; var '@$primeshowpads' 1">
                         <panel class="scratchpanelhor" x="10+230-2" y="309" dy="188" dwidth="1030" dheight="162"/>
                         <visual>
                             <pos x="+10" y="+309"/>
                             <size width="14*16+4" height="188*2-5"/>
                             <off color="panelback"/>
-                            <!--                            <off shape="square" color="black" border_size="1" border="bordercolor"/>-->
                         </visual>
                         <panel class="video" x="+45" y="+309+17" dborder="0" dwidth="10*16" dheight="10*9" dsource="deck" deckn="left" dbackgroundcolor="panelback"/>
                         <panel class="video" x="+12" y="+309+125" dborder="0" dwidth="14*16" dheight="14*9"
                                daction="holding 1000ms ? set '@$primeshowvideo' 0 : video off ? set '$denonfullvideo' 1 &amp; video on : set '$denonfullvideo' 1" dsource="master"/>
                         <panel class="video" x="+45" y="+309+120+145" dborder="0" dwidth="10*16" dheight="10*9" dsource="deck" deckn="right" dbackgroundcolor="panelback"/>
                     </group>
-                    <group visibility="var '@$denoncontrollertype' 1 &amp;&amp; var '@$primeshowvideo' 1 &amp;&amp; var '$denonfullvideo' 1">
+                    <group visibility="var '@$denoncontrollertype' 1 &amp;&amp; var '@$primeshowvideo' 1 &amp;&amp; var '$denonfullvideo' 1 &amp;&amp; var '@$primeshowpads' 0">
+                        <panel class="scratchpanelhor" x="10+630-50-2" y="309" dy="188+55" dwidth="1260-630+50" dheight="162+55"/>
+                        <panel class="video" x="+10" y="+309" dborder="5" dwidth="628-50" dheight="188*2-6" daction="set '$denonfullvideo' 0"/>
+                        <panel class="vfxdrop" width="+200" x="+190" y="+329+290+70" action1="video_fx" action2="video_fx_select" textaction="get_videofx_name &amp; param_uppercase"/>
+                    </group>
+                    <group visibility="var '@$denoncontrollertype' 1 &amp;&amp; var '@$primeshowvideo' 1 &amp;&amp; var '$denonfullvideo' 1 &amp;&amp; var '@$primeshowpads' 1">
                         <panel class="scratchpanelhor" x="10+630-50-2" y="309" dy="188" dwidth="1260-630+50" dheight="162"/>
                         <panel class="video" x="+10" y="+309" dborder="5" dwidth="628-50" dheight="188*2-6" daction="set '$denonfullvideo' 0"/>
                         <panel class="vfxdrop" width="+200" x="+190" y="+329+290" action1="video_fx" action2="video_fx_select" textaction="get_videofx_name &amp; param_uppercase"/>
@@ -3465,7 +3505,7 @@
                     </define>
                     <!-- ========================= 2 Decks horizontal =========================== -->
                     <group visibility="var '@$denoncontrollertype' 0">
-                        <panel name="pads" x="10" y="610">
+                        <panel name="pads" x="10" y="610" visibility="var '@$primeshowpads' 1">
                             <visual>
                                 <pos x="+0" y="+0"/>
                                 <size width="628" height="115-9"/>
@@ -3485,7 +3525,7 @@
                         <panel class="primegofxpannel"/>
                     </group>
                     <group visibility="var '@$denoncontrollertype' 1">
-                        <panel name="pads" x="10" y="800-10-115+9">
+                        <panel name="pads" x="10" y="800-10-115+9" visibility="var '@$primeshowpads' 1">
                             <visual>
                                 <pos x="+0" y="+0"/>
                                 <size width="628" height="115-9"/>
@@ -4099,6 +4139,10 @@
                 <panel class="denonsetting" x="200" y="120+80+80+80+80+80" text="Stems Overlay on Album" text1="No" text2="Yes"
                        action3="set '$denonsetextension' 5" action1="set '@$primeshowstemstatus' 0"
                        action2="set '@$primeshowstemstatus' 1"/>
+                <panel class="denonsetting" x="200" y="120+80+80+80+80+80+80" text="Show Pads on 2 Deck Horizonal" text1="No" text2="Yes"
+                       action3="set '$denonsetextension' 6" action1="set '@$primeshowpads' 0"
+                       action2="set '@$primeshowpads' 1"/>
+
 
                 <textzone visibility="var '$denonsetextension' 0">
                     <pos x="240" y="800-115"/>
@@ -4134,6 +4178,12 @@
                     <size width="1280-30-240" height="60"/>
                     <text fontsize="21" align="left" color="text"
                           text="Should a small S-symbol be overlayed to reflect the stems status?"/>
+                </textzone>
+                <textzone visibility="var '$denonsetextension' 6">
+                    <pos x="240" y="800-115"/>
+                    <size width="1280-30-240" height="60"/>
+                    <text fontsize="21" align="left" color="text"
+                          text="Should the pad section been displayed in 2 deck horizontal mode?"/>
                 </textzone>
             </panel>
             <panel name="DNS2_mic" group="DNS2_settings" visible="no">
