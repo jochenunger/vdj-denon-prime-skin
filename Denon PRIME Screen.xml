@@ -43,13 +43,16 @@
             <define color="textfxdark" value="#808080"/>
             <define color="fxseldark" value="#151515"/>
 
-            <define color="colorBass" value="#2C6DAC" deck="left"/>
-            <define color="colorMed" value="#5993CE" deck="left"/>
-            <define color="colorHigh" value="#699ED2" deck="left"/>
+            <define color="colorBass" value="#2C6DAC"/>
+            <define color="colorMed" value="#5993CE"/>
+            <define color="colorHigh" value="#699ED2"/>
 
-            <define color="colorHigh" value="#e97f81" deck="right"/>
-            <define color="colorMed" value="#e4000d" deck="right"/>
-            <define color="colorBass" value="#7a0005" deck="right"/>
+            <define color="colorVocal" value="#3390F5"/>
+            <define color="colorInstru" value="#84F4B2"/>
+            <define color="colorBeat" value="#FFFFFF"/>
+            <define color="colorNoVocal" value="#084E9A"/>
+            <define color="colorNoInstru" value="#12C45A"/>
+            <define color="colorNoBeat" value="#DDDDDD"/>
 
             <define color="text" value="#707070"/>
             <define color="text2" value="#aaaaaa"/>
@@ -164,13 +167,16 @@
             <define color="textfxdark" value="#7f7f7f"/>
             <define color="fxseldark" value="#eaeaea"/>
 
-            <define color="colorBass" value="#d39253" deck="left"/>
-            <define color="colorMed" value="#a66c31" deck="left"/>
-            <define color="colorHigh" value="#96612d" deck="left"/>
+            <define color="colorBass" value="#2C6DAC"/>
+            <define color="colorMed" value="#5993CE"/>
+            <define color="colorHigh" value="#699ED2"/>
 
-            <define color="colorHigh" value="#16807e" deck="right"/>
-            <define color="colorMed" value="#1bfff2" deck="right"/>
-            <define color="colorBass" value="#85fffa" deck="right"/>
+            <define color="colorVocal" value="#3390F5"/>
+            <define color="colorInstru" value="#84F4B2"/>
+            <define color="colorBeat" value="#000000"/>
+            <define color="colorNoVocal" value="#084E9A"/>
+            <define color="colorNoInstru" value="#12C45A"/>
+            <define color="colorNoBeat" value="#AAAAAA"/>
 
             <define color="text" value="#8f8f8f"/>
             <define color="text2" value="#555555"/>
@@ -501,9 +507,9 @@
             </loops>
         </define>
 
-        <define class="songprogresscolorswide" colorVocal="#075CDB" colorInstru="#0CFF00" colorBeat="white"
-                colorNoBeat="black" colorPlayed="black" colorHigh="colorHigh" colorMed="colorMed"
-                colorBass="colorBass" placeholders="dwidth,*dheight">
+        <define class="songprogresscolorswide" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat"
+                colorNoVocal="colorNoVocal" colorNoInstru="colorNoInstru" colorNoBeat="colorNoBeat"
+                colorPlayed="black" placeholders="dwidth,*dheight">
             <size width="[DWIDTH]" height="60"/>
             <wave>
                 <size height="[DHEIGHT]-10"/>
@@ -536,8 +542,9 @@
             </loops>
         </define>
 
-        <define class="songprogressshortcolors" colorVocal="#075CDB" colorInstru="#0CFF00" colorBeat="white"
-                colorNoBeat="black" colorPlayed="black" colorHigh="colorHigh" colorMed="colorMed"
+        <define class="songprogressshortcolors" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat"
+                colorNoVocal="colorNoVocal" colorNoInstru="colorNoInstru" colorNoBeat="colorNoBeat"
+                colorPlayed="black" colorHigh="colorHigh" colorMed="colorMed"
                 colorBass="colorBass">
             <size width="538-10" height="24"/>
             <wave>
@@ -571,8 +578,9 @@
             </loops>
         </define>
 
-        <define class="songprogressshortwidecolors" colorVocal="#075CDB" colorInstru="#0CFF00" colorBeat="white"
-                colorNoBeat="black" colorPlayed="black" colorHigh="colorHigh" colorMed="colorMed"
+        <define class="songprogressshortwidecolors" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat"
+                colorNoVocal="colorNoVocal" colorNoInstru="colorNoInstru" colorNoBeat="colorNoBeat"
+                colorPlayed="black" colorHigh="colorHigh" colorMed="colorMed"
                 colorBass="colorBass">
             <size width="538-10+88" height="24"/>
             <wave>
@@ -605,9 +613,9 @@
                 <clipmask x="74" y="107"/>
             </loops>
         </define>
-        <define class="songprogressverticalcolors" colorVocal="#075CDB" colorInstru="#0CFF00" colorBeat="white"
-                colorNoBeat="black" colorPlayed="black" colorHigh="colorHigh" colorMed="colorMed"
-                colorBass="colorBass"
+        <define class="songprogressverticalcolors" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat"
+                colorNoVocal="colorNoVocal" colorNoInstru="colorNoInstru" colorNoBeat="colorNoBeat"
+                colorPlayed="black" colorHigh="colorHigh" colorMed="colorMed" colorBass="colorBass"
                 placeholders="*dwidth=200,*dheight">
             <size width="538-10+88" height="24"/>
             <wave>
@@ -709,14 +717,14 @@
         <define class="scratchwhcolor" placeholders="deckn,*swidth=1260,*sheight=100">
             <deck deck="[DECKN]">
                 <group visibility="loaded">
-                    <scratchwave orientation="horizontal" colorVocal="#075CDB" colorInstru="#0CFF00" colorBeat="white"
-                                 colorNoVocal="#36393B" colorNoInstru="#4B4C4D" colorNoBeat="#595A5C">
+                    <scratchwave orientation="horizontal" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat"
+                                 colorNoVocal="colorNoVocal" colorNoInstru="colorNoInstru" colorNoBeat="colorNoBeat"
+                                 colorHigh="colorHigh" colorMed="colorMed" colorBass="colorBass">
                         <pos x="+0" y="+15"/>
                         <size width="[SWIDTH]" height="[SHEIGHT]-10"/>
-                        <grid mirrored="yes" pos="-15" shapepos="-15" shapemirrored="both" maincolor="deckcolorbright"
-                              color="deckcolorbright" background="no" backgroundshaded="no" height="8" size="3"
+                        <grid mirrored="yes" pos="-15" shapepos="-15" shapemirrored="both" maincolor="#FF3737"
+                              color="#444444" background="no" backgroundshaded="no" height="8" size="3"
                               mainsize="6"/>
-                        <gridlines width="1" color="deckcolorbright" transparency="0.8"/>
                         <cue y="-15" height="23">
                             <text dx="20" dy="-2" size="20"/>
                             <mask width="24" height="21" x="31" y="187"/>
@@ -757,7 +765,6 @@
                         <grid mirrored="yes" pos="0" shapepos="0" shapemirrored="both" maincolor="deckcolorbright"
                               color="deckcolorbright" background="no" backgroundshaded="no" height="8" size="3"
                               mainsize="6"/>
-                        <gridlines width="1" color="deckcolorbright" transparency="0.8"/>
                         <cue y="-2" height="23">
                             <text dy="-2" dx="20" size="20"/>
                             <mask width="24" height="21" x="31" y="187"/>
@@ -788,8 +795,9 @@
         <define class="scratchwverticalcolor" placeholders="deckn, *swidth,*sheight=100">
             <deck deck="[DECKN]">
                 <group visibility="loaded">
-                    <scratchwave orientation="vertical" colorVocal="#075CDB" colorInstru="#0CFF00" colorBeat="white"
-                                 colorNoVocal="#36393B" colorNoInstru="#4B4C4D" colorNoBeat="#595A5C">
+                    <scratchwave colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat"
+                                 colorNoVocal="colorNoVocal" colorNoInstru="colorNoInstru" colorNoBeat="colorNoBeat"
+                                 colorHigh="colorHigh" colorMed="colorMed" colorBass="colorBass">
                         <pos x="+0" y="+0"/>
                         <size width="[SWIDTH]" height="[SHEIGHT]"/>
                         <grid mirrored="yes" pos="0" shapepos="0" shapemirrored="both" maincolor="deckcolorbright"
@@ -1398,8 +1406,9 @@
                              colorPlayed="black" colorHigh="colorHigh" colorMed="colorMed" colorBass="colorBass"
                              visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? false : true : true"/>
                     <songpos x="+5" y="+5" class="songposvertical_wave" dwidth="[DWIDTH]-10" dheight="[DHEIGHT]-10"
-                             colorVocal="#075CDB" colorInstru="#0CFF00" colorBeat="white"
-                             colorNoBeat="black" colorPlayed="black" colorHigh="colorHigh" colorMed="colorMed"
+                             colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat"
+                             colorNoVocal="colorNoVocal" colorNoInstru="colorNoInstru" colorNoBeat="colorNoBeat"
+                             colorPlayed="black" colorHigh="colorHigh" colorMed="colorMed"
                              colorBass="colorBass"
                              visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? true : false : false"/>
                     <textzone>
