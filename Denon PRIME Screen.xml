@@ -2385,7 +2385,7 @@
                 <text fontsize="18" color="text2" align="center" weight="" action="get_clock"/>
                 <text2 fontsize="18" color="text2" align="center" weight="bold" format="%counter" important="true"/>
             </textzone>
-            <panel name="battery" x="+1260-90+5" y="+30+25+2" width="80" height="27" visibility="is_battery">
+            <panel name="battery" x="+1260-90+5" y="+30+25+2" width="80" height="27" visibility="var '$primebrowserextend' 0 &amp;&amp; is_battery">
                 <textzone visibility="get_battery &amp; param_bigger 10% ? true : false" align="center" group="horizontal">
                     <size width="80" height="25"/>
                     <text fontsize="18" color="text2" action="get_battery"/>
@@ -3110,6 +3110,16 @@
                 <selected color="buttonoff3" border_size="2" border="black"/>
                 <down color="buttonoff4" border_size="2" border="bordercolor2"/>
                 <icon sysicon="sideview 'clone'" width="48" height="48" coloroff="iconoff" colordown="text3"
+                      colorselected="text3"/>
+            </button>
+            <button action="goto_last_folder"
+                    query="on">
+                <pos x="+5" y="+5+80+80+80+80"/>
+                <size width="80" height="70"/>
+                <off color="buttonoff3" border_size="2" border="black"/>
+                <selected color="buttonoff3" border_size="2" border="black"/>
+                <down color="buttonoff4" border_size="2" border="bordercolor2"/>
+                <icon sysicon="goto_last_folder" width="48" height="48" coloroff="iconoff" colordown="text3"
                       colorselected="text3"/>
             </button>
 
