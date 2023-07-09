@@ -47,12 +47,12 @@
             <define color="colorMed" value="#5993CE"/>
             <define color="colorHigh" value="#699ED2"/>
 
-            <define color="colorVocal" value="#3390F5"/>
-            <define color="colorInstru" value="#84F4B2"/>
-            <define color="colorBeat" value="#FFFFFF"/>
-            <define color="colorNoVocal" value="#084E9A"/>
-            <define color="colorNoInstru" value="#12C45A"/>
-            <define color="colorNoBeat" value="#DDDDDD"/>
+            <define color="colorVocal" value="#5791EF"/>
+            <define color="colorInstru" value="#11E968"/>
+            <define color="colorBeat" value="#D1F7E0"/>
+            <define color="colorNoVocal" value="#0B3373"/>
+            <define color="colorNoInstru" value="#087233"/>
+            <define color="colorNoBeat" value="#20C262"/>
 
             <define color="text" value="#707070"/>
             <define color="text2" value="#aaaaaa"/>
@@ -171,11 +171,11 @@
             <define color="colorMed" value="#5993CE"/>
             <define color="colorHigh" value="#699ED2"/>
 
-            <define color="colorVocal" value="#3390F5"/>
-            <define color="colorInstru" value="#84F4B2"/>
+            <define color="colorVocal" value="#5791EF"/>
+            <define color="colorInstru" value="#11E968"/>
             <define color="colorBeat" value="#000000"/>
-            <define color="colorNoVocal" value="#084E9A"/>
-            <define color="colorNoInstru" value="#12C45A"/>
+            <define color="colorNoVocal" value="#0B3373"/>
+            <define color="colorNoInstru" value="#087233"/>
             <define color="colorNoBeat" value="#AAAAAA"/>
 
             <define color="text" value="#8f8f8f"/>
