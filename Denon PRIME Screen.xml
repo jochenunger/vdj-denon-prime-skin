@@ -4269,7 +4269,7 @@
     <panel class="exitusb" x="0" y="0" visibility="var '$denonprimesource' 1"/>
     <panel name="prelistener" x="105" y="0" visible="prelisten ? true : false">
         <prelisten>
-            <size width="1070" height="85"/>
+            <size width="1070" height="80"/>
             <colors background="prelistenbackground" border="prelistenborder" selected="prelistenselected"
                     cursor="prelistencursor" button="prelistenbutton" buttonbackground="#5C5C5C"
                     buttonselected="#18A639"/>
