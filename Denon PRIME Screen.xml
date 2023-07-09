@@ -459,6 +459,10 @@
             <off shape="square" color="black" radius="2"/>
             <on shape="square" color="deckcolordark" radius="2"/>
         </define>
+        <define class="phrase_bar">
+            <size width="16" height="3"/>
+            <on shape="square" color="deckcolordark" radius="1"/>
+        </define>
 
         <define class="samplerbutton" placeholders="*bwidth=120,action,textaction,sourcecolor,textsize=20">
             <button action="[ACTION]">
@@ -1723,6 +1727,11 @@
                 <button class="beat_bar" x="+42" y="+0" action="goto_bar 2"/>
                 <button class="beat_bar" x="+42+42" y="+0" action="goto_bar 3"/>
                 <button class="beat_bar" x="+42+42+42" y="+0" action="goto_bar 4"/>
+
+                <button class="phrase_bar" x="+0+10" y="+3" query="get_phrase_num 1"/>
+                <button class="phrase_bar" x="+42+10" y="+3" query="get_phrase_num 2"/>
+                <button class="phrase_bar" x="+42+42+10" y="+3" query="get_phrase_num 3"/>
+                <button class="phrase_bar" x="+42+42+42+10" y="+3" query="get_phrase_num 4"/>
             </deck>
         </define>
 
