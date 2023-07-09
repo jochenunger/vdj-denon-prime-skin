@@ -698,14 +698,14 @@
                             <background color="white" shape="square"/>
                         </overlay>
                     </scratchwave>
-                    <panel visibility="var '@$denonwavebeats' 1">
-                        <visual>
-                            <pos x="+[SWIDTH]/2-160-2" y="+10"/>
+                    <panel visibility="var '@$denonwavebeats' 1 &amp;&amp; loaded">
+                        <visual visibility="50%">
+                            <pos x="+30" y="+15"/>
                             <size width="150" height="30"/>
-                            <off color="#a0000000"/>
+                            <off color="black"/>
                         </visual>
                         <textzone visibility="loaded">
-                            <pos x="+[SWIDTH]/2-160-2" y="+10"/>
+                            <pos x="+40" y="+15"/>
                             <size width="150" height="30"/>
                             <text fontsize="22" color="deckcolorbright" align="center"
                                   format="BAR `get_bar` : `get_beat_num`"/>
@@ -735,14 +735,14 @@
                             <background color="white" shape="square"/>
                         </overlay>
                     </scratchwave>
-                    <panel visibility="var '@$denonwavebeats' 1">
-                        <visual>
-                            <pos x="+[SWIDTH]/2-160-2" y="+10"/>
+                    <panel visibility="var '@$denonwavebeats' 1 &amp;&amp; loaded">
+                        <visual visibility="50%">
+                            <pos x="+30" y="+15"/>
                             <size width="150" height="30"/>
-                            <off color="#a0000000"/>
+                            <off color="black"/>
                         </visual>
                         <textzone visibility="loaded">
-                            <pos x="+[SWIDTH]/2-160-2" y="+10"/>
+                            <pos x="+40" y="+15"/>
                             <size width="150" height="30"/>
                             <text fontsize="22" color="deckcolorbright" align="center"
                                   format="BAR `get_bar` : `get_beat_num`"/>
@@ -775,14 +775,14 @@
                             <background color="white" shape="square"/>
                         </overlay>
                     </scratchwave>
-                    <panel visibility="var '@$denonwavebeats' 1">
-                        <visual visibility="80%">
-                            <pos x="+5" y="+[SHEIGHT]-130"/>
+                    <panel visibility="var '@$denonwavebeats' 1 &amp;&amp; loaded">
+                        <visual visibility="50%">
+                            <pos x="+0" y="+70"/>
                             <size width="150" height="30"/>
                             <off color="black"/>
                         </visual>
                         <textzone visibility="loaded">
-                            <pos x="+5" y="+[SHEIGHT]-130"/>
+                            <pos x="+0" y="+70"/>
                             <size width="150" height="30"/>
                             <text fontsize="22" color="deckcolorbright" align="center"
                                   format="BAR `get_bar` : `get_beat_num`"/>
@@ -798,12 +798,11 @@
                     <scratchwave colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat"
                                  colorNoVocal="colorNoVocal" colorNoInstru="colorNoInstru" colorNoBeat="colorNoBeat"
                                  colorHigh="colorHigh" colorMed="colorMed" colorBass="colorBass">
-                        <pos x="+0" y="+0"/>
-                        <size width="[SWIDTH]" height="[SHEIGHT]"/>
-                        <grid mirrored="yes" pos="0" shapepos="0" shapemirrored="both" maincolor="deckcolorbright"
-                              color="deckcolorbright" background="no" backgroundshaded="no" height="8" size="3"
+                        <pos x="+15" y="+0"/>
+                        <size width="[SWIDTH]-30" height="[SHEIGHT]"/>
+                        <grid mirrored="yes" pos="0" shapepos="-15" shapemirrored="both" maincolor="#FF3737"
+                              color="#444444" background="no" backgroundshaded="no" height="8" size="3"
                               mainsize="6"/>
-                        <gridlines width="1" color="deckcolorbright" transparency="0.8"/>
                         <cue y="-2" height="23">
                             <text dy="20" dx="-2" size="20"/>
                             <mask width="24" height="21" x="31" y="187"/>
@@ -814,14 +813,14 @@
                             <background color="white" shape="square"/>
                         </overlay>
                     </scratchwave>
-                    <panel visibility="var '@$denonwavebeats' 1">
-                        <visual visibility="80%">
-                            <pos x="+5" y="+[SHEIGHT]-130"/>
+                    <panel visibility="var '@$denonwavebeats' 1 &amp;&amp; loaded">
+                        <visual visibility="50%">
+                            <pos x="+0" y="+70"/>
                             <size width="150" height="30"/>
                             <off color="black"/>
                         </visual>
                         <textzone visibility="loaded">
-                            <pos x="+5" y="+[SHEIGHT]-130"/>
+                            <pos x="+0" y="+70"/>
                             <size width="150" height="30"/>
                             <text fontsize="22" color="deckcolorbright" align="center"
                                   format="BAR `get_bar` : `get_beat_num`"/>
