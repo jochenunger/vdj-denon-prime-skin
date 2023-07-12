@@ -774,8 +774,8 @@
                             <mask width="24" height="21" x="31" y="187"/>
                         </cue>
                         <overlay>
-                            <pos x="+0" y="+[SHEIGHT]*1/2"/>
-                            <size width="[SWIDTH]" height="3"/>
+                            <pos x="-16" y="+[SHEIGHT]*1/2"/>
+                            <size width="[SWIDTH]+4" height="4"/>
                             <background color="white" shape="square"/>
                         </overlay>
                     </scratchwave>
@@ -812,8 +812,8 @@
                             <mask width="24" height="21" x="31" y="187"/>
                         </cue>
                         <overlay>
-                            <pos x="+0" y="+[SHEIGHT]*1/2"/>
-                            <size width="[SWIDTH]" height="3"/>
+                            <pos x="-16" y="+[SHEIGHT]*1/2"/>
+                            <size width="[SWIDTH]+4" height="4"/>
                             <background color="white" shape="square"/>
                         </overlay>
                     </scratchwave>
