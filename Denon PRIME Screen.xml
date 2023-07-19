@@ -47,12 +47,13 @@
             <define color="colorMed" value="#5993CE"/>
             <define color="colorHigh" value="#699ED2"/>
 
-            <define color="colorVocal" value="#5791EF"/>
-            <define color="colorInstru" value="#11E968"/>
-            <define color="colorBeat" value="#D1F7E0"/>
+            <define color="colorVocal" value="#075CDB"/>
+            <define color="colorInstru" value="#0CFF00"/>
+            <define color="colorBeat" value="#FFFFFF"/>
             <define color="colorNoVocal" value="#0B3373"/>
             <define color="colorNoInstru" value="#087233"/>
             <define color="colorNoBeat" value="#20C262"/>
+            <define color="colorNoBeatSongPos" value="#000000"/>
 
             <define color="text" value="#707070"/>
             <define color="text2" value="#aaaaaa"/>
@@ -171,12 +172,13 @@
             <define color="colorMed" value="#5993CE"/>
             <define color="colorHigh" value="#699ED2"/>
 
-            <define color="colorVocal" value="#5791EF"/>
-            <define color="colorInstru" value="#11E968"/>
+            <define color="colorVocal" value="#075CDB"/>
+            <define color="colorInstru" value="#0CFF00"/>
             <define color="colorBeat" value="#000000"/>
             <define color="colorNoVocal" value="#0B3373"/>
             <define color="colorNoInstru" value="#087233"/>
             <define color="colorNoBeat" value="#AAAAAA"/>
+            <define color="colorNoBeatSongPos" value="#FFFFFF"/>
 
             <define color="text" value="#8f8f8f"/>
             <define color="text2" value="#555555"/>
@@ -512,7 +514,7 @@
         </define>
 
         <define class="songprogresscolorswide" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat"
-                colorNoVocal="colorNoVocal" colorNoInstru="colorNoInstru" colorNoBeat="colorNoBeat"
+                colorNoVocal="colorNoVocal" colorNoInstru="colorNoInstru" colorNoBeat="colorNoBeatSongPos"
                 colorPlayed="black" placeholders="dwidth,*dheight">
             <size width="[DWIDTH]" height="60"/>
             <wave>
@@ -547,7 +549,7 @@
         </define>
 
         <define class="songprogressshortcolors" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat"
-                colorNoVocal="colorNoVocal" colorNoInstru="colorNoInstru" colorNoBeat="colorNoBeat"
+                colorNoVocal="colorNoVocal" colorNoInstru="colorNoInstru" colorNoBeat="colorNoBeatSongPos"
                 colorPlayed="black" colorHigh="colorHigh" colorMed="colorMed"
                 colorBass="colorBass">
             <size width="538-10" height="24"/>
@@ -583,7 +585,7 @@
         </define>
 
         <define class="songprogressshortwidecolors" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat"
-                colorNoVocal="colorNoVocal" colorNoInstru="colorNoInstru" colorNoBeat="colorNoBeat"
+                colorNoVocal="colorNoVocal" colorNoInstru="colorNoInstru" colorNoBeat="colorNoBeatSongPos"
                 colorPlayed="black" colorHigh="colorHigh" colorMed="colorMed"
                 colorBass="colorBass">
             <size width="538-10+88" height="24+8"/>
@@ -618,7 +620,7 @@
             </loops>
         </define>
         <define class="songprogressverticalcolors" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat"
-                colorNoVocal="colorNoVocal" colorNoInstru="colorNoInstru" colorNoBeat="colorNoBeat"
+                colorNoVocal="colorNoVocal" colorNoInstru="colorNoInstru" colorNoBeat="colorNoBeatSongPos"
                 colorPlayed="black" colorHigh="colorHigh" colorMed="colorMed" colorBass="colorBass"
                 placeholders="*dwidth=200,*dheight">
             <size width="538-10+88" height="24"/>
@@ -1410,7 +1412,7 @@
                              visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? false : true : true"/>
                     <songpos x="+5" y="+5" class="songposvertical_wave" dwidth="[DWIDTH]-10" dheight="[DHEIGHT]-10"
                              colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat"
-                             colorNoVocal="colorNoVocal" colorNoInstru="colorNoInstru" colorNoBeat="colorNoBeat"
+                             colorNoVocal="colorNoVocal" colorNoInstru="colorNoInstru" colorNoBeat="colorNoBeatSongPos"
                              colorPlayed="black" colorHigh="colorHigh" colorMed="colorMed"
                              colorBass="colorBass"
                              visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? true : false : false"/>
