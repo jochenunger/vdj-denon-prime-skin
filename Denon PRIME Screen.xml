@@ -481,7 +481,47 @@
                 <pos x="+[BWIDTH]*30/100" y="+47" width="[BWIDTH]*40/100" height="2"/>
             </visual>
         </define>
-
+        <define class="64beatsfirst" type="linear" placeholders="width,height" action="get_firstbeat & param_1_x & param_multiply 'get_time total absolute 1000' & param_1_x & param_multiply 1" visibility="loaded ? get_firstbeat & param_1_x & param_multiply 'get_time total absolute 1000' & param_1_x & param_multiply 1 & param_smaller 1 ? constant 1 : off : off">
+            <size width="[WIDTH]" height="[HEIGHT]"/>
+            <off color="transparent"/>
+            <on color="transparent"/>
+            <fader>
+                <off color="white"/>
+                <size width="3" height="[HEIGHT]"/>
+            </fader>
+        </define>
+        <define class="64beatsstroke" type="linear" placeholders="*beats,width,height" action="param_add `get_firstbeat` `get_bpm absolute & param_1_x & param_multiply 60000 & param_multiply [BEATS]` & param_1_x & param_multiply 'get_time total absolute 1000' & param_1_x" visibility="loaded ? param_add `get_firstbeat` `get_bpm absolute & param_1_x & param_multiply 60000 & param_multiply [BEATS]` & param_1_x & param_multiply 'get_time total absolute 1000' & param_1_x & param_smaller 1 ? constant 0.9 : off : off">
+            <size width="[WIDTH]" height="[HEIGHT]"/>
+            <off color="transparent"/>
+            <on color="transparent"/>
+            <fader>
+                <off color="white"/>
+                <size width="3" height="[HEIGHT]"/>
+            </fader>
+        </define>
+        <define class="32beatsruler" placeholders="width,*height">
+            <slider class="64beatsfirst" width="[WIDTH]" height="[HEIGHT]"/>
+            <slider class="64beatsstroke" width="[WIDTH]" height="[HEIGHT]" beats="64"/>
+            <slider class="64beatsstroke" width="[WIDTH]" height="[HEIGHT]" beats="128"/>
+            <slider class="64beatsstroke" width="[WIDTH]" height="[HEIGHT]" beats="192"/>
+            <slider class="64beatsstroke" width="[WIDTH]" height="[HEIGHT]" beats="256"/>
+            <slider class="64beatsstroke" width="[WIDTH]" height="[HEIGHT]" beats="320"/>
+            <slider class="64beatsstroke" width="[WIDTH]" height="[HEIGHT]" beats="384"/>
+            <slider class="64beatsstroke" width="[WIDTH]" height="[HEIGHT]" beats="448"/>
+            <slider class="64beatsstroke" width="[WIDTH]" height="[HEIGHT]" beats="512"/>
+            <slider class="64beatsstroke" width="[WIDTH]" height="[HEIGHT]" beats="576"/>
+            <slider class="64beatsstroke" width="[WIDTH]" height="[HEIGHT]" beats="640"/>
+            <slider class="64beatsstroke" width="[WIDTH]" height="[HEIGHT]" beats="704"/>
+            <slider class="64beatsstroke" width="[WIDTH]" height="[HEIGHT]" beats="768"/>
+            <slider class="64beatsstroke" width="[WIDTH]" height="[HEIGHT]" beats="832"/>
+            <slider class="64beatsstroke" width="[WIDTH]" height="[HEIGHT]" beats="896"/>
+            <slider class="64beatsstroke" width="[WIDTH]" height="[HEIGHT]" beats="960"/>
+            <slider class="64beatsstroke" width="[WIDTH]" height="[HEIGHT]" beats="1024"/>
+            <slider class="64beatsstroke" width="[WIDTH]" height="[HEIGHT]" beats="1088"/>
+            <slider class="64beatsstroke" width="[WIDTH]" height="[HEIGHT]" beats="1152"/>
+            <slider class="64beatsstroke" width="[WIDTH]" height="[HEIGHT]" beats="1216"/>
+            <slider class="64beatsstroke" width="[WIDTH]" height="[HEIGHT]" beats="1280"/>
+        </define>
         <define class="songprogress" colorPlayed="black" colorHigh="colorHigh" colorMed="colorMed"
                 colorBass="colorBass">
             <size width="538-10" height="55"/>
@@ -519,7 +559,7 @@
         <define class="songprogresscolorswide" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat"
                 colorNoVocal="colorNoVocal" colorNoInstru="colorNoInstru" colorNoBeat="colorNoBeatSongPos"
                 colorPlayed="black" placeholders="dwidth,*dheight">
-            <size width="[DWIDTH]" height="60"/>
+            <size width="[DWIDTH]" height="[DHEIGHT]"/>
             <wave>
                 <size height="[DHEIGHT]-10"/>
                 <pos y="+5"/>
@@ -1916,9 +1956,35 @@
                 </group>
             </deck>
         </define>
-
         <define class="fulldeckwide" placeholders="deckn">
             <deck deck="[DECKN]">
+                <group visibility="var '@$denonwavehalf' 0">
+                    <songpos class="songprogresswide" x="+5" y="+65" dheight="60" dwidth="538-10+88"
+                             visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? false : true : true"/>
+                    <songpos class="songprogresscolorswide" x="+5" y="+65" dheight="60" dwidth="538-10+88"
+                             visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? true : false : false"/>
+                </group>
+                <group visibility="var '@$denonwavehalf' 1">
+                    <group visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? false : true : true">
+                        <songpos class="songprogresswide" x="+5" y="+65" dheight="135" dwidth="538-10+88"/>
+                        <songpos class="songprogresswide" x="+5" y="+8" dheight="70" dwidth="538-10+88"/>
+                    </group>
+                    <group visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? true : false : false">
+                        <songpos class="songprogresscolorswide" x="+5" y="+65" dheight="135" dwidth="538-10+88"/>
+                        <songpos class="songprogresscolorswide" x="+5" y="+8" dheight="70" dwidth="538-10+88"/>
+                    </group>
+                    <visual>
+                        <pos x="+5" y="+15"/>
+                        <size width="538-10+88" height="51"/>
+                        <off color="black"/>
+                    </visual>
+                    <visual>
+                        <pos x="+5" y="+122"/>
+                        <size width="538-10+88" height="8"/>
+                        <off color="black"/>
+                    </visual>
+                    <panel class="32beatsruler" x="+5" y="+122" width="538-10+88" height="7"/>
+                </group>
                 <visual>
                     <pos x="+0" y="+0"/>
                     <size width="50" height="71-10"/>
@@ -2149,11 +2215,6 @@
                     </panel>
 
                 </panel>
-                <songpos class="songprogresswide" x="+5" y="+65" dheight="60" dwidth="538-10+88"
-                         visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? false : true : true"/>
-                <songpos class="songprogresscolorswide" x="+5" y="+65" dheight="60" dwidth="538-10+88"
-                         visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? true : false : false"/>
-
                 <button class="needlelockwide" x="+5" y="+65"/>
 
                 <group name="decktimes" x="+0" y="+125" visibility="loaded"><!-- width 538-->
@@ -2333,12 +2394,32 @@
                     <size width="45" height="71-10"/>
                     <text fontsize="36" align="center" color="deckcolorbright" action="get_deck"/>
                 </textzone>
+                <group visibility="var '@$denonwavehalf' 0">
+                    <songpos class="songprogresswide" x="+55" y="+0" dheight="60" dwidth="538-10+88-55"
+                             visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? false : true : true"/>
+                    <songpos class="songprogresscolorswide" x="+55" y="+0" dheight="60" dwidth="538-10+88-55"
+                             visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? true : false : false"/>
+                </group>
+                <group visibility="var '@$denonwavehalf' 1">
+                    <group visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? false : true : true">
+                        <songpos class="songprogresswide" x="+55" y="+0" dheight="60" dwidth="538-10+88-55"/>
 
-                <songpos class="songprogresswide" x="+55" y="+0" dheight="60" dwidth="538-10+88-55"
-                         visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? false : true : true"/>
-                <songpos class="songprogresscolorswide" x="+55" y="+0" dheight="60" dwidth="538-10+88-55"
-                         visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? true : false : false"/>
-
+                    </group>
+                    <group visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? true : false : false">
+                        <songpos class="songprogresscolorswide" x="+55" y="+0" dheight="135" dwidth="538-10+88-55"/>
+                        <songpos class="songprogresscolorswide" x="+55" y="+0" dheight="135" dwidth="538-10+88-55"/>
+                        <visual>
+                            <pos x="+55" y="+59"/>
+                            <size width="538-10+88-55" height="80"/>
+                            <off color="black"/>
+                        </visual>
+                    </group>
+                    <visual>
+                        <pos x="+55" y="+125"/>
+                        <size width="538-10+88-55" height="5"/>
+                        <off color="black"/>
+                    </visual>
+                </group>
                 <button class="needlelockwide" x="+5" y="+65"/>
 
                 <group name="tinytime" x="+30" y="+7" visibility="songpos_remain 30%">
@@ -4059,11 +4140,16 @@
                        action1="setting 'SkinWaveformScratchType' 'Shapes' &amp; setting 'SkinWaveformtype' 'Shapes'"
                        action2="setting 'SkinWaveformScratchType' 'Colors' &amp; setting 'SkinWaveformType' 'Colors'"/>
 
-                <panel class="denonsetting" x="200" y="120+80+80" text="Shapes Wave Colors" text1="Per-Deck"
+                <panel class="denonsetting" x="200" y="120+80+80" text="Wave Size" text1="Half" text2="Full"
+                       action3="set '$denonsetwave' 5"
+                       action1="set '@$denonwavehalf' 1"
+                       action2="set '@$denonwavehalf' 0"/>
+
+                <panel class="denonsetting" x="200" y="120+80+80+80" text="Shapes Wave Colors" text1="Per-Deck"
                        text2="3 Colors" action3="set '$denonsetwave' 2" action1="set '@$denonshapescolors' 0"
                        action2="set '@$denonshapescolors' 1"
                        visibility="setting 'SkinWaveformScratchType' 'Colors' ? false : true"/>
-                <panel class="denonsetting" x="200" y="120+80+80" text="Waves Color" text1="Multi-Color"
+                <panel class="denonsetting" x="200" y="120+80+80+80" text="Waves Color" text1="Multi-Color"
                        text2="Per Deck" action3="set '$denonsetwave' 2" action1="setting 'ColoredWaveforms' 'neutral'"
                        action2="setting 'ColoredWaveforms' 'per-deck'"
                        visibility="setting 'SkinWaveformScratchType' 'Colors'">
@@ -4082,13 +4168,13 @@
                         <on color="buttonon3" border_size="2" border="black"/>
                     </button>
                 </panel>
-                <panel class="denonsetting" x="200" y="120+80+80+80" text="Show Grid Lines" text1="No" text2="Yes"
+                <panel class="denonsetting" x="200" y="120+80+80+80+80" text="Show Grid Lines" text1="No" text2="Yes"
                        action3="set '$denonsetwave' 3" action1="setting 'showGridLines' off"
                        action2="setting 'showGridLines' on"/>
-                <panel class="denonsetting" x="200" y="120+80+80+80+80" text="Lock Scratch-Wave" text1="No" text2="Yes"
+                <panel class="denonsetting" x="200" y="120+80+80+80+80+80" text="Lock Scratch-Wave" text1="No" text2="Yes"
                        action3="set '$denonsetwave' 4" action1="set '@$denonwavelock' 0"
                        action2="set '@$denonwavelock' 1"/>
-                <panel class="denonsetting" x="200" y="120+80+80+80+80+80" text="Show Beats on Wave" text1="No"
+                <panel class="denonsetting" x="200" y="120+80+80+80+80+80+80" text="Show Beats on Wave" text1="No"
                        text2="Yes" action3="set '$denonsetwave' 5" action1="set '@$denonwavebeats' 0"
                        action2="set '@$denonwavebeats' 1"/>
 
@@ -4523,7 +4609,8 @@
                     <off color="white"/>
                 </fader>
             </slider>
-            <slider action="var '$touchfxlatch' ? effect_activate on & effect_slider 2 : effect_slider_activate 2" action2="var '$touchfxlatch' ? effect_slider 1 : effect_slider_activate 1" direction="right" direction2="up" orientation="2d" visibility="not effect_activate && effect_has_slider 2">
+            <slider action="var '$touchfxlatch' ? effect_activate on & effect_slider 2 : effect_slider_activate 2" action2="var '$touchfxlatch' ? effect_slider 1 : effect_slider_activate 1" direction="right"
+                    direction2="up" orientation="2d" visibility="not effect_activate && effect_has_slider 2">
                 <pos x="+35+4+100+8-3" y="+108-3-10-1"/>
                 <size width="1000-16+6" height="386+6"/>
                 <fader>
@@ -4533,7 +4620,8 @@
                     <off color="white"/>
                 </fader>
             </slider>
-            <slider action="var '$touchfxlatch' ? effect_slider 2 : effect_slider_activate 2" action2="var '$touchfxlatch' ? effect_slider 1 : effect_slider_activate 1" direction="right" direction2="up" orientation="2d" visibility="effect_activate && effect_has_slider 2">
+            <slider action="var '$touchfxlatch' ? effect_slider 2 : effect_slider_activate 2" action2="var '$touchfxlatch' ? effect_slider 1 : effect_slider_activate 1" direction="right" direction2="up" orientation="2d"
+                    visibility="effect_activate && effect_has_slider 2">
                 <pos x="+35+4+100+8-3" y="+108-3-10-1"/>
                 <size width="1000-16+6" height="386+6"/>
                 <fader>
