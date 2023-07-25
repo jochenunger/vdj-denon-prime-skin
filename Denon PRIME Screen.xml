@@ -521,6 +521,16 @@
             <slider class="64beatsstroke" width="[WIDTH]" height="[HEIGHT]" beats="1152"/>
             <slider class="64beatsstroke" width="[WIDTH]" height="[HEIGHT]" beats="1216"/>
             <slider class="64beatsstroke" width="[WIDTH]" height="[HEIGHT]" beats="1280"/>
+            <slider class="64beatsstroke" width="[WIDTH]" height="[HEIGHT]" beats="1344"/>
+            <slider class="64beatsstroke" width="[WIDTH]" height="[HEIGHT]" beats="1408"/>
+            <slider class="64beatsstroke" width="[WIDTH]" height="[HEIGHT]" beats="1472"/>
+            <slider class="64beatsstroke" width="[WIDTH]" height="[HEIGHT]" beats="1536"/>
+            <slider class="64beatsstroke" width="[WIDTH]" height="[HEIGHT]" beats="1600"/>
+            <slider class="64beatsstroke" width="[WIDTH]" height="[HEIGHT]" beats="1664"/>
+            <slider class="64beatsstroke" width="[WIDTH]" height="[HEIGHT]" beats="1728"/>
+            <slider class="64beatsstroke" width="[WIDTH]" height="[HEIGHT]" beats="1792"/>
+            <slider class="64beatsstroke" width="[WIDTH]" height="[HEIGHT]" beats="1856"/>
+            <slider class="64beatsstroke" width="[WIDTH]" height="[HEIGHT]" beats="1920"/>
         </define>
         <define class="songprogress" colorPlayed="black" colorHigh="colorHigh" colorMed="colorMed"
                 colorBass="colorBass">
@@ -1983,7 +1993,7 @@
                         <size width="538-10+88" height="8"/>
                         <off color="black"/>
                     </visual>
-                    <panel class="32beatsruler" x="+5" y="+122" width="538-10+88" height="7"/>
+                    <panel class="32beatsruler" x="+5" y="+122" width="538-10+88" height="7" visibility="get_songlength & param_smaller 1200 ? true : false"/>
                 </group>
                 <visual>
                     <pos x="+0" y="+0"/>
