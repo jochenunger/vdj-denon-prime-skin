@@ -1108,45 +1108,9 @@
                               action="get_bpm &amp; param_cast frac 2 &amp; param_multiply 100 &amp; param_cast &apos;00&apos;"/>
                     </textzone>
                 </group>
-                <group name="time_footer" x="+10" y="+25" visibility="loaded">
-                    <button action="nothing"
-                            query="var '@$denonblinktime' 0 ? songpos_warning ? blink 1000ms : on : on">
-                        <pos x="+0" y="+0"/>
-                        <size width="80" height="50"/>
-                        <text fontsize="40" color="buttonon2" valign="bottom" align="right"
-                              action="display_time 'remain' ? get_text '-`get_time_min`:' : get_text '`get_time_min`:'"/>
-                        <textselected fontsize="40" color="text3" valign="bottom" align="right"
-                                      action="display_time 'remain' ? get_text '-`get_time_min`:' : get_text '`get_time_min`:'"/>
-                    </button>
-                    <button action="nothing"
-                            query="var '@$denonblinktime' 0 ? songpos_warning ? blink 1000ms : on : on">
-                        <pos x="+65" y="+0"/>
-                        <size width="68" height="50"/>
-                        <text fontsize="40" color="buttonon2" valign="bottom" align="right"
-                              action="get_text &quot;`get_time_sec &amp; param_cast '00'`.&quot;"/>
-                        <textselected fontsize="40" color="text3" valign="bottom" align="right"
-                                      action="get_text &quot;`get_time_sec &amp; param_cast '00'`.&quot;"/>
-                    </button>
-                    <button action="nothing"
-                            query="var '@$denonblinktime' 0 ? songpos_warning ? blink 1000ms : on : on">
-                        <pos x="+65+68+2" y="+0"/>
-                        <size width="50" height="50"/>
-                        <text fontsize="30" color="buttonon2" valign="bottom" align="left"
-                              action="get_time_ms &amp; param_multiply 0.1 &amp; param_cast 'int_trunc'"/>
-                        <textselected fontsize="30" color="text3" valign="bottom" align="left"
-                                      action="get_time_ms &amp; param_multiply 0.1 &amp; param_cast 'int_trunc'"/>
-                    </button>
-                    <!--                    <textzone visibility="songpos_remain 30000ms ? blink 1000ms ? false : true : true">-->
-                    <!--                        <tooltip></tooltip>-->
-                    <!--                        <size width="[DWAVE_WIDTH]" height="44"/>-->
-                    <!--                        <text size="44" color="text3" align="center" action="display_time 'elapsed' ? get_time 'elapsed' : get_text '-`get_time`'"/>-->
-                    <!--                    </textzone>-->
-                    <!--                    <textzone visibility="songpos_remain 30000ms ? blink 1000ms ? true : false : false">-->
-                    <!--                        <tooltip></tooltip>-->
-                    <!--                        <size width="[DWAVE_WIDTH]" height="44"/>-->
-                    <!--                        <text size="44" color="buttonon2" align="center" action="display_time 'elapsed' ? get_time 'elapsed' : get_text '-`get_time`'"/>-->
-                    <!--                    </textzone>-->
-                </group>
+
+                <panel class="time" x="-15" y="+25" visibility="loaded" fontsize="40"/>
+
                 <group name="key_footer" x="+[DWIDTH]-80" y="+0" visibility="loaded">
                     <textzone>
                         <pos x="+5" y="+26+10-30"/>
@@ -1804,6 +1768,39 @@
             <off color="buttonon2"/>
         </define>
 
+        <define class="time" placeholders="*fontsize=46">
+            <group name="time_short" visibility="get_time & param_smaller 3600000 ? true : false">
+                <button action="nothing" query="var '@$denonblinktime' 0 ? songpos_warning ? blink 1000ms : on : on">
+                    <pos x="+0" y="+0"/>
+                    <size width="68+80+20" height="50"/>
+                    <text fontsize="[FONTSIZE]" color="buttonon2" valign="bottom" align="right" action="display_time 'remain' ? get_text &quot;-`get_time_min`:`get_time_sec &amp; param_cast '00'`.&quot; : get_text &quot;`get_time_min`:`get_time_sec &amp; param_cast '00'`.&quot;"/>
+                    <textselected fontsize="[FONTSIZE]" color="text3" valign="bottom" align="right"
+                                  action="display_time 'remain' ? get_text &quot;-`get_time_min`:`get_time_sec &amp; param_cast '00'`.&quot; : get_text &quot;`get_time_min`:`get_time_sec &amp; param_cast '00'`.&quot;"/>
+                </button>
+                <button action="nothing" query="var '@$denonblinktime' 0 ? songpos_warning ? blink 1000ms : on : on">
+                    <pos x="+20+80+68+2" y="+0"/>
+                    <size width="50" height="50"/>
+                    <text fontsize="34" color="buttonon2" valign="bottom" align="left"
+                          action="get_time_ms &amp; param_multiply 0.1 &amp; param_cast 'int_trunc'"/>
+                    <textselected fontsize="[FONTSIZE]-12" color="text3" valign="bottom" align="left"
+                                  action="get_time_ms &amp; param_multiply 0.1 &amp; param_cast 'int_trunc'"/>
+                </button>
+            </group>
+            <group name="time_long" visibility="get_time & param_smaller 3600000 ? false : true">
+                <button action="nothing" query="var '@$denonblinktime' 0 ? songpos_warning ? blink 1000ms : on : on">
+                    <pos x="+20" y="+0"/>
+                    <size width="68+80+20" height="50"/>
+                    <text fontsize="[FONTSIZE]" color="buttonon2" valign="bottom" align="right" action="display_time 'remain' ? get_text '-`get_time`' : get_text '`get_time`'"/>
+                    <textselected fontsize="[FONTSIZE]" color="text3" valign="bottom" align="right"
+                                  action="display_time 'remain' ? get_text '-`get_time`' : get_text '`get_time`'"/>
+                </button>
+            </group>
+            <button action="display_time 'remain,elapsed'">
+                <pos x="+5" y="-10"/>
+                <size width="190" height="70"/>
+            </button>
+        </define>
+
         <define class="minideckbackwide">
             <visual>
                 <pos x="+0" y="+0"/>
@@ -1880,7 +1877,7 @@
 
                 <group name="decktimes" x="+0" y="+80" visibility="loaded">
 
-                    <group name="bpm" x="+470" y="+0">
+                    <group name="bpm" x="+470" y="+5">
                         <textzone>
                             <pos x="+0" y="+0"/>
                             <size width="82+15" height="50"/>
@@ -1895,59 +1892,25 @@
                         </textzone>
                     </group>
 
-
                     <textzone>
-                        <pos x="+538-180" y="+25"/>
+                        <pos x="+538-180" y="+23"/>
                         <size width="100" height="28"/>
                         <text fontsize="28" color="text2" align="right" format="%Ppitch%"/>
                     </textzone>
 
+                    <panel class="time" x="+140" y="+5" visibility="loaded"/>
 
-                    <group name="times" x="+140" y="+0">
-
-                        <group name="time" visibility="loaded">
-                            <button action="nothing"
-                                    query="var '@$denonblinktime' 0 ? songpos_warning ? blink 1000ms : on : on">
-                                <pos x="+20" y="+0"/>
-                                <size width="80" height="50"/>
-                                <text fontsize="46" color="buttonon2" valign="bottom" align="right"
-                                      action="display_time 'remain' ? get_text '-`get_time_min`:' : get_text '`get_time_min`:'"/>
-                                <textselected fontsize="46" color="text3" valign="bottom" align="right"
-                                              action="display_time 'remain' ? get_text '-`get_time_min`:' : get_text '`get_time_min`:'"/>
-                            </button>
-                            <button action="nothing"
-                                    query="var '@$denonblinktime' 0 ? songpos_warning ? blink 1000ms : on : on">
-                                <pos x="+20+80" y="+0"/>
-                                <size width="68" height="50"/>
-                                <text fontsize="46" color="buttonon2" valign="bottom" align="right"
-                                      format="`get_time_sec &amp; param_cast '00'`."/>
-                                <textselected fontsize="46" color="text3" valign="bottom" align="right"
-                                              format="`get_time_sec &amp; param_cast '00'`."/>
-                            </button>
-                            <button action="nothing"
-                                    query="var '@$denonblinktime' 0 ? songpos_warning ? blink 1000ms : on : on">
-                                <pos x="+20+80+68+2" y="+0"/>
-                                <size width="50" height="50"/>
-                                <text fontsize="34" color="buttonon2" valign="bottom" align="left"
-                                      action="get_time_ms &amp; param_multiply 0.1 &amp; param_cast 'int_trunc'"/>
-                                <textselected fontsize="34" color="text3" valign="bottom" align="left"
-                                              action="get_time_ms &amp; param_multiply 0.1 &amp; param_cast 'int_trunc'"/>
-                            </button>
-                        </group>
-
-                        <button action="display_time 'remain,elapsed'">
-                            <pos x="+5" y="+0"/>
-                            <size width="190" height="50"/>
-                        </button>
-
-                    </group>
-
-
-                    <group name="loop" x="+85" y="+0">
+                    <group name="loop" x="+88" y="+0">
+                        <visual source="loop">
+                            <pos x="+18" y="+2"/>
+                            <size width="42" height="36"/>
+                            <off x="5" y="34"/>
+                            <on x="75" y="34"/>
+                        </visual>
                         <button action="nothing" query="loop">
                             <pos x="+0" y="+20"/>
-                            <size width="80" height="35"/>
-                            <text fontsize="30" color="settingsbuttontext" align="center" format="%loop"/>
+                            <size width="80" height="46"/>
+                            <text fontsize="30" color="#909090" align="center" format="%loop"/>
                             <textselected fontsize="30" color="text3" align="center" format="%loop"/>
                         </button>
                     </group>
@@ -2285,37 +2248,7 @@
                             <textselected fontsize="12" color="text2" align="right" text="REMAIN"/>
                         </button>
 
-                        <group name="time" visibility="loaded">
-                            <button action="nothing" query="var '@$denonblinktime' 0 ? songpos_warning ? blink 1000ms : on : on">
-                                <pos x="+20" y="+27"/>
-                                <size width="80" height="50"/>
-                                <text fontsize="46" color="buttonon2" valign="bottom" align="right"
-                                      action="display_time 'remain' ? get_text '-`get_time_min`:' : get_text '`get_time_min`:'"/>
-                                <textselected fontsize="46" color="text3" valign="bottom" align="right"
-                                              action="display_time 'remain' ? get_text '-`get_time_min`:' : get_text '`get_time_min`:'"/>
-                            </button>
-                            <button action="nothing" query="var '@$denonblinktime' 0 ? songpos_warning ? blink 1000ms : on : on">
-                                <pos x="+20+80" y="+27"/>
-                                <size width="68" height="50"/>
-                                <text fontsize="46" color="buttonon2" valign="bottom" align="right" action="get_text &quot;`get_time_sec &amp; param_cast '00'`.&quot;"/>
-                                <textselected fontsize="46" color="text3" valign="bottom" align="right"
-                                              action="get_text &quot;`get_time_sec &amp; param_cast '00'`.&quot;"/>
-                            </button>
-                            <button action="nothing" query="var '@$denonblinktime' 0 ? songpos_warning ? blink 1000ms : on : on">
-                                <pos x="+20+80+68+2" y="+27"/>
-                                <size width="50" height="50"/>
-                                <text fontsize="34" color="buttonon2" valign="bottom" align="left"
-                                      action="get_time_ms &amp; param_multiply 0.1 &amp; param_cast 'int_trunc'"/>
-                                <textselected fontsize="34" color="text3" valign="bottom" align="left"
-                                              action="get_time_ms &amp; param_multiply 0.1 &amp; param_cast 'int_trunc'"/>
-                            </button>
-                        </group>
-
-                        <button action="display_time 'remain,elapsed'">
-                            <pos x="+5" y="+5"/>
-                            <size width="190" height="80"/>
-                        </button>
-
+                        <panel class="time" y="+27" visibility="loaded"/>
                     </group>
 
                     <group name="loop" x="+75" y="+0">
@@ -2432,35 +2365,7 @@
                 </group>
                 <button class="needlelockwide" x="+5" y="+65"/>
 
-                <group name="tinytime" x="+30" y="+7" visibility="songpos_remain 30%">
-                    <button action="nothing"
-                            query="var '@$denonblinktime' 0 ? songpos_warning ? blink 1000ms : on : on">
-                        <pos x="+20" y="+0"/>
-                        <size width="80" height="40"/>
-                        <text fontsize="46" color="buttonon2" valign="bottom" align="right"
-                              action="display_time 'remain' ? get_text '-`get_time_min`:' : get_text '`get_time_min`:'"/>
-                        <textselected fontsize="46" color="text3" valign="bottom" align="right"
-                                      action="display_time 'remain' ? get_text '-`get_time_min`:' : get_text '`get_time_min`:'"/>
-                    </button>
-                    <button action="nothing"
-                            query="var '@$denonblinktime' 0 ? songpos_warning ? blink 1000ms : on : on">
-                        <pos x="+20+80" y="+0"/>
-                        <size width="68" height="40"/>
-                        <text fontsize="46" color="buttonon2" valign="bottom" align="right"
-                              action="get_text &quot;`get_time_sec &amp; param_cast '00'`.&quot;"/>
-                        <textselected fontsize="46" color="text3" valign="bottom" align="right"
-                                      action="get_text &quot;`get_time_sec &amp; param_cast '00'`.&quot;"/>
-                    </button>
-                    <button action="nothing"
-                            query="var '@$denonblinktime' 0 ? songpos_warning ? blink 1000ms : on : on">
-                        <pos x="+20+80+68+2" y="+0"/>
-                        <size width="50" height="40"/>
-                        <text fontsize="34" color="buttonon2" valign="bottom" align="left"
-                              action="get_time_ms &amp; param_multiply 0.1 &amp; param_cast 'int_trunc'"/>
-                        <textselected fontsize="34" color="text3" valign="bottom" align="left"
-                                      action="get_time_ms &amp; param_multiply 0.1 &amp; param_cast 'int_trunc'"/>
-                    </button>
-                </group>
+                <panel class="time" x="+30" y="+5" visibility="songpos_remain 35%"/>
             </deck>
         </define>
 
