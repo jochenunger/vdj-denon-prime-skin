@@ -737,6 +737,32 @@
             </define>
         </group>
 
+        <define class="waveoverlayh" placeholders="*swidth,*sheight">
+            <group visibility="setting 'WaveformCenter' 'Centered'">
+                <visual>
+                    <pos x="+[SWIDTH]/2-1-1" y="-1"/>
+                    <size width="5" height="[SHEIGHT]+20+2"/>
+                    <off color="black"/>
+                </visual>
+                <visual>
+                    <pos x="+[SWIDTH]/2-1" y="+0"/>
+                    <size width="3" height="[SHEIGHT]+20"/>
+                    <off color="white"/>
+                </visual>
+            </group>
+            <group visibility="setting 'WaveformCenter' 'Left'">
+                <visual>
+                    <pos x="+[SWIDTH]/4-1-1" y="-1"/>
+                    <size width="5" height="[SHEIGHT]+20+2"/>
+                    <off color="black"/>
+                </visual>
+                <visual>
+                    <pos x="+[SWIDTH]/4-1" y="+0"/>
+                    <size width="3" height="[SHEIGHT]+20"/>
+                    <off color="white"/>
+                </visual>
+            </group>
+        </define>
         <define class="scratchwh" placeholders="deckn,*swidth=1260,*sheight=100">
             <deck deck="[DECKN]">
                 <group visibility="loaded">
@@ -751,12 +777,8 @@
                             <text dx="20" dy="-2" size="20"/>
                             <mask width="24" height="21" x="31" y="187"/>
                         </cue>
-                        <overlay>
-                            <pos x="+[SWIDTH]/2-1" y="-15"/>
-                            <size width="3" height="[SHEIGHT]+20"/>
-                            <background color="white" shape="square"/>
-                        </overlay>
                     </scratchwave>
+                    <panel class="waveoverlayh" swidth="[SWIDTH]" sheight="[SHEIGHT]"/>
                     <panel visibility="var '@$denonwavebeats' 1 &amp;&amp; loaded">
                         <visual visibility="50%">
                             <pos x="+30" y="+15"/>
@@ -788,12 +810,8 @@
                             <text dx="20" dy="-2" size="20"/>
                             <mask width="24" height="21" x="31" y="187"/>
                         </cue>
-                        <overlay>
-                            <pos x="+[SWIDTH]/2-1" y="-15"/>
-                            <size width="3" height="[SHEIGHT]+20"/>
-                            <background color="white" shape="square"/>
-                        </overlay>
                     </scratchwave>
+                    <panel class="waveoverlayh" swidth="[SWIDTH]" sheight="[SHEIGHT]"/>
                     <panel visibility="var '@$denonwavebeats' 1 &amp;&amp; loaded">
                         <visual visibility="50%">
                             <pos x="+30" y="+15"/>
@@ -815,6 +833,32 @@
             <size width="1280-20" height="[SHEIGHT]"/>
         </define>
 
+        <define class="waveoverlayv" placeholders="*swidth,*sheight">
+            <group visibility="setting 'WaveformCenter' 'Centered'">
+                <visual>
+                    <pos x="-1" y="+[SHEIGHT]/2-1"/>
+                    <size width="[SWIDTH]+2" height="6"/>
+                    <off color="black"/>
+                </visual>
+                <visual>
+                    <pos x="+0" y="+[SHEIGHT]/2"/>
+                    <size width="[SWIDTH]" height="4"/>
+                    <off color="white"/>
+                </visual>
+            </group>
+            <group visibility="setting 'WaveformCenter' 'Left'">
+                <visual>
+                    <pos x="-1" y="-1+[SHEIGHT]/4-1"/>
+                    <size width="[SWIDTH]+2" height="6"/>
+                    <off color="black"/>
+                </visual>
+                <visual>
+                    <pos x="+0" y="+[SHEIGHT]/4"/>
+                    <size width="[SWIDTH]" height="4"/>
+                    <off color="white"/>
+                </visual>
+            </group>
+        </define>
         <define class="scratchwvertical" placeholders="deckn,swidth,*sheight,*disableWaveBeats=false">
             <deck deck="[DECKN]">
                 <group visibility="loaded">
@@ -828,12 +872,8 @@
                             <text dy="-2" dx="20" size="20"/>
                             <mask width="24" height="21" x="31" y="187"/>
                         </cue>
-                        <overlay>
-                            <pos x="-16" y="+[SHEIGHT]*1/2"/>
-                            <size width="[SWIDTH]+4" height="4"/>
-                            <background color="white" shape="square"/>
-                        </overlay>
                     </scratchwave>
+                    <panel class="waveoverlayv" swidth="[SWIDTH]" sheight="[SHEIGHT]"/>
                     <panel visibility="var '@$denonwavebeats' 1 &amp;&amp; loaded &amp;&amp; not [DISABLEWAVEBEATS]">
                         <visual visibility="50%">
                             <pos x="+0" y="+70"/>
@@ -866,12 +906,8 @@
                             <text dy="20" dx="-2" size="20"/>
                             <mask width="24" height="21" x="31" y="187"/>
                         </cue>
-                        <overlay>
-                            <pos x="-16" y="+[SHEIGHT]*1/2"/>
-                            <size width="[SWIDTH]+4" height="4"/>
-                            <background color="white" shape="square"/>
-                        </overlay>
                     </scratchwave>
+                    <panel class="waveoverlayv" swidth="[SWIDTH]" sheight="[SHEIGHT]"/>
                     <panel visibility="var '@$denonwavebeats' 1 &amp;&amp; loaded &amp;&amp; not [DISABLEWAVEBEATS]">
                         <visual visibility="50%">
                             <pos x="+0" y="+70"/>
@@ -2509,10 +2545,22 @@
                     <search background="white" border="prelistenborder" selected="text" text="white" cursor="white"/>
                     <fontsearch fontsize="16"/>
                 </browsertoolbar>
-                <filelist class="primebrowser" headerheight="[LINEHEIGHT]" lineheight="[LINEHEIGHT]">
-                    <pos x="+0" y="+50"/>
-                    <size width="[BRWIDTH]" height="[BRHEIGHT]-50"/>
-                </filelist>
+                <group visibility="setting 'coverFlow' 0 ? false : true">
+                    <filelist class="primebrowser" headerheight="[LINEHEIGHT]" lineheight="[LINEHEIGHT]">
+                        <pos x="+0" y="+50+200"/>
+                        <size width="[BRWIDTH]" height="[BRHEIGHT]-50-200"/>
+                    </filelist>
+                    <coverflow>
+                        <pos x="+0" y="+50"/>
+                        <size width="[BRWIDTH]" height="200"/>
+                    </coverflow>
+                </group>
+                <group visibility="setting 'coverFlow' 0 ? true : false">
+                    <filelist class="primebrowser" headerheight="[LINEHEIGHT]" lineheight="[LINEHEIGHT]">
+                        <pos x="+0" y="+50"/>
+                        <size width="[BRWIDTH]" height="[BRHEIGHT]-50"/>
+                    </filelist>
+                </group>
             </panel>
 
             <panel name="folders" visibility="browser_window 'folders'">
