@@ -2547,13 +2547,24 @@
                 </browsertoolbar>
                 <group visibility="setting 'coverFlow' 0 ? false : true">
                     <filelist class="primebrowser" headerheight="[LINEHEIGHT]" lineheight="[LINEHEIGHT]">
-                        <pos x="+0" y="+50+200"/>
-                        <size width="[BRWIDTH]" height="[BRHEIGHT]-50-200"/>
+                        <pos x="+0" y="+50"/>
+                        <size width="[BRWIDTH]" height="[BRHEIGHT]-50-400"/>
                     </filelist>
                     <coverflow>
-                        <pos x="+0" y="+50"/>
-                        <size width="[BRWIDTH]" height="200"/>
+                        <pos x="+0" y="[BRHEIGHT]-400+10"/>
+                        <size width="[BRWIDTH]" height="400-10"/>
                     </coverflow>
+                    <visual visibility="80%">
+                        <pos x="+0" y="[BRHEIGHT]-80"/>
+                        <size width="[BRWIDTH]" height="80"/>
+                        <off color="buttonoff"/>
+                    </visual>
+                    <textzone group="vertical" align="left" scroll="yes">
+                        <pos x="+10" y="[BRHEIGHT]-80"/>
+                        <size width="[BRWIDTH]-20" height="80"/>
+                        <text fontsize="30" color="text3" action="get_browsed_song 'title_remix'"/>
+                        <text fontsize="25" color="text4" action="get_browsed_song 'artist'"/>
+                    </textzone>
                 </group>
                 <group visibility="setting 'coverFlow' 0 ? true : false">
                     <filelist class="primebrowser" headerheight="[LINEHEIGHT]" lineheight="[LINEHEIGHT]">
