@@ -1067,6 +1067,13 @@
                             <text fontsize="18" color="settingsbuttontext" action="get_featuring_after_artist"/>
                         </textzone>
                     </panel>
+                    <group visibility="get_loaded_song 'Already Played' & param_equal 1 ? true : false">
+                        <visual visibility="60%">
+                            <pos x="+0" y="+0"/>
+                            <size width="[DWIDTH]" height="[DHEIGHT]"/>
+                            <off color="panelback"/>
+                        </visual>
+                    </group>
                 </panel>
             </deck>
         </define>
@@ -1855,8 +1862,8 @@
 
                     <panel visibility="var '@$primeshowalbum' 1">
                         <cover>
-                            <pos x="+64+5" y="+2"/>
-                            <size width="37" height="37"/>
+                            <pos x="+54" y="+0"/>
+                            <size width="40" height="40"/>
                         </cover>
                         <textzone group="horizontal" scroll="no">
                             <pos x="+64+5+47" y="+2"/>
@@ -1867,6 +1874,13 @@
                     </panel>
 
                 </panel>
+                <group visibility="get_loaded_song 'Already Played' & param_equal 1 ? true : false">
+                    <visual visibility="60%">
+                        <pos x="+54" y="+0"/>
+                        <size width="485+88" height="41"/>
+                        <off color="panelback"/>
+                    </visual>
+                </group>
 
                 <songpos class="songprogressshortwide" x="+5" y="+43"
                          visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? false : true : true"/>
@@ -2092,7 +2106,13 @@
                                 </button>
                             </panel>
 
-
+                            <group visibility="get_loaded_song 'Already Played' & param_equal 1 ? true : false">
+                                <visual visibility="60%">
+                                    <pos x="+54" y="+0"/>
+                                    <size width="485+89" height="71-10"/>
+                                    <off color="panelback"/>
+                                </visual>
+                            </group>
                         </panel>
 
                         <panel visibility="var 'keydisplay' 0 ? var 'showtrackinfo' 1">
