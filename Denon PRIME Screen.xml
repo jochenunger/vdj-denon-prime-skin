@@ -2545,7 +2545,40 @@
                     <search background="white" border="prelistenborder" selected="text" text="white" cursor="white"/>
                     <fontsearch fontsize="16"/>
                 </browsertoolbar>
-                <group visibility="setting 'coverFlow' 0 ? false : true">
+                <group visibility="var '@$primebrowsercoverflow' 0 ? true : var '@$primebrowserinfo' 1 ? true : false">
+                    <filelist class="primebrowser" headerheight="[LINEHEIGHT]" lineheight="[LINEHEIGHT]">
+                        <pos x="+0" y="+50"/>
+                        <size width="[BRWIDTH]" height="[BRHEIGHT]-50"/>
+                    </filelist>
+                </group>
+                <group visibility="var '@$primebrowsercoverflow' 1 && var '@$primebrowserinfo' 0">
+                    <filelist class="primebrowser" headerheight="[LINEHEIGHT]" lineheight="[LINEHEIGHT]">
+                        <pos x="+300+2" y="+50"/>
+                        <size width="[BRWIDTH]-300-2" height="[BRHEIGHT]-50"/>
+                    </filelist>
+                    <coverflow>
+                        <pos x="+0" y="+50+2"/>
+                        <size width="300" height="[BRHEIGHT]-270"/>
+                    </coverflow>
+                    <visual visibility="80%">
+                        <pos x="+0" y="+50+[BRHEIGHT]-270"/>
+                        <size width="300" height="80"/>
+                        <off color="buttonoff"/>
+                    </visual>
+                    <textzone group="vertical" align="left" scroll="now">
+                        <pos x="+0" y="+50+[BRHEIGHT]-270"/>
+                        <size width="300" height="200"/>
+                        <text fontsize="30" color="text3" action="get_browsed_song 'title_remix'"/>
+                        <text fontsize="5" color="text4" text=""/>
+                        <text fontsize="25" color="text3" action="get_browsed_song 'artist'"/>
+                        <text fontsize="25" color="text4" action="get_browsed_song 'genre'"/>
+                        <text fontsize="25" color="text4" action="get_browsed_song 'bpm'"/>
+                        <text fontsize="5" color="text4" text=""/>
+                        <text fontsize="25" color="text4" action="get_browsed_song 'User 1'"/>
+                        <text fontsize="25" color="text4" action="get_browsed_song 'User 2'"/>
+                    </textzone>
+                </group>
+                <group visibility="var '@$primebrowsercoverflow' 2">
                     <filelist class="primebrowser" headerheight="[LINEHEIGHT]" lineheight="[LINEHEIGHT]">
                         <pos x="+0" y="+50"/>
                         <size width="[BRWIDTH]" height="[BRHEIGHT]-50-400"/>
@@ -2565,12 +2598,6 @@
                         <text fontsize="30" color="text3" action="get_browsed_song 'title_remix'"/>
                         <text fontsize="25" color="text4" action="get_browsed_song 'artist'"/>
                     </textzone>
-                </group>
-                <group visibility="setting 'coverFlow' 0 ? true : false">
-                    <filelist class="primebrowser" headerheight="[LINEHEIGHT]" lineheight="[LINEHEIGHT]">
-                        <pos x="+0" y="+50"/>
-                        <size width="[BRWIDTH]" height="[BRHEIGHT]-50"/>
-                    </filelist>
                 </group>
             </panel>
 
@@ -2977,7 +3004,7 @@
                 <icon sysicon="stop" width="48" height="48" coloroff="darkgreen" colordown="darkgreen"
                       colorselected="darkgreen"/>
             </button>
-            <button action="toggle '@$primebrowserinfo'">
+            <button action="holding ? toggle '@$primebrowsercoverflow' : toggle '@$primebrowserinfo'">
                 <pos x="+0" y="+80+80+80+80"/>
                 <size width="80" height="70"/>
                 <off color="buttonoff3" border_size="2" border="black"/>
@@ -4135,7 +4162,7 @@
                        action2="setting 'SkinWaveformScratchType' 'Colors' &amp; setting 'SkinWaveformType' 'Colors'"/>
 
                 <panel class="denonsetting" x="200" y="120+80+80" text="Wave Size" text1="Half" text2="Full"
-                       action3="set '$denonsetwave' 5"
+                       action3="set '$denonsetwave' 6"
                        action1="set '@$denonwavehalf' 1"
                        action2="set '@$denonwavehalf' 0"/>
 
@@ -4204,6 +4231,11 @@
                     <size width="1280-30-240" height="60"/>
                     <text fontsize="21" align="left" color="text" text="Show or Hide  Bar : Beats  numbers on Waves"/>
                 </textzone>
+                <textzone visibility="var '$denonsetwave' 6">
+                    <pos x="240" y="800-115"/>
+                    <size width="1280-30-240" height="60"/>
+                    <text fontsize="21" align="left" color="text" text="Show the songposition waveform half or full."/>
+                </textzone>
             </panel>
 
             <panel name="DNS2_browser" group="DNS2_settings" visible="no">
@@ -4220,11 +4252,28 @@
                 <panel class="denonsetting" x="200" y="120+80+80+80+80" text="Append when adding to Sideview" text1="No"
                        text2="Yes" action3="set '$denonsetbrowser' 3" action1="set '@$primelistappend' 0"
                        action2="set '@$primelistappend' 1"/>
-                <panel class="denonsettingq" x="200" y="120+80+80+80+80+80" text="2 Fingers Scroll" text1="No" text2="Yes"
+                <panel class="denonsetting" x="200" y="120+80+80+80+80+80" text="2 Fingers Scroll" text1="No" text2="Yes"
                        action3="set '$denonsetbrowser' 4" action1="setting 'multiTouchTwoFingerScroll' 0"
                        action2="setting 'multiTouchTwoFingerScroll' 1"
                        query1="setting 'multiTouchTwoFingerScroll' ? off : on"
                        query2="setting 'multiTouchTwoFingerScroll'"/>
+                <panel class="denonsetting" x="200" y="120+80+80+80+80+80+80" text="Cover Flow" text1="Off" text2="3D"
+                       action3="set '$denonsetbrowser' 5" action1="set '@$primebrowsercoverflow' 0"
+                       action2="set '@$primebrowsercoverflow' 1">
+                    <button/>
+                    <button>
+                        <size width="370" height="70"/>
+                    </button>
+                    <button/>
+                    <button/>
+<!--                    <button action="setting 'PRIMEGO-MicAttenuation' '0db' &amp; set '$denonsetmic' 0">-->
+<!--                        <pos x="+600-220" y="+0"/>-->
+<!--                        <size width="200" height="70"/>-->
+<!--                        <text dx="4" width="192" fontsize="26" align="center" color="settingsbuttontext" text="0db"/>-->
+<!--                        <off color="buttonoff3" border_size="2" border="black"/>-->
+<!--                        <on color="buttonon3" border_size="2" border="black"/>-->
+<!--                    </button>-->
+                </panel>
 
                 <textzone visibility="var '$denonsetbrowser' 0">
                     <pos x="240" y="800-115"/>
