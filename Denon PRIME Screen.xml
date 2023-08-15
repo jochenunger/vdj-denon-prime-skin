@@ -2040,7 +2040,7 @@
                         <size width="538-10+88" height="8"/>
                         <off color="black"/>
                     </visual>
-                    <panel class="32beatsruler" x="+5" y="+122" width="538-10+88" height="7" visibility="get_songlength & param_smaller 1200 ? true : false"/>
+                    <panel class="32beatsruler" x="+5-2" y="+122" width="538-10+88" height="7" visibility="get_songlength & param_smaller 1200 ? true : false"/>
                 </group>
                 <visual>
                     <pos x="+0" y="+0"/>
