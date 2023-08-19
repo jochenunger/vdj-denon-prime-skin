@@ -2021,6 +2021,7 @@
                              visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? false : true : true"/>
                     <songpos class="songprogresscolorswide" x="+5" y="+65" dheight="60" dwidth="538-10+88"
                              visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? true : false : false"/>
+                    <panel class="32beatsruler" x="+5-2" y="+63" width="538-10+88" height="7" visibility="get_songlength & param_smaller 1200 ? true : false"/>
                 </group>
                 <group visibility="var '@$denonwavehalf' 1">
                     <group visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? false : true : true">
@@ -2432,6 +2433,7 @@
                              visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? false : true : true"/>
                     <songpos class="songprogresscolorswide" x="+55" y="+0" dheight="60" dwidth="538-10+88-55"
                              visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? true : false : false"/>
+                    <panel class="32beatsruler" x="+55-2" y="-0" width="538-10+88-55" height="7" visibility="get_songlength & param_smaller 1200 ? true : false"/>
                 </group>
                 <group visibility="var '@$denonwavehalf' 1">
                     <group visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? false : true : true">
@@ -2440,6 +2442,7 @@
                     <group visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? true : false : false">
                         <songpos class="songprogresscolorswidehalf" x="+55" y="+0" dheight="135" cueheight="135-10" dwidth="538-10+88-55"/>
                     </group>
+                    <panel class="32beatsruler" x="+55-2" y="-0" width="538-10+88-55" height="7" visibility="get_songlength & param_smaller 1200 ? true : false"/>
                     <visual>
                         <pos x="+55" y="+59"/>
                         <size width="538-10+88-55" height="80"/>
