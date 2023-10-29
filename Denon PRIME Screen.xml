@@ -584,41 +584,6 @@
             </loops>
         </define>
 
-        <define class="songprogresswidehalf" colorPlayed="black" colorHigh="colorHigh" colorMed="colorMed"
-                colorBass="colorBass" placeholders="dwidth,*dheight,*cueheight">
-            <size width="[DWIDTH]" height="[DHEIGHT]"/>
-            <wave>
-                <size height="[DHEIGHT]-10"/>
-                <pos y="+5"/>
-            </wave>
-            <cues dy="-5" shade="0">
-                <size width="18" height="[CUEHEIGHT]"/>
-                <clipmask x="30" y="107"/>
-            </cues>
-            <loops dy="-5">
-                <size width="22" height="[DHEIGHT]"/>
-                <clipmask x="74" y="107"/>
-            </loops>
-        </define>
-
-        <define class="songprogresscolorswidehalf" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat"
-                colorNoVocal="colorNoVocal" colorNoInstru="colorNoInstru" colorNoBeat="colorNoBeatSongPos"
-                colorPlayed="black" placeholders="dwidth,*dheight,*cueheight">
-            <size width="[DWIDTH]" height="[DHEIGHT]"/>
-            <wave>
-                <size height="[DHEIGHT]-10"/>
-                <pos y="+5"/>
-            </wave>
-            <cues dy="+10" shade="0">
-                <size width="18" height="[CUEHEIGHT]"/>
-                <clipmask x="30" y="107"/>
-            </cues>
-            <loops dy="-5">
-                <size width="22" height="[DHEIGHT]"/>
-                <clipmask x="74" y="107"/>
-            </loops>
-        </define>
-
         <define class="songprogressshort" colorPlayed="black" colorHigh="colorHigh" colorMed="colorMed"
                 colorBass="colorBass">
             <size width="538-10" height="24"/>
@@ -2024,24 +1989,11 @@
                     <panel class="32beatsruler" x="+5-2" y="+63" width="538-10+88" height="7" visibility="get_songlength & param_smaller 1200 ? true : false"/>
                 </group>
                 <group visibility="var '@$denonwavehalf' 1">
-                    <group visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? false : true : true">
-                        <songpos class="songprogresswidehalf" x="+5" y="+65" dheight="135" cueheight="135-10" dwidth="538-10+88"/>
-                    </group>
-                    <group visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? true : false : false">
-                        <songpos class="songprogresscolorswidehalf" x="+5" y="+65" dheight="135" cueheight="135-10" dwidth="538-10+88"/>
-                        <songpos class="songprogresscolorswidehalf" x="+5" y="+8" dheight="70" cueheight="0" dwidth="538-10+88"/>
-                    </group>
-                    <visual>
-                        <pos x="+5" y="+15"/>
-                        <size width="538-10+88" height="51"/>
-                        <off color="black"/>
-                    </visual>
-                    <visual>
-                        <pos x="+5" y="+122"/>
-                        <size width="538-10+88" height="8"/>
-                        <off color="black"/>
-                    </visual>
-                    <panel class="32beatsruler" x="+5-2" y="+122" width="538-10+88" height="7" visibility="get_songlength & param_smaller 1200 ? true : false"/>
+                    <songpos class="songprogresswide" x="+5" y="+65" dheight="60" dwidth="538-10+88" half = "yes"
+                             visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? false : true : true"/>
+                    <songpos class="songprogresscolorswide" x="+5" y="+65" dheight="60" dwidth="538-10+88" half = "yes"
+                             visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? true : false : false"/>
+                    <panel class="32beatsruler" x="+5-2" y="+63" width="538-10+88" height="7" visibility="get_songlength & param_smaller 1200 ? true : false"/>
                 </group>
                 <visual>
                     <pos x="+0" y="+0"/>
@@ -2436,23 +2388,11 @@
                     <panel class="32beatsruler" x="+55-2" y="-0" width="538-10+88-55" height="7" visibility="get_songlength & param_smaller 1200 ? true : false"/>
                 </group>
                 <group visibility="var '@$denonwavehalf' 1">
-                    <group visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? false : true : true">
-                        <songpos class="songprogresswidehalf" x="+55" y="+0" dheight="135" cueheight="135-10" dwidth="538-10+88-55"/>
-                    </group>
-                    <group visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? true : false : false">
-                        <songpos class="songprogresscolorswidehalf" x="+55" y="+0" dheight="135" cueheight="135-10" dwidth="538-10+88-55"/>
-                    </group>
+                    <songpos class="songprogresswide" x="+55" y="+0" dheight="60" dwidth="538-10+88-55" half = "yes"
+                             visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? false : true : true"/>
+                    <songpos class="songprogresscolorswide" x="+55" y="+0" dheight="60" dwidth="538-10+88-55" half = "yes"
+                             visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? true : false : false"/>
                     <panel class="32beatsruler" x="+55-2" y="-0" width="538-10+88-55" height="7" visibility="get_songlength & param_smaller 1200 ? true : false"/>
-                    <visual>
-                        <pos x="+55" y="+59"/>
-                        <size width="538-10+88-55" height="80"/>
-                        <off color="black"/>
-                    </visual>
-                    <visual>
-                        <pos x="+55" y="+125"/>
-                        <size width="538-10+88-55" height="5"/>
-                        <off color="black"/>
-                    </visual>
                 </group>
                 <button class="needlelockwide" x="+5" y="+65"/>
 
