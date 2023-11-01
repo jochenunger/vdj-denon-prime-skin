@@ -318,9 +318,9 @@
         <define class="padbuttonwide" placeholders="action,rightclick,textaction,sourcecolor,textsize=20">
             <button action="[ACTION]" rightclick="[RIGHTCLICK]">
                 <size width="140" height="51"/>
-                <off color="buttonoff" shape="square" border="bordercolor" border_size="2"/>
-                <selected color="buttonon" shape="square" border="deckcolordark" border_size="2"/>
-                <down color="buttonon" shape="square" border="deckcolordark" border_size="2"/>
+                <off radius="6" color="buttonoff" shape="square" border="bordercolor" border_size="2"/>
+                <selected radius="6" color="buttonon" shape="square" border="deckcolordark" border_size="2"/>
+                <down radius="6" color="buttonon" shape="square" border="deckcolordark" border_size="2"/>
                 <text dx="+4" dy="-7" width="140-8" fontsize="[TEXTSIZE]" color="text2" colorselected="padbuttontextselected"
                       colordown="padbuttontextselected" align="center" action="[TEXTACTION]"/>
             </button>
@@ -334,9 +334,9 @@
                 placeholders="action,rightclick,important=true,textaction,sourcecolor,textsize=16">
             <button action="[ACTION]" rightclick="[RIGHTCLICK]">
                 <size width="110" height="42"/>
-                <off color="buttonoff" shape="square" border="bordercolor" border_size="2"/>
-                <selected color="buttonon" shape="square" border="deckcolordark" border_size="2"/>
-                <down color="buttonon" shape="square" border="deckcolordark" border_size="2"/>
+                <off radius="6" color="buttonoff" shape="square" border="bordercolor" border_size="2"/>
+                <selected radius="6" color="buttonon" shape="square" border="deckcolordark" border_size="2"/>
+                <down radius="6" color="buttonon" shape="square" border="deckcolordark" border_size="2"/>
                 <text dx="+4" dy="-7" width="102" fontsize="[TEXTSIZE]" color="text2" colorselected="padbuttontextselected"
                       colordown="padbuttontextselected" align="center" action="[TEXTACTION]" important="[IMPORTANT]"/>
             </button>
@@ -357,9 +357,9 @@
 
         <define class="custombutton" placeholders="textaction">
             <size width="90" height="50"/>
-            <off color="buttonoff" shape="square" border="bordercolor" border_size="2"/>
-            <selected color="buttonon" shape="square" border="deckcolordark" border_size="2"/>
-            <down color="buttonon" shape="square" border="deckcolordark" border_size="2"/>
+            <off radius="6" color="buttonoff" shape="square" border="bordercolor" border_size="2"/>
+            <selected radius="6" color="buttonon" shape="square" border="deckcolordark" border_size="2"/>
+            <down radius="6" color="buttonon" shape="square" border="deckcolordark" border_size="2"/>
             <text dx="+2" width="86" fontsize="18" color="text2" colorselected="padbuttontextselected" colordown="padbuttontextselected"
                   align="center" action="[TEXTACTION]" scroll="yes"/>
         </define>
@@ -395,21 +395,21 @@
 
         <define class="fxbutton" placeholders="textaction,textsize=18">
             <size width="150" height="40"/>
-            <off color="fxseldark" shape="square" border="bordercolor" border_size="2"/>
+            <off radius="6" color="fxseldark" shape="square" border="bordercolor" border_size="2"/>
             <text dx="5" width="140" fontsize="[TEXTSIZE]" color="text2" colorselected="padbuttontextselected" align="center" action="[TEXTACTION]"/>
         </define>
         <define class="fxbuttonwideglobal" placeholders="textaction,textsize=18">
             <size width="200" height="40"/>
-            <off color="fxseldark" shape="square" border="panelback" border_size="2"/>
-            <selected color="fxseldark" shape="square" border="panelback" border_size="2"/>
+            <off radius="6" color="fxseldark" shape="square" border="panelback" border_size="2"/>
+            <selected radius="6" color="buttonoff4" shape="square" border="panelback" border_size="2"/>
             <text dx="5" width="190" fontsize="[TEXTSIZE]" color="text2" colorselected="padbuttontextselected" colordown="padbuttontextselected" align="center"
                   action="[TEXTACTION]"/>
             <textselected dx="5" width="190" fontsize="[TEXTSIZE]" color="white" align="center" action="[TEXTACTION]"/>
         </define>
         <define class="fxbuttonwideglobalon" placeholders="textaction,textsize=18">
             <size width="200" height="40"/>
-            <off color="fxseldark" shape="square" border="panelback" border_size="2"/>
-            <selected color="buttonoff4" shape="square" border="panelback" border_size="2"/>
+            <off radius="6" color="fxseldark" shape="square" border="panelback" border_size="2"/>
+            <selected radius="6" color="fixedbutton" shape="square" border="panelback" border_size="2"/>
             <text dx="5" width="190" fontsize="[TEXTSIZE]" color="text2" colorselected="padbuttontextselected" colordown="padbuttontextselected" align="center"
                   action="[TEXTACTION]"/>
             <textselected dx="5" width="190" fontsize="[TEXTSIZE]" color="white" align="center" action="[TEXTACTION]"/>
@@ -417,8 +417,8 @@
 
         <define class="fxbuttonon" placeholders="*icon=chevrondown">
             <size width="80" height="80"/>
-            <off color="buttonoff3" shape="square"/>
-            <selected color="buttonoff3" shape="square"/>
+            <off radius="6" color="buttonoff3" shape="square"/>
+            <selected radius="6" color="buttonoff3" shape="square"/>
             <icon sysicon="[ICON]" width="40" height="40" coloroff="text2" colorselected="#ffffff"/>
         </define>
 
@@ -463,22 +463,22 @@
             <visual>
                 <pos x="+0" y="+0"/>
                 <size width="[SWIDTH]" height="48"/>
-                <off color="black" shape="square"/>
+                <off radius="6" color="black" shape="square"/>
             </visual>
             <slider action="[ACTION]" frommiddle="[FROMMIDDLE]" disabled="[DISABLED]" orientation="horizontal"
                     visibility="effect_active">
                 <pos x="+10" y="+10"/>
                 <size width="[SWIDTH]-20" height="28"/>
-                <off color="black" shape="square"/>
-                <on color="deckcolordark" shape="square"/>
+                <off radius="6" color="black" shape="square"/>
+                <on radius="6" color="deckcolordark" shape="square"/>
                 <fader color="white" width="2" height="28"/>
             </slider>
             <slider action="[ACTION]" frommiddle="[FROMMIDDLE]" disabled="[DISABLED]" orientation="horizontal"
                     visibility="not effect_active">
                 <pos x="+10" y="+10"/>
                 <size width="[SWIDTH]-20" height="28"/>
-                <off color="black" shape="square"/>
-                <on color="text" shape="square"/>
+                <off radius="6" color="black" shape="square"/>
+                <on radius="6" color="text" shape="square"/>
                 <fader color="white" width="2" height="28"/>
             </slider>
         </define>
@@ -721,7 +721,7 @@
         <group name="button defines">
             <define class="browserextend">
                 <size width="80" height="70"/>
-                <off color="buttonoff3" border_size="2" border="black"/>
+                <off radius="6" color="buttonoff3" border_size="2" border="black"/>
                 <icon x="296" y="121" width="35" height="22" coloroff="#808080" colorselected="text2"/>
             </define>
         </group>
@@ -1644,8 +1644,8 @@
                         visibility="deck 1 leftdeck ? true : false">
                     <pos x="+20" y="+17"/>
                     <size width="50" height="50"/>
-                    <off color="fxseldark" shape="square" border="bordercolor" border_size="2"/>
-                    <selected color="deckcolordark" shape="square" border="bordercolor" border_size="2"/>
+                    <off radius="6" color="fxseldark" shape="square" border="bordercolor" border_size="2"/>
+                    <selected radius="6" color="deckcolorbright" shape="square" border="bordercolor" border_size="2"/>
                     <text fontsize="18" color="text2" colorselected="padbuttontextselected" colordown="padbuttontextselected" align="center" text="1"/>
                 </button>
             </deck>
@@ -1654,8 +1654,8 @@
                         visibility="deck 3 leftdeck ? true : false">
                     <pos x="+20" y="+17"/>
                     <size width="50" height="50"/>
-                    <off color="fxseldark" shape="square" border="bordercolor" border_size="2"/>
-                    <selected color="deckcolordark" shape="square" border="bordercolor" border_size="2"/>
+                    <off radius="6" color="fxseldark" shape="square" border="bordercolor" border_size="2"/>
+                    <selected radius="6" color="deckcolorbright" shape="square" border="bordercolor" border_size="2"/>
                     <text fontsize="18" color="text2" colorselected="padbuttontextselected" colordown="padbuttontextselected" align="center" text="3"/>
                 </button>
             </deck>
@@ -1707,8 +1707,8 @@
                         visibility="deck 2 rightdeck ? true : false">
                     <pos x="+1280-40-50" y="+17"/>
                     <size width="50" height="50"/>
-                    <off color="fxseldark" shape="square" border="bordercolor" border_size="2"/>
-                    <selected color="deckcolordark" shape="square" border="bordercolor" border_size="2"/>
+                    <off radius="6" color="fxseldark" shape="square" border="bordercolor" border_size="2"/>
+                    <selected radius="6" color="deckcolorbright" shape="square" border="bordercolor" border_size="2"/>
                     <text fontsize="18" color="text2" colorselected="padbuttontextselected" colordown="padbuttontextselected" align="center" text="2"/>
                 </button>
             </deck>
@@ -1717,8 +1717,8 @@
                         visibility="deck 4 rightdeck ? true : false">
                     <pos x="+1280-40-50" y="+17"/>
                     <size width="50" height="50"/>
-                    <off color="fxseldark" shape="square" border="bordercolor" border_size="2"/>
-                    <selected color="deckcolordark" shape="square" border="bordercolor" border_size="2"/>
+                    <off radius="6" color="fxseldark" shape="square" border="bordercolor" border_size="2"/>
+                    <selected radius="6" color="deckcolorbright" shape="square" border="bordercolor" border_size="2"/>
                     <text fontsize="18" color="text2" colorselected="padbuttontextselected" colordown="padbuttontextselected" align="center" text="4"/>
                 </button>
             </deck>
@@ -2879,9 +2879,9 @@
 
         <define class="browserfontoption" action="toggle '$prbrowsersetbut'">
             <size width="80" height="70"/>
-            <off color="buttonoff3" border_size="2" border="black"/>
-            <on color="buttonoff3" border_size="2" border="black"/>
-            <down color="buttonoff4" border_size="2" border="bordercolor2"/>
+            <off radius="6" color="buttonoff3" border_size="2" border="black"/>
+            <on radius="6" color="buttonoff3" border_size="2" border="black"/>
+            <down radius="6" color="buttonoff4" border_size="2" border="bordercolor2"/>
             <icon x="401" y="120" width="30" height="24" coloroff="#808080" colorselected="text3"
                   colordown="text3"/>
         </define>
@@ -2890,16 +2890,16 @@
             <button action="font_size -1">
                 <pos x="+0" y="+0"/>
                 <size width="80" height="55"/>
-                <off color="buttonoff3" border_size="2" border="black"/>
-                <down color="buttonoff4" border_size="2" border="bordercolor2"/>
+                <off radius="6" color="buttonoff3" border_size="2" border="black"/>
+                <down radius="6" color="buttonoff4" border_size="2" border="bordercolor2"/>
                 <text fontsize="24" align="center" color="text" text="A-"/>
                 <textdown fontsize="24" align="center" color="text3" text="A-"/>
             </button>
             <button action="font_size +1">
                 <pos x="+0" y="+60"/>
                 <size width="80" height="55"/>
-                <off color="buttonoff3" border_size="2" border="black"/>
-                <down color="buttonoff4" border_size="2" border="bordercolor2"/>
+                <off radius="6" color="buttonoff3" border_size="2" border="black"/>
+                <down radius="6" color="buttonoff4" border_size="2" border="bordercolor2"/>
                 <text fontsize="24" align="center" color="text" text="A+"/>
                 <textdown fontsize="24" align="center" color="text3" text="A+"/>
             </button>
@@ -2908,16 +2908,16 @@
                     query="off">
                 <pos x="+0" y="+65+65+5"/>
                 <size width="80" height="55"/>
-                <off color="buttonoff3" border_size="2" border="black"/>
-                <down color="buttonoff4" border_size="2" border="bordercolor2"/>
+                <off radius="6" color="buttonoff3" border_size="2" border="black"/>
+                <down radius="6" color="buttonoff4" border_size="2" border="bordercolor2"/>
                 <icon x="165" y="124" width="24" height="26" coloroff="iconoff" colordown="text3"/>
             </button>
             <button action="var '@$denonpadding' 0 ? set '@$denonpadding' 1 : var '@$denonpadding' 1 ? set '@$denonpadding' 2 : set '@$denonpadding' 2"
                     query="off">
                 <pos x="+0" y="+65+65+60+5"/>
                 <size width="80" height="55"/>
-                <off color="buttonoff3" border_size="2" border="black"/>
-                <down color="buttonoff4" border_size="2" border="bordercolor2"/>
+                <off radius="6" color="buttonoff3" border_size="2" border="black"/>
+                <down radius="6" color="buttonoff4" border_size="2" border="bordercolor2"/>
                 <icon x="165" y="154" width="24" height="26" coloroff="iconoff" colordown="text3"/>
             </button>
         </define>
@@ -2926,8 +2926,8 @@
             <button action="prelisten">
                 <pos x="+0" y="+0"/>
                 <size width="80" height="70"/>
-                <off color="buttonoff3" border_size="2" border="black"/>
-                <down color="buttonoff4" border_size="2" border="bordercolor2"/>
+                <off radius="6" color="buttonoff3" border_size="2" border="black"/>
+                <down radius="6" color="buttonoff4" border_size="2" border="bordercolor2"/>
 
                 <icon sysicon="headphones" width="48" height="48" coloroff="white" colordown="white"
                       colorselected="white"/>
@@ -2936,8 +2936,8 @@
                     query="get_browsed_song 'already played'">
                 <pos x="+0" y="+80"/>
                 <size width="80" height="70"/>
-                <off color="buttonoff3" border_size="2" border="black"/>
-                <down color="buttonoff4" border_size="2" border="bordercolor2"/>
+                <off radius="6" color="buttonoff3" border_size="2" border="black"/>
+                <down radius="6" color="buttonoff4" border_size="2" border="bordercolor2"/>
 
                 <icon sysicon="minimize" width="48" height="48" coloroff="red" colordown="red"
                       colorselected="red"/>
@@ -2946,8 +2946,8 @@
                     query="param_equal `get_browsed_song 'color'` 'blue'">
                 <pos x="+0" y="+80+80"/>
                 <size width="80" height="70"/>
-                <off color="buttonoff3" border_size="2" border="black"/>
-                <down color="buttonoff4" border_size="2" border="bordercolor2"/>
+                <off radius="6" color="buttonoff3" border_size="2" border="black"/>
+                <down radius="6" color="buttonoff4" border_size="2" border="bordercolor2"/>
 
                 <icon sysicon="stop" width="48" height="48" coloroff="blue" colordown="blue"
                       colorselected="blue"/>
@@ -2956,8 +2956,8 @@
                     query="param_equal `get_browsed_song 'color'` 'darkgreen'">
                 <pos x="+0" y="+80+80+80"/>
                 <size width="80" height="70"/>
-                <off color="buttonoff3" border_size="2" border="black"/>
-                <down color="buttonoff4" border_size="2" border="bordercolor2"/>
+                <off radius="6" color="buttonoff3" border_size="2" border="black"/>
+                <down radius="6" color="buttonoff4" border_size="2" border="bordercolor2"/>
 
                 <icon sysicon="stop" width="48" height="48" coloroff="darkgreen" colordown="darkgreen"
                       colorselected="darkgreen"/>
@@ -2965,8 +2965,8 @@
             <button action="holding ? toggle '@$primebrowsercoverflow' : toggle '@$primebrowserinfo'">
                 <pos x="+0" y="+80+80+80+80"/>
                 <size width="80" height="70"/>
-                <off color="buttonoff3" border_size="2" border="black"/>
-                <down color="buttonoff4" border_size="2" border="bordercolor2"/>
+                <off radius="6" color="buttonoff3" border_size="2" border="black"/>
+                <down radius="6" color="buttonoff4" border_size="2" border="bordercolor2"/>
 
                 <icon sysicon="show_splitpanel 'info'" width="48" height="48" coloroff="iconoff" colordown="text3"
                       colorselected="text3"/>
@@ -2979,16 +2979,16 @@
             <button action="playlist_add">
                 <pos x="+1260-90+5" y="+35"/>
                 <size width="80" height="70"/>
-                <off color="buttonoff3" border_size="2" border="black"/>
-                <down color="buttonoff4" border_size="2" border="bordercolor2"/>
+                <off radius="6" color="buttonoff3" border_size="2" border="black"/>
+                <down radius="6" color="buttonoff4" border_size="2" border="bordercolor2"/>
                 <icon x="246" y="123" width="34" height="27" coloroff="iconoff" colordown="text3"
                       colorselected="text3"/>
             </button>
             <button action="sidelist_add">
                 <pos x="+1260-90+5" y="+35+80"/>
                 <size width="80" height="70"/>
-                <off color="buttonoff3" border_size="2" border="black"/>
-                <down color="buttonoff4" border_size="2" border="bordercolor2"/>
+                <off radius="6" color="buttonoff3" border_size="2" border="black"/>
+                <down radius="6" color="buttonoff4" border_size="2" border="bordercolor2"/>
                 <icon x="246" y="162" width="34" height="25" coloroff="iconoff" colordown="text3"
                       colorselected="text3"/>
             </button>
@@ -2999,16 +2999,16 @@
             <button action="automix">
                 <pos x="+1260-90+5" y="+35"/>
                 <size width="80" height="70"/>
-                <off color="buttonoff3" border_size="2" border="black"/>
-                <selected color="buttonon4" border_size="2" border="bordercolor2"/>
-                <down color="buttonoff4" border_size="2" border="bordercolor2"/>
+                <off radius="6" color="buttonoff3" border_size="2" border="black"/>
+                <selected cradius="6" olor="buttonon4" border_size="2" border="bordercolor2"/>
+                <down radius="6" color="buttonoff4" border_size="2" border="bordercolor2"/>
                 <icon sysicon="automix" width="40" height="40" coloroff="iconoff" colordown="text3"
                       colorselected="text3"/>
             </button>
             <button action="playlist_options">
                 <pos x="+1260-90+5" y="+35+80"/>
                 <size width="80" height="70"/>
-                <off color="buttonoff3" border_size="2" border="black"/>
+                <off radius="6" color="buttonoff3" border_size="2" border="black"/>
                 <icon x="208" y="120" width="27" height="27" coloroff="iconoff"/>
             </button>
             <panel class="tagbuttons" x="+1260-90+5" y="+35+80+105"/>
@@ -3018,23 +3018,23 @@
             <button action="sampler_options">
                 <pos x="+1260-90+5" y="+35"/>
                 <size width="80" height="70"/>
-                <off color="buttonoff3" border_size="2" border="black"/>
+                <off radius="6" color="buttonoff3" border_size="2" border="black"/>
                 <icon x="208" y="120" width="27" height="27" coloroff="iconoff"/>
             </button>
             <button action="sideview_triggerpad">
                 <pos x="+1260-90+5" y="+35+80"/>
                 <size width="80" height="70"/>
-                <off color="buttonoff3" border_size="2" border="black"/>
-                <selected color="buttonoff3" border_size="2" border="black"/>
-                <down color="buttonoff4" border_size="2" border="bordercolor2"/>
+                <off radius="6" color="buttonoff3" border_size="2" border="black"/>
+                <selected radius="6" color="buttonoff3" border_size="2" border="black"/>
+                <down radius="6" color="buttonoff4" border_size="2" border="bordercolor2"/>
                 <icon sysicon="sideview_triggerpad" width="42" height="42" coloroff="iconoff"/>
             </button>
             <button action="sampler_mode +1">
                 <pos x="+1260-90+5" y="+35+80+80"/>
                 <size width="80" height="70"/>
-                <off color="buttonoff3" border_size="2" border="black"/>
-                <selected color="buttonoff3" border_size="2" border="black"/>
-                <down color="buttonoff4" border_size="2" border="bordercolor2"/>
+                <off radius="6" color="buttonoff3" border_size="2" border="black"/>
+                <selected radius="6" color="buttonoff3" border_size="2" border="black"/>
+                <down radius="6" color="buttonoff4" border_size="2" border="bordercolor2"/>
                 <icon sysicon="sampler_mode" width="42" height="42" coloroff="text2"/>
             </button>
 
@@ -3044,16 +3044,16 @@
             <button action="karaoke">
                 <pos x="+1260-90+5" y="+35"/>
                 <size width="80" height="70"/>
-                <off color="buttonoff3" border_size="2" border="black"/>
-                <selected color="buttonon4" border_size="2" border="bordercolor2"/>
-                <down color="buttonoff4" border_size="2" border="bordercolor2"/>
+                <off radius="6" color="buttonoff3" border_size="2" border="black"/>
+                <selected radius="6" color="buttonon4" border_size="2" border="bordercolor2"/>
+                <down radius="6" color="buttonoff4" border_size="2" border="bordercolor2"/>
                 <icon sysicon="karaoke" width="40" height="40" coloroff="iconoff" colordown="text3"
                       colorselected="text3"/>
             </button>
             <button action="karaoke_options">
                 <pos x="+1260-90+5" y="+35+80"/>
                 <size width="80" height="70"/>
-                <off color="buttonoff3" border_size="2" border="black"/>
+                <off radius="6" color="buttonoff3" border_size="2" border="black"/>
                 <icon x="208" y="120" width="27" height="27" coloroff="iconoff"/>
             </button>
         </define>
@@ -3062,14 +3062,14 @@
             <button action="sidelist_options">
                 <pos x="+1260-90+5" y="+35"/>
                 <size width="80" height="70"/>
-                <off color="buttonoff3" border_size="2" border="black"/>
+                <off radius="6" color="buttonoff3" border_size="2" border="black"/>
                 <icon x="208" y="120" width="27" height="27" coloroff="iconoff"/>
             </button>
             <panel class="tagbuttons" x="+1260-90+5" y="+35+102"/>
             <button action="sideview_options">
                 <pos x="+1260-90+5" y="+35+80+80+80+80+80+102"/>
                 <size width="80" height="70"/>
-                <off color="buttonoff3" border_size="2" border="black"/>
+                <off radius="6" color="buttonoff3" border_size="2" border="black"/>
                 <icon x="207" y="166" width="31" height="27" coloroff="#909090"/>
             </button>
         </define>
@@ -3078,7 +3078,7 @@
             <button action="sidereco_options">
                 <pos x="+1260-90+5" y="+35"/>
                 <size width="80" height="70"/>
-                <off color="buttonoff3" border_size="2" border="black"/>
+                <off radius="6" color="buttonoff3" border_size="2" border="black"/>
                 <icon x="208" y="120" width="27" height="27" coloroff="iconoff"/>
             </button>
         </define>
@@ -3087,24 +3087,24 @@
             <button action="var '@$primelistappend' 1 ? playlist_load 'append' : playlist_load">
                 <pos x="+1260-90+5" y="+35"/>
                 <size width="80" height="70"/>
-                <off color="buttonoff3" border_size="2" border="black"/>
-                <down color="buttonoff4" border_size="2" border="bordercolor2"/>
+                <off radius="6" color="buttonoff3" border_size="2" border="black"/>
+                <down radius="6" color="buttonoff4" border_size="2" border="bordercolor2"/>
                 <icon x="246" y="123" width="34" height="27" coloroff="iconoff" colordown="text3"
                       colorselected="text3"/>
             </button>
             <button action="var '@$primelistappend' 1 ? sidelist_load 'append' : sidelist_load">
                 <pos x="+1260-90+5" y="+35+80"/>
                 <size width="80" height="70"/>
-                <off color="buttonoff3" border_size="2" border="black"/>
-                <down color="buttonoff4" border_size="2" border="bordercolor2"/>
+                <off radius="6" color="buttonoff3" border_size="2" border="black"/>
+                <down radius="6" color="buttonoff4" border_size="2" border="bordercolor2"/>
                 <icon x="246" y="162" width="34" height="25" coloroff="iconoff" colordown="text3"
                       colorselected="text3"/>
             </button>
             <button action="var '@$primelistappend' 1 ? karaoke_load 'append' : karaoke_load">
                 <pos x="+1260-90+5" y="+35+80+80"/>
                 <size width="80" height="70"/>
-                <off color="buttonoff3" border_size="2" border="black"/>
-                <down color="buttonoff4" border_size="2" border="bordercolor2"/>
+                <off radius="6" color="buttonoff3" border_size="2" border="black"/>
+                <down radius="6" color="buttonoff4" border_size="2" border="bordercolor2"/>
                 <icon x="246" y="193" width="34" height="24" coloroff="iconoff" colordown="text3"
                       colorselected="text3"/>
             </button>
@@ -3114,18 +3114,18 @@
             <button action="browser_window 'folders'">
                 <pos x="+5" y="+5+80"/>
                 <size width="80" height="70"/>
-                <off color="buttonoff3" border_size="2" border="black"/>
-                <selected color="buttonoff3" border_size="2" border="black"/>
-                <down color="buttonoff4" border_size="2" border="bordercolor2"/>
+                <off radius="6" color="buttonoff3" border_size="2" border="black"/>
+                <selected radius="6" color="buttonoff3" border_size="2" border="black"/>
+                <down radius="6" color="buttonoff4" border_size="2" border="bordercolor2"/>
                 <icon x="553" y="38" width="38" height="27" coloroff="iconoff" colordown="text3"
                       colorselected="text3"/>
             </button>
             <button action="browser_window 'songs'">
                 <pos x="+5" y="+5+80+80"/>
                 <size width="80" height="70"/>
-                <off color="buttonoff3" border_size="2" border="black"/>
-                <selected color="buttonoff3" border_size="2" border="black"/>
-                <down color="buttonoff4" border_size="2" border="bordercolor2"/>
+                <off radius="6" color="buttonoff3" border_size="2" border="black"/>
+                <selected radius="6" color="buttonoff3" border_size="2" border="black"/>
+                <down radius="6" color="buttonoff4" border_size="2" border="bordercolor2"/>
                 <icon x="616" y="38" width="38" height="29" coloroff="iconoff" colordown="text3"
                       colorselected="text3"/>
             </button>
@@ -3134,9 +3134,9 @@
                     query="browser_window 'sideview'" visibility="sideview 'automix'">
                 <pos x="+5" y="+5+80+80+80"/>
                 <size width="80" height="70"/>
-                <off color="buttonoff3" border_size="2" border="black"/>
-                <selected color="buttonoff3" border_size="2" border="black"/>
-                <down color="buttonoff4" border_size="2" border="bordercolor2"/>
+                <off radius="6" color="buttonoff3" border_size="2" border="black"/>
+                <selected radius="6" color="buttonoff3" border_size="2" border="black"/>
+                <down radius="6" color="buttonoff4" border_size="2" border="bordercolor2"/>
                 <icon sysicon="sideview 'automix'" width="48" height="48" coloroff="iconoff" colordown="text3"
                       colorselected="text3"/>
             </button>
@@ -3144,9 +3144,9 @@
                     query="browser_window 'sideview'" visibility="sideview 'karaoke'">
                 <pos x="+5" y="+5+80+80+80"/>
                 <size width="80" height="70"/>
-                <off color="buttonoff3" border_size="2" border="black"/>
-                <selected color="buttonoff3" border_size="2" border="black"/>
-                <down color="buttonoff4" border_size="2" border="bordercolor2"/>
+                <off radius="6" color="buttonoff3" border_size="2" border="black"/>
+                <selected radius="6" color="buttonoff3" border_size="2" border="black"/>
+                <down radius="6" color="buttonoff4" border_size="2" border="bordercolor2"/>
                 <icon sysicon="sideview 'karaoke'" width="48" height="48" coloroff="iconoff" colordown="text3"
                       colorselected="text3"/>
             </button>
@@ -3154,9 +3154,9 @@
                     query="browser_window 'sideview'" visibility="sideview 'sidelist'">
                 <pos x="+5" y="+5+80+80+80"/>
                 <size width="80" height="70"/>
-                <off color="buttonoff3" border_size="2" border="black"/>
-                <selected color="buttonoff3" border_size="2" border="black"/>
-                <down color="buttonoff4" border_size="2" border="bordercolor2"/>
+                <off radius="6" color="buttonoff3" border_size="2" border="black"/>
+                <selected radius="6" color="buttonoff3" border_size="2" border="black"/>
+                <down radius="6" color="buttonoff4" border_size="2" border="bordercolor2"/>
                 <icon sysicon="sideview 'sidelist'" width="48" height="48" coloroff="iconoff" colordown="text3"
                       colorselected="text3"/>
             </button>
@@ -3164,9 +3164,9 @@
                     query="browser_window 'sideview'" visibility="sideview 'remixes'">
                 <pos x="+5" y="+5+80+80+80"/>
                 <size width="80" height="70"/>
-                <off color="buttonoff3" border_size="2" border="black"/>
-                <selected color="buttonoff3" border_size="2" border="black"/>
-                <down color="buttonoff4" border_size="2" border="bordercolor2"/>
+                <off radius="6" color="buttonoff3" border_size="2" border="black"/>
+                <selected radius="6" color="buttonoff3" border_size="2" border="black"/>
+                <down radius="6" color="buttonoff4" border_size="2" border="bordercolor2"/>
                 <icon sysicon="sideview 'remixes'" width="48" height="48" coloroff="iconoff" colordown="text3"
                       colorselected="text3"/>
             </button>
@@ -3174,9 +3174,9 @@
                     query="browser_window 'sideview'" visibility="sideview 'sampler'">
                 <pos x="+5" y="+5+80+80+80"/>
                 <size width="80" height="70"/>
-                <off color="buttonoff3" border_size="2" border="black"/>
-                <selected color="buttonoff3" border_size="2" border="black"/>
-                <down color="buttonoff4" border_size="2" border="bordercolor2"/>
+                <off radius="6" color="buttonoff3" border_size="2" border="black"/>
+                <selected radius="6" color="buttonoff3" border_size="2" border="black"/>
+                <down radius="6" color="buttonoff4" border_size="2" border="bordercolor2"/>
                 <icon sysicon="sideview 'sampler'" width="48" height="48" coloroff="iconoff" colordown="text3"
                       colorselected="text3"/>
             </button>
@@ -3185,9 +3185,9 @@
                     visibility="sideview 'sampler' ? false : sideview 'automix' ? false : sideview 'sidelist' ? false : sideview 'karaoke' ? false : sideview 'remixes' ? false : true">
                 <pos x="+5" y="+5+80+80+80"/>
                 <size width="80" height="70"/>
-                <off color="buttonoff3" border_size="2" border="black"/>
-                <selected color="buttonoff3" border_size="2" border="black"/>
-                <down color="buttonoff4" border_size="2" border="bordercolor2"/>
+                <off radius="6" color="buttonoff3" border_size="2" border="black"/>
+                <selected radius="6" color="buttonoff3" border_size="2" border="black"/>
+                <down radius="6" color="buttonoff4" border_size="2" border="bordercolor2"/>
                 <icon sysicon="sideview 'clone'" width="48" height="48" coloroff="iconoff" colordown="text3"
                       colorselected="text3"/>
             </button>
@@ -3195,9 +3195,9 @@
                     query="on">
                 <pos x="+5" y="+5+80+80+80+80"/>
                 <size width="80" height="70"/>
-                <off color="buttonoff3" border_size="2" border="black"/>
-                <selected color="buttonoff3" border_size="2" border="black"/>
-                <down color="buttonoff4" border_size="2" border="bordercolor2"/>
+                <off radius="6" color="buttonoff3" border_size="2" border="black"/>
+                <selected radius="6" color="buttonoff3" border_size="2" border="black"/>
+                <down radius="6" color="buttonoff4" border_size="2" border="bordercolor2"/>
                 <icon sysicon="goto_last_folder" width="48" height="48" coloroff="iconoff" colordown="text3"
                       colorselected="text3"/>
             </button>
@@ -3208,18 +3208,18 @@
             <button action="browser_window 'folders'">
                 <pos x="+5" y="+5+80"/>
                 <size width="80" height="70"/>
-                <off color="buttonoff3" border_size="2" border="black"/>
-                <selected color="buttonoff3" border_size="2" border="black"/>
-                <down color="buttonoff4" border_size="2" border="bordercolor2"/>
+                <off radius="6" color="buttonoff3" border_size="2" border="black"/>
+                <selected radius="6" color="buttonoff3" border_size="2" border="black"/>
+                <down radius="6" color="buttonoff4" border_size="2" border="bordercolor2"/>
                 <icon x="553" y="38" width="38" height="27" coloroff="iconoff" colordown="text3"
                       colorselected="text3"/>
             </button>
             <button action="browser_window 'songs'">
                 <pos x="+5" y="+5+80+80"/>
                 <size width="80" height="70"/>
-                <off color="buttonoff3" border_size="2" border="black"/>
-                <selected color="buttonoff3" border_size="2" border="black"/>
-                <down color="buttonoff4" border_size="2" border="bordercolor2"/>
+                <off radius="6" color="buttonoff3" border_size="2" border="black"/>
+                <selected radius="6" color="buttonoff3" border_size="2" border="black"/>
+                <down radius="6" color="buttonoff4" border_size="2" border="bordercolor2"/>
                 <icon x="616" y="38" width="38" height="29" coloroff="iconoff" colordown="text3"
                       colorselected="text3"/>
             </button>
