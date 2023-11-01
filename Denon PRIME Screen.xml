@@ -35,6 +35,9 @@
             <define color="deckcolorbright" value="#64F082" deck="3"/>
             <define color="deckcolorbright" value="#F0C164" deck="4"/>
 
+            <define color="fixedbutton" value="#63A9F0"/>
+            <define color="fixedbutton2" value="#E82525"/>
+
             <define color="black" value="#000000"/>
             <define color="white" value="#FFFFFF"/>
 
@@ -159,6 +162,9 @@
             <define color="deckcolorbright" value="#ac2f37" deck="2"/>
             <define color="deckcolorbright" value="#0d7264" deck="3"/>
             <define color="deckcolorbright" value="#a54d30" deck="4"/>
+
+            <define color="fixedbutton" value="#156c89"/>
+            <define color="fixedbutton2" value="#ac2f37"/>
 
             <define color="black" value="#ffffff"/>
             <define color="white" value="#000000"/>
@@ -340,6 +346,15 @@
             </visual>
         </define>
 
+        <define class="fixedbutton" placeholders="textaction,selectedcolor">
+            <size width="90" height="50"/>
+            <off radius="6" color="buttonoff" shape="square" border="bordercolor" border_size="2"/>
+            <selected radius="6" color="[SELECTEDCOLOR]" shape="square" border="[SELECTEDCOLOR]" border_size="2"/>
+            <down radius="6" color="buttonon" shape="square" border="[SELECTEDCOLOR]" border_size="2"/>
+            <text dx="+2" width="86" fontsize="18" color="text2" colorselected="padbuttontextselected" colordown="padbuttontextselected"
+                  align="center" action="[TEXTACTION]" scroll="yes"/>
+        </define>
+
         <define class="custombutton" placeholders="textaction">
             <size width="90" height="50"/>
             <off color="buttonoff" shape="square" border="bordercolor" border_size="2"/>
@@ -352,27 +367,36 @@
         <define class="customs" placeholders="deckn">
             <deck deck="[DECKN]">
                 <button class="custombutton" action="custom_button 1" x="+0" y="+0" textaction="custom_button_name 1"/>
-                <button class="custombutton" action="custom_button 2" x="+100" y="+0"
-                        textaction="custom_button_name 2"/>
-                <button class="custombutton" action="custom_button 3" x="+100+100" y="+0"
-                        textaction="custom_button_name 3"/>
-                <button class="custombutton" action="custom_button 4" x="+100+100+100" y="+0"
-                        textaction="custom_button_name 4"/>
+                <button class="custombutton" action="custom_button 2" x="+100" y="+0" textaction="custom_button_name 2"/>
+                <button class="custombutton" action="custom_button 3" x="+100+100" y="+0" textaction="custom_button_name 3"/>
+                <button class="custombutton" action="custom_button 4" x="+100+100+100" y="+0" textaction="custom_button_name 4"/>
             </deck>
+        </define>
+
+        <define class="topbuttons" placeholders="deckn">
+            <group visibility="var '@$primeshowfixedbuttons' 0">
+                <button class="fixedbutton" selectedcolor="fixedbutton" action="prelisten" x="+0" y="+0" textaction="get_text 'Prelisten'"/>
+                <button class="fixedbutton" selectedcolor="fixedbutton" action="sandbox" x="+100" y="+0" textaction="get_text 'Sandbox'"/>
+                <button class="fixedbutton" selectedcolor="fixedbutton" action="pitch_range 8%" x="+100+100" y="+0" textaction="get_text 'Pitch 8%'"/>
+                <button class="fixedbutton" selectedcolor="fixedbutton" action="pitch_range 4%" x="+100+100+100" y="+0" textaction="get_text 'Pitch 4%'"/>
+
+                <button class="fixedbutton" selectedcolor="fixedbutton" action="toggle '$touchfx'" x="+630+0" y="+0" textaction="get_text 'TouchFX'"/>
+                <button class="fixedbutton" selectedcolor="fixedbutton" action="video & set '@$primeshowvideo' 1" x="+630+100" y="+0" textaction="get_text 'Video'"/>
+                <button class="fixedbutton" selectedcolor="fixedbutton2" action="broadcast" x="+630+100+100" y="+0" textaction="broadcast ? broadcast_message & param_contains 'Broadcasting' ? get_text 'ON AIR' : broadcast_message & param_cast 'text' 18 & param_contains '10' ? get_text '10 clients' : param_contains '9' ? get_text '9 clients' : param_contains '8' ? get_text '8 clients' : param_contains '7' ? get_text '7 clients' : param_contains '6' ? get_text '6 clients' : param_contains '5' ? get_text '5 clients' : param_contains '4' ? get_text '4 clients' : param_contains '3' ? get_text '3 clients' : param_contains '2' ? get_text '2 clients' : param_contains '1' ? get_text '1 client' : param_contains '0' ? get_text 'no clients' : get_text 'Broadcast' : get_text 'Broadcast'"/>
+                <button class="fixedbutton" selectedcolor="fixedbutton2" action="record" x="+630+100+100+100" y="+0" textaction="record ? get_record_time : get_text 'Record'"/>
+            </group>
+            <group visibility="var '@$primeshowfixedbuttons' 1">
+                <panel class="customs" deckn="1" x="+0" y="+0" visibility="deck 1 leftdeck"/>
+                <panel class="customs" deckn="3" x="+0" y="+0" visibility="deck 3 leftdeck"/>
+                <panel class="customs" deckn="2" x="+630" y="+0" visibility="deck 2 rightdeck"/>
+                <panel class="customs" deckn="4" x="+630" y="+0" visibility="deck 4 rightdeck"/>
+            </group>
         </define>
 
         <define class="fxbutton" placeholders="textaction,textsize=18">
             <size width="150" height="40"/>
             <off color="fxseldark" shape="square" border="bordercolor" border_size="2"/>
             <text dx="5" width="140" fontsize="[TEXTSIZE]" color="text2" colorselected="padbuttontextselected" align="center" action="[TEXTACTION]"/>
-        </define>
-        <define class="fxbuttonwide" placeholders="textaction,textsize=18">
-            <size width="200" height="40"/>
-            <off color="fxseldark" shape="square" border="bordercolor" border_size="2"/>
-            <selected color="deckcolordark" shape="square" border="bordercolor" border_size="2"/>
-            <text dx="5" width="190" fontsize="[TEXTSIZE]" color="text2" colorselected="padbuttontextselected" colordown="padbuttontextselected" align="center"
-                  action="[TEXTACTION]"/>
-            <textselected dx="5" width="190" fontsize="[TEXTSIZE]" color="white" align="center" action="[TEXTACTION]"/>
         </define>
         <define class="fxbuttonwideglobal" placeholders="textaction,textsize=18">
             <size width="200" height="40"/>
@@ -652,41 +676,6 @@
             </cues>
             <loops dy="-5">
                 <size width="22" height="24+8"/>
-                <clipmask x="74" y="107"/>
-            </loops>
-        </define>
-
-        <define class="songprogressvertical"
-                placeholders="*dwidth=200,*dheight">
-            <size width="538-10+88" height="24"/>
-            <wave>
-                <size height="24-10"/>
-                <pos y="+5"/>
-            </wave>
-            <cues dy="-5" shade="0">
-                <size width="18" height="24"/>
-                <clipmask x="30" y="107"/>
-            </cues>
-            <loops dy="-5">
-                <size width="22" height="24"/>
-                <clipmask x="74" y="107"/>
-            </loops>
-        </define>
-        <define class="songprogressverticalcolors" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat"
-                colorNoVocal="colorNoVocal" colorNoInstru="colorNoInstru" colorNoBeat="colorNoBeatSongPos"
-                colorPlayed="black" colorHigh="colorHigh" colorMed="colorMed" colorBass="colorBass"
-                placeholders="*dwidth=200,*dheight">
-            <size width="538-10+88" height="24"/>
-            <wave>
-                <size height="24-10"/>
-                <pos y="+5"/>
-            </wave>
-            <cues dy="-5" shade="0">
-                <size width="18" height="24"/>
-                <clipmask x="30" y="107"/>
-            </cues>
-            <loops dy="-5">
-                <size width="22" height="24"/>
                 <clipmask x="74" y="107"/>
             </loops>
         </define>
@@ -1676,18 +1665,12 @@
                 <size width="100" height="25"/>
                 <text fontsize="18" align="left" color="settingsbuttontext" text="FX"/>
             </textzone>
-            <button class="fxbuttonwide" deck="left" x="+20+95" y="+30" query="deck left effect_active"
-                    textaction="deck left get_effect_name &amp; param_uppercase"
-                    visibility="deck left effect_active ? deck right effect_active ? false : true : false"/>
-            <button class="fxbuttonwide" deck="right" x="+20+95" y="+30" query="deck right effect_active"
-                    textaction="deck right get_effect_name &amp; param_uppercase"
-                    visibility="deck right effect_active ? deck left effect_active ? false : true : false"/>
             <button class="fxbuttonwideglobal" x="+20+95" y="+30" query="var '$pmgofxon' ? true : false"
                     textaction="deck left get_effect_name &amp; param_uppercase"
-                    visibility="deck left effect_active ? false : deck right effect_active ? false : true"/>
+                    visibility="var '$pmgofxon' 0"/>
             <button class="fxbuttonwideglobalon" x="+20+95" y="+30" query="var '$pmgofxon' ? true : false"
                     textaction="deck left get_effect_name &amp; param_uppercase"
-                    visibility="deck left effect_active ? deck right effect_active ? true : false"/>
+                    isibility="var '$pmgofxon' 1"/>
 
             <textzone>
                 <pos x="+320+80" y="+5"/>
@@ -3685,10 +3668,7 @@
                         <button class="browserextend" x="+5" y="+5"
                                 action="set '$primebrowserextend' 1 &amp; browser_isactive on" query="off"/>
 
-                        <panel class="customs" deckn="1" x="130" y="+20" visibility="deck 1 leftdeck ? true : false"/>
-                        <panel class="customs" deckn="3" x="130" y="+20" visibility="deck 3 leftdeck ? true : false"/>
-                        <panel class="customs" deckn="2" x="760" y="+20" visibility="deck 2 rightdeck ? true : false"/>
-                        <panel class="customs" deckn="4" x="760" y="+20" visibility="deck 4 rightdeck ? true : false"/>
+                        <panel class="topbuttons" x="130" y="+20"/>
 
                         <panel class="beatsblock" deckn="1" x="565" y="+28" visibility="deck 1 leftdeck"/>
                         <panel class="beatsblock" deckn="3" x="565" y="+28" visibility="deck 3 leftdeck"/>
@@ -3769,10 +3749,7 @@
                         <button class="browserextend" x="+5" y="+5"
                                 action="set '$primebrowserextend' 1 &amp; browser_isactive on" query="off"/>
 
-                        <panel class="customs" deckn="1" x="130" y="+20" visibility="deck 1 leftdeck"/>
-                        <panel class="customs" deckn="3" x="130" y="+20" visibility="deck 3 leftdeck"/>
-                        <panel class="customs" deckn="2" x="760" y="+20" visibility="deck 2 rightdeck"/>
-                        <panel class="customs" deckn="4" x="760" y="+20" visibility="deck 4 rightdeck"/>
+                        <panel class="topbuttons" x="130" y="+20"/>
 
                         <panel class="beatsblock" deckn="3" x="565" y="+18"/>
                         <panel class="beatsblock" deckn="1" x="565" y="+33"/>
@@ -3795,10 +3772,7 @@
                         <button class="browserextend" x="+5" y="+5"
                                 action="set '$primebrowserextend' 1 &amp;&amp; browser_isactive on" query="off"/>
 
-                        <panel class="customs" deckn="1" x="130" y="+20" visibility="deck 1 leftdeck"/>
-                        <panel class="customs" deckn="3" x="130" y="+20" visibility="deck 3 leftdeck"/>
-                        <panel class="customs" deckn="2" x="760" y="+20" visibility="deck 2 rightdeck"/>
-                        <panel class="customs" deckn="4" x="760" y="+20" visibility="deck 4 rightdeck"/>
+                        <panel class="topbuttons" x="130" y="+20"/>
 
                         <panel class="beatsblock" deckn="3" x="565" y="+18"/>
                         <panel class="beatsblock" deckn="1" x="565" y="+33"/>
@@ -3840,10 +3814,7 @@
                         <button class="browserextend" x="+5" y="+5"
                                 action="set '$primebrowserextend' 1 &amp;&amp; browser_isactive on" query="off"/>
 
-                        <panel class="customs" deckn="1" x="130" y="+20" visibility="deck 1 leftdeck"/>
-                        <panel class="customs" deckn="3" x="130" y="+20" visibility="deck 3 leftdeck"/>
-                        <panel class="customs" deckn="2" x="760" y="+20" visibility="deck 2 rightdeck"/>
-                        <panel class="customs" deckn="4" x="760" y="+20" visibility="deck 4 rightdeck"/>
+                        <panel class="topbuttons" x="130" y="+20"/>
 
                         <panel class="beatsblock" deckn="1" x="565" y="+28" visibility="deck 1 leftdeck"/>
                         <panel class="beatsblock" deckn="3" x="565" y="+28" visibility="deck 3 leftdeck"/>
@@ -4029,12 +4000,11 @@
                 <on color="buttonoff4" border_size="2" border="bordercolor3"/>
             </button>
 
-            <visual>
-                <pos x="180" y="800-130+10+20"/>
+            <visual> <!--Info button-->
+                <pos x="180" y="800-60+10+20"/>
                 <size width="30" height="30"/>
                 <off x="315" y="160"/>
             </visual>
-
 
             <panel name="DNS2_deck" group="DNS2_settings" visible="yes">
                 <panel class="denonsetting" x="200" y="120" text="Display" text1="4 Decks"
@@ -4062,7 +4032,6 @@
                     </button>
                 </panel>
 
-
                 <panel class="denonsetting" x="200" y="120+80" text="Blink Time near End" text1="No" text2="Yes"
                        action3="set '$denonsetdeck' 1" action1="set '@$denonblinktime' 1"
                        action2="set '@$denonblinktime' 0"/>
@@ -4083,43 +4052,43 @@
                        action2="setting 'loadSecurity' 'on'"/>
 
                 <textzone visibility="var '$denonsetdeck' 0">
-                    <pos x="250" y="800-115"/>
+                    <pos x="235" y="800-50"/>
                     <size width="1280-30-240" height="60"/>
                     <text fontsize="21" align="left" color="text"
                           text="Choose Deck View Layout"/>
                 </textzone>
                 <textzone visibility="var '$denonsetdeck' 1">
-                    <pos x="240" y="800-125"/>
+                    <pos x="235" y="800-50"/>
                     <size width="1280-30-240" height="60"/>
                     <text fontsize="21" align="left" color="text"
                           format="When enabled, Track Time on Deck and Jogwheel Ring Led will blink when the track is near its End\nThe time before End can be defined from VirtualDJ Options tab of Settings(endOfSongWarning setting)"/>
                 </textzone>
                 <textzone visibility="var '$denonsetdeck' 2">
-                    <pos x="240" y="800-115"/>
+                    <pos x="235" y="800-50"/>
                     <size width="1280-30-240" height="60"/>
                     <text fontsize="21" align="left" color="text"
                           text="Select the type for the Musical Key value of the Track displayed on Decks and Browser"/>
                 </textzone>
                 <textzone visibility="var '$denonsetdeck' 3">
-                    <pos x="240" y="800-115"/>
+                    <pos x="235" y="800-50"/>
                     <size width="1280-30-240" height="60"/>
                     <text fontsize="21" align="left" color="text"
                           text="When enabled, tracks loaded to a Deck will automatically match the Key of the other Deck"/>
                 </textzone>
                 <textzone visibility="var '$denonsetdeck' 4">
-                    <pos x="240" y="800-115"/>
+                    <pos x="235" y="800-50"/>
                     <size width="1280-30-240" height="60"/>
                     <text fontsize="21" align="left" color="text"
                           text="When set to Yes, the Album Art of the loaded Track will be displayed on the Track Info area of the Deck."/>
                 </textzone>
                 <textzone visibility="var '$denonsetdeck' 5">
-                    <pos x="240" y="800-115"/>
+                    <pos x="235" y="800-50"/>
                     <size width="1280-30-240" height="60"/>
                     <text fontsize="21" align="left" color="text"
                           text="When enabled, the Song Progress Wave area of the Deck will be protected from touch."/>
                 </textzone>
                 <textzone visibility="var '$denonsetdeck' 6">
-                    <pos x="250" y="800-115"/>
+                    <pos x="235" y="800-50"/>
                     <size width="1280-30-240" height="60"/>
                     <text fontsize="21" align="left" color="text"
                           text="When set to No, tracks will load to Decks even if playing."/>
@@ -4175,39 +4144,39 @@
                        action2="set '@$denonwavebeats' 1"/>
 
                 <textzone visibility="var '$denonsetwave' 0">
-                    <pos x="240" y="800-115"/>
+                    <pos x="235" y="800-50"/>
                     <size width="1280-30-240" height="60"/>
                     <text fontsize="21" align="left" color="text"
                           text="Select between Center and Left Align for the Scratch Waves"/>
                 </textzone>
                 <textzone visibility="var '$denonsetwave' 1">
-                    <pos x="240" y="800-115"/>
+                    <pos x="235" y="800-50"/>
                     <size width="1280-30-240" height="60"/>
                     <text fontsize="21" align="left" color="text" text="Select the Type of the Waves."/>
                 </textzone>
                 <textzone visibility="var '$denonsetwave' 2">
-                    <pos x="240" y="800-115"/>
+                    <pos x="235" y="800-50"/>
                     <size width="1280-30-240" height="60"/>
                     <text fontsize="21" align="left" color="text" text="Select the Colors of the Waves"/>
                 </textzone>
                 <textzone visibility="var '$denonsetwave' 3">
-                    <pos x="240" y="800-115"/>
+                    <pos x="235" y="800-50"/>
                     <size width="1280-30-240" height="60"/>
                     <text fontsize="21" align="left" color="text" text="Show extra Grid-Lines in Scratch Wave"/>
                 </textzone>
                 <textzone visibility="var '$denonsetwave' 4">
-                    <pos x="240" y="800-115"/>
+                    <pos x="235" y="800-50"/>
                     <size width="1280-30-240" height="60"/>
                     <text fontsize="21" align="left" color="text"
                           text="When set to Yes, the Scratch Waves area will be blocked from touching."/>
                 </textzone>
                 <textzone visibility="var '$denonsetwave' 5">
-                    <pos x="240" y="800-115"/>
+                    <pos x="235" y="800-50"/>
                     <size width="1280-30-240" height="60"/>
                     <text fontsize="21" align="left" color="text" text="Show or Hide  Bar : Beats  numbers on Waves"/>
                 </textzone>
                 <textzone visibility="var '$denonsetwave' 6">
-                    <pos x="240" y="800-115"/>
+                    <pos x="235" y="800-50"/>
                     <size width="1280-30-240" height="60"/>
                     <text fontsize="21" align="left" color="text" text="Show the songposition waveform half or full."/>
                 </textzone>
@@ -4233,7 +4202,7 @@
                        query1="setting 'multiTouchTwoFingerScroll' ? off : on"
                        query2="setting 'multiTouchTwoFingerScroll'"/>
                 <panel class="denonsetting" x="200" y="120+80+80+80+80+80+80" text="Cover Flow" text1="Off" text2="3D"
-                       action3="set '$denonsetbrowser' 5" action1="set '@$primebrowsercoverflow' 0"
+                       action3="set '$denonsetbrowser' 6" action1="set '@$primebrowsercoverflow' 0"
                        action2="set '@$primebrowsercoverflow' 1">
                     <button/>
                     <button>
@@ -4251,40 +4220,46 @@
                 </panel>
 
                 <textzone visibility="var '$denonsetbrowser' 0">
-                    <pos x="240" y="800-115"/>
+                    <pos x="235" y="800-50"/>
                     <size width="1280-30-240" height="60"/>
                     <text fontsize="21" align="left" color="text"
                           text="When set to Yes, the selected Track's Info panel will be displayed at the right side of Browser."/>
                 </textzone>
                 <textzone visibility="var '$denonsetbrowser' 1">
-                    <pos x="240" y="800-115-10"/>
-                    <size width="1280-30-240" height="80"/>
+                    <pos x="235" y="800-50"/>
+                    <size width="1280-30-240" height="80"/><pos x="235" y="800-50"/>
                     <text fontsize="21" align="left" color="text"
                           format="When  enabled, the Browser will be automatically enlarged when Browser actions are performed, such as \nscrolling, changing Browser panels, searching etc, and will be automatically shrinked if a Track is loaded\nor no Browser action is performed within 5 seconds."/>
                 </textzone>
                 <textzone visibility="var '$denonsetbrowser' 2">
-                    <pos x="240" y="800-115"/>
+                    <pos x="235" y="800-50"/>
                     <size width="1280-30-240" height="60"/>
                     <text fontsize="21" align="left" color="text"
                           text="Select between the List and Grid view for the Browser"/>
                 </textzone>
                 <textzone visibility="var '$denonsetbrowser' 3">
-                    <pos x="240" y="800-115"/>
+                    <pos x="235" y="800-50"/>
                     <size width="1280-30-240" height="60"/>
                     <text fontsize="21" align="left" color="text"
                           format="When enabled, the Folders that you choose to add to Sidelist (Automix, Sidelist, Karaoke) \nwill append their tracks at the end of the current list, instead of replacing"/>
                 </textzone>
                 <textzone visibility="var '$denonsetbrowser' 4">
-                    <pos x="240" y="800-115-10"/>
+                    <pos x="235" y="800-50"/>
                     <size width="1280-30-240" height="80"/>
                     <text fontsize="21" align="left" color="text"
                           format="When set to Yes, scrolling the Browser lists will require two fingers while dragging will require one finger.\nWhen set to No, scrolling will require one finger and dragging will be offered with one finger on the Album\nArt in Grid view."/>
                 </textzone>
                 <textzone visibility="var '$denonsetbrowser' 5">
-                    <pos x="240" y="800-115-10"/>
+                    <pos x="235" y="800-50"/>
                     <size width="1280-30-240" height="80"/>
                     <text fontsize="21" align="left" color="text"
                           format="This will set the browser mode in the 2 deck vertical view."/>
+                </textzone>
+                <textzone visibility="var '$denonsetbrowser' 6">
+                    <pos x="235" y="800-50"/>
+                    <size width="1280-30-240" height="80"/>
+                    <text fontsize="21" align="left" color="text"
+                          format="This will enable Cover Flow view in Browser"/>
                 </textzone>
 
             </panel>
@@ -4311,48 +4286,57 @@
                 <panel class="denonsetting" x="200" y="120+80+80+80+80+80+80" text="Show Pads on 2 Deck Horizonal" text1="No" text2="Yes"
                        action3="set '$denonsetextension' 6" action1="set '@$primeshowpads' 0"
                        action2="set '@$primeshowpads' 1"/>
+                <panel class="denonsetting" x="200" y="120+80+80+80+80+80+80+80" text="Top Buttons" text1="Fixed" text2="Custom per Deck"
+                       action3="set '$denonsetextension' 7" action1="set '@$primeshowfixedbuttons' 0"
+                       action2="set '@$primeshowfixedbuttons' 1"/>
 
 
                 <textzone visibility="var '$denonsetextension' 0">
-                    <pos x="240" y="800-115"/>
+                    <pos x="235" y="800-50"/>
                     <size width="1280-30-240" height="60"/>
                     <text fontsize="21" align="left" color="text"
                           text="Controller layout of your Skin"/>
                 </textzone>
                 <textzone visibility="var '$denonsetextension' 1">
-                    <pos x="240" y="800-115"/>
+                    <pos x="235" y="800-50"/>
                     <size width="1280-30-240" height="60"/>
                     <text fontsize="21" align="left" color="text" text="Display videos in horizontal mode?"/>
                 </textzone>
                 <textzone visibility="var '$denonsetextension' 2">
-                    <pos x="240" y="800-115"/>
+                    <pos x="235" y="800-50"/>
                     <size width="1280-30-240" height="60"/>
                     <text fontsize="21" align="left" color="text"
                           text="Enable or disable Daylight Mode"/>
                 </textzone>
                 <textzone visibility="var '$denonsetextension' 3">
-                    <pos x="240" y="800-115"/>
+                    <pos x="235" y="800-50"/>
                     <size width="1280-30-240" height="60"/>
                     <text fontsize="21" align="left" color="text"
                           text="Inactive Decks will be displayed with reduced brightness."/>
                 </textzone>
                 <textzone visibility="var '$denonsetextension' 4">
-                    <pos x="240" y="800-115"/>
+                    <pos x="235" y="800-50"/>
                     <size width="1280-30-240" height="60"/>
                     <text fontsize="21" align="left" color="text"
                           text="Show a per-channel VU-meter?"/>
                 </textzone>
                 <textzone visibility="var '$denonsetextension' 5">
-                    <pos x="240" y="800-115"/>
+                    <pos x="235" y="800-50"/>
                     <size width="1280-30-240" height="60"/>
                     <text fontsize="21" align="left" color="text"
                           text="Should a small S-symbol be overlayed to reflect the stems status?"/>
                 </textzone>
                 <textzone visibility="var '$denonsetextension' 6">
-                    <pos x="240" y="800-115"/>
+                    <pos x="235" y="800-50"/>
                     <size width="1280-30-240" height="60"/>
                     <text fontsize="21" align="left" color="text"
                           text="Should the pad section been displayed in 2 deck horizontal mode?"/>
+                </textzone>
+                <textzone visibility="var '$denonsetextension' 7">
+                    <pos x="235" y="800-50"/>
+                    <size width="1280-30-240" height="60"/>
+                    <text fontsize="21" align="left" color="text"
+                          text="The buttons on top should show the custom per deck buttons or the fixed buttons"/>
                 </textzone>
             </panel>
             <panel name="DNS2_mic" group="DNS2_settings" visible="no">
@@ -4381,18 +4365,18 @@
                        action2="setting 'PRIMEGO-MicTalkover' on"/>
 
                 <textzone visibility="var '$denonsetmic' 0">
-                    <pos x="240" y="800-115"/>
+                    <pos x="235" y="800-50"/>
                     <size width="1280-30-240" height="60"/>
                     <text fontsize="21" align="left" color="text" text="Select the Attenuation for Microphones"/>
                 </textzone>
                 <textzone visibility="var '$denonsetmic' 1">
-                    <pos x="240" y="800-115"/>
+                    <pos x="235" y="800-50"/>
                     <size width="1280-30-240" height="60"/>
                     <text fontsize="21" align="left" color="text"
                           text="Select if Microphone will be heard through Booth Output"/>
                 </textzone>
                 <textzone visibility="var '$denonsetmic' 2">
-                    <pos x="240" y="800-115"/>
+                    <pos x="235" y="800-50"/>
                     <size width="1280-30-240" height="60"/>
                     <text fontsize="21" align="left" color="text"
                           text="Enable/Disable Microphone Talkover functionality"/>
