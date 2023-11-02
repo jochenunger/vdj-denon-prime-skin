@@ -7,7 +7,7 @@
  Want to see it in action: https://youtu.be/pQGqcDsc6-w
  Want to get in touch: https://github.com/jochenunger/vdj-denon-prime-skin
 
- Version: 0.2.3
+ Version: 1.0.0
 
  Have fun!
  Jochen
@@ -680,7 +680,9 @@
             </loops>
         </define>
 
-        <define class="songprogresssandbox" colorPlayed="black" colorHigh="colorHigh" colorMed="colorMed"
+        <define class="songprogresssandbox" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat"
+                colorNoVocal="colorNoVocal" colorNoInstru="colorNoInstru" colorNoBeat="colorNoBeatSongPos"
+                colorPlayed="black" colorHigh="colorHigh" colorMed="colorMed"
                 colorBass="colorBass">
             <pos x="+10" y="+280"/>
             <size width="1240" height="160"/>
@@ -4407,24 +4409,23 @@
                     buttonselected="#18A639"/>
         </prelisten>
     </panel>
-    <panel name="sandboxmode" x="10" y="80" visible="sandbox">
+    <panel name="sandboxmode" x="0" y="0" visible="sandbox">
         <button visibility="90%" action="sandbox">
-            <size width="1280-20+1" height="800-80"/>
+            <size width="1280" height="800"/>
             <off color="black"/>
+            <on color="black"/>
         </button>
-        <visual>
-            <pos x="+5" y="+280" width="1280-10-20" height="160"/>
-            <off color="panelback"/>
-        </visual>
-        <textzone>
-            <pos x="+0" y="+80" width="1260" height="160"/>
-            <text size="160" font="Segoe Script" color="text" text="Sandbox Mode..." align="center"/>
-        </textzone>
 
-        <songpos deck="1" class="songprogresssandbox" visibility="deck 1 masterdeck"/>
-        <songpos deck="2" class="songprogresssandbox" visibility="deck 2 masterdeck"/>
-        <songpos deck="3" class="songprogresssandbox" visibility="deck 3 masterdeck"/>
-        <songpos deck="4" class="songprogresssandbox" visibility="deck 4 masterdeck"/>
+        <group y="+80">
+            <textzone>
+                <pos x="+0" y="+80" width="1260" height="160"/>
+                <text size="160" font="Segoe Script" color="text" text="Sandbox Mode..." align="center"/>
+            </textzone>
+            <songpos deck="1" class="songprogresssandbox" visibility="deck 1 masterdeck"/>
+            <songpos deck="2" class="songprogresssandbox" visibility="deck 2 masterdeck"/>
+            <songpos deck="3" class="songprogresssandbox" visibility="deck 3 masterdeck"/>
+            <songpos deck="4" class="songprogresssandbox" visibility="deck 4 masterdeck"/>
+        </group>
     </panel>
     <define class="touchfxbutton" placeholders="textaction">
         <size width="130" height="50"/>
