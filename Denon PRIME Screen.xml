@@ -19,6 +19,7 @@
     <!-- Defines-->
     <group name="windowdefines">
         <font name="Lato"/>
+        <font name="Fjalla One"/>
 
         <dialogs darkmode="true" condition="var_not_equal '@$colorscheme' 2"/>
         <dialogs darkmode="false" condition="var_equal '@$colorscheme' 2"/>
