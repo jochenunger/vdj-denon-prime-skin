@@ -82,6 +82,7 @@
             <define color="settingstext" value="#BBBBBB"/>
 
             <define color="background1" value="#1A1A1A"/>
+            <define color="background1_transparent" value="#001A1A1A"/>
             <define color="bordercolor" value="#000000"/>
             <define color="bordercolor2" value="#222222"/>
             <define color="bordercolor3" value="#707070"/>
@@ -210,6 +211,7 @@
             <define color="settingstext" value="#444444"/>
 
             <define color="background1" value="#e5e5e5"/>
+            <define color="background1_transparent" value="#00e5e5e5"/>
             <define color="bordercolor" value="#ffffff"/>
             <define color="bordercolor2" value="#dddddd"/>
             <define color="bordercolor3" value="#8f8f8f"/>
@@ -2534,23 +2536,77 @@
                         <pos x="+0" y="+50+2"/>
                         <size width="300" height="[BRHEIGHT]-270"/>
                     </coverflow>
-                    <visual visibility="80%">
-                        <pos x="+0" y="+50+[BRHEIGHT]-270"/>
-                        <size width="300" height="80"/>
-                        <off color="buttonoff"/>
+                    <visual visibility="100%">
+                        <pos x="+0" y="+50+[BRHEIGHT]-260"/>
+                        <size width="300" height="100"/>
+                        <off color="background1"/>
                     </visual>
-                    <textzone group="vertical" align="left" scroll="now">
-                        <pos x="+0" y="+50+[BRHEIGHT]-270"/>
-                        <size width="300" height="200"/>
+                    <square>
+                        <pos x="+0" y="+50+[BRHEIGHT]-260-50"/>
+                        <size width="300" height="50"/>
+                        <gradient type="vertical" color1="background1_transparent" color2="background1"/>
+                    </square>
+                    <textzone group="horizontal" align="left" scroll="yes">
+                        <pos x="+0" y="+60+[BRHEIGHT]-270"/>
+                        <size width="300" height="40"/>
+                        <text fontsize="25" action="get_text ' '"/>
                         <text fontsize="30" color="text3" action="get_browsed_song 'title_remix'"/>
-                        <text fontsize="5" color="text4" text=""/>
-                        <text fontsize="25" color="text3" action="get_browsed_song 'artist'"/>
-                        <text fontsize="25" color="text4" action="get_browsed_song 'genre'"/>
-                        <text fontsize="25" color="text4" action="get_browsed_song 'bpm'"/>
-                        <text fontsize="5" color="text4" text=""/>
-                        <text fontsize="25" color="text4" action="get_browsed_song 'User 1'"/>
-                        <text fontsize="25" color="text4" action="get_browsed_song 'User 2'"/>
+                        <text fontsize="25" action="get_text ' '"/>
                     </textzone>
+                    <textzone group="horizontal" align="left">
+                        <pos x="+0" y="+60+[BRHEIGHT]-270+40"/>
+                        <size width="300" height="35"/>
+                        <text fontsize="25" action="get_text ' '"/>
+                        <text fontsize="25" color="text3" action="get_browsed_song 'artist'"/>
+                        <text fontsize="25" action="get_text ' '"/>
+                    </textzone>
+                    <textzone group="horizontal" align="left">
+                        <pos x="+0" y="+60+[BRHEIGHT]-270+50+35"/>
+                        <size width="300" height="35"/>
+                        <text fontsize="25" action="get_text ' '"/>
+                        <text fontsize="25" color="text4" action="get_browsed_song 'genre'"/>
+                        <text fontsize="25" action="get_text ' '"/>
+                    </textzone>
+                    <textzone group="horizontal" align="left">
+                        <pos x="+0" y="+60+[BRHEIGHT]-270+50+35+35"/>
+                        <size width="300" height="35"/>
+                        <text fontsize="25" action="get_text ' '"/>
+                        <text fontsize="25" color="text4" action="get_browsed_song 'bpm'"/>
+                        <text fontsize="25" action="get_text ' '"/>
+                    </textzone>
+                    <textzone group="horizontal" align="left" scroll="yes" visibility="get_browsed_song 'User 1' & param_equal '' ? true : false">
+                        <pos x="+0" y="+50+[BRHEIGHT]-270+70+35+35+35"/>
+                        <size width="300" height="35"/>
+                        <text fontsize="25" action="get_text ' '"/>
+                        <text fontsize="25" color="text4" action="get_browsed_song 'User 2'"/>
+                        <text fontsize="25" action="get_text ' '"/>
+                    </textzone>
+                    <textzone group="horizontal" align="left" scroll="yes" visibility="get_browsed_song 'User 1' & param_equal '' ? false : get_browsed_song 'User 2' & param_equal '' ? false : true">
+                        <pos x="+0" y="+50+[BRHEIGHT]-270+70+35+35+35"/>
+                        <size width="300" height="35"/>
+                        <text fontsize="25" action="get_text ' '"/>
+                        <text fontsize="25" color="text4" action="get_browsed_song 'User 1'"/>
+                        <text fontsize="25" color="text4" action="get_text ' - '"/>
+                        <text fontsize="25" color="text4" action="get_browsed_song 'User 2'"/>
+                        <text fontsize="25" action="get_text ' '"/>
+                    </textzone>
+                    <textzone group="horizontal" align="left" scroll="yes" visibility="get_browsed_song 'User 1' & param_equal '' ? false : get_browsed_song 'User 2' & param_equal '' ? true : false">
+                        <pos x="+0" y="+50+[BRHEIGHT]-270+70+35+35+35"/>
+                        <size width="300" height="35"/>
+                        <text fontsize="25" action="get_text ' '"/>
+                        <text fontsize="25" color="text4" action="get_browsed_song 'User 1'"/>
+                        <text fontsize="25" action="get_text ' '"/>
+                    </textzone>
+                    <square>
+                        <pos x="+0" y="+60+[BRHEIGHT]-270"/>
+                        <size width="8" height="210"/>
+                        <gradient type="horizontal" color1="background1" color2="background1_transparent"/>
+                    </square>
+                    <square>
+                        <pos x="+300-15" y="+60+[BRHEIGHT]-270"/>
+                        <size width="15" height="210"/>
+                        <gradient type="horizontal" color1="background1_transparent" color2="background1"/>
+                    </square>
                 </group>
                 <group visibility="var '@$primebrowsercoverflow' 2">
                     <filelist class="primebrowser" headerheight="[LINEHEIGHT]" lineheight="[LINEHEIGHT]">
@@ -3921,10 +3977,7 @@
 
                     </panel>
                 </group>
-
             </panel>
-
-
         </panel>
 
         <!-- Settings View -->
