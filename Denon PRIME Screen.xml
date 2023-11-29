@@ -1281,8 +1281,11 @@
         </define>
 
         <define class="scratchpanelhor" placeholders="*dy,*dwidth,*dheight">
-            <panel class="greenroom-logo-static" x="+[DWIDTH]/2-100" y="+[DY]-100"
+<!--            <panel class="greenroom-logo-static" x="+[DWIDTH]/2-100" y="+[DY]-100"-->
+<!--                   visibility="not deck 1 loaded &amp;&amp; not deck 2 loaded &amp;&amp; not deck 3 loaded &amp;&amp; not deck 4 loaded"/>-->
+            <panel class="greenroom-logo-start" x="+[DWIDTH]/2-460" y="+[DY]-110"
                    visibility="not deck 1 loaded &amp;&amp; not deck 2 loaded &amp;&amp; not deck 3 loaded &amp;&amp; not deck 4 loaded"/>
+
             <panel visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? false : true : true">
                 <panel class="scratchwh" x="+0" y="+0" swidth="[DWIDTH]" sheight="[DHEIGHT]" deckn="1" visibility="deck 1 leftdeck"/>
                 <panel class="scratchwh" x="+0" y="+0" swidth="[DWIDTH]" sheight="[DHEIGHT]" deckn="3" visibility="deck 3 leftdeck"/>
@@ -1422,6 +1425,21 @@
             <visual visibility="20%">
                 <size width="[DWIDTH]" height="[DHEIGHT]"/>
                 <off color="black"/>
+            </visual>
+        </define>
+        <define class="greenroom-logo-start" placeholders="*dwidth=1000,*dheight=210">
+<!--            <visual visibility="90%">-->
+<!--                <size width="[DWIDTH]" height="[DHEIGHT]"/>-->
+<!--                <off color="black"/>-->
+<!--            </visual>-->
+            <square radius="10">
+                <pos x="-20" y="-20"/>
+                <size width="[DWIDTH]+40" height="[DHEIGHT]+40"/>
+                <gradient type="vertical" color1="background1" color2="panelback"/>
+            </square>
+            <visual>
+                <size width="[DWIDTH]" height="[DHEIGHT]"/>
+                <off x="10" y="310"/>
             </visual>
         </define>
 
