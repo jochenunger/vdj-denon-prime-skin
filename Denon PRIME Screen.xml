@@ -388,7 +388,7 @@
                 <button class="fixedbutton" selectedcolor="fixedbutton2" action="broadcast" x="+630+100+100" y="+0" textaction="broadcast ? broadcast_message & param_contains 'Video Broadcast' ? get_text 'ON AIR' : broadcast_message & param_cast 'text' 18 & param_contains '10' ? get_text '10 clients' : param_contains '9' ? get_text '9 clients' : param_contains '8' ? get_text '8 clients' : param_contains '7' ? get_text '7 clients' : param_contains '6' ? get_text '6 clients' : param_contains '5' ? get_text '5 clients' : param_contains '4' ? get_text '4 clients' : param_contains '3' ? get_text '3 clients' : param_contains '2' ? get_text '2 clients' : param_contains '1' ? get_text '1 client' : param_contains '0' ? get_text 'no clients' : get_text 'Broadcast' : get_text 'Broadcast'"/>
                 <button class="fixedbutton" selectedcolor="fixedbutton2" action="record" x="+630+100+100+100" y="+0" textaction="record ? get_record_time : get_text 'Record'"/>
 
-                <group visibility="broadcast || record">
+                <group visibility="broadcast ? true : record ? true : false">
                     <pos x="+630+100+101" y="+58"/>
                     <visual>
                         <pos x="-2" y="-3"/>
@@ -402,33 +402,6 @@
                         <off x="1020+70-6" y="50" condition="var_equal '@$colorscheme' 2"/>
                     </visual>
                 </group>
-<!--                <visual source="record_vu" type="linear" orientation="horizontal" visibility="broadcast || record" smooth="false" granularity="30">-->
-<!--                    <pos x="+630+100+100+5" y="+62"/>-->
-<!--                    <size width="180" height="4"/>-->
-<!--                    <on x="1020+70" y="20"/>-->
-<!--                    <off x="1020+70" y="35" condition="var_not_equal '@$colorscheme' 2"/>-->
-<!--                    <off x="1020+70" y="50" condition="var_equal '@$colorscheme' 2"/>-->
-<!--                </visual>-->
-<!--                <visual source="record_vu" type="linear" orientation="horizontal" visibility="record" smooth="true" granularity="13">-->
-<!--                    <pos x="+630+100+100+100+5" y="+38"/>-->
-<!--                    <size width="80" height="8"/>-->
-<!--                    <off shape="square" color="display" radius="3"/>-->
-<!--                    <on shape="square" color="green" radius="3"/>-->
-<!--                </visual>-->
-<!--                <visual source="get_vu_meter_left 'master'" type="linear" orientation="horizontal" granularity="13">-->
-<!--                    <pos x="+55" y="+9"/>-->
-<!--                    <size width="70" height="4"/>-->
-<!--                    <on x="1669" y="0"/>-->
-<!--                    <off x="1669" y="15" condition="var_not_equal '@$colorscheme' 2"/>-->
-<!--                    <off x="1669" y="30" condition="var_equal '@$colorscheme' 2"/>-->
-<!--                </visual>-->
-<!--                <visual source="get_vu_meter_right 'master'" type="linear" orientation="horizontal" granularity="13">-->
-<!--                    <pos x="+55" y="+15"/>-->
-<!--                    <size width="70" height="4"/>-->
-<!--                    <on x="1669" y="0"/>-->
-<!--                    <off x="1669" y="15" condition="var_not_equal '@$colorscheme' 2"/>-->
-<!--                    <off x="1669" y="30" condition="var_equal '@$colorscheme' 2"/>-->
-<!--                </visual>-->
             </group>
             <group visibility="var '@$primeshowfixedbuttons' 1">
                 <panel class="customs" deckn="1" x="+0" y="+0" visibility="deck 1 leftdeck"/>
