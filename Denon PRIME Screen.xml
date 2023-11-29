@@ -378,7 +378,7 @@
 
         <define class="topbuttons" placeholders="deckn">
             <group visibility="var '@$primeshowfixedbuttons' 0">
-                <button class="fixedbutton" selectedcolor="fixedbutton" query="prelisten" action="prelisten ? prelisten off : prelisten on & prelisten_pos 10% & deck 1 pfl off & deck 2 pfl off & deck 3 pfl off & deck 4 pfl off" x="+0" y="+0" textaction="get_text 'Prelisten'"/>
+                <button class="fixedbutton" selectedcolor="fixedbutton" action="holding 1000ms ? toggle '@$primeshowpads' : cycle '@$prime4fulldecks' 4" x="+0" y="+0" textaction="get_text 'Layout'"/>
                 <button class="fixedbutton" selectedcolor="fixedbutton" action="sandbox" x="+100" y="+0" textaction="get_text 'Sandbox'"/>
                 <button class="fixedbutton" selectedcolor="fixedbutton" action="pitch_range 8%" x="+100+100" y="+0" textaction="get_text 'Pitch 8%'"/>
                 <button class="fixedbutton" selectedcolor="fixedbutton" action="pitch_range 4%" x="+100+100+100" y="+0" textaction="get_text 'Pitch 4%'"/>
@@ -388,18 +388,47 @@
                 <button class="fixedbutton" selectedcolor="fixedbutton2" action="broadcast" x="+630+100+100" y="+0" textaction="broadcast ? broadcast_message & param_contains 'Video Broadcast' ? get_text 'ON AIR' : broadcast_message & param_cast 'text' 18 & param_contains '10' ? get_text '10 clients' : param_contains '9' ? get_text '9 clients' : param_contains '8' ? get_text '8 clients' : param_contains '7' ? get_text '7 clients' : param_contains '6' ? get_text '6 clients' : param_contains '5' ? get_text '5 clients' : param_contains '4' ? get_text '4 clients' : param_contains '3' ? get_text '3 clients' : param_contains '2' ? get_text '2 clients' : param_contains '1' ? get_text '1 client' : param_contains '0' ? get_text 'no clients' : get_text 'Broadcast' : get_text 'Broadcast'"/>
                 <button class="fixedbutton" selectedcolor="fixedbutton2" action="record" x="+630+100+100+100" y="+0" textaction="record ? get_record_time : get_text 'Record'"/>
 
-                <visual source="record_vu" type="linear" orientation="horizontal" visibility="broadcast" smooth="true" granularity="13">
-                    <pos x="+630+100+100+5" y="+38"/>
-                    <size width="80" height="8"/>
-                    <off shape="square" color="display" radius="3"/>
-                    <on shape="square" color="green" radius="3"/>
-                </visual>
-                <visual source="record_vu" type="linear" orientation="horizontal" visibility="record" smooth="true" granularity="13">
-                    <pos x="+630+100+100+100+5" y="+38"/>
-                    <size width="80" height="8"/>
-                    <off shape="square" color="display" radius="3"/>
-                    <on shape="square" color="green" radius="3"/>
-                </visual>
+                <group visibility="broadcast || record">
+                    <pos x="+630+100+101" y="+58"/>
+                    <visual>
+                        <pos x="-2" y="-3"/>
+                        <size width="186+5" height="12"/>
+                        <off radius="4" color="buttonon" shape="square" border="black" border_size="2"/>
+                    </visual>
+                    <visual source="record_vu" type="linear" orientation="horizontal" smooth="false" granularity="31">
+                        <size width="186" height="6"/>
+                        <on x="1020+70-6" y="20"/>
+                        <off x="1020+70-6" y="35" condition="var_not_equal '@$colorscheme' 2"/>
+                        <off x="1020+70-6" y="50" condition="var_equal '@$colorscheme' 2"/>
+                    </visual>
+                </group>
+<!--                <visual source="record_vu" type="linear" orientation="horizontal" visibility="broadcast || record" smooth="false" granularity="30">-->
+<!--                    <pos x="+630+100+100+5" y="+62"/>-->
+<!--                    <size width="180" height="4"/>-->
+<!--                    <on x="1020+70" y="20"/>-->
+<!--                    <off x="1020+70" y="35" condition="var_not_equal '@$colorscheme' 2"/>-->
+<!--                    <off x="1020+70" y="50" condition="var_equal '@$colorscheme' 2"/>-->
+<!--                </visual>-->
+<!--                <visual source="record_vu" type="linear" orientation="horizontal" visibility="record" smooth="true" granularity="13">-->
+<!--                    <pos x="+630+100+100+100+5" y="+38"/>-->
+<!--                    <size width="80" height="8"/>-->
+<!--                    <off shape="square" color="display" radius="3"/>-->
+<!--                    <on shape="square" color="green" radius="3"/>-->
+<!--                </visual>-->
+<!--                <visual source="get_vu_meter_left 'master'" type="linear" orientation="horizontal" granularity="13">-->
+<!--                    <pos x="+55" y="+9"/>-->
+<!--                    <size width="70" height="4"/>-->
+<!--                    <on x="1669" y="0"/>-->
+<!--                    <off x="1669" y="15" condition="var_not_equal '@$colorscheme' 2"/>-->
+<!--                    <off x="1669" y="30" condition="var_equal '@$colorscheme' 2"/>-->
+<!--                </visual>-->
+<!--                <visual source="get_vu_meter_right 'master'" type="linear" orientation="horizontal" granularity="13">-->
+<!--                    <pos x="+55" y="+15"/>-->
+<!--                    <size width="70" height="4"/>-->
+<!--                    <on x="1669" y="0"/>-->
+<!--                    <off x="1669" y="15" condition="var_not_equal '@$colorscheme' 2"/>-->
+<!--                    <off x="1669" y="30" condition="var_equal '@$colorscheme' 2"/>-->
+<!--                </visual>-->
             </group>
             <group visibility="var '@$primeshowfixedbuttons' 1">
                 <panel class="customs" deckn="1" x="+0" y="+0" visibility="deck 1 leftdeck"/>
