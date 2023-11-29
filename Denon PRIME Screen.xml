@@ -1270,21 +1270,26 @@
                         <on color="blue" radius="2"/>
                     </led>
                 </visual>
-                <!--                <slider action="get level_peak" orientation="vertical" direction="up" smooth="false">-->
-                <!--                    <pos x="-3" y="+0"/><size width="[DWIDTH]+6" height="[DHEIGHT]"/>-->
-                <!--                    <fader>-->
-                <!--                        <size width="[DWIDTH]+6" height="5"/>-->
-                <!--                        <off shape="square" color="white" radius="2"/>-->
-                <!--                    </fader>-->
-                <!--                </slider>-->
             </deck>
+        </define>
+        <define class="brushed-background" placeholders="*dwidth,*dheight">
+            <group visibility="var_not_equal '@$colorscheme' 2">
+                <visual visibility="20%">
+                    <size width="[DWIDTH]" height="[DHEIGHT]"/>
+                    <off x="0" y="512"/>
+                </visual>
+            </group>
         </define>
 
         <define class="scratchpanelhor" placeholders="*dy,*dwidth,*dheight">
-<!--            <panel class="greenroom-logo-static" x="+[DWIDTH]/2-100" y="+[DY]-100"-->
-<!--                   visibility="not deck 1 loaded &amp;&amp; not deck 2 loaded &amp;&amp; not deck 3 loaded &amp;&amp; not deck 4 loaded"/>-->
+            <panel class="brushed-background" dwidth="[DWIDTH]" dheight="[DHEIGHT]+21">
+                <pos x="+0" y="+0"/>
+            </panel>
+            <panel class="brushed-background" dwidth="[DWIDTH]" dheight="[DHEIGHT]+21">
+                <pos x="+0" y="+[DY]"/>
+            </panel>
             <panel class="greenroom-logo-start" x="+[DWIDTH]/2-460" y="+[DY]-110"
-                   visibility="not deck 1 loaded &amp;&amp; not deck 2 loaded &amp;&amp; not deck 3 loaded &amp;&amp; not deck 4 loaded"/>
+                   visibility="var '@$primeshowvideo' 0 &amp;&amp; not deck 1 loaded &amp;&amp; not deck 2 loaded &amp;&amp; not deck 3 loaded &amp;&amp; not deck 4 loaded"/>
 
             <panel visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? false : true : true">
                 <panel class="scratchwh" x="+0" y="+0" swidth="[DWIDTH]" sheight="[DHEIGHT]" deckn="1" visibility="deck 1 leftdeck"/>
@@ -1309,8 +1314,20 @@
         </define>
 
         <define class="scratchpanelhort_4decks" placeholders="*dy,*dwidth,*dheight">
-            <panel class="greenroom-logo-static" x="+[DWIDTH]/2-80" y="+[DY]*2-80" dwidth="160" dheight="160"
-                   visibility="not deck 1 loaded &amp;&amp; not deck 2 loaded &amp;&amp; not deck 3 loaded &amp;&amp; not deck 4 loaded"/>
+            <panel class="greenroom-logo-start" x="+[DWIDTH]/2-460" y="+[DY]*2-110"
+                   visibility="var '@$primeshowvideo' 0 &amp;&amp; not deck 1 loaded &amp;&amp; not deck 2 loaded &amp;&amp; not deck 3 loaded &amp;&amp; not deck 4 loaded"/>
+            <panel class="brushed-background" dwidth="[DWIDTH]" dheight="[DHEIGHT]+20">
+                <pos x="+0" y="+0"/>
+            </panel>
+            <panel class="brushed-background" dwidth="[DWIDTH]" dheight="[DHEIGHT]+20">
+                <pos x="+0" y="+[DY]"/>
+            </panel>
+            <panel class="brushed-background" dwidth="[DWIDTH]" dheight="[DHEIGHT]+20">
+                <pos x="+0" y="+[DY]*2"/>
+            </panel>
+            <panel class="brushed-background" dwidth="[DWIDTH]" dheight="[DHEIGHT]+20">
+                <pos x="+0" y="+[DY]*3"/>
+            </panel>
             <panel visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? false : true : true">
                 <panel class="scratchwh" x="+0" y="+[DY]" swidth="[DWIDTH]" sheight="[DHEIGHT]" deckn="1"/>
                 <panel class="scratchwh" x="+0" y="+0" swidth="[DWIDTH]" sheight="[DHEIGHT]" deckn="3"/>
@@ -1353,6 +1370,18 @@
             <panel class="songposvertical" x="+[DY]*3-[SONGPOS_DX]" y="+85" dwidth="60" dheight="[DHEIGHT]-210" dbuttonspacer="140" deckn="2"/>
             <panel class="songposvertical" x="+[DY]*4-[SONGPOS_DX]" y="+85" dwidth="60" dheight="[DHEIGHT]-210" dbuttonspacer="140" deckn="4"/>
 
+            <panel class="brushed-background" dwidth="[DY]" dheight="[DHEIGHT]" novisibility="deck 3 loaded">
+                <pos x="+0" y="+0"/>
+            </panel>
+            <panel class="brushed-background" dwidth="[DY]" dheight="[DHEIGHT]" novisibility="deck 1 loaded">
+                <pos x="+[DY]*1" y="+0"/>
+            </panel>
+            <panel class="brushed-background" dwidth="[DY]" dheight="[DHEIGHT]" novisibility="deck 2 loaded">
+                <pos x="+[DY]*2" y="+0"/>
+            </panel>
+            <panel class="brushed-background" dwidth="[DY]" dheight="[DHEIGHT]" novisibility="deck 4 loaded">
+                <pos x="+[DY]*3+" y="+0"/>
+            </panel>
             <visual>
                 <pos x="+[DY]-2" y="+0"/>
                 <size width="4" height="[DHEIGHT]"/>
@@ -1427,11 +1456,7 @@
                 <off color="black"/>
             </visual>
         </define>
-        <define class="greenroom-logo-start" placeholders="*dwidth=1000,*dheight=210">
-<!--            <visual visibility="90%">-->
-<!--                <size width="[DWIDTH]" height="[DHEIGHT]"/>-->
-<!--                <off color="black"/>-->
-<!--            </visual>-->
+        <define class="greenroom-logo-start" placeholders="*dwidth=1000,*dheight=200">
             <square radius="10">
                 <pos x="-20" y="-20"/>
                 <size width="[DWIDTH]+40" height="[DHEIGHT]+40"/>
@@ -1459,6 +1484,12 @@
             <panel class="songposvertical" x="+[DY]*4-[SONGPOS_DX]" y="+85" dwidth="60" dheight="[DHEIGHT]-210" dbuttonspacer="103" deckn="4"
                    visibility="deck 4 rightdeck"/>
 
+            <panel class="brushed-background" dwidth="[DY]" dheight="[DHEIGHT]" novisibility="deck 1 loaded && deck 1 leftdeck || deck 3 loaded && deck 3 leftdeck">
+                <pos x="+6" y="+0"/>
+            </panel>
+            <panel class="brushed-background" dwidth="[DY]" dheight="[DHEIGHT]" novisibility="deck 2 loaded && deck 2 rightdeck || deck 4 loaded && deck 4 rightdeck">
+                <pos x="+[DY]*3+6" y="+0"/>
+            </panel>
             <panel visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? false : true : true">
                 <panel class="scratchwvertical" x="+6" y="+0" swidth="[DWIDTH]" sheight="[DHEIGHT]" deckn="1" visibility="deck 1 leftdeck"/>
                 <panel class="scratchwvertical" x="+6" y="+0" swidth="[DWIDTH]" sheight="[DHEIGHT]" deckn="3" visibility="deck 3 leftdeck"/>
@@ -2029,20 +2060,22 @@
         </define>
         <define class="fulldeckwide" placeholders="deckn">
             <deck deck="[DECKN]">
+                <panel class="brushed-background" dwidth="538+89" dheight="61">
+                    <pos x="+0" y="+65"/>
+                </panel>
                 <group visibility="var '@$denonwavehalf' 0">
                     <songpos class="songprogresswide" x="+5" y="+65" dheight="60" dwidth="538-10+88"
                              visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? false : true : true"/>
                     <songpos class="songprogresscolorswide" x="+5" y="+65" dheight="60" dwidth="538-10+88"
                              visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? true : false : false"/>
-                    <panel class="32beatsruler" x="+5-2" y="+63" width="538-10+88" height="7" visibility="get_songlength & param_smaller 1200 ? true : false"/>
                 </group>
                 <group visibility="var '@$denonwavehalf' 1">
                     <songpos class="songprogresswide" x="+5" y="+65" dheight="60" dwidth="538-10+88" half = "yes"
                              visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? false : true : true"/>
                     <songpos class="songprogresscolorswide" x="+5" y="+65" dheight="60" dwidth="538-10+88" half = "yes"
                              visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? true : false : false"/>
-                    <panel class="32beatsruler" x="+5-2" y="+63" width="538-10+88" height="7" visibility="get_songlength & param_smaller 1200 ? true : false"/>
                 </group>
+                <panel class="32beatsruler" x="+5-2" y="+63" width="538-10+88" height="7" visibility="get_songlength & param_smaller 1200 ? true : false"/>
                 <visual>
                     <pos x="+0" y="+0"/>
                     <size width="50" height="71-10"/>
@@ -2428,6 +2461,9 @@
                     <size width="45" height="71-10"/>
                     <text fontsize="36" align="center" color="deckcolorbright" action="get_deck"/>
                 </textzone>
+                <panel class="brushed-background" dwidth="538+38" dheight="57">
+                    <pos x="+50" y="+0"/>
+                </panel>
                 <group visibility="var '@$denonwavehalf' 0">
                     <songpos class="songprogresswide" x="+55" y="+0" dheight="60" dwidth="538-10+88-55"
                              visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? false : true : true"/>
@@ -2454,6 +2490,9 @@
                 <size width="1260" height="[BRHEIGHT]"/>
                 <off color="background1"/>
             </visual>
+            <panel class="brushed-background" dwidth="1260" dheight="[BRHEIGHT]">
+                <pos x="+0" y="+0"/>
+            </panel>
             <visual>
                 <pos x="+90" y="+0"/>
                 <size width="5" height="[BRHEIGHT]"/>
