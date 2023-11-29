@@ -1247,7 +1247,7 @@
         </define>
         <define class="brushed-background" placeholders="*dwidth,*dheight">
             <group visibility="var_not_equal '@$colorscheme' 2">
-                <visual visibility="20%">
+                <visual visibility="30%">
                     <size width="[DWIDTH]" height="[DHEIGHT]"/>
                     <off x="0" y="512"/>
                 </visual>
@@ -1457,10 +1457,10 @@
             <panel class="songposvertical" x="+[DY]*4-[SONGPOS_DX]" y="+85" dwidth="60" dheight="[DHEIGHT]-210" dbuttonspacer="103" deckn="4"
                    visibility="deck 4 rightdeck"/>
 
-            <panel class="brushed-background" dwidth="[DY]" dheight="[DHEIGHT]" novisibility="deck 1 loaded && deck 1 leftdeck || deck 3 loaded && deck 3 leftdeck">
+            <panel class="brushed-background" dwidth="[DY]" dheight="[DHEIGHT]" novisibility="deck left loaded">
                 <pos x="+6" y="+0"/>
             </panel>
-            <panel class="brushed-background" dwidth="[DY]" dheight="[DHEIGHT]" novisibility="deck 2 loaded && deck 2 rightdeck || deck 4 loaded && deck 4 rightdeck">
+            <panel class="brushed-background" dwidth="[DY]" dheight="[DHEIGHT]" novisibility="deck right loaded">
                 <pos x="+[DY]*3+6" y="+0"/>
             </panel>
             <panel visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? false : true : true">
