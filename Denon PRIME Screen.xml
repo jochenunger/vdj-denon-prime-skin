@@ -1931,11 +1931,11 @@
                     <size width="5" height="41"/>
                     <off color="black"/>
                 </visual>
-                <textzone>
+                <button action="invert_deck">
                     <pos x="+5" y="+0"/>
                     <size width="45" height="41"/>
-                    <text fontsize="32" align="center" color="deckcolorbright" action="get_deck"/>
-                </textzone>
+                    <text fontsize="32" color="deckcolorbright" align="center" action="get_deck"/>
+                </button>
 
                 <panel visibility="get_title ? true : false">
                     <panel visibility="var '@$primeshowalbum' 0">
@@ -2075,11 +2075,11 @@
                     <size width="5" height="71-10"/>
                     <off color="panelback"/>
                 </visual>
-                <textzone>
+                <button action="invert_deck">
                     <pos x="+5" y="+0"/>
                     <size width="45" height="71-10"/>
-                    <text fontsize="36" align="center" color="deckcolorbright" action="get_deck"/>
-                </textzone>
+                    <text fontsize="36" color="deckcolorbright" align="center" action="get_deck"/>
+                </button>
                 <panel visibility="get_title ? true : false">
                     <panel visibility="var 'denoneditbpm' 0">
                         <panel visibility="var 'keydisplay' 1">
