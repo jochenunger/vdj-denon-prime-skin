@@ -378,13 +378,13 @@
 
         <define class="topbuttons" placeholders="deckn">
             <group visibility="var '@$primeshowfixedbuttons' 0">
-                <button class="fixedbutton" selectedcolor="fixedbutton" action="holding 1000ms ? toggle '@$primeshowpads' : cycle '@$prime4fulldecks' 4" x="+0" y="+0" textaction="get_text 'Layout'"/>
+                <button class="fixedbutton" selectedcolor="fixedbutton" action="holding 1000ms ? toggle '@$primeshowpads' : var '$touchfx' ? set '$touchfx' 0 : cycle '@$prime4fulldecks' 4" x="+0" y="+0" textaction="get_text 'Layout'"/>
                 <button class="fixedbutton" selectedcolor="fixedbutton" action="sandbox" x="+100" y="+0" textaction="get_text 'Sandbox'"/>
-                <button class="fixedbutton" selectedcolor="fixedbutton" action="pitch_range 8%" x="+100+100" y="+0" textaction="get_text 'Pitch 8%'"/>
-                <button class="fixedbutton" selectedcolor="fixedbutton" action="pitch_range 4%" x="+100+100+100" y="+0" textaction="get_text 'Pitch 4%'"/>
+                <button class="fixedbutton" selectedcolor="fixedbutton" action="video ? toggle '@$primeshowvideo' : video on &amp; set '@$primeshowvideo' 1" x="+100+100" y="+0" textaction="get_text 'Video'"/>
+                <button class="fixedbutton" selectedcolor="fixedbutton" action="toggle '$touchfx'" x="+100+100+100" y="+0" textaction="get_text 'TouchFX'"/>
 
-                <button class="fixedbutton" selectedcolor="fixedbutton" action="toggle '$touchfx'" x="+630+0" y="+0" textaction="get_text 'TouchFX'"/>
-                <button class="fixedbutton" selectedcolor="fixedbutton" action="video & set '@$primeshowvideo' 1" x="+630+100" y="+0" textaction="get_text 'Video'"/>
+                <button class="fixedbutton" selectedcolor="fixedbutton" action="pitch_range 4%" x="+630+0" y="+0" textaction="get_text 'Pitch 4%'"/>
+                <button class="fixedbutton" selectedcolor="fixedbutton" action="pitch_range 8%" x="+630+100" y="+0" textaction="get_text 'Pitch 8%'"/>
                 <button class="fixedbutton" selectedcolor="fixedbutton2" action="broadcast" x="+630+100+100" y="+0" textaction="broadcast ? broadcast_message & param_contains 'Video Broadcast' ? get_text 'ON AIR' : broadcast_message & param_cast 'text' 18 & param_contains '10' ? get_text '10 clients' : param_contains '9' ? get_text '9 clients' : param_contains '8' ? get_text '8 clients' : param_contains '7' ? get_text '7 clients' : param_contains '6' ? get_text '6 clients' : param_contains '5' ? get_text '5 clients' : param_contains '4' ? get_text '4 clients' : param_contains '3' ? get_text '3 clients' : param_contains '2' ? get_text '2 clients' : param_contains '1' ? get_text '1 client' : param_contains '0' ? get_text 'no clients' : get_text 'Broadcast' : get_text 'Broadcast'"/>
                 <button class="fixedbutton" selectedcolor="fixedbutton2" action="record" x="+630+100+100+100" y="+0" textaction="record ? get_record_time : get_text 'Record'"/>
 
