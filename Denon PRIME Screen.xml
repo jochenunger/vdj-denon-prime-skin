@@ -476,6 +476,25 @@
                 <fader color="fxfader" shape="circle" width="30" height="30"/>
             </slider>
         </define>
+        <define class="beatdriftslider" placeholders="*swidth=120,deckn">
+            <visual>
+                <pos x="+0" y="+0"/>
+                <size width="[SWIDTH]" height="24"/>
+                <off color="black" shape="square" radius="6"/>
+            </visual>
+            <slider action="get_beatdiff" frommiddle="true" disabled="false" orientation="horizontal">
+                <pos x="+5" y="+5"/>
+                <size width="[SWIDTH]-10" height="14"/>
+                <off color="black" shape="square" radius="6"/>
+                <on color="fxslideron" shape="square" radius="6"/>
+                <fader color="white" width="0" height="0"/>
+            </slider>
+            <slider action="get_beatdiff" frommiddle="true" disabled="false" orientation="horizontal">
+                <pos x="-5" y="-10"/>
+                <size width="[SWIDTH]+10" height="44"/>
+                <fader color="text" shape="square" width="3" height="30"/>
+            </slider>
+        </define>
 
         <define class="fxsliderxl" placeholders="action,frommiddle,disabled,*swidth=460">
             <visual>
@@ -3805,6 +3824,7 @@
                         <panel class="beatsblock" deckn="3" x="565" y="+28" visibility="deck 3 leftdeck"/>
                         <panel class="beatsblock" deckn="2" x="565" y="+53" visibility="deck 2 rightdeck"/>
                         <panel class="beatsblock" deckn="4" x="565" y="+53" visibility="deck 4 rightdeck"/>
+                        <panel class="beatdriftslider" x="565" y="+60" swidth="168"/>
                     </group>
                 </panel>
                 <!-- ========================= 4 Decks horizontal  =========================== -->
