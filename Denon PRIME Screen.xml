@@ -3797,7 +3797,7 @@
                         </deck>
                     </define>
                     <!-- ========================= 2 Decks horizontal =========================== -->
-                    <group visibility="var '@$denoncontrollertype' 0">
+                    <group visibility="var '@$denoncontrollertype' 0 && var '$touchfx' 0">
                         <panel name="pads" x="10" y="610" visibility="var '@$primeshowpads' 1">
                             <visual>
                                 <pos x="+0" y="+0"/>
@@ -3817,7 +3817,7 @@
 
                         <panel class="primegofxpannel"/>
                     </group>
-                    <group visibility="var '@$denoncontrollertype' 1">
+                    <group visibility="var '@$denoncontrollertype' 1 && var '$touchfx' 0">
                         <panel name="pads" x="10" y="800-10-115+9" visibility="var '@$primeshowpads' 1">
                             <visual>
                                 <pos x="+0" y="+0"/>
