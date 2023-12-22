@@ -500,6 +500,16 @@
                         <size width="[SWIDTH]" height="18"/>
                         <fader color="white" shape="square" width="3" height="15"/>
                     </slider>
+                    <button visibility="param_bigger get_beatdiff 0.5" action="nothing">
+                        <pos x="-15" y="+1"/>
+                        <size width="15" height="15"/>
+                        <icon sysicon="arrowleft" width="15" height="15" coloroff="text"/>
+                    </button>
+                    <button visibility="param_smaller get_beatdiff 0.5" action="nothing">
+                        <pos x="+[SWIDTH]" y="+1"/>
+                        <size width="15" height="15"/>
+                        <icon sysicon="arrowright" width="15" height="15" coloroff="text"/>
+                    </button>
                 </deck>
             </group>
             <group novisibility="deck left play && deck right play">
