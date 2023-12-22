@@ -58,6 +58,7 @@
             <define color="colorNoInstru" value="#087233"/>
             <define color="colorNoBeat" value="#20C262"/>
             <define color="colorNoBeatSongPos" value="#000000"/>
+            <define color="colorPlayed" value="#646464"/>
 
             <define color="text" value="#707070"/>
             <define color="text2" value="#aaaaaa"/>
@@ -153,7 +154,7 @@
             <define color="browser_iconbuttondown" value="#2f3032"/>
             <define color="browser_iconbuttonactive" value="#2e6b76"/>
         </group>
-        <group name="color-normal" condition="var_equal '@$colorscheme' 2">
+        <group name="color-normal-daylight" condition="var_equal '@$colorscheme' 2">
             <define color="deckcolordark" value="#365E8F" deck="1"/>
             <define color="deckcolordark" value="#8F2424" deck="2"/>
             <define color="deckcolordark" value="#368F47" deck="3"/>
@@ -187,6 +188,7 @@
             <define color="colorNoInstru" value="#087233"/>
             <define color="colorNoBeat" value="#AAAAAA"/>
             <define color="colorNoBeatSongPos" value="#FFFFFF"/>
+            <define color="colorPlayed" value="#646464"/>
 
             <define color="text" value="#8f8f8f"/>
             <define color="text2" value="#555555"/>
@@ -573,7 +575,7 @@
             <on color="transparent"/>
             <fader>
                 <off color="white"/>
-                <size width="3" height="[HEIGHT]"/>
+                <size width="2" height="[HEIGHT]"/>
             </fader>
         </define>
         <define class="64beatsstroke" type="linear" placeholders="*beats,width,height" action="param_add `get_firstbeat` `get_bpm absolute & param_1_x & param_multiply 60000 & param_multiply [BEATS]` & param_1_x & param_multiply 'get_time total absolute 1000' & param_1_x" visibility="loaded ? param_add `get_firstbeat` `get_bpm absolute & param_1_x & param_multiply 60000 & param_multiply [BEATS]` & param_1_x & param_multiply 'get_time total absolute 1000' & param_1_x & param_smaller 1 ? constant 0.9 : off : off">
@@ -582,7 +584,7 @@
             <on color="transparent"/>
             <fader>
                 <off color="white"/>
-                <size width="3" height="[HEIGHT]"/>
+                <size width="2" height="[HEIGHT]"/>
             </fader>
         </define>
         <define class="32beatsruler" placeholders="width,*height">
@@ -618,7 +620,7 @@
             <slider class="64beatsstroke" width="[WIDTH]" height="[HEIGHT]" beats="1856"/>
             <slider class="64beatsstroke" width="[WIDTH]" height="[HEIGHT]" beats="1920"/>
         </define>
-        <define class="songprogress" colorPlayed="black" colorHigh="colorHigh" colorMed="colorMed"
+        <define class="songprogress" colorPlayed="colorPlayed" colorHigh="colorHigh" colorMed="colorMed"
                 colorBass="colorBass">
             <size width="538-10" height="55"/>
             <wave>
@@ -635,7 +637,7 @@
             </loops>
         </define>
 
-        <define class="songprogresswide" colorPlayed="black" colorHigh="colorHigh" colorMed="colorMed"
+        <define class="songprogresswide" colorPlayed="colorPlayed" colorHigh="colorHigh" colorMed="colorMed"
                 colorBass="colorBass" placeholders="dwidth,*dheight">
             <size width="[DWIDTH]" height="[DHEIGHT]"/>
             <wave>
@@ -654,11 +656,11 @@
 
         <define class="songprogresscolorswide" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat"
                 colorNoVocal="colorNoVocal" colorNoInstru="colorNoInstru" colorNoBeat="colorNoBeatSongPos"
-                colorPlayed="black" placeholders="dwidth,*dheight">
+                colorPlayed="colorPlayed" placeholders="dwidth,*dheight">
             <size width="[DWIDTH]" height="[DHEIGHT]"/>
             <wave>
-                <size height="[DHEIGHT]-10"/>
-                <pos y="+5"/>
+                <size height="[DHEIGHT]-0"/>
+                <pos y="+0"/>
             </wave>
             <cues dy="-5" shade="0">
                 <size width="18" height="[DHEIGHT]"/>
@@ -670,43 +672,7 @@
             </loops>
         </define>
 
-        <define class="songprogressshort" colorPlayed="black" colorHigh="colorHigh" colorMed="colorMed"
-                colorBass="colorBass">
-            <size width="538-10" height="24"/>
-            <wave>
-                <size height="24-10"/>
-                <pos y="+5"/>
-            </wave>
-            <cues dy="-5" shade="0">
-                <size width="18" height="24"/>
-                <clipmask x="30" y="107"/>
-            </cues>
-            <loops dy="-5">
-                <size width="22" height="24"/>
-                <clipmask x="74" y="107"/>
-            </loops>
-        </define>
-
-        <define class="songprogressshortcolors" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat"
-                colorNoVocal="colorNoVocal" colorNoInstru="colorNoInstru" colorNoBeat="colorNoBeatSongPos"
-                colorPlayed="black" colorHigh="colorHigh" colorMed="colorMed"
-                colorBass="colorBass">
-            <size width="538-10" height="24"/>
-            <wave>
-                <size height="24-10"/>
-                <pos y="+5"/>
-            </wave>
-            <cues dy="-5" shade="0">
-                <size width="18" height="24"/>
-                <clipmask x="30" y="107"/>
-            </cues>
-            <loops dy="-5">
-                <size width="22" height="24"/>
-                <clipmask x="74" y="107"/>
-            </loops>
-        </define>
-
-        <define class="songprogressshortwide" colorPlayed="black" colorHigh="colorHigh" colorMed="colorMed"
+        <define class="songprogressshortwide" colorPlayed="colorPlayed" colorHigh="colorHigh" colorMed="colorMed"
                 colorBass="colorBass">
             <size width="538-10+88" height="24+8"/>
             <wave>
@@ -725,7 +691,7 @@
 
         <define class="songprogressshortwidecolors" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat"
                 colorNoVocal="colorNoVocal" colorNoInstru="colorNoInstru" colorNoBeat="colorNoBeatSongPos"
-                colorPlayed="black" colorHigh="colorHigh" colorMed="colorMed"
+                colorPlayed="colorPlayed" colorHigh="colorHigh" colorMed="colorMed"
                 colorBass="colorBass">
             <size width="538-10+88" height="24+8"/>
             <wave>
@@ -744,7 +710,7 @@
 
         <define class="songprogresssandbox" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat"
                 colorNoVocal="colorNoVocal" colorNoInstru="colorNoInstru" colorNoBeat="colorNoBeatSongPos"
-                colorPlayed="black" colorHigh="colorHigh" colorMed="colorMed"
+                colorPlayed="colorPlayed" colorHigh="colorHigh" colorMed="colorMed"
                 colorBass="colorBass">
             <pos x="+10" y="+280"/>
             <size width="1240" height="160"/>
@@ -1570,12 +1536,12 @@
                         <off color="panelback"/>
                     </visual>
                     <songpos x="+5" y="+5" class="songposvertical_wave" dwidth="[DWIDTH]-10" dheight="[DHEIGHT]-10"
-                             colorPlayed="black" colorHigh="colorHigh" colorMed="colorMed" colorBass="colorBass"
+                             colorPlayed="colorPlayed" colorHigh="colorHigh" colorMed="colorMed" colorBass="colorBass"
                              visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? false : true : true"/>
                     <songpos x="+5" y="+5" class="songposvertical_wave" dwidth="[DWIDTH]-10" dheight="[DHEIGHT]-10"
                              colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat"
                              colorNoVocal="colorNoVocal" colorNoInstru="colorNoInstru" colorNoBeat="colorNoBeatSongPos"
-                             colorPlayed="black" colorHigh="colorHigh" colorMed="colorMed"
+                             colorPlayed="colorPlayed" colorHigh="colorHigh" colorMed="colorMed"
                              colorBass="colorBass"
                              visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? true : false : false"/>
                     <textzone>
@@ -2075,6 +2041,7 @@
                 <panel class="brushed-background" dwidth="538+89" dheight="61">
                     <pos x="+0" y="+65"/>
                 </panel>
+                <panel class="32beatsruler" x="+5-2" y="+65" width="538-10+88" height="6" visibility="get_songlength & param_smaller 1200 ? true : false"/>
                 <group visibility="var '@$denonwavehalf' 0">
                     <songpos class="songprogresswide" x="+5" y="+65" dheight="60" dwidth="538-10+88"
                              visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? false : true : true"/>
@@ -2087,7 +2054,6 @@
                     <songpos class="songprogresscolorswide" x="+5" y="+65" dheight="60" dwidth="538-10+88" half = "yes"
                              visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? true : false : false"/>
                 </group>
-                <panel class="32beatsruler" x="+5-2" y="+63" width="538-10+88" height="7" visibility="get_songlength & param_smaller 1200 ? true : false"/>
                 <visual>
                     <pos x="+0" y="+0"/>
                     <size width="50" height="71-10"/>
@@ -2478,19 +2444,18 @@
                 <panel class="brushed-background" dwidth="538+38" dheight="57">
                     <pos x="+50" y="+0"/>
                 </panel>
+                <panel class="32beatsruler" x="+55-2" y="-0" width="538-10+88-55" height="7" visibility="get_songlength & param_smaller 1200 ? true : false"/>
                 <group visibility="var '@$denonwavehalf' 0">
                     <songpos class="songprogresswide" x="+55" y="+0" dheight="60" dwidth="538-10+88-55"
                              visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? false : true : true"/>
                     <songpos class="songprogresscolorswide" x="+55" y="+0" dheight="60" dwidth="538-10+88-55"
                              visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? true : false : false"/>
-                    <panel class="32beatsruler" x="+55-2" y="-0" width="538-10+88-55" height="7" visibility="get_songlength & param_smaller 1200 ? true : false"/>
                 </group>
                 <group visibility="var '@$denonwavehalf' 1">
                     <songpos class="songprogresswide" x="+55" y="+0" dheight="60" dwidth="538-10+88-55" half = "yes"
                              visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? false : true : true"/>
                     <songpos class="songprogresscolorswide" x="+55" y="+0" dheight="60" dwidth="538-10+88-55" half = "yes"
                              visibility="setting 'SkinWaveformScratchType' 'Shapes' ? var '@$denonshapescolors' 1 ? true : false : false"/>
-                    <panel class="32beatsruler" x="+55-2" y="-0" width="538-10+88-55" height="7" visibility="get_songlength & param_smaller 1200 ? true : false"/>
                 </group>
                 <button class="needlelockwide" x="+5" y="+65"/>
 
