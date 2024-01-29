@@ -2325,7 +2325,7 @@
                         <text fontsize="12" color="#707070" align="center" text="QUANTIZE"/>
                         <textselected fontsize="12" color="black" align="center" text="QUANTIZE"/>
                     </button>
-                    <button action="nothing" query="masterdeck">
+                    <button action="holding 1000ms ? masterdeck_auto : masterdeck" query="masterdeck">
                         <pos x="+538-80+5+88" y="+10+40"/>
                         <size width="70" height="22"/>
                         <off color="settingsbuttonoff"/>
