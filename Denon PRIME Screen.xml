@@ -961,11 +961,12 @@
 
         <define class="wavedeck" placeholders="*dheight,textsize=36,deckn">
             <deck deck="[DECKN]">
-                <visual>
-                    <pos x="+0" y="+0"/>
-                    <size width="50" height="[DHEIGHT]"/>
+                <button action="nothing" query="loop">
+                    <pos x="+5" y="+0"/>
+                    <size width="45" height="[DHEIGHT]"/>
+                    <text fontsize="[TEXTSIZE]" color="deckcolorbright" align="center" text="[DECKN]"/>
                     <off color="panelback"/>
-                </visual>
+                </button>
                 <visual visibility="get_volume &amp; param_bigger 0">
                     <pos x="+0" y="+0"/>
                     <size width="5" height="[DHEIGHT]"/>
@@ -976,32 +977,10 @@
                     <size width="5" height="[DHEIGHT]"/>
                     <off color="black"/>
                 </visual>
-                <textzone>
-                    <pos x="+5" y="+0"/>
-                    <size width="45" height="[DHEIGHT]"/>
-                    <text fontsize="[TEXTSIZE]" align="center" color="deckcolorbright" action="get_deck"/>
-                </textzone>
-                <panel class="wavedeckvertical_wave_overlay" x="+50+0" y="+0" dwidth="1" dheight="+[DHEIGHT]" visibility="95%"/>
-                <panel class="wavedeckvertical_wave_overlay" x="+50+1" y="+0" dwidth="1" dheight="+[DHEIGHT]" visibility="90%"/>
-                <panel class="wavedeckvertical_wave_overlay" x="+50+2" y="+0" dwidth="1" dheight="+[DHEIGHT]" visibility="85%"/>
-                <panel class="wavedeckvertical_wave_overlay" x="+50+3" y="+0" dwidth="1" dheight="+[DHEIGHT]" visibility="80%"/>
-                <panel class="wavedeckvertical_wave_overlay" x="+50+4" y="+0" dwidth="1" dheight="+[DHEIGHT]" visibility="75%"/>
-                <panel class="wavedeckvertical_wave_overlay" x="+50+5" y="+0" dwidth="1" dheight="+[DHEIGHT]" visibility="70%"/>
-                <panel class="wavedeckvertical_wave_overlay" x="+50+6" y="+0" dwidth="1" dheight="+[DHEIGHT]" visibility="65%"/>
-                <panel class="wavedeckvertical_wave_overlay" x="+50+7" y="+0" dwidth="1" dheight="+[DHEIGHT]" visibility="60%"/>
-                <panel class="wavedeckvertical_wave_overlay" x="+50+8" y="+0" dwidth="1" dheight="+[DHEIGHT]" visibility="55%"/>
-                <panel class="wavedeckvertical_wave_overlay" x="+50+9" y="+0" dwidth="1" dheight="+[DHEIGHT]" visibility="50%"/>
-                <panel class="wavedeckvertical_wave_overlay" x="+50+10" y="+0" dwidth="1" dheight="+[DHEIGHT]" visibility="45%"/>
-                <panel class="wavedeckvertical_wave_overlay" x="+50+11" y="+0" dwidth="1" dheight="+[DHEIGHT]" visibility="40%"/>
-                <panel class="wavedeckvertical_wave_overlay" x="+50+12" y="+0" dwidth="1" dheight="+[DHEIGHT]" visibility="35%"/>
-                <panel class="wavedeckvertical_wave_overlay" x="+50+13" y="+0" dwidth="1" dheight="+[DHEIGHT]" visibility="30%"/>
-                <panel class="wavedeckvertical_wave_overlay" x="+50+14" y="+0" dwidth="1" dheight="+[DHEIGHT]" visibility="25%"/>
-                <panel class="wavedeckvertical_wave_overlay" x="+50+15" y="+0" dwidth="1" dheight="+[DHEIGHT]" visibility="20%"/>
-                <panel class="wavedeckvertical_wave_overlay" x="+50+16" y="+0" dwidth="1" dheight="+[DHEIGHT]" visibility="15%"/>
-                <panel class="wavedeckvertical_wave_overlay" x="+50+17" y="+0" dwidth="1" dheight="+[DHEIGHT]" visibility="10%"/>
-                <panel class="wavedeckvertical_wave_overlay" x="+50+18" y="+0" dwidth="1" dheight="+[DHEIGHT]" visibility="5%"/>
+                <panel class="wavedeckhorizontal_overlay" x="+50+0" y="+0" dwidth="20" dheight="+[DHEIGHT]"/>
+                <panel class="wavedeckhorizontal_overlay_inverse" x="1280-20" y="+0" dwidth="20" dheight="+[DHEIGHT]"/>
 
-                <visual type="vumeter" x="+0" y="+0" width="5" height="120" source="get_level" smooth="true" visibility="var '@$primeshowvumeter' 1">
+                <visual type="vumeter" x="+0" y="+0" width="5" height="100" source="get_level" smooth="true" visibility="var '@$primeshowvumeter' 1 && play">
                     <led x="+0" y="+[DHEIGHT]*11/12" width="5" height="[DHEIGHT]/12+1">
                         <off color="black"/>
                         <on color="deckcolorbright"/>
@@ -1053,11 +1032,23 @@
                 </visual>
             </deck>
         </define>
-        <define class="wavedeckvertical_wave_overlay" placeholders="*dwidth, *dheight,*visibility">
-            <visual visibility="[VISIBILITY]">
+        <define class="wavedeckvertical_overlay" placeholders="*dwidth, *dheight">
+            <square visibility="var_not_equal '@$colorscheme' 2">
                 <size width="[DWIDTH]" height="[DHEIGHT]"/>
-                <off color="black"/>
-            </visual>
+                <gradient type="vertical" color1="black" color2="transparent"/>
+            </square>
+        </define>
+        <define class="wavedeckhorizontal_overlay" placeholders="*dwidth, *dheight">
+            <square visibility="var_not_equal '@$colorscheme' 2">
+                <size width="[DWIDTH]" height="[DHEIGHT]"/>
+                <gradient type="horizontal" color1="black" color2="transparent"/>
+            </square>
+        </define>
+        <define class="wavedeckhorizontal_overlay_inverse" placeholders="*dwidth, *dheight">
+            <square visibility="var_not_equal '@$colorscheme' 2">
+                <size width="[DWIDTH]" height="[DHEIGHT]"/>
+                <gradient type="horizontal" color2="black" color1="transparent"/>
+            </square>
         </define>
 
         <define class="wavedeckvertical" placeholders="*dwidth,*dheight,textsize=36,deckn,*deckactive">
@@ -1067,25 +1058,7 @@
                     <size width="[DWIDTH]" height="[DHEIGHT]"/>
                     <off color="panelback"/>
                 </visual>
-                <panel class="wavedeckvertical_wave_overlay" x="+0" y="+[DHEIGHT]+0" dwidth="[DWIDTH]" dheight="1" visibility="95%"/>
-                <panel class="wavedeckvertical_wave_overlay" x="+0" y="+[DHEIGHT]+1" dwidth="[DWIDTH]" dheight="1" visibility="90%"/>
-                <panel class="wavedeckvertical_wave_overlay" x="+0" y="+[DHEIGHT]+2" dwidth="[DWIDTH]" dheight="1" visibility="85%"/>
-                <panel class="wavedeckvertical_wave_overlay" x="+0" y="+[DHEIGHT]+3" dwidth="[DWIDTH]" dheight="1" visibility="80%"/>
-                <panel class="wavedeckvertical_wave_overlay" x="+0" y="+[DHEIGHT]+4" dwidth="[DWIDTH]" dheight="1" visibility="75%"/>
-                <panel class="wavedeckvertical_wave_overlay" x="+0" y="+[DHEIGHT]+5" dwidth="[DWIDTH]" dheight="1" visibility="70%"/>
-                <panel class="wavedeckvertical_wave_overlay" x="+0" y="+[DHEIGHT]+6" dwidth="[DWIDTH]" dheight="1" visibility="65%"/>
-                <panel class="wavedeckvertical_wave_overlay" x="+0" y="+[DHEIGHT]+7" dwidth="[DWIDTH]" dheight="1" visibility="60%"/>
-                <panel class="wavedeckvertical_wave_overlay" x="+0" y="+[DHEIGHT]+8" dwidth="[DWIDTH]" dheight="1" visibility="55%"/>
-                <panel class="wavedeckvertical_wave_overlay" x="+0" y="+[DHEIGHT]+9" dwidth="[DWIDTH]" dheight="1" visibility="50%"/>
-                <panel class="wavedeckvertical_wave_overlay" x="+0" y="+[DHEIGHT]+10" dwidth="[DWIDTH]" dheight="1" visibility="45%"/>
-                <panel class="wavedeckvertical_wave_overlay" x="+0" y="+[DHEIGHT]+11" dwidth="[DWIDTH]" dheight="1" visibility="40%"/>
-                <panel class="wavedeckvertical_wave_overlay" x="+0" y="+[DHEIGHT]+12" dwidth="[DWIDTH]" dheight="1" visibility="35%"/>
-                <panel class="wavedeckvertical_wave_overlay" x="+0" y="+[DHEIGHT]+13" dwidth="[DWIDTH]" dheight="1" visibility="30%"/>
-                <panel class="wavedeckvertical_wave_overlay" x="+0" y="+[DHEIGHT]+14" dwidth="[DWIDTH]" dheight="1" visibility="25%"/>
-                <panel class="wavedeckvertical_wave_overlay" x="+0" y="+[DHEIGHT]+15" dwidth="[DWIDTH]" dheight="1" visibility="20%"/>
-                <panel class="wavedeckvertical_wave_overlay" x="+0" y="+[DHEIGHT]+16" dwidth="[DWIDTH]" dheight="1" visibility="15%"/>
-                <panel class="wavedeckvertical_wave_overlay" x="+0" y="+[DHEIGHT]+17" dwidth="[DWIDTH]" dheight="1" visibility="10%"/>
-                <panel class="wavedeckvertical_wave_overlay" x="+0" y="+[DHEIGHT]+18" dwidth="[DWIDTH]" dheight="1" visibility="5%"/>
+                <panel class="wavedeckvertical_overlay" x="+0" y="+[DHEIGHT]" dwidth="[DWIDTH]" dheight="20" visibility="95%"/>
 
                 <visual visibility="[DECKACTIVE]">
                     <pos x="+2" y="-4"/>
@@ -1294,7 +1267,7 @@
                 <panel class="scratchwhcolor" x="+0" swidth="[DWIDTH]" y="+0" sheight="[DHEIGHT]" deckn="1" visibility="deck 1 leftdeck"/>
                 <panel class="scratchwhcolor" x="+0" swidth="[DWIDTH]" y="+0" sheight="[DHEIGHT]" deckn="3" visibility="deck 3 leftdeck"/>
                 <panel class="scratchwhcolor" x="+0" swidth="[DWIDTH]" y="+[DY]" sheight="[DHEIGHT]" deckn="2" visibility="deck 2 rightdeck"/>
-                <panel class="scratchwhcolor" x="+0" y="+[DY]" swidth="[DWIDTH]" sheight="[DHEIGHT]" deckn="4" visibility="deck 4 rightdeck"/>
+                <panel class="scratchwhcolor" x="+0" swidth="[DWIDTH]" y="+[DY]" sheight="[DHEIGHT]" deckn="4" visibility="deck 4 rightdeck"/>
             </panel>
 
             <panel class="wavedeck" x="+0" y="+0" dheight="[DHEIGHT]+21" deckn="1" visibility="deck 1 leftdeck"/>
@@ -2367,7 +2340,7 @@
                             <pos x="+18" y="+36"/>
                             <size width="40" height="25"/>
                             <text fontsize="25" color="#909090" align="center" format="%loop"/>
-                            <textselected fontsize="30" color="text3" align="center" format="%loop"/>
+                            <textselected fontsize="25" color="text3" align="center" format="%loop"/>
                         </button>
                     </group>
 
