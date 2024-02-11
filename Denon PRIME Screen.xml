@@ -768,6 +768,7 @@
 
         <define class="waveoverlayh" placeholders="*swidth,*sheight">
             <group visibility="setting 'WaveformCenter' 'Centered'">
+                <panel class="wavedeckhorizontal_overlay" x="+[SWIDTH]/2" y="-1" dwidth="15" dheight="[SHEIGHT]+20"/>
                 <visual>
                     <pos x="+[SWIDTH]/2-1-1" y="-1"/>
                     <size width="5" height="[SHEIGHT]+20+2"/>
@@ -780,6 +781,7 @@
                 </visual>
             </group>
             <group visibility="setting 'WaveformCenter' 'Left'">
+                <panel class="wavedeckhorizontal_overlay" x="+[SWIDTH]/4" y="-1" dwidth="15" dheight="[SHEIGHT]+20"/>
                 <visual>
                     <pos x="+[SWIDTH]/4-1-1" y="-1"/>
                     <size width="5" height="[SHEIGHT]+20+2"/>
@@ -864,6 +866,7 @@
 
         <define class="waveoverlayv" placeholders="*swidth,*sheight">
             <group visibility="setting 'WaveformCenter' 'Centered'">
+                <panel class="wavedeckvertical_overlay" x="+0" y="+[SHEIGHT]/2" dwidth="[SWIDTH]" dheight="15"/>
                 <visual>
                     <pos x="-1" y="+[SHEIGHT]/2-1"/>
                     <size width="[SWIDTH]+2" height="6"/>
@@ -876,6 +879,7 @@
                 </visual>
             </group>
             <group visibility="setting 'WaveformCenter' 'Left'">
+                <panel class="wavedeckvertical_overlay" x="+0" y="+[SHEIGHT]/4" dwidth="[SWIDTH]" dheight="15"/>
                 <visual>
                     <pos x="-1" y="-1+[SHEIGHT]/4-1"/>
                     <size width="[SWIDTH]+2" height="6"/>
