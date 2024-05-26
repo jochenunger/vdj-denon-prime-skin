@@ -4541,16 +4541,16 @@
     </panel>
     <define class="touchfxbutton" placeholders="textaction">
         <size width="130" height="50"/>
-        <off color="buttonoff" shape="square" border="bordercolor" border_size="2"/>
-        <selected color="buttonon" shape="square" border="deckcolordark" border_size="2"/>
-        <down color="buttonon" shape="square" border="deckcolordark" border_size="2"/>
+        <off color="buttonoff" shape="square" border="bordercolor" border_size="2" radius="6"/>
+        <selected color="buttonon" shape="square" border="deckcolordark" border_size="2" radius="6"/>
+        <down color="buttonon" shape="square" border="deckcolordark" border_size="2" radius="6"/>
         <text dx="+2" width="120" fontsize="18" color="text2" colorselected="padbuttontextselected" colordown="padbuttontextselected"
               align="center" action="[TEXTACTION]" scroll="yes"/>
     </define>
     <define class="touchfxbuttonwide" placeholders="textaction,textsize=18">
         <size width="180" height="50"/>
-        <off color="buttonoff" shape="square" border="bordercolor" border_size="2"/>
-        <selected color="deckcolorbright" shape="square" border="bordercolor" border_size="2"/>
+        <off color="buttonoff" shape="square" border="bordercolor" border_size="2" radius="6"/>
+        <selected color="deckcolorbright" shape="square" border="bordercolor" border_size="2" radius="6"/>
         <text dx="5" width="170" fontsize="[TEXTSIZE]" color="text2" colorselected="black" align="center" action="[TEXTACTION]"/>
     </define>
     <define class="fxbackgrounddot" placeholders="*widthn=114,dotcolor">
