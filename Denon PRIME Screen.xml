@@ -7,7 +7,7 @@
  Want to see it in action: https://youtu.be/pQGqcDsc6-w
  Want to get in touch: https://github.com/jochenunger/vdj-denon-prime-skin
 
- Version: 1.1.0
+ Version: 1.1.2
 
  Have fun!
  Jochen
@@ -2294,25 +2294,25 @@
                     </button>
 
                     <panel name="bpm">
-                        <pos x="+410" y="+5"/>
+                        <pos x="+405" y="+5"/>
                         <textzone>
-                            <pos x="+0" y="+5"/>
+                            <pos x="+5" y="+5"/>
                             <size width="40" height="25"/>
                             <text fontsize="14" color="settingsbuttontext" align="right" format="± %pitchrange%%"/>
                         </textzone>
                         <textzone>
-                            <pos x="+40" y="+0"/>
+                            <pos x="+45" y="+0"/>
                             <size width="80" height="34"/>
                             <text fontsize="26" color="text2" align="right" format="%Ppitch%"/>
                         </textzone>
                         <textzone>
-                            <pos x="+15" y="+25"/>
-                            <size width="72" height="50"/>
+                            <pos x="+0" y="+25"/>
+                            <size width="92" height="50"/>
                             <text fontsize="46" color="deckcolorbright" valign="bottom" align="right" format="`get_bpm &amp; param_cast &apos;int_trunc&apos; 2`."/>
                         </textzone>
                         <textzone>
-                            <pos x="+87" y="+25"/>
-                            <size width="35" height="50"/>
+                            <pos x="+92" y="+25"/>
+                            <size width="40" height="50"/>
                             <text fontsize="32" color="deckcolorbright" valign="bottom" align="left"
                                   action="get_bpm &amp; param_cast frac 2 &amp; param_multiply 100 &amp; param_cast &apos;00&apos;"/>
                         </textzone>
