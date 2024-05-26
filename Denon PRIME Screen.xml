@@ -13,7 +13,7 @@
  Jochen
  -->
 <skin name="denonprime" version="2020" width="1280" height="800" preview="preview.png" author="Jochen Unger" nbdecks="4" hidden="true" dpi="1.3">
-    <!--	<oninit action="get_controller_name &amp; param_contains 'Prime GO' ? set '@$denoncontrollertype' 0 : set '@$denoncontrollertype' 1"/>-->
+    <oninit action="set '$runsondesktop' 0"/>
 
     <customicons file="icons_daylight.png" nb="64" nbx="16" condition="var_equal '@$colorscheme' 2"/>
     <!-- Defines-->
@@ -3003,6 +3003,15 @@
                   colordown="text3"/>
         </define>
 
+        <define class="browseropensettings" action="toggle '$primesettingsview'">
+            <size width="80" height="70"/>
+            <off radius="6" color="buttonoff3" border_size="2" border="black"/>
+            <on radius="6" color="buttonoff3" border_size="2" border="black"/>
+            <down radius="6" color="buttonoff4" border_size="2" border="bordercolor2"/>
+            <icon sysicon="settings" width="60" height="60" coloroff="#808080" colorselected="text3"
+                  colordown="text3"/>
+        </define>
+
         <define class="browserfontbuttons">
             <button action="font_size -1">
                 <pos x="+0" y="+0"/>
@@ -3961,6 +3970,8 @@
                     <button class="browserextend" x="+5" y="+5"
                             action="set '$primebrowserextend' 0 &amp; browser_isactive off" query="on"/>
 
+                    <button class="browseropensettings" x="+5" y="+645-80-80" visibility="var '$prbrowsersetbut' 0"/>
+
                     <button class="browserfontoption" x="+5" y="+645-80"/>
 
                     <panel class="browserfontbuttons" x="+5" y="+90+5+30" visibility="var '$prbrowsersetbut' 1"/>
@@ -4105,11 +4116,26 @@
                 <off color="buttonoff3" border_size="2" border="black"/>
                 <on color="buttonoff4" border_size="2" border="bordercolor3"/>
             </button>
-            <button action="set &apos;$denonprimesource&apos; 1" query="off">
+            <button action="set '$primesettingsview' 0" query="off">
                 <pos x="20" y="+15"/>
+                <size width="60" height="60"/>
+                <off color="buttonoff3" border_size="2" border="black"/>
+                <on color="buttonoff4" border_size="2" border="bordercolor3"/>
+                <icon width="50" height="50" sysicon="chevronleft"></icon>
+            </button>
+            <button action="set &apos;$denonprimesource&apos; 1" query="off" visibility="var '$runsondesktop' 0">
+                <pos x="20+70" y="+15"/>
                 <size width="250" height="60"/>
                 <text fontsize="22" align="center" color="textfxdark" text="Standalone mode"/>
                 <textdown fontsize="22" align="center" color="settingstext" text="Standalone mode"/>
+                <off color="buttonoff3" border_size="2" border="black"/>
+                <on color="buttonoff4" border_size="2" border="bordercolor3"/>
+            </button>
+            <button action="settings" visibility="var '$runsondesktop' 1">
+                <pos x="20+70" y="+15"/>
+                <size width="250" height="60"/>
+                <text fontsize="22" align="center" color="textfxdark" text="VDJ Settings Dialog"/>
+                <textdown fontsize="22" align="center" color="settingstext" text="VDJ Settings Dialog"/>
                 <off color="buttonoff3" border_size="2" border="black"/>
                 <on color="buttonoff4" border_size="2" border="bordercolor3"/>
             </button>
