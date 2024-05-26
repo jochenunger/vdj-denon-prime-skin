@@ -966,72 +966,56 @@
         <define class="wavedeck" placeholders="*dheight,textsize=36,deckn">
             <deck deck="[DECKN]">
                 <button action="nothing" query="loop">
-                    <pos x="+5" y="+0"/>
-                    <size width="45" height="[DHEIGHT]"/>
-                    <text fontsize="[TEXTSIZE]" color="deckcolorbright" align="center" text="[DECKN]"/>
-                    <off color="panelback"/>
+                    <pos x="+0" y="+0"/>
+                    <size width="50" height="[DHEIGHT]"/>
+                    <off color="black" />
                 </button>
-                <visual visibility="get_volume &amp; param_bigger 0">
+                <button action="nothing" query="loop">
                     <pos x="+0" y="+0"/>
-                    <size width="5" height="[DHEIGHT]"/>
-                    <off color="deckcolorbright"/>
-                </visual>
-                <visual visibility="get_volume &amp; param_equal 0">
-                    <pos x="+0" y="+0"/>
-                    <size width="5" height="[DHEIGHT]"/>
-                    <off color="black"/>
-                </visual>
+                    <size width="50" height="[DHEIGHT]"/>
+                    <text fontsize="[TEXTSIZE]" color="deckcolorbright" align="center" text="[DECKN]"/>
+                    <off color="panelback" radius="6"/>
+                </button>
+
                 <panel class="wavedeckhorizontal_overlay" x="+50+0" y="+0" dwidth="20" dheight="+[DHEIGHT]"/>
                 <panel class="wavedeckhorizontal_overlay_inverse" x="1280-20" y="+0" dwidth="20" dheight="+[DHEIGHT]"/>
 
-                <visual type="vumeter" x="+0" y="+0" width="5" height="100" source="get_level" smooth="true" visibility="var '@$primeshowvumeter' 1 && play">
-                    <led x="+0" y="+[DHEIGHT]*11/12" width="5" height="[DHEIGHT]/12+1">
-                        <off color="black"/>
-                        <on color="deckcolorbright"/>
+                <visual type="vumeter" x="+4" y="+1" width="5" height="100" source="get_level" smooth="true" visibility="var '@$primeshowvumeter' 1 && play">
+                    <led x="+0" y="+[DHEIGHT]*11/12" width="5" height="[DHEIGHT]/12-3">
+                        <on color="deckcolorbright" radius="3"/>
                     </led>
-                    <led x="+0" y="+[DHEIGHT]*10/12" width="5" height="[DHEIGHT]/12+1">
-                        <off color="black"/>
-                        <on color="deckcolorbright"/>
+                    <led x="+0" y="+[DHEIGHT]*10/12" width="5" height="[DHEIGHT]/12-3">
+                        <on color="deckcolorbright" radius="3"/>
                     </led>
-                    <led x="+0" y="+[DHEIGHT]*9/12" width="5" height="[DHEIGHT]/12+1">
-                        <off color="black"/>
-                        <on color="deckcolorbright"/>
+                    <led x="+0" y="+[DHEIGHT]*9/12" width="5" height="[DHEIGHT]/12-3">
+                        <on color="deckcolorbright" radius="3"/>
                     </led>
-                    <led x="+0" y="+[DHEIGHT]*8/12" width="5" height="[DHEIGHT]/12+1">
-                        <off color="black"/>
-                        <on color="deckcolorbright"/>
+                    <led x="+0" y="+[DHEIGHT]*8/12" width="5" height="[DHEIGHT]/12-3">
+                        <on color="deckcolorbright" radius="3"/>
                     </led>
-                    <led x="+0" y="+[DHEIGHT]*7/12" width="5" height="[DHEIGHT]/12+1">
-                        <off color="black"/>
-                        <on color="deckcolorbright"/>
+                    <led x="+0" y="+[DHEIGHT]*7/12" width="5" height="[DHEIGHT]/12-3">
+                        <on color="deckcolorbright" radius="3"/>
                     </led>
-                    <led x="+0" y="+[DHEIGHT]*6/12" width="5" height="[DHEIGHT]/12+1">
-                        <off color="black"/>
-                        <on color="deckcolorbright"/>
+                    <led x="+0" y="+[DHEIGHT]*6/12" width="5" height="[DHEIGHT]/12-3">
+                        <on color="deckcolorbright" radius="3"/>
                     </led>
-                    <led x="+0" y="+[DHEIGHT]*5/12" width="5" height="[DHEIGHT]/12+1">
-                        <off color="black"/>
-                        <on color="deckcolorbright"/>
+                    <led x="+0" y="+[DHEIGHT]*5/12" width="5" height="[DHEIGHT]/12-3">
+                        <on color="deckcolorbright" radius="3"/>
                     </led>
-                    <led x="+0" y="+[DHEIGHT]*4/12" width="5" height="[DHEIGHT]/12+1">
-                        <off color="black"/>
-                        <on color="deckcolorbright"/>
+                    <led x="+0" y="+[DHEIGHT]*4/12" width="5" height="[DHEIGHT]/12-3">
+                        <on color="deckcolorbright" radius="3"/>
                     </led>
-                    <led x="+0" y="+[DHEIGHT]*3/12" width="5" height="[DHEIGHT]/12+1">
-                        <off color="black"/>
-                        <on color="deckcolorbright"/>
+                    <led x="+0" y="+[DHEIGHT]*3/12" width="5" height="[DHEIGHT]/12-3">
+                        <on color="deckcolorbright" radius="3"/>
                     </led>
-                    <led x="+0" y="+[DHEIGHT]*2/12" width="5" height="[DHEIGHT]/12+1">
-                        <off color="black"/>
-                        <on color="yellow"/>
+                    <led x="+0" y="+[DHEIGHT]*2/12" width="5" height="[DHEIGHT]/12-3">
+                        <on color="yellow" radius="3"/>
                     </led>
-                    <led x="+0" y="+[DHEIGHT]*1/12" width="5" height="[DHEIGHT]/12+1">
-                        <off color="black"/>
-                        <on color="yellow"/>
+                    <led x="+0" y="+[DHEIGHT]*1/12" width="5" height="[DHEIGHT]/12-3">
+                        <on color="yellow" radius="3"/>
                     </led>
-                    <led x="+0" y="+0" width="5" height="[DHEIGHT]/12+1">
-                        <off color="black"/>
-                        <on color="blue"/>
+                    <led x="+0" y="+0" width="6" height="[DHEIGHT]/12-3">
+                        <on color="blue" radius="3"/>
                     </led>
                 </visual>
             </deck>
@@ -1680,30 +1664,35 @@
             $pmgofxon
             pmgofxassign
             <visual>
-                <pos x="+20+50+20" y="+0"/>
-                <size width="5" height="90"/>
-                <off color="black"/>
+                <pos x="+0" y="+0"/>
+                <size width="90" height="76"/>
+                <off color="buttonoff3" radius="6"/>
             </visual>
             <visual>
-                <pos x="+1280-40-50-30" y="+0"/>
-                <size width="5" height="90"/>
-                <off color="black"/>
+                <pos x="+90+5" y="+0"/>
+                <size width="250" height="76"/>
+                <off color="buttonoff3" radius="6"/>
             </visual>
             <visual>
-                <pos x="+20+95+200+30" y="+0"/>
-                <size width="5" height="90"/>
-                <off color="black"/>
+                <pos x="+90+5+250+5" y="+0"/>
+                <size width="540" height="76"/>
+                <off color="buttonoff3" radius="6"/>
             </visual>
             <visual>
-                <pos x="+320+240+60+240+60-30" y="+0"/>
-                <size width="5" height="90"/>
-                <off color="black"/>
+                <pos x="+90+5+250+5+540+5" y="+0"/>
+                <size width="270" height="76"/>
+                <off color="buttonoff3" radius="6"/>
+            </visual>
+            <visual>
+                <pos x="+90+5+250+5+540+5+270+5" y="+0"/>
+                <size width="90" height="76"/>
+                <off color="buttonoff3" radius="6"/>
             </visual>
 
             <deck deck="1">
                 <button action="nothing" query="deck left var 'pmgofxassign' ? true : false"
                         visibility="deck 1 leftdeck ? true : false">
-                    <pos x="+20" y="+17"/>
+                    <pos x="+20" y="+15"/>
                     <size width="50" height="50"/>
                     <off radius="6" color="fxseldark" shape="square" border="bordercolor" border_size="2"/>
                     <selected radius="6" color="deckcolorbright" shape="square" border="bordercolor" border_size="2"/>
@@ -1713,7 +1702,7 @@
             <deck deck="3">
                 <button action="nothing" query="deck left var 'pmgofxassign' ? true : false"
                         visibility="deck 3 leftdeck ? true : false">
-                    <pos x="+20" y="+17"/>
+                    <pos x="+20" y="+15"/>
                     <size width="50" height="50"/>
                     <off radius="6" color="fxseldark" shape="square" border="bordercolor" border_size="2"/>
                     <selected radius="6" color="deckcolorbright" shape="square" border="bordercolor" border_size="2"/>
@@ -1766,7 +1755,7 @@
             <deck deck="2">
                 <button action="nothing" query="deck right var 'pmgofxassign' ? true : false"
                         visibility="deck 2 rightdeck ? true : false">
-                    <pos x="+1280-40-50" y="+17"/>
+                    <pos x="+1280-40-50" y="+15"/>
                     <size width="50" height="50"/>
                     <off radius="6" color="fxseldark" shape="square" border="bordercolor" border_size="2"/>
                     <selected radius="6" color="deckcolorbright" shape="square" border="bordercolor" border_size="2"/>
@@ -1776,7 +1765,7 @@
             <deck deck="4">
                 <button action="nothing" query="deck right var 'pmgofxassign' ? true : false"
                         visibility="deck 4 rightdeck ? true : false">
-                    <pos x="+1280-40-50" y="+17"/>
+                    <pos x="+1280-40-50" y="+15"/>
                     <size width="50" height="50"/>
                     <off radius="6" color="fxseldark" shape="square" border="bordercolor" border_size="2"/>
                     <selected radius="6" color="deckcolorbright" shape="square" border="bordercolor" border_size="2"/>
@@ -2040,28 +2029,28 @@
                 <visual>
                     <pos x="+0" y="+0"/>
                     <size width="50" height="71-10"/>
-                    <off color="panelback"/>
+                    <off color="panelback" radius="6"/>
                 </visual>
                 <visual>
                     <pos x="+54" y="+0"/>
                     <size width="485+89" height="71-10"/>
-                    <off color="panelback"/>
+                    <off color="panelback" radius="6"/>
                 </visual>
                 <visual>
                     <pos x="+0" y="+130"/>
                     <size width="538+89" height="127-33-15"/>
-                    <off color="background1"/>
+                    <off color="background1" radius="6"/>
                 </visual>
 
                 <visual visibility="get_volume &amp; param_bigger 0">
-                    <pos x="+0" y="+0"/>
-                    <size width="5" height="71-10"/>
+                    <pos x="+3" y="+0"/>
+                    <size width="3" height="71-10"/>
                     <off color="deckcolorbright"/>
                 </visual>
-                <visual visibility="get_volume &amp; param_equal 0">
+                <visual visibility="get_volume &amp; param_bigger 0">
                     <pos x="+0" y="+0"/>
-                    <size width="5" height="71-10"/>
-                    <off color="panelback"/>
+                    <size width="6" height="71-10"/>
+                    <off color="deckcolorbright" radius="3"/>
                 </visual>
                 <button action="invert_deck">
                     <pos x="+5" y="+0"/>
@@ -2139,10 +2128,10 @@
 
                             <panel visibility="var '@$primeshowalbum' 1">
                                 <cover>
-                                    <pos x="+54" y="+0"/>
-                                    <size width="60" height="60"/>
+                                    <pos x="+54+3" y="+0+3"/>
+                                    <size width="60-6" height="60-6"/>
                                 </cover>
-                                <panel x="+54+35-1" y="+35-1" class="stemsoverlay" deckn="[DECKN]" visibility="var '@$primeshowstemstatus'"/>
+                                <panel x="+54+35-3" y="+35-3" class="stemsoverlay" deckn="[DECKN]" visibility="var '@$primeshowstemstatus'"/>
                                 <textzone group="horizontal" scroll="yes">
                                     <pos x="+54+5+58" y="+1"/>
                                     <size width="485+20" height="29"/>
@@ -2269,9 +2258,7 @@
                             <down color="buttonoff4" border_size="2" border="bordercolor4" radius="6"/>
                             <text size="20" align="center" color="white" text="OK"/>
                         </button>
-
                     </panel>
-
                 </panel>
                 <button class="needlelockwide" x="+5" y="+65"/>
 
@@ -2279,16 +2266,16 @@
                     <button action="quantize_all">
                         <pos x="+538-80+5+88" y="+10"/>
                         <size width="70" height="22"/>
-                        <off color="settingsbuttonoff"/>
-                        <on color="text2"/>
+                        <off color="settingsbuttonoff" radius="6"/>
+                        <on color="text2" radius="6"/>
                         <text fontsize="12" color="#707070" align="center" text="QUANTIZE"/>
                         <textselected fontsize="12" color="black" align="center" text="QUANTIZE"/>
                     </button>
                     <button action="holding 1000ms ? masterdeck_auto : masterdeck" query="masterdeck">
                         <pos x="+538-80+5+88" y="+10+40"/>
                         <size width="70" height="22"/>
-                        <off color="settingsbuttonoff"/>
-                        <on color="text2"/>
+                        <off color="settingsbuttonoff" radius="6"/>
+                        <on color="text2" radius="6"/>
                         <text fontsize="12" color="#707070" align="center" text="MASTER"/>
                         <textselected fontsize="12" color="black" align="center" text="MASTER"/>
                     </button>
@@ -2390,40 +2377,29 @@
 
         <define class="tinydeckwide" placeholders="deckn">
             <deck deck="[DECKN]">
+                <panel class="brushed-background" dwidth="538+42" dheight="61">
+                    <pos x="+46" y="+0"/>
+                </panel>
                 <visual>
                     <pos x="+0" y="+0"/>
                     <size width="50" height="71-10"/>
-                    <off color="panelback"/>
+                    <off color="panelback" radius="6"/>
                 </visual>
-                <visual>
-                    <pos x="+54" y="+0"/>
-                    <size width="485+34+51" height="71-10"/>
-                    <off color="black"/>
-                </visual>
-                <visual>
-                    <pos x="+0" y="+58"/>
-                    <size width="485+34+50+56" height="3"/>
-                    <off color="panelback"/>
-                </visual>
-
                 <visual visibility="get_volume &amp; param_bigger 0">
-                    <pos x="+0" y="+0"/>
-                    <size width="5" height="71-10"/>
+                    <pos x="+3" y="+0"/>
+                    <size width="3" height="71-10"/>
                     <off color="deckcolorbright"/>
                 </visual>
-                <visual visibility="get_volume &amp; param_equal 0">
+                <visual visibility="get_volume &amp; param_bigger 0">
                     <pos x="+0" y="+0"/>
-                    <size width="5" height="71-10"/>
-                    <off color="panelback"/>
+                    <size width="6" height="71-10"/>
+                    <off color="deckcolorbright" radius="3"/>
                 </visual>
                 <textzone>
                     <pos x="+5" y="+0"/>
                     <size width="45" height="71-10"/>
                     <text fontsize="36" align="center" color="deckcolorbright" action="get_deck"/>
                 </textzone>
-                <panel class="brushed-background" dwidth="538+38" dheight="57">
-                    <pos x="+50" y="+0"/>
-                </panel>
                 <panel class="32beatsruler" x="+55-2" y="-0" width="538-10+88-55" height="7" visibility="get_songlength & param_smaller 1200 ? true : false"/>
                 <group visibility="var '@$denonwavehalf' 0">
                     <songpos class="songprogresswide" x="+55" y="+0" dheight="60" dwidth="538-10+88-55"
@@ -2439,32 +2415,29 @@
                 </group>
                 <button class="needlelockwide" x="+5" y="+65"/>
 
-                <panel class="time" x="+30" y="+5" visibility="songpos_remain 35%"/>
+                <panel class="time" x="+30" y="+0" visibility="songpos_remain 35%"/>
             </deck>
         </define>
 
-        <define class="browserback" placeholders="*brheight">
+        <define class="browsersmallback" placeholders="*brheight">
             <visual>
                 <pos x="+0" y="+0"/>
-                <size width="1260" height="[BRHEIGHT]"/>
-                <off color="background1"/>
-            </visual>
-            <panel class="brushed-background" dwidth="1260" dheight="[BRHEIGHT]">
-                <pos x="+0" y="+0"/>
-            </panel>
-            <visual>
-                <pos x="+90" y="+0"/>
-                <size width="5" height="[BRHEIGHT]"/>
-                <off color="black"/>
+                <size width="90" height="[BRHEIGHT]"/>
+                <off color="buttonoff3" radius="6"/>
             </visual>
             <visual>
-                <pos x="+1260-90-5" y="+0"/>
-                <size width="5" height="[BRHEIGHT]"/>
-                <off color="black"/>
+                <pos x="+95" y="+0"/>
+                <size width="1260-90-5-90-5" height="[BRHEIGHT]"/>
+                <off color="buttonoff3" radius="6"/>
+            </visual>
+            <visual>
+                <pos x="+1260-90" y="+0"/>
+                <size width="90" height="[BRHEIGHT]"/>
+                <off color="buttonoff3" radius="6"/>
             </visual>
 
             <logo>
-                <pos x="+1260-90+5" y="+5"/>
+                <pos x="+1260-90+5" y="+7"/>
                 <size width="80" height="20"/>
             </logo>
 
@@ -2520,6 +2493,38 @@
                 </group>
             </panel>
 
+        </define>
+        <define class="browserback" placeholders="*brheight">
+            <visual>
+                <pos x="+0" y="+0"/>
+                <size width="1260" height="[BRHEIGHT]"/>
+                <off color="background1"/>
+            </visual>
+            <panel class="brushed-background" dwidth="1260" dheight="[BRHEIGHT]">
+                <pos x="+0" y="+0"/>
+            </panel>
+            <visual>
+                <pos x="+90" y="+0"/>
+                <size width="5" height="[BRHEIGHT]"/>
+                <off color="black"/>
+            </visual>
+            <visual>
+                <pos x="+1260-90-5" y="+0"/>
+                <size width="5" height="[BRHEIGHT]"/>
+                <off color="black"/>
+            </visual>
+
+            <logo>
+                <pos x="+1260-90+5" y="+5"/>
+                <size width="80" height="20"/>
+            </logo>
+
+            <textzone>
+                <pos x="+1260-90+5" y="+30"/>
+                <size width="80" height="25"/>
+                <text fontsize="18" color="text2" align="center" weight="" action="get_clock"/>
+                <text2 fontsize="18" color="text2" align="center" weight="bold" format="%counter" important="true"/>
+            </textzone>
         </define>
 
         <define class="browserlist" x="110" placeholders="*brwidth=1060,*brheight,lineheight">
@@ -3526,14 +3531,7 @@
         <define class="primegofxpannel">
 
             <panel name="fxs" x="10" y="564+106+10+40">
-                <visual>
-                    <pos x="+0" y="+0"/>
-                    <size width="1260" height="85"/>
-                    <off color="buttonoff3"/>
-                </visual>
-
                 <panel class="fxpanel" x="+0" y="+0"/>
-
             </panel>
 
             <panel class="fxselects" x="10+115-2" y="500" visibility="var '$primego_fxselect'"/>
@@ -3756,12 +3754,12 @@
                             <visual>
                                 <pos x="+0" y="+0"/>
                                 <size width="628" height="115-9"/>
-                                <off color="buttonoff3"/>
+                                <off color="buttonoff3" radius="6"/>
                             </visual>
                             <visual>
                                 <pos x="+630+3" y="+0"/>
                                 <size width="627" height="115-9"/>
-                                <off color="buttonoff3"/>
+                                <off color="buttonoff3" radius="6"/>
                             </visual>
                             <panel class="deckpadswide_only4" deckn="1" x="+5" y="+0" visibility="deck 1 leftdeck"/>
                             <panel class="deckpadswide_only4" deckn="3" x="+5" y="+0" visibility="deck 3 leftdeck"/>
@@ -3776,12 +3774,12 @@
                             <visual>
                                 <pos x="+0" y="+0"/>
                                 <size width="628" height="115-9"/>
-                                <off color="buttonoff3"/>
+                                <off color="buttonoff3" radius="6"/>
                             </visual>
                             <visual>
                                 <pos x="+630+3" y="+0"/>
                                 <size width="627" height="115-9"/>
-                                <off color="buttonoff3"/>
+                                <off color="buttonoff3" radius="6"/>
                             </visual>
                             <panel class="deckpadswide" deckn="1" x="+5" y="+0" visibility="deck 1 leftdeck"/>
                             <panel class="deckpadswide" deckn="3" x="+5" y="+0" visibility="deck 3 leftdeck"/>
@@ -3790,8 +3788,8 @@
                         </panel>
                     </group>
                     <group name="browsersmall" x="10" y="0">
-                        <panel class="browserback" brheight="90"/>
-                        <button class="browserextend" x="+5" y="+5"
+                        <panel class="browsersmallback" brheight="90"/>
+                        <button class="browserextend" x="+5" y="+10"
                                 action="set '$primebrowserextend' 1 &amp; browser_isactive on" query="off"/>
 
                         <panel class="topbuttons" x="130" y="+20"/>
@@ -3871,8 +3869,8 @@
                     </group>
 
                     <group name="browsersmall" x="10" y="0">
-                        <panel class="browserback" brheight="90"/>
-                        <button class="browserextend" x="+5" y="+5"
+                        <panel class="browsersmallback" brheight="90"/>
+                        <button class="browserextend" x="+5" y="+10"
                                 action="set '$primebrowserextend' 1 &amp; browser_isactive on" query="off"/>
 
                         <panel class="topbuttons" x="130" y="+20"/>
@@ -3894,8 +3892,8 @@
                     </group>
 
                     <group name="browsersmall" x="10" y="0">
-                        <panel class="browserback" brheight="90"/>
-                        <button class="browserextend" x="+5" y="+5"
+                        <panel class="browsersmallback" brheight="90"/>
+                        <button class="browserextend" x="+5" y="+10"
                                 action="set '$primebrowserextend' 1 &amp;&amp; browser_isactive on" query="off"/>
 
                         <panel class="topbuttons" x="130" y="+20"/>
@@ -3916,12 +3914,6 @@
                             <panel class="scratchpanelvertical2decks" x="10" y="94" dy="315" dwidth="200" dheight="621" songpos_dx="95"/>
                         </group>
                         <panel name="fxs" x="10" y="564+106+10+40">
-                            <visual>
-                                <pos x="+0" y="+0"/>
-                                <size width="1260" height="85"/>
-                                <off color="buttonoff3"/>
-                            </visual>
-
                             <panel class="fxpanel" x="+0" y="+0"/>
                         </panel>
                         <panel class="fxselects" x="10+115-2" y="500" visibility="var '$primego_fxselect'"/>
@@ -3936,8 +3928,8 @@
                     </group>
 
                     <group name="browsersmall" x="10" y="0">
-                        <panel class="browserback" brheight="90"/>
-                        <button class="browserextend" x="+5" y="+5"
+                        <panel class="browsersmallback" brheight="90"/>
+                        <button class="browserextend" x="+5" y="+10"
                                 action="set '$primebrowserextend' 1 &amp;&amp; browser_isactive on" query="off"/>
 
                         <panel class="topbuttons" x="130" y="+20"/>
@@ -3967,7 +3959,7 @@
 
                     <panel class="browserbuttons" visibility="var '$prbrowsersetbut' 0"/>
 
-                    <button class="browserextend" x="+5" y="+5"
+                    <button class="browserextend" x="+5" y="+10"
                             action="set '$primebrowserextend' 0 &amp; browser_isactive off" query="on"/>
 
                     <button class="browseropensettings" x="+5" y="+645-80-80" visibility="var '$prbrowsersetbut' 0"/>
