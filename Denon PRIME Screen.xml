@@ -766,16 +766,16 @@
             </define>
         </group>
 
-        <define class="waveoverlayh" placeholders="*swidth,*sheight">
+        <define class="waveoverlayh" placeholders="*swidth,*sheight,*offset">
             <group visibility="setting 'WaveformCenter' 'Centered'">
-                <panel class="wavedeckhorizontal_overlay" x="+[SWIDTH]/2" y="-1" dwidth="15" dheight="[SHEIGHT]+20"/>
+                <panel class="wavedeckhorizontal_overlay" x="+[SWIDTH]/2+[OFFSET]" y="-1" dwidth="15" dheight="[SHEIGHT]+20"/>
                 <visual>
-                    <pos x="+[SWIDTH]/2-1-1" y="-1"/>
+                    <pos x="+[SWIDTH]/2-1-1+[OFFSET]" y="-1"/>
                     <size width="5" height="[SHEIGHT]+20+2"/>
                     <off color="black"/>
                 </visual>
                 <visual>
-                    <pos x="+[SWIDTH]/2-1" y="+0"/>
+                    <pos x="+[SWIDTH]/2-1+[OFFSET]" y="+0"/>
                     <size width="3" height="[SHEIGHT]+20"/>
                     <off color="white"/>
                 </visual>
@@ -797,19 +797,41 @@
         <define class="scratchwh" placeholders="deckn,*swidth=1260,*sheight=100">
             <deck deck="[DECKN]">
                 <group visibility="loaded">
-                    <scratchwave orientation="horizontal">
-                        <pos x="+0" y="+15"/>
-                        <size width="[SWIDTH]" height="[SHEIGHT]-10"/>
-                        <grid mirrored="yes" pos="-15" shapepos="-15" shapemirrored="both" maincolor="deckcolorbright"
-                              color="deckcolorbright" background="no" backgroundshaded="no" height="8" size="3"
-                              mainsize="6"/>
-                        <gridlines width="1" color="deckcolorbright" transparency="0.8"/>
-                        <cue y="-15" height="23">
-                            <text dx="20" dy="-2" size="20"/>
-                            <mask width="24" height="21" x="31" y="187"/>
-                        </cue>
-                    </scratchwave>
-                    <panel class="waveoverlayh" swidth="[SWIDTH]" sheight="[SHEIGHT]"/>
+                    <group visibility="setting 'WaveformCenter' 'Centered'">
+                        <scratchwave orientation="horizontal">
+                            <pos x="-150" y="+15"/>
+                            <size width="[SWIDTH]+150" height="[SHEIGHT]-10"/>
+                            <grid mirrored="yes" pos="-15" shapepos="-15" shapemirrored="both" maincolor="deckcolorbright"
+                                  color="deckcolorbright" background="no" backgroundshaded="no" height="8" size="3"
+                                  mainsize="6"/>
+                            <gridlines width="1" color="deckcolorbright" transparency="0.8"/>
+                            <cue y="-15" height="23">
+                                <text dx="20" dy="-2" size="20"/>
+                                <mask width="24" height="21" x="31" y="187"/>
+                            </cue>
+                        </scratchwave>
+                        <visual>
+                            <pos x="-10" y="+0"/>
+                            <size width="10" height="[SHEIGHT]+20"/>
+                            <off color="black"/>
+                        </visual>
+                        <panel class="waveoverlayh" swidth="[SWIDTH]" sheight="[SHEIGHT]" offset="-75"/>
+                    </group>
+                    <group visibility="setting 'WaveformCenter' 'Left'">
+                        <scratchwave orientation="horizontal">
+                            <pos x="+0" y="+15"/>
+                            <size width="[SWIDTH]" height="[SHEIGHT]-10"/>
+                            <grid mirrored="yes" pos="-15" shapepos="-15" shapemirrored="both" maincolor="deckcolorbright"
+                                  color="deckcolorbright" background="no" backgroundshaded="no" height="8" size="3"
+                                  mainsize="6"/>
+                            <gridlines width="1" color="deckcolorbright" transparency="0.8"/>
+                            <cue y="-15" height="23">
+                                <text dx="20" dy="-2" size="20"/>
+                                <mask width="24" height="21" x="31" y="187"/>
+                            </cue>
+                        </scratchwave>
+                        <panel class="waveoverlayh" swidth="[SWIDTH]" sheight="[SHEIGHT]"/>
+                    </group>
                     <panel visibility="var '@$denonwavebeats' 1 &amp;&amp; loaded">
                         <visual visibility="50%">
                             <pos x="+30" y="+15"/>
@@ -829,20 +851,43 @@
         <define class="scratchwhcolor" placeholders="deckn,*swidth=1260,*sheight=100">
             <deck deck="[DECKN]">
                 <group visibility="loaded">
-                    <scratchwave orientation="horizontal" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat"
-                                 colorNoVocal="colorNoVocal" colorNoInstru="colorNoInstru" colorNoBeat="colorNoBeat"
-                                 colorHigh="colorHigh" colorMed="colorMed" colorBass="colorBass">
-                        <pos x="+0" y="+15"/>
-                        <size width="[SWIDTH]" height="[SHEIGHT]-10"/>
-                        <grid mirrored="yes" pos="-15" shapepos="-15" shapemirrored="both" maincolor="#FF3737"
-                              color="#444444" background="no" backgroundshaded="no" height="8" size="3"
-                              mainsize="6"/>
-                        <cue y="-15" height="23">
-                            <text dx="20" dy="-2" size="20"/>
-                            <mask width="24" height="21" x="31" y="187"/>
-                        </cue>
-                    </scratchwave>
-                    <panel class="waveoverlayh" swidth="[SWIDTH]" sheight="[SHEIGHT]"/>
+                    <group visibility="setting 'WaveformCenter' 'Centered'">
+                        <scratchwave orientation="horizontal" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat"
+                                     colorNoVocal="colorNoVocal" colorNoInstru="colorNoInstru" colorNoBeat="colorNoBeat"
+                                     colorHigh="colorHigh" colorMed="colorMed" colorBass="colorBass">
+                            <pos x="-150" y="+15"/>
+                            <size width="[SWIDTH]+150" height="[SHEIGHT]-10"/>
+                            <grid mirrored="yes" pos="-15" shapepos="-15" shapemirrored="both" maincolor="#FF3737"
+                                  color="#444444" background="no" backgroundshaded="no" height="8" size="3"
+                                  mainsize="6"/>
+                            <cue y="-15" height="23">
+                                <text dx="20" dy="-2" size="20"/>
+                                <mask width="24" height="21" x="31" y="187"/>
+                            </cue>
+                        </scratchwave>
+                        <visual>
+                            <pos x="-10" y="+0"/>
+                            <size width="10" height="[SHEIGHT]+20"/>
+                            <off color="black"/>
+                        </visual>
+                        <panel class="waveoverlayh" swidth="[SWIDTH]" sheight="[SHEIGHT]" offset="-75"/>
+                    </group>
+                    <group visibility="setting 'WaveformCenter' 'Left'">
+                        <scratchwave orientation="horizontal" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat"
+                                     colorNoVocal="colorNoVocal" colorNoInstru="colorNoInstru" colorNoBeat="colorNoBeat"
+                                     colorHigh="colorHigh" colorMed="colorMed" colorBass="colorBass">
+                            <pos x="+0" y="+15"/>
+                            <size width="[SWIDTH]" height="[SHEIGHT]-10"/>
+                            <grid mirrored="yes" pos="-15" shapepos="-15" shapemirrored="both" maincolor="#FF3737"
+                                  color="#444444" background="no" backgroundshaded="no" height="8" size="3"
+                                  mainsize="6"/>
+                            <cue y="-15" height="23">
+                                <text dx="20" dy="-2" size="20"/>
+                                <mask width="24" height="21" x="31" y="187"/>
+                            </cue>
+                        </scratchwave>
+                        <panel class="waveoverlayh" swidth="[SWIDTH]" sheight="[SHEIGHT]"/>
+                    </group>
                     <panel visibility="var '@$denonwavebeats' 1 &amp;&amp; loaded">
                         <visual visibility="50%">
                             <pos x="+30" y="+15"/>
@@ -2064,8 +2109,8 @@
                     <off color="deckcolorbright" radius="3"/>
                 </visual>
                 <button action="invert_deck">
-                    <pos x="+5" y="+0"/>
-                    <size width="45" height="71-10"/>
+                    <pos x="+0" y="+0"/>
+                    <size width="50" height="71-10"/>
                     <text fontsize="36" color="deckcolorbright" align="center" action="get_deck"/>
                 </button>
                 <panel visibility="get_title ? true : false">
@@ -2110,8 +2155,8 @@
                         <panel visibility="var 'keydisplay' 0 ? var 'showtrackinfo' 0">
                             <panel visibility="var '@$primeshowalbum' 0">
                                 <textzone group="horizontal" scroll="yes">
-                                    <pos x="+58" y="+1"/>
-                                    <size width="485+20+60" height="29"/>
+                                    <pos x="+58+5" y="+1"/>
+                                    <size width="485+20+60-5" height="29"/>
                                     <text fontsize="22" color="text3" action="get_title_before_remix"/>
                                     <text fontsize="22" color="text4" action="get_remix_after_title"/>
                                 </textzone>
@@ -2121,8 +2166,8 @@
                                     <text fontsize="22" color="text3" align="right" action="get_loaded_song 'rating'"/>
                                 </textzone>
                                 <textzone group="horizontal" scroll="yes">
-                                    <pos x="+58" y="+30"/>
-                                    <size width="485+20-110+60" height="29"/>
+                                    <pos x="+58+5" y="+30"/>
+                                    <size width="485+20-110+60-5" height="29"/>
                                     <text fontsize="20" color="text2" action="get_artist_before_feat"/>
                                     <text fontsize="20" color="settingsbuttontext" action="get_featuring_after_artist"/>
                                 </textzone>
@@ -2407,8 +2452,8 @@
                     <off color="deckcolorbright" radius="3"/>
                 </visual>
                 <textzone>
-                    <pos x="+5" y="+0"/>
-                    <size width="45" height="71-10"/>
+                    <pos x="+0" y="+0"/>
+                    <size width="50" height="71-10"/>
                     <text fontsize="36" align="center" color="deckcolorbright" action="get_deck"/>
                 </textzone>
                 <panel class="32beatsruler" x="+55-2" y="-0" width="538-10+88-55" height="7" visibility="get_songlength & param_smaller 1200 ? true : false"/>
