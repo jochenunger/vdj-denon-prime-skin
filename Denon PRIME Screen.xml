@@ -3428,15 +3428,15 @@
                 <pos x="+600" y="+0"/>
                 <size width="200" height="70"/>
                 <text fontsize="26" align="center" color="settingsbuttontext" text="[TEXT1]"/>
-                <off color="buttonoff3" border_size="2" border="black"/>
-                <on color="buttonon3" border_size="2" border="black"/>
+                <off color="buttonoff3" border_size="2" border="black" radius="6"/>
+                <on color="buttonon3" border_size="2" border="black" radius="6"/>
             </button>
             <button action="[ACTION2] &amp; [ACTION3]">
                 <pos x="+600+200+20" y="+0"/>
                 <size width="200" height="70"/>
                 <text fontsize="26" align="center" color="settingsbuttontext" text="[TEXT2]"/>
-                <off color="buttonoff3" border_size="2" border="black"/>
-                <on color="buttonon3" border_size="2" border="black"/>
+                <off color="buttonoff3" border_size="2" border="black" radius="6"/>
+                <on color="buttonon3" border_size="2" border="black" radius="6"/>
             </button>
             <visual>
                 <pos x="+0+10" y="+75"/>
@@ -3499,13 +3499,13 @@
             <button action="set &apos;$denonprimepower&apos; 0">
                 <pos x="+200+120" y="+390"/>
                 <size width="230" height="90"/>
-                <off color="buttonoff4"/>
+                <off color="buttonoff4" radius="6"/>
                 <text fontsize="34" color="text3" align="center" localize="true" text="CANCEL"/>
             </button>
             <button action="set &apos;$denonprimepower&apos; 0 &amp; controllerscreen_action powerdown">
                 <pos x="+200+120+240+200-30" y="+390"/>
                 <size width="230" height="90"/>
-                <off color="buttonoff4"/>
+                <off color="buttonoff4" radius="6"/>
                 <text fontsize="34" color="text3" align="center" localize="true" text="POWER OFF"/>
             </button>
 
@@ -3532,13 +3532,13 @@
             <button action="set &apos;$denonprimesource&apos; 0">
                 <pos x="+200+120" y="+390"/>
                 <size width="230" height="90"/>
-                <off color="buttonoff4"/>
+                <off color="buttonoff4" radius="6"/>
                 <text fontsize="34" color="text3" align="center" localize="true" text="CANCEL"/>
             </button>
             <button action="set &apos;$denonprimesource&apos; 0 &amp; controllerscreen_action standalone">
                 <pos x="+200+120+240+200-30" y="+390"/>
                 <size width="230" height="90"/>
-                <off color="buttonoff4"/>
+                <off color="buttonoff4" radius="6"/>
                 <text fontsize="34" color="text3" align="center" localize="true" text="RESTART"/>
             </button>
         </define>
@@ -4208,15 +4208,15 @@
                         <pos x="+600-220-220" y="+0"/>
                         <size width="200" height="70"/>
                         <text fontsize="26" align="center" color="settingsbuttontext" text="2 Decks"/>
-                        <off color="buttonoff3" border_size="2" border="black"/>
-                        <on color="buttonon3" border_size="2" border="black"/>
+                        <off color="buttonoff3" border_size="2" border="black" radius="6"/>
+                        <on color="buttonon3" border_size="2" border="black" radius="6"/>
                     </button>
                     <button action="set '@$prime4fulldecks' 3">
                         <pos x="+600-220" y="+0"/>
                         <size width="200" height="70"/>
                         <text fontsize="26" align="center" color="settingsbuttontext" text="2 Decks Vertical"/>
-                        <off color="buttonoff3" border_size="2" border="black"/>
-                        <on color="buttonon3" border_size="2" border="black"/>
+                        <off color="buttonoff3" border_size="2" border="black" radius="6"/>
+                        <on color="buttonon3" border_size="2" border="black" radius="6"/>
                     </button>
                 </panel>
 
