@@ -982,86 +982,88 @@
             <size width="[SWIDTH]" height="[SHEIGHT]"/>
         </define>
 
-        <define class="wavedeck" placeholders="*dheight,textsize=36,deckn">
+        <define class="wavedeck" placeholders="*dheight,*textsize=26,deckn">
             <deck deck="[DECKN]">
-                <button action="nothing" query="loop">
-                    <pos x="+0" y="+0"/>
-                    <size width="50" height="[DHEIGHT]"/>
-                    <off color="black" />
-                </button>
-                <button action="nothing" query="loop">
-                    <pos x="+0" y="+0"/>
-                    <size width="50" height="[DHEIGHT]"/>
-                    <text fontsize="[TEXTSIZE]" color="deckcolorbright" align="center" text="[DECKN]"/>
-                    <off color="panelback" radius="6"/>
-                </button>
-                <group visibility="has_stems '2.0'">
-                    <circle color="darkgreen" border="1" border_color="white">
-                        <pos x="+26" y="+5"/>
-                        <size width="20" height="20"/>
-                    </circle>
-                    <textzone>
-                        <pos x="+26" y="+5"/>
-                        <size width="20" height="20"/>
-                        <text fontsize="15" color="white" align="center" text="S"/>
-                    </textzone>
-                </group>
 
-                <panel class="wavedeckhorizontal_overlay" x="+50+0" y="+0" dwidth="100" dheight="+[DHEIGHT]"/>
+                <button action="nothing" query="loop">
+                    <pos x="+0" y="+0"/>
+                    <size width="22" height="[DHEIGHT]"/>
+                    <off color="deckcolorbright" radius="3"/>
+                </button>
+                <button action="nothing" query="loop" novisibility="var '@$primeshowvumeter' 1 && play">
+                    <pos x="+0" y="+0"/>
+                    <size width="22" height="[DHEIGHT]"/>
+                    <text fontsize="[TEXTSIZE]" weight="bold" color="white" align="center" text="[DECKN]"/>
+                </button>
+
+                <panel class="wavedeckhorizontal_overlay" x="+20+2" y="+0" dwidth="100" dheight="+[DHEIGHT]"/>
                 <panel class="wavedeckhorizontal_overlay_inverse" x="1280-20" y="+0" dwidth="20" dheight="+[DHEIGHT]"/>
 
                 <panel visibility="var '@$denonwavebeats' 1 &amp;&amp; loaded">
                     <visual visibility="50%">
-                        <pos x="+50" y="+15"/>
+                        <pos x="+22" y="+15"/>
                         <size width="150" height="30"/>
                         <off color="black"/>
                     </visual>
                     <textzone visibility="loaded">
-                        <pos x="+60" y="+15"/>
+                        <pos x="+32" y="+15"/>
                         <size width="150" height="30"/>
                         <text fontsize="22" color="deckcolorbright" align="center"
                               format="BAR `get_bar` : `get_beat_num`"/>
                     </textzone>
                 </panel>
 
-                <visual type="vumeter" x="+4" y="+1" width="5" height="100" source="get_level" smooth="true" visibility="var '@$primeshowvumeter' 1 && play">
-                    <led x="+0" y="+[DHEIGHT]*11/12" width="5" height="[DHEIGHT]/12-3">
-                        <on color="deckcolorbright" radius="3"/>
+                <visual type="vumeter" x="+3" y="+2" width="5" height="95" source="get_level" smooth="true" visibility="var '@$primeshowvumeter' 1 && play">
+                    <led x="+0" y="+[DHEIGHT]*10/11" width="16" height="[DHEIGHT]/11-3">
+                        <on color="#99000000" radius="3"/>
                     </led>
-                    <led x="+0" y="+[DHEIGHT]*10/12" width="5" height="[DHEIGHT]/12-3">
-                        <on color="deckcolorbright" radius="3"/>
+                    <led x="+0" y="+[DHEIGHT]*9/11" width="16" height="[DHEIGHT]/11-3">
+                        <on color="#99000000" radius="3"/>
                     </led>
-                    <led x="+0" y="+[DHEIGHT]*9/12" width="5" height="[DHEIGHT]/12-3">
-                        <on color="deckcolorbright" radius="3"/>
+                    <led x="+0" y="+[DHEIGHT]*8/11" width="16" height="[DHEIGHT]/11-3">
+                        <on color="#99000000" radius="3"/>
                     </led>
-                    <led x="+0" y="+[DHEIGHT]*8/12" width="5" height="[DHEIGHT]/12-3">
-                        <on color="deckcolorbright" radius="3"/>
+                    <led x="+0" y="+[DHEIGHT]*7/11" width="16" height="[DHEIGHT]/11-3">
+                        <on color="#99000000" radius="3"/>
                     </led>
-                    <led x="+0" y="+[DHEIGHT]*7/12" width="5" height="[DHEIGHT]/12-3">
-                        <on color="deckcolorbright" radius="3"/>
+                    <led x="+0" y="+[DHEIGHT]*6/11" width="16" height="[DHEIGHT]/11-3">
+                        <on color="#99000000" radius="3"/>
                     </led>
-                    <led x="+0" y="+[DHEIGHT]*6/12" width="5" height="[DHEIGHT]/12-3">
-                        <on color="deckcolorbright" radius="3"/>
+                    <led x="+0" y="+[DHEIGHT]*5/11" width="16" height="[DHEIGHT]/11-3">
+                        <on color="#99000000" radius="3"/>
                     </led>
-                    <led x="+0" y="+[DHEIGHT]*5/12" width="5" height="[DHEIGHT]/12-3">
-                        <on color="deckcolorbright" radius="3"/>
+                    <led x="+0" y="+[DHEIGHT]*4/11" width="16" height="[DHEIGHT]/11-3">
+                        <on color="#99000000" radius="3"/>
                     </led>
-                    <led x="+0" y="+[DHEIGHT]*4/12" width="5" height="[DHEIGHT]/12-3">
-                        <on color="deckcolorbright" radius="3"/>
+                    <led x="+0" y="+[DHEIGHT]*3/11" width="16" height="[DHEIGHT]/11-3">
+                        <on color="#99000000" radius="3"/>
                     </led>
-                    <led x="+0" y="+[DHEIGHT]*3/12" width="5" height="[DHEIGHT]/12-3">
-                        <on color="deckcolorbright" radius="3"/>
+                    <led x="+0" y="+[DHEIGHT]*2/11" width="16" height="[DHEIGHT]/11-3">
+                        <on color="#99000000" radius="3"/>
                     </led>
-                    <led x="+0" y="+[DHEIGHT]*2/12" width="5" height="[DHEIGHT]/12-3">
+                    <led x="+0" y="+[DHEIGHT]*1/11" width="16" height="[DHEIGHT]/11-3">
+                        <on color="#99000000" radius="3"/>
+                    </led>
+                    <led x="+0" y="+0" width="16" height="[DHEIGHT]/11-3">
                         <on color="yellow" radius="3"/>
-                    </led>
-                    <led x="+0" y="+[DHEIGHT]*1/12" width="5" height="[DHEIGHT]/12-3">
-                        <on color="yellow" radius="3"/>
-                    </led>
-                    <led x="+0" y="+0" width="6" height="[DHEIGHT]/12-3">
-                        <on color="blue" radius="3"/>
                     </led>
                 </visual>
+<!--                <button action="nothing" query="loop">-->
+<!--                    <pos x="+0" y="+0"/>-->
+<!--                    <size width="22" height="[DHEIGHT]"/>-->
+<!--                    <text fontsize="[TEXTSIZE]" weight="bold" color="white" align="center" text="[DECKN]"/>-->
+<!--                </button>-->
+                <group visibility="has_stems '2.0'">
+                    <circle color="darkgreen" border="1" border_color="white">
+                        <pos x="+1280-35" y="+3"/>
+                        <size width="20" height="20"/>
+                    </circle>
+                    <textzone>
+                        <pos x="+1280-35" y="+3"/>
+                        <size width="20" height="20"/>
+                        <text fontsize="15" color="white" align="center" text="S"/>
+                    </textzone>
+                </group>
             </deck>
         </define>
         <define class="wavedeckvertical_overlay" placeholders="*dwidth, *dheight">
