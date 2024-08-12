@@ -3921,11 +3921,11 @@
                         <panel class="primegofxpannel"/>
                     </group>
                     <group visibility="var '@$denoncontrollertype' 0 &amp;&amp; var '@$primeshowvideo' 1 &amp;&amp; var '$denonfullvideo' 0">
-                        <panel class="scratchpanelhort_4decks" x="10+230-2" y="373" dy="86" dwidth="1032" dheight="64"/>
+                        <panel class="scratchpanelhort_4decks" x="10+230+3" y="373" dy="86" dwidth="1032-5" dheight="64"/>
                         <visual>
                             <pos x="+10" y="+374"/>
-                            <size width="14*16+4" height="344"/>
-                            <off color="panelback"/>
+                            <size width="14*16+4" height="340"/>
+                            <off color="panelback" radius="6"/>
                         </visual>
                         <panel class="video" x="+11" y="+373+3" dborder="0" dwidth="7*16" dheight="7*9" dsource="deck" deckn="3" dbackgroundcolor="panelback"/>
                         <panel class="video" x="+125" y="+373+43" dborder="0" dwidth="7*16" dheight="7*9" dsource="deck" deckn="1" dbackgroundcolor="panelback"/>
@@ -3937,7 +3937,7 @@
                         <panel class="primegofxpannel"/>
                     </group>
                     <group visibility="var '@$denoncontrollertype' 0 &amp;&amp; var '@$primeshowvideo' 1 &amp;&amp; var '$denonfullvideo' 1">
-                        <panel class="scratchpanelhort_4decks" x="10+512+10" y="374" dy="86" dwidth="735" dheight="64"/>
+                        <panel class="scratchpanelhort_4decks" x="10+512+10+5" y="374" dy="86" dwidth="730" dheight="64"/>
                         <panel class="video" x="+10" y="+373" dborder="5" dwidth="32*16+10" dheight="32*9+55" daction="set '$denonfullvideo' 0"/>
                         <panel class="vfxdrop" width="+200" x="+170" y="+329+330" action1="video_fx" action2="video_fx_select"
                                textaction="get_videofx_name &amp; param_uppercase"/>
@@ -3949,11 +3949,11 @@
                         <panel class="scratchpanelhort_4decks" x="10" y="374" dy="106" dwidth="1260" dheight="84"/>
                     </group>
                     <group visibility="var '@$denoncontrollertype' 1 &amp;&amp; var '@$primeshowvideo' 1 &amp;&amp; var '$denonfullvideo' 0">
-                        <panel class="scratchpanelhort_4decks" x="10+230-2" y="374" dy="106" dwidth="1032" dheight="84"/>
+                        <panel class="scratchpanelhort_4decks" x="10+230+3" y="374" dy="106" dwidth="1032-5" dheight="84"/>
                         <visual>
                             <pos x="+10" y="+374"/>
                             <size width="14*16+4" height="422"/>
-                            <off color="panelback"/>
+                            <off color="panelback" radius="6"/>
                         </visual>
                         <panel class="video" x="+70" y="+373+8" dborder="0" dwidth="7*16" dheight="7*9" dsource="deck" deckn="3" dbackgroundcolor="panelback"/>
                         <panel class="video" x="+70" y="+373+78" dborder="0" dwidth="7*16" dheight="7*9" dsource="deck" deckn="1" dbackgroundcolor="panelback"/>
@@ -3964,7 +3964,7 @@
                         <panel class="video" x="+70" y="+373+236+119" dborder="0" dwidth="7*16" dheight="7*9" dsource="deck" deckn="4" dbackgroundcolor="panelback"/>
                     </group>
                     <group visibility="var '@$denoncontrollertype' 1 &amp;&amp; var '@$primeshowvideo' 1 &amp;&amp; var '$denonfullvideo' 1">
-                        <panel class="scratchpanelhort_4decks" x="10+512+10" y="374" dy="106" dwidth="735" dheight="84"/>
+                        <panel class="scratchpanelhort_4decks" x="10+512+10+5" y="374" dy="106" dwidth="730" dheight="84"/>
                         <panel class="video" x="+10" y="+373" dborder="5" dwidth="32*16+10" dheight="422" daction="set '$denonfullvideo' 0"/>
                         <panel class="vfxdrop" width="+200" x="+180" y="+329+407" action1="video_fx" action2="video_fx_select"
                                textaction="get_videofx_name &amp; param_uppercase"/>
