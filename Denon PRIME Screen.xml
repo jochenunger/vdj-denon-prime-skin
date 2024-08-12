@@ -2059,6 +2059,11 @@
                 <panel class="brushed-background" dwidth="538+89" dheight="61">
                     <pos x="+0" y="+65"/>
                 </panel>
+                <visual visibility="var '@$denonblinktime' 0 ? songpos_warning ? blink 1000ms ? on : off : off : off">
+                    <pos x="+0" y="+65"/>
+                    <size width="538+89" height="61"/>
+                    <off color="red"/>
+                </visual>
                 <panel class="32beatsruler" x="+5-2" y="+65" width="538-10+88" height="6" visibility="get_songlength & param_smaller 1200 ? true : false"/>
                 <group visibility="var '@$denonwavehalf' 0">
                     <songpos class="songprogresswide" x="+0" y="+65" dheight="60" dwidth="538+88"
